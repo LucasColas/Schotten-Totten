@@ -20,7 +20,7 @@ private:
     Couleur couleur;
     int force;
 public:
-    Carte_clan(string id, Couleur couleur, int force);
+    Carte_clan(string id_, Couleur couleur_, int force_);
     Couleur get_couleur();
     int get_force();
 
@@ -89,6 +89,6 @@ class Carte_Banshee : public Carte_Ruse {
 };
 
 class Carte_Traitre : public Carte_Ruse {
-    
+
 };
 #endif //SCHOTTEN_TOTTEN_CARTE_H
