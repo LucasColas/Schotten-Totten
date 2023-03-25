@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <queue>
+#include <map>
 
 using namespace std;
 #ifndef SCHOTTEN_TOTTEN_CARTE_H
@@ -21,8 +22,8 @@ private:
     int force;
 public:
     Carte_clan(string id_, Couleur couleur_, int force_);
-    Couleur get_couleur();
-    int get_force();
+    Couleur get_couleur() const { return couleur;};
+    int get_force() const { return force;};
 
 
 };
@@ -35,7 +36,7 @@ private:
     vector<Carte> cartes_joueur_1;
     vector<Carte> cartes_joueur_2;
     vector<Carte> carte_dessus;
-    queue<Carte> historique;
+    map<Carte, string> historique; //pour savoir qui a posé la troisième carte en premier
 public:
     Borne();
 };
@@ -44,16 +45,16 @@ class Carte_tactique : public Carte {
 private:
     string type; //Pour savoir le type de carte tactique.
 public:
-    Carte_tactique();
+    Carte_tactique(string type);
     void capacite();
-    string getType();
+    string getType() const { return type;};
     void setType();
 
 };
 
 class Carte_Combat : public Carte_tactique {
 public:
-    Carte_Combat();
+    Carte_Combat(string type);
     void choix_borne();
 };
 
@@ -64,7 +65,7 @@ private:
     vector<Couleur> couleurs_possibles;
     vector<int> force_possible;
 public:
-    Carte_Elite();
+    Carte_Elite(string type);
     void setCouleur();
     void setForce();
 
@@ -91,4 +92,5 @@ class Carte_Banshee : public Carte_Ruse {
 class Carte_Traitre : public Carte_Ruse {
 
 };
+
 #endif //SCHOTTEN_TOTTEN_CARTE_H

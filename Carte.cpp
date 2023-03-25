@@ -8,10 +8,3 @@ Carte_clan::Carte_clan(string id_, Couleur couleur_, int force_) {
     force = force_;
 }
 
-Couleur Carte_clan::get_couleur() {
-    return couleur;
-}
-
-int Carte_clan::get_force() {
-    return force;
-}
