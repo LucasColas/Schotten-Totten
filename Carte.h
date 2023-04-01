@@ -10,7 +10,21 @@ using namespace std;
 #ifndef SCHOTTEN_TOTTEN_CARTE_H
 #define SCHOTTEN_TOTTEN_CARTE_H
 
-enum class Couleur {Rouge, Vert, Bleu, Dore, Violet, Marron};
+enum class Couleur {Rouge, Vert, Bleu, Dore, Violet, Marron, NC}; //NC est utilisée pour des cartes tactique qui n'ont pas encore de couleur
+string toString(Couleur c);
+
+ostream& operator<<(ostream& f, Couleur c);
+
+class SetException {
+public:
+    SetException(const string& i) : info(i) {}
+    string getInfo() const { return info; }
+private:
+    string info;
+};
+
+
+
 class Carte {
 protected:
     string id; //un id pour chaque carte. Peut servir pour retrouver une carte
@@ -25,6 +39,7 @@ public:
     Couleur get_couleur() const { return couleur;};
     int get_force() const { return force;};
 
+    friend ostream& operator<<(ostream& f, const Carte_clan& c);
 
 };
 
@@ -33,19 +48,20 @@ private:
     int regle;
     int nb_max_cartes;
     int possesseur;
-    vector<Carte> cartes_joueur_1;
-    vector<Carte> cartes_joueur_2;
-    vector<Carte> carte_dessus;
-    map<Carte, string> historique; //pour savoir qui a posé la troisième carte en premier
+    vector<Carte*> cartes_joueur_1;
+    vector<Carte*> cartes_joueur_2;
+    vector<Carte*> carte_dessus;
+    map<Carte*, string> historique; //pour savoir qui a posé la troisième carte en premier
 public:
-    Borne();
+    Borne(string id_, int r);
 };
 
 class Carte_tactique : public Carte {
-private:
-    string type; //Pour savoir le type de carte tactique.
+//Pour savoir le type de carte tactique.
+protected:
+    string type;
 public:
-    Carte_tactique(string type);
+    Carte_tactique(string id_, string t);
     void capacite();
     string getType() const { return type;};
     void setType();
@@ -54,7 +70,7 @@ public:
 
 class Carte_Combat : public Carte_tactique {
 public:
-    Carte_Combat(string type);
+
     void choix_borne();
 };
 
@@ -65,7 +81,7 @@ private:
     vector<Couleur> couleurs_possibles;
     vector<int> force_possible;
 public:
-    Carte_Elite(string type);
+    Carte_Elite(string t, string id_, int f, Couleur c);
     void setCouleur();
     void setForce();
 
@@ -73,7 +89,6 @@ public:
 
 class Carte_Ruse : public Carte_tactique {
 public:
-    Carte_Ruse();
 
 };
 

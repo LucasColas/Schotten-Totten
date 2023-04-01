@@ -5,6 +5,7 @@
 #ifndef SCHOTTEN_TOTTEN_PIOCHE_H
 #define SCHOTTEN_TOTTEN_PIOCHE_H
 class Pioche {
+
 private:
     deque<Carte*> pioche;
 
