@@ -39,6 +39,8 @@ public:
         return *bornes[i];
     }
 
+
+
 };
 
 class Tactique : Schotten_Totten {

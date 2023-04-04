@@ -53,11 +53,19 @@ private:
     vector<Carte*> carte_dessus;
     map<Carte*, string> historique; //pour savoir qui a posé la troisième carte en premier
 public:
-    Borne(string id_, int r);
+    Borne(string id_, int r=0, int nb_cartes=3, int possesseur=0);
+    int getRegle() const { return regle;};
+    int getNbMaxCartes() const { return nb_max_cartes;};
+    int GetPossesseur() const {return possesseur;};
+    vector<Carte*> getCartes_joueur_1() {return cartes_joueur_1;};
+    vector<Carte*> getCartes_joueur_2() {return cartes_joueur_2;};
+
+
+
 };
 
 class Carte_tactique : public Carte {
-//Pour savoir le type de carte tactique.
+//Pour savoir le type de carte tactique (Combat, Elite, etc.).
 protected:
     string type;
 public:

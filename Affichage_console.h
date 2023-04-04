@@ -11,11 +11,14 @@ class Affichage_console {
 public:
 
     Affichage_console(string v);
-    void affichage_bornes(vector<Borne*>& Bornes);
-    void affichage_cartes();
-    void affichage_pioche();
-    void affichage_pioche_tactique();
-    void affichage_défausse();
+
+    void afficher_bornes(vector<Borne*>& Bornes);
+    void afficher_cartes_joueur1(vector<Borne*>& Bornes);
+    void afficher_cartes_joueur2();
+    void afficher_cartes_joueur_actuel();
+    void afficher_pioche();
+    void afficher_pioche_tactique();
+    void afficher_défausse();
     int positionner_carte();
 
 };

@@ -27,7 +27,7 @@ Carte_clan::Carte_clan(string id_, Couleur couleur_, int force_) {
     force = force_;
 }
 
-Borne::Borne(string id_, int r) {
+Borne::Borne(string id_, int r, int nb_cartes, int possesseur) {
     id = id_;
     regle = r;
 }
@@ -50,4 +50,5 @@ ostream& operator<<(ostream& f, const Carte_clan& c) {
     f << "(" << c.get_force() << "," << c.get_couleur()<<")";
     return f;
 }
+
 
