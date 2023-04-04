@@ -32,6 +32,7 @@ Carte& Joueur::choix_carte() {
 }
 
 int Joueur::choix_borne() {
+    //num_borne stocke le numéro de borne où le joueur veut poser sa carte
     int num_borne;
     cout << "choix borne (nombre entre 1 et 9, 1 étant la borne le plus à gauche)";
     cin >> num_borne;
