@@ -47,8 +47,11 @@ Carte_Elite::Carte_Elite(string id_, string t, int f, Couleur c) : Carte_tactiqu
 
 
 ostream& operator<<(ostream& f, const Carte_clan& c) {
-    f << "(" << c.get_force() << "," << c.get_couleur()<<")";
+    f << c.get_force() << "," << c.get_couleur();
     return f;
 }
 
-
+ostream& operator<<(ostream& f, const Borne& b) {
+    f << b.getRegle() << "\n" << b.GetPossesseur() << "\n" << b.getNbMaxCartes();
+    return f;
+}

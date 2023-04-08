@@ -20,6 +20,7 @@ public:
     Joueur(string n, int nb_cartes, int nb_tactiques_jouees=0, int joker_j = 0, int nb_p=0);
     Carte& choix_carte();
     int choix_borne();
+    void ajout_carte(Carte* c);
 
 
 };

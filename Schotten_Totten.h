@@ -1,23 +1,24 @@
 //
 // Created by lucas on 24/03/2023.
 //
-#include <string>
-#include "Carte.h"
-#include "Joueur.h"
-#include "Pioche.h"
-#include "Affichage_console.h"
-#include <cstddef>
+
+
 using namespace std;
 
 #ifndef SCHOTTEN_TOTTEN_SCHOTTEN_TOTTEN_H
 #define SCHOTTEN_TOTTEN_SCHOTTEN_TOTTEN_H
+#include <string>
+#include "Pioche.h"
+#include <cstddef>
+#include "Carte.h"
 class Schotten_Totten {
-private:
+protected:
 
     vector<Borne*> bornes;
     vector<Carte_clan*> cartes;
     int nb_Cartes_clan;
     int nb_bornes;
+    int nb_cartes_par_joueur;
 
 public:
     Schotten_Totten();
@@ -39,15 +40,17 @@ public:
         return *bornes[i];
     }
 
+    int getNb_Cartes_par_joueur() const { return nb_cartes_par_joueur;};
 
 
 };
 
-class Tactique : Schotten_Totten {
+class Tactique : public Schotten_Totten{
 private:
     Pioche pioche_tactique;
     Pioche défausse;
     vector<Carte_tactique*> cartes_tactique;
+    int nb_cartes_tactiques;
 
 public:
     Tactique();

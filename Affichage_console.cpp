@@ -11,27 +11,50 @@ Affichage_console::Affichage_console(string v) {
 
 }
 
-void Affichage_console::afficher_cartes_joueur1(vector<Borne *> &Bornes) {
+void Affichage_console::afficher_cartes_joueur_haut(vector<Borne *> &Bornes, int joueur) {
     int espace = 0;
     int max_cartes = 0;
+
+
     for (int i = 0; i < Bornes.size(); i++) {
-        if (Bornes[i]->getCartes_joueur_1().size() > max_cartes) {
-            max_cartes = Bornes[i]->getCartes_joueur_1().size();
+        if (joueur == 1) {
+            if (Bornes[i]->getCartes_joueur_1().size() > max_cartes) {
+                max_cartes = Bornes[i]->getCartes_joueur_1().size();
+            }
         }
+
+        else {
+            if (Bornes[i]->getCartes_joueur_2().size() > max_cartes) {
+                max_cartes = Bornes[i]->getCartes_joueur_2().size();
+            }
+        }
+
     }
     for (int j = max_cartes - 1; j >= 0; j--) {
         for (int i = 0; i < Bornes.size(); i++) {
             for (int k = 0; k < espace; k++) {
                 cout << " " << flush;
             }
-            if (Bornes[i]->getCartes_joueur_1().size() >= max_cartes) {
-                cout << Bornes[i]->getCartes_joueur_1()[j] << flush;
-            }
-            else {
-                cout << "   " << flush;
+            if (joueur == 1){
+                if (Bornes[i]->getCartes_joueur_1().size() >= max_cartes) {
+                    cout << Bornes[i]->getCartes_joueur_1()[j] << flush;
+                }
+                else {
+                    cout << "___" << flush;
+                }
             }
 
-            espace += 4;
+            else {
+                if (Bornes[i]->getCartes_joueur_2().size() >= max_cartes) {
+                    cout << Bornes[i]->getCartes_joueur_2()[j] << flush;
+                }
+                else {
+                    cout << "___" << flush;
+                }
+            }
+
+
+            espace += 3;
 
             cout << endl;
         }
@@ -39,4 +62,10 @@ void Affichage_console::afficher_cartes_joueur1(vector<Borne *> &Bornes) {
     }
 
 
+}
+
+void Affichage_console::afficher_bornes(vector<Borne *> &Bornes) {
+    for (int i = 0; i < Bornes.size(); i++) {
+        cout << Bornes[i];
+    }
 }

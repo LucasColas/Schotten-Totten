@@ -60,6 +60,8 @@ public:
     vector<Carte*> getCartes_joueur_1() {return cartes_joueur_1;};
     vector<Carte*> getCartes_joueur_2() {return cartes_joueur_2;};
 
+    friend ostream& operator<<(ostream& f, const Borne& b);
+
 
 
 };
