@@ -11,10 +11,9 @@ class Affichage_console {
 public:
 
     Affichage_console(string v);
-
     void afficher_bornes(vector<Borne*>& Bornes);
-    void afficher_cartes_joueur1(vector<Borne*>& Bornes);
-    void afficher_cartes_joueur2();
+    void afficher_cartes_joueur_haut(vector<Borne*>& Bornes, int joueur);
+    void afficher_cartes_joueur_bas();
     void afficher_cartes_joueur_actuel();
     void afficher_pioche();
     void afficher_pioche_tactique();

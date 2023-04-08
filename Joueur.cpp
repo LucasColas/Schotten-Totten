@@ -38,3 +38,9 @@ int Joueur::choix_borne() {
     cin >> num_borne;
     return num_borne;
 }
+
+void Joueur::ajout_carte(Carte *c) {
+    if (cartes.size() < nb_max_cartes) {
+        cartes.push_back(c);
+    }
+}
