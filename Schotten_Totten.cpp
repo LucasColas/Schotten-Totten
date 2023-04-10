@@ -3,7 +3,6 @@
 //
 #include "Schotten_Totten.h"
 #include "Carte.h"
-#include "Pioche.h"
 #include "Affichage_console.h"
 using namespace std;
 

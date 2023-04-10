@@ -6,6 +6,7 @@
 
 #include "Jeu.h"
 #include "Schotten_Totten.h"
+#include "Pioche.h"
 using namespace std;
 
 
@@ -15,11 +16,12 @@ Jeu::Jeu(string mode, string v) {
     variante = v;
     nb_parties_jouees = 0;
     joueur_actuelle = 1;
+    schottenTotten = new Schotten_Totten();
+
 
     setNb_parties();
     choix_jeu();
     setNb_joueurs_humains();
-    creation_joueurs();
     resume();
     distribution_cartes();
     creation_joueurs();
@@ -38,6 +40,7 @@ void Jeu::choix_jeu() {
         if (variante.compare("normal") == 0) {
             cout << "Schotten Totten normal " << endl;
             schottenTotten = new Schotten_Totten();
+            pioche = new Pioche(5);
 
         }
         else {
@@ -88,11 +91,8 @@ void Jeu::distribution_cartes() {
     for (int i = 0; i < schottenTotten->getNb_Cartes_par_joueur() * 2; i++) {
         //Distribuer cartes
         if (i%2 == 0) {
-            joueurs[0]->ajout_carte();
+            joueurs[0]->ajout_carte(&pioches["pioches tactique"]->piocher_carte());
         }
     }
 }
 
-void Jeu::setPioches() {
-    if (mode_jeu.compare("v"))
-}

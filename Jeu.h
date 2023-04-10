@@ -1,12 +1,14 @@
 //
 // Created by lucas on 24/03/2023.
 //
-#include "Joueur.h"
-#include "Affichage_console.h"
-#include "Schotten_Totten.h"
+
 using namespace std;
 #ifndef SCHOTTEN_TOTTEN_JEU_H
 #define SCHOTTEN_TOTTEN_JEU_H
+#include "Joueur.h"
+#include "Affichage_console.h"
+#include "Schotten_Totten.h"
+
 class Jeu {
 private:
     int nb_joueurs;
@@ -23,6 +25,7 @@ private:
     Affichage_console* affichageConsole;
 
     Schotten_Totten* schottenTotten;
+    Pioche* pioche;
     map<string, Pioche*> pioches;
 
 public:

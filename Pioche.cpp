@@ -1,26 +1,27 @@
 //
-// Created by lucas on 24/03/2023.
+// Created by lucas on 09/04/2023.
 //
 #include "Pioche.h"
 #include "Carte.h"
+#include "Schotten_Totten.h"
+#include <iostream>
 using namespace std;
-
-Pioche::Pioche(const Schotten_Totten& S) {
-    for (int i = 0; S.getNb_Cartes_clan(); i ++) {
-        pioche.push_back(&S.getCarte_clan(i));
-    }
-
+Pioche::Pioche(Schotten_Totten& j): cartes(new const Carte*[j.getNb_Cartes_clan()]), nb(j.getNb_Cartes_clan()) {
+    for(size_t i=0; i <nb; i++)
+        cartes[i] = &j.getCarte_clan(i);
+}
+Pioche::Pioche(int n) {
+    cout << "essai";
 }
 bool Pioche::est_vide() {
-    return pioche.size() == 0;
+    return nb == 0;
 }
 Carte& Pioche::piocher_carte() {
     if (est_vide()) {
         throw "pas possible de piocher. Pioche vide";
     }
 
-    Carte& c = *pioche[pioche.size() - 1];
-    pioche.pop_back();
+    Carte& c = *cartes[nb- 1];
+    nb--;
     return c;
 }
-
