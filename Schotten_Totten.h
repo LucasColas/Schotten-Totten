@@ -12,6 +12,7 @@ using namespace std;
 #include <cstddef>
 #include "Carte.h"
 class Schotten_Totten {
+    friend class Jeu;
 protected:
 
     vector<Borne*> bornes;
