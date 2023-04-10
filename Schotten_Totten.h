@@ -8,7 +8,7 @@ using namespace std;
 #ifndef SCHOTTEN_TOTTEN_SCHOTTEN_TOTTEN_H
 #define SCHOTTEN_TOTTEN_SCHOTTEN_TOTTEN_H
 #include <string>
-#include "Pioche.h"
+
 #include <cstddef>
 #include "Carte.h"
 class Schotten_Totten {
@@ -48,8 +48,7 @@ public:
 
 class Tactique : public Schotten_Totten{
 private:
-    Pioche pioche_tactique;
-    Pioche défausse;
+
     vector<Carte_tactique*> cartes_tactique;
     int nb_cartes_tactiques;
 
