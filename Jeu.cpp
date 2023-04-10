@@ -40,7 +40,7 @@ void Jeu::choix_jeu() {
         if (variante.compare("normal") == 0) {
             cout << "Schotten Totten normal " << endl;
             schottenTotten = new Schotten_Totten();
-            pioche = new Pioche(5);
+            pioche = new Pioche(*schottenTotten);
 
         }
         else {
