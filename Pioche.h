@@ -10,11 +10,11 @@
 class Pioche {
 
 private:
-    const Carte** cartes;
-    size_t nb;
+    vector<Carte*> cartes;
 
 public:
-    explicit Pioche(const Schotten_Totten& j);
+    Pioche(vector<Carte_clan*>& cartes);
+    Pioche(vector<Carte_tactique*>& cartes);
     Pioche(int n);
     void melange();
     Carte& piocher_carte();

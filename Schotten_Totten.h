@@ -28,6 +28,14 @@ public:
     void revendication();
     int getNb_bornes() const { return nb_bornes;};
     int getNb_Cartes_clan() const {return nb_Cartes_clan;};
+    virtual vector<Carte_tactique*>& getCartesTactique() {
+        throw SetException("La classe Schotten_Totten n'a pas de cartes tactiques");
+
+    }
+
+    vector<Carte_clan*>& getCartesClan() {
+        return cartes;
+    }
 
     Carte_clan& getCarte_clan(int i) const {
         if (i >= nb_Cartes_clan) {
@@ -44,16 +52,22 @@ public:
     int getNb_Cartes_par_joueur() const { return nb_cartes_par_joueur;};
 
 
+
 };
 
 class Tactique : public Schotten_Totten{
+    friend class Jeu;
 private:
 
     vector<Carte_tactique*> cartes_tactique;
     int nb_cartes_tactiques;
+    vector<Carte_tactique*>& getCartesTactique() override {
+        return cartes_tactique;
+    }
 
 public:
     Tactique();
+    void test();
 
 };
 

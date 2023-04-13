@@ -3,7 +3,6 @@
 //
 
 #include <iostream>
-
 #include "Jeu.h"
 #include "Schotten_Totten.h"
 #include "Pioche.h"
@@ -40,12 +39,14 @@ void Jeu::choix_jeu() {
         if (variante.compare("normal") == 0) {
             cout << "Schotten Totten normal " << endl;
             schottenTotten = new Schotten_Totten();
-            pioche = new Pioche(*schottenTotten);
 
+            pioches["pioche tactique"] = new Pioche(schottenTotten->getCartesClan());
         }
         else {
             cout << "Schotten Totten tactique " << endl;
             schottenTotten = new Tactique();
+            pioches["pioche tactique"] = new Pioche(schottenTotten->getCartesClan());
+            pioches["pioche clan"] = new Pioche(schottenTotten->getCartesTactique());
         }
     }
     affichageConsole = new Affichage_console(variante);
@@ -63,6 +64,8 @@ void Jeu::joueur_tour() {
     else {
         cout << "Joueur 2 à ton tour" << endl;
     }
+
+
 }
 
 void Jeu::setNb_joueurs_humains() {

@@ -3,6 +3,7 @@
 //
 #include <string>
 #include "Carte.h"
+#include "defausse.h"
 using namespace std;
 #ifndef SCHOTTEN_TOTTEN_AFFICHAGE_CONSOLE_H
 #define SCHOTTEN_TOTTEN_AFFICHAGE_CONSOLE_H
@@ -11,14 +12,13 @@ class Affichage_console {
 public:
 
     Affichage_console(string v);
+    void Afficher_jeu(vector<Borne*>& Bornes, int joueur_actuelle);
+    void Afficher_proposition();
     void afficher_bornes(vector<Borne*>& Bornes);
-    void afficher_cartes_joueur_haut(vector<Borne*>& Bornes, int joueur);
-    void afficher_cartes_joueur_bas();
-    void afficher_cartes_joueur_actuel();
-    void afficher_pioche();
-    void afficher_pioche_tactique();
-    void afficher_défausse();
-    int positionner_carte();
+    void afficher_cartes_bornes(vector<Borne*>& Bornes, int joueur_actuelle);
+
+    void afficher_défausse(const Defausse& d);
+
 
 };
 #endif //SCHOTTEN_TOTTEN_AFFICHAGE_CONSOLE_H
