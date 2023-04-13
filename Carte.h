@@ -43,6 +43,7 @@ public:
 
 };
 
+
 class Borne : public Carte {
 private:
     int regle;

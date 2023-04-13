@@ -8,7 +8,7 @@ using namespace std;
 #include "Joueur.h"
 #include "Affichage_console.h"
 #include "Schotten_Totten.h"
-
+#include "Pioche.h"
 class Jeu {
 private:
     int nb_joueurs;
@@ -26,6 +26,7 @@ private:
 
     Schotten_Totten* schottenTotten;
     Pioche* pioche;
+    Pioche* pioche_tactique;
     map<string, Pioche*> pioches;
 
 public:
@@ -46,7 +47,8 @@ public:
     string getVariante() const { return variante;};
     int getNbParties() const { return nb_parties;};
     int getNbPartiesJouees() const { return nb_parties_jouees;};
-    void setPioches();
+
+
 
 };
 #endif //SCHOTTEN_TOTTEN_JEU_H

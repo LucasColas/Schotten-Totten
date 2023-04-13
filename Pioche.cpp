@@ -6,22 +6,29 @@
 #include "Schotten_Totten.h"
 #include <iostream>
 using namespace std;
-Pioche::Pioche(Schotten_Totten& j): cartes(new const Carte*[j.getNb_Cartes_clan()]), nb(j.getNb_Cartes_clan()) {
-    for(size_t i=0; i <nb; i++)
-        cartes[i] = &j.getCarte_clan(i);
+Pioche::Pioche(vector<Carte_clan*>& cartes) {
+    for (size_t i = 0; i < cartes.size(); i++) {
+        cartes.push_back(cartes[i]);
+    }
+}
+
+Pioche::Pioche(vector<Carte_tactique*>& cartes) {
+    for (size_t i = 0; i < cartes.size(); i++) {
+        cartes.push_back(cartes[i]);
+    }
 }
 Pioche::Pioche(int n) {
     cout << "essai";
 }
 bool Pioche::est_vide() {
-    return nb == 0;
+    return cartes.size() == 0;
 }
 Carte& Pioche::piocher_carte() {
     if (est_vide()) {
         throw "pas possible de piocher. Pioche vide";
     }
 
-    Carte& c = *cartes[nb- 1];
-    nb--;
+    Carte& c = *cartes.back();
+    cartes.pop_back();
     return c;
 }

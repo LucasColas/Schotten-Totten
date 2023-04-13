@@ -55,3 +55,8 @@ ostream& operator<<(ostream& f, const Borne& b) {
     f << b.getRegle() << "\n" << b.GetPossesseur() << "\n" << b.getNbMaxCartes();
     return f;
 }
+
+ostream& operator<<(ostream& f, const Carte_tactique& c) {
+    f << c.getType();
+    return f;
+}

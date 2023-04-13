@@ -4,6 +4,7 @@
 #include "Affichage_console.h"
 #include "Carte.h"
 #include <iostream>
+#include <conio.h>
 using namespace std;
 
 Affichage_console::Affichage_console(string v) {
@@ -11,13 +12,61 @@ Affichage_console::Affichage_console(string v) {
 
 }
 
-void Affichage_console::afficher_cartes_joueur_haut(vector<Borne *> &Bornes, int joueur) {
-    int espace = 0;
+void Affichage_console::afficher_cartes_bornes(vector<Borne *> &Bornes, int joueur_actuelle) {
+    /*
+     *
+     * On affiche en haut les cartes du joueur qui ne joue pas
+     */
+    //int espace = 0;
     int max_cartes = 0;
 
 
     for (int i = 0; i < Bornes.size(); i++) {
-        if (joueur == 1) {
+        if (joueur_actuelle == 1) {
+            if (Bornes[i]->getCartes_joueur_2().size() > max_cartes) {
+                max_cartes = Bornes[i]->getCartes_joueur_2().size();
+            }
+        }
+
+        else {
+            if (Bornes[i]->getCartes_joueur_1().size() > max_cartes) {
+                max_cartes = Bornes[i]->getCartes_joueur_1().size();
+            }
+        }
+
+    }
+    for (int j = max_cartes - 1; j >= 0; j--) {
+        for (int i = 0; i < Bornes.size(); i++) {
+
+            if (joueur_actuelle == 2){
+                if (Bornes[i]->getCartes_joueur_1().size() >= max_cartes) {
+                    cout << Bornes[i]->getCartes_joueur_1()[j] << flush;
+                }
+                else {
+                    cout << "___";
+                }
+            }
+
+            else {
+                if (Bornes[i]->getCartes_joueur_2().size() >= max_cartes) {
+                    cout << Bornes[i]->getCartes_joueur_2()[j] << flush;
+                }
+                else {
+                    cout << "___";
+                }
+            }
+
+        }
+        cout << endl;
+        //espace = 0;
+    }
+
+    for (int i = 0; i < Bornes.size(); i++) {
+        cout << Bornes[i];
+    }
+    cout << endl;
+    for (int i = 0; i < Bornes.size(); i++) {
+        if (joueur_actuelle == 1) {
             if (Bornes[i]->getCartes_joueur_1().size() > max_cartes) {
                 max_cartes = Bornes[i]->getCartes_joueur_1().size();
             }
@@ -30,35 +79,30 @@ void Affichage_console::afficher_cartes_joueur_haut(vector<Borne *> &Bornes, int
         }
 
     }
-    for (int j = max_cartes - 1; j >= 0; j--) {
+
+    for (int j = 0; j < max_cartes; j--) {
         for (int i = 0; i < Bornes.size(); i++) {
-            for (int k = 0; k < espace; k++) {
-                cout << " " << flush;
-            }
-            if (joueur == 1){
-                if (Bornes[i]->getCartes_joueur_1().size() >= max_cartes) {
-                    cout << Bornes[i]->getCartes_joueur_1()[j] << flush;
+            if (joueur_actuelle == 1) {
+                if (Bornes[i]->getCartes_joueur_1().size() > j) {
+                    cout << Bornes[i]->getCartes_joueur_1()[j];
                 }
                 else {
-                    cout << "___" << flush;
+                    cout << "   ";
                 }
             }
 
             else {
-                if (Bornes[i]->getCartes_joueur_2().size() >= max_cartes) {
-                    cout << Bornes[i]->getCartes_joueur_2()[j] << flush;
+                if (Bornes[i]->getCartes_joueur_2().size() > j) {
+                    cout << Bornes[i]->getCartes_joueur_2()[j];
                 }
                 else {
-                    cout << "___" << flush;
+                    cout << "   ";
                 }
             }
 
 
-            espace += 3;
-
-            cout << endl;
         }
-        espace = 0;
+        cout << endl;
     }
 
 
@@ -67,5 +111,36 @@ void Affichage_console::afficher_cartes_joueur_haut(vector<Borne *> &Bornes, int
 void Affichage_console::afficher_bornes(vector<Borne *> &Bornes) {
     for (int i = 0; i < Bornes.size(); i++) {
         cout << Bornes[i];
+    }
+}
+
+void Affichage_console::Afficher_proposition() {
+    cout << "Entrez un des choix " << endl;
+    cout << "1 : Placer carte" << endl;
+    if (variante.compare("tactique")) {
+        cout << "2: consulter défausse" << endl;
+    }
+}
+
+void Affichage_console::Afficher_jeu(vector<Borne*>& Bornes, int joueur_actuelle) {
+
+    afficher_cartes_bornes(Bornes, joueur_actuelle);
+    Afficher_proposition();
+}
+
+void Affichage_console::afficher_défausse(const Defausse &d) {
+    size_t nb = d.getNbCartes();
+    size_t i = 0;
+    size_t nb_cartes_affichees = 7;
+    int continuer = 1;
+
+    while (i < nb && !continuer) {
+        for (size_t j = i; j < i+nb_cartes_affichees; j++) {
+            //
+            //Afficher carte. Besoin de surcharge d'opérateurs.
+            //
+        }
+        cout << "continuer (1) ou sortir (0)";
+        cin >> continuer;
     }
 }
