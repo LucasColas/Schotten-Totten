@@ -19,6 +19,7 @@ void Affichage_console::afficher_cartes_bornes(vector<Borne *> &Bornes, int joue
      */
     //int espace = 0;
     int max_cartes = 0;
+    cout << "plateau" << endl;
 
 
     for (int i = 0; i < Bornes.size(); i++) {

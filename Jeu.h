@@ -13,6 +13,7 @@ class Jeu {
 private:
     int nb_joueurs;
     int joueur_actuelle;
+    int nb_max_joueurs;
     vector<Joueur*> joueurs;
     string mode_jeu;
     string variante;
@@ -31,11 +32,11 @@ private:
 
 public:
 
-    Jeu(string mode,string v);
+    Jeu(string mode,string v, int nb_max_j=2);
     void designe_premier_joueur();
     void setNb_joueurs_humains();
     void choix_jeu();
-    void joueur_tour();
+    void jouer_tour();
     void setAffichage(string affichage);
     void setChoix_IA();
     void creation_joueurs();
@@ -47,6 +48,7 @@ public:
     string getVariante() const { return variante;};
     int getNbParties() const { return nb_parties;};
     int getNbPartiesJouees() const { return nb_parties_jouees;};
+    bool verif();
 
 
 

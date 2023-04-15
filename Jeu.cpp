@@ -9,21 +9,25 @@
 using namespace std;
 
 
-Jeu::Jeu(string mode, string v) {
+Jeu::Jeu(string mode, string v, int nb_max_j) {
 
     mode_jeu = mode;
     variante = v;
     nb_parties_jouees = 0;
     joueur_actuelle = 1;
     schottenTotten = new Schotten_Totten();
+    nb_max_joueurs = nb_max_j;
 
 
     setNb_parties();
     choix_jeu();
     setNb_joueurs_humains();
     resume();
-    distribution_cartes();
+    cout << "resumé fait" << endl;
     creation_joueurs();
+    distribution_cartes();
+    cout << "cartes distribuées" << endl;
+
 
 }
 
@@ -39,24 +43,33 @@ void Jeu::choix_jeu() {
         if (variante.compare("normal") == 0) {
             cout << "Schotten Totten normal " << endl;
             schottenTotten = new Schotten_Totten();
-
-            pioches["pioche tactique"] = new Pioche(schottenTotten->getCartesClan());
+            cout << "Schotten Totten cree" << endl;
+            Pioche* pioche = new Pioche(schottenTotten->getCartesClan());
+            pioches["pioche clan"] = pioche;
+            cout << "Pioche et jeu crées" << endl;
         }
         else {
             cout << "Schotten Totten tactique " << endl;
             schottenTotten = new Tactique();
-            pioches["pioche tactique"] = new Pioche(schottenTotten->getCartesClan());
-            pioches["pioche clan"] = new Pioche(schottenTotten->getCartesTactique());
+            pioches["pioche tactique"] = new Pioche(schottenTotten->getCartesTactique());
+            pioches["pioche clan"] = new Pioche(schottenTotten->getCartesClan());
         }
     }
     affichageConsole = new Affichage_console(variante);
+    /*
     for (int i = 0; i < schottenTotten->getNb_Cartes_clan(); i++) {
         cout << schottenTotten->getCarte_clan(i) << endl;
         cout << i << endl;
     }
+     */
+    cout << "jeu crée" << endl;
 }
 
-void Jeu::joueur_tour() {
+
+void Jeu::jouer_tour() {
+    affichageConsole->afficher_cartes_bornes(schottenTotten->bornes, joueur_actuelle);
+    int borne;
+
     if (joueur_actuelle == 1) {
         cout << "Joueur 1 à ton tour" << endl;
     }
@@ -65,12 +78,33 @@ void Jeu::joueur_tour() {
         cout << "Joueur 2 à ton tour" << endl;
     }
 
+    borne = joueurs[joueur_actuelle-1]->choix_borne();
+    Carte& carte = joueurs[joueur_actuelle-1]->choix_carte();
+    schottenTotten->bornes[borne-1]->ajout_Carte(&carte, joueur_actuelle);
+    if (variante.compare("normal")) {
+        joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
+    }
 
+
+}
+
+void Jeu::designe_premier_joueur() {
+    cout << "Lequel des deux joueurs a voyagé le plus récemment le plus près de l'Ecosse (Joueur 1 ou Joueur 2) ?";
+    cin >> joueur_actuelle;
+    if (joueur_actuelle != 1 && joueur_actuelle != 2) {
+        throw "erreur : valeur invalide";
+    }
 }
 
 void Jeu::setNb_joueurs_humains() {
     cout << "Nombre de joueurs humains : " << endl;
     cin >> nb_joueurs_humains;
+    if (nb_joueurs_humains < 0 || nb_joueurs_humains > nb_max_joueurs) {
+        throw "erreur : valeur invalide";
+    }
+
+
+
 }
 
 void Jeu::creation_joueurs() {
@@ -80,7 +114,7 @@ void Jeu::creation_joueurs() {
        cout << "nom joueur 1 : " << endl;
        cin >> nom;
        joueurs.push_back(new Joueur(nom, schottenTotten->getNb_Cartes_par_joueur()));
-       cout << "nom joueur 1 : " << endl;
+       cout << "nom joueur 2 : " << endl;
        cin >> nom;
        joueurs.push_back(new Joueur(nom, schottenTotten->getNb_Cartes_par_joueur()));
     }
@@ -91,10 +125,18 @@ void Jeu::resume() {
 }
 
 void Jeu::distribution_cartes() {
+    cout << "distribution cartes" << endl;
     for (int i = 0; i < schottenTotten->getNb_Cartes_par_joueur() * 2; i++) {
         //Distribuer cartes
+        cout << "distribue carte" << to_string(i) << endl;
         if (i%2 == 0) {
-            joueurs[0]->ajout_carte(&pioches["pioches tactique"]->piocher_carte());
+            cout << "dans i%2" << endl;
+            Carte c = pioches["pioche clan"]->piocher_carte();
+
+            joueurs[0]->ajout_carte(&c);
+        }
+        else {
+            joueurs[1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
         }
     }
 }

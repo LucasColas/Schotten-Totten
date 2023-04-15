@@ -15,6 +15,9 @@ int main() {
     cout << mode_jeu << " " << variante << endl;
     */
     Jeu j(mode_jeu, variante);
-
+    while (j.getNbParties() < j.getNbPartiesJouees()) {
+        cout << "jouer" << endl;
+        j.jouer_tour();
+    }
     return 0;
 }

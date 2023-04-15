@@ -10,7 +10,7 @@
 class Pioche {
 
 private:
-    vector<Carte*> cartes;
+    vector<Carte*> cartes_pioche;
 
 public:
     Pioche(vector<Carte_clan*>& cartes);
