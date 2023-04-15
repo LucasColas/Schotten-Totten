@@ -60,3 +60,19 @@ ostream& operator<<(ostream& f, const Carte_tactique& c) {
     f << c.getType();
     return f;
 }
+
+bool Borne::ajout_Carte(Carte *c, int joueur_actuelle) {
+    if (joueur_actuelle == 1) {
+        cartes_joueur_1.push_back(c);
+        if (cartes_joueur_1.size() == nb_max_cartes) {
+            historique = 1;
+        }
+
+    }
+    else {
+        cartes_joueur_2.push_back(c);
+        if (cartes_joueur_2.size() == nb_max_cartes) {
+            historique = 2;
+        }
+    }
+}

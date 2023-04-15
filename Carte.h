@@ -52,7 +52,8 @@ private:
     vector<Carte*> cartes_joueur_1;
     vector<Carte*> cartes_joueur_2;
     vector<Carte*> carte_dessus;
-    map<Carte*, string> historique; //pour savoir qui a posé la troisième carte en premier
+    //pour savoir qui a posé la troisième ou quatrième carte en premier. On met 1 si c'est le joueur 1. 2 sinon.
+    int historique;
 public:
     Borne(string id_, int r=0, int nb_cartes=3, int possesseur=0);
     int getRegle() const { return regle;};
@@ -60,6 +61,7 @@ public:
     int GetPossesseur() const {return possesseur;};
     vector<Carte*> getCartes_joueur_1() {return cartes_joueur_1;};
     vector<Carte*> getCartes_joueur_2() {return cartes_joueur_2;};
+    bool ajout_Carte(Carte* c, int joueur_actuelle);
 
     friend ostream& operator<<(ostream& f, const Borne& b);
 

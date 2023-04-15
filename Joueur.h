@@ -17,7 +17,7 @@ protected:
     int joker_joue;
     int nb_points;
 public:
-    Joueur(string n, int nb_cartes, int nb_tactiques_jouees=0, int joker_j = 0, int nb_p=0);
+    Joueur(string n, int nb_cartes, int nb_tactiques_jouees=0, int joker_j = 0, int nb_p=0, int nb_b=9);
     Carte& choix_carte();
     int choix_borne();
     void ajout_carte(Carte* c);
