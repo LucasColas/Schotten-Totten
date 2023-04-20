@@ -4,6 +4,7 @@
 #include "Schotten_Totten.h"
 #include "Carte.h"
 #include "Affichage_console.h"
+#include "iostream"
 using namespace std;
 
 initializer_list<Couleur> Couleurs = {Couleur::Rouge, Couleur::Bleu, Couleur::Dore, Couleur::Marron, Couleur::Vert, Couleur::Violet, Couleur::NC};
@@ -25,6 +26,7 @@ Schotten_Totten::Schotten_Totten() {
     for (int i = 0; i < nb_bornes; i++) {
         string id = "Borne_"+ to_string(i);
         bornes.push_back(new Borne(id, 0));
+        cout << "borne " << i << " cree : " << *bornes[i] << endl;
     }
 
 }
@@ -46,7 +48,7 @@ Tactique::Tactique() {
 
     for (int i = 0; i < nb_bornes; i++) {
         string id = "Borne_"+ to_string(i);
-        bornes.push_back(new Borne(id, 0));
+        bornes.push_back(new Borne(id));
     }
     for (int i = 0; i < 2; i++) {
         cartes_tactique.push_back(new Carte_Elite("Elite", "Joker_"+ to_string(i), -1, Couleur::NC));

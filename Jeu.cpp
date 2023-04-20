@@ -15,7 +15,7 @@ Jeu::Jeu(string mode, string v, int nb_max_j) {
     variante = v;
     nb_parties_jouees = 0;
     joueur_actuelle = 1;
-    schottenTotten = new Schotten_Totten();
+    //schottenTotten = new Schotten_Totten();
     nb_max_joueurs = nb_max_j;
 
 

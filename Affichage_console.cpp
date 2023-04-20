@@ -36,12 +36,13 @@ void Affichage_console::afficher_cartes_bornes(vector<Borne *> &Bornes, int joue
         }
 
     }
+    cout << "cartes joueur haut" << endl;
     for (int j = max_cartes - 1; j >= 0; j--) {
         for (int i = 0; i < Bornes.size(); i++) {
 
             if (joueur_actuelle == 2){
                 if (Bornes[i]->getCartes_joueur_1().size() >= max_cartes) {
-                    cout << Bornes[i]->getCartes_joueur_1()[j] << flush;
+                    cout << *(Bornes[i]->getCartes_joueur_1()[j]) << " ";
                 }
                 else {
                     cout << "___";
@@ -50,7 +51,7 @@ void Affichage_console::afficher_cartes_bornes(vector<Borne *> &Bornes, int joue
 
             else {
                 if (Bornes[i]->getCartes_joueur_2().size() >= max_cartes) {
-                    cout << Bornes[i]->getCartes_joueur_2()[j] << flush;
+                    cout << *(Bornes[i]->getCartes_joueur_2()[j]) << " ";
                 }
                 else {
                     cout << "___";
@@ -61,11 +62,16 @@ void Affichage_console::afficher_cartes_bornes(vector<Borne *> &Bornes, int joue
         cout << endl;
         //espace = 0;
     }
+    cout << "\n\n";
+    cout << "borne" << endl;
 
     for (int i = 0; i < Bornes.size(); i++) {
-        cout << Bornes[i];
+        //cout << i << " : ";
+        cout << *Bornes[i] << " ";
+
     }
     cout << endl;
+    cout << "carte en dessous" << endl;
     for (int i = 0; i < Bornes.size(); i++) {
         if (joueur_actuelle == 1) {
             if (Bornes[i]->getCartes_joueur_1().size() > max_cartes) {
@@ -85,7 +91,7 @@ void Affichage_console::afficher_cartes_bornes(vector<Borne *> &Bornes, int joue
         for (int i = 0; i < Bornes.size(); i++) {
             if (joueur_actuelle == 1) {
                 if (Bornes[i]->getCartes_joueur_1().size() > j) {
-                    cout << Bornes[i]->getCartes_joueur_1()[j];
+                    cout << *(Bornes[i]->getCartes_joueur_1()[j]) << " ";
                 }
                 else {
                     cout << "   ";
@@ -94,7 +100,7 @@ void Affichage_console::afficher_cartes_bornes(vector<Borne *> &Bornes, int joue
 
             else {
                 if (Bornes[i]->getCartes_joueur_2().size() > j) {
-                    cout << Bornes[i]->getCartes_joueur_2()[j];
+                    cout << *(Bornes[i]->getCartes_joueur_2()[j]) << " ";
                 }
                 else {
                     cout << "   ";

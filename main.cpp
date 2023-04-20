@@ -14,8 +14,12 @@ int main() {
     getline(cin, variante);
     cout << mode_jeu << " " << variante << endl;
     */
+    cout << "jeu pas encore instancie" << endl;
     Jeu j(mode_jeu, variante);
-    while (j.getNbParties() < j.getNbPartiesJouees()) {
+    cout << "There" << endl;
+    cout << "nb parties" << j.getNbParties() << endl;
+    cout << "nb parties jouees " << j.getNbPartiesJouees() << endl;
+    while (j.getNbPartiesJouees() < j.getNbParties()) {
         cout << "jouer" << endl;
         j.jouer_tour();
     }
