@@ -28,6 +28,11 @@ private:
 class Carte {
 protected:
     string id; //un id pour chaque carte. Peut servir pour retrouver une carte
+public:
+    virtual Couleur get_couleur() const { throw "erreur pas de couleur";};
+    virtual int get_force() const { throw "erreur pas de force.";};
+
+    friend ostream& operator<<(ostream& f, const Carte&);
 };
 
 class Carte_clan : public Carte {
@@ -36,8 +41,8 @@ private:
     int force;
 public:
     Carte_clan(string id_, Couleur couleur_, int force_);
-    Couleur get_couleur() const { return couleur;};
-    int get_force() const { return force;};
+    Couleur get_couleur() const override { return couleur;};
+    int get_force() const override { return force;};
 
     friend ostream& operator<<(ostream& f, const Carte_clan& c);
 
@@ -55,7 +60,7 @@ private:
     //pour savoir qui a posé la troisième ou quatrième carte en premier. On met 1 si c'est le joueur 1. 2 sinon.
     int historique;
 public:
-    Borne(string id_, int r=0, int nb_cartes=3, int possesseur=0);
+    Borne(string id_, int r=0, int nb_cartes=3, int p=0);
     int getRegle() const { return regle;};
     int getNbMaxCartes() const { return nb_max_cartes;};
     int GetPossesseur() const {return possesseur;};

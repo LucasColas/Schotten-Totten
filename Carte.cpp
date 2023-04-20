@@ -27,9 +27,12 @@ Carte_clan::Carte_clan(string id_, Couleur couleur_, int force_) {
     force = force_;
 }
 
-Borne::Borne(string id_, int r, int nb_cartes, int possesseur) {
+Borne::Borne(string id_, int r, int nb_cartes, int p) {
     id = id_;
     regle = r;
+    nb_max_cartes = nb_cartes;
+    possesseur = p;
+
 }
 
 Carte_tactique::Carte_tactique(string id_, string t) {
@@ -44,15 +47,17 @@ Carte_Elite::Carte_Elite(string id_, string t, int f, Couleur c) : Carte_tactiqu
     couleur = c;
 }
 
-
-
+ostream& operator<<(ostream& f, const Carte& c) {
+    f << c.get_force() << "," << c.get_couleur();
+    return f;
+}
 ostream& operator<<(ostream& f, const Carte_clan& c) {
     f << c.get_force() << "," << c.get_couleur();
     return f;
 }
 
 ostream& operator<<(ostream& f, const Borne& b) {
-    f << b.getRegle() << "\n" << b.GetPossesseur() << "\n" << b.getNbMaxCartes();
+    f << b.getRegle() << "" << b.GetPossesseur() << "" << b.getNbMaxCartes();
     return f;
 }
 
