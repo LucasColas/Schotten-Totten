@@ -25,20 +25,22 @@ Carte& Joueur::choix_carte() {
 
     int num_carte;
 
-    cout << "choix carte (nombre entre 1 et " << to_string(nb_max_cartes) <<  ", 1 étant la carte affichée la plus à gauche.)";
+    cout << "choix carte (nombre entre 1 et " << to_string(nb_max_cartes) <<  ", 1 etant la carte affichée la plus a gauche.)";
     cin >> num_carte;
-    //cout << "choix borne (nb entre 1 et 9, 1 la borne la plus à gauche)";
+    //cout << "choix borne (nb entre 1 et 9, 1 la borne la plus a gauche)";
     if (num_carte < 1 || num_carte > nb_max_cartes) {
         throw "erreur";
     }
-    return *cartes[num_carte-1];
+    Carte& carte = *cartes[num_carte-1];
+    cartes.erase(cartes.begin()+num_carte-1);
+    return carte;
 
 }
 
 int Joueur::choix_borne() {
     //num_borne stocke le numéro de borne où le joueur veut poser sa carte
     int num_borne;
-    cout << "choix borne (nombre entre 1 et  " << to_string(nb_bornes) << ", 1 étant la borne le plus à gauche)";
+    cout << "choix borne (nombre entre 1 et  " << to_string(nb_bornes) << ", 1 etant la borne le plus a gauche)";
     cin >> num_borne;
     if (num_borne < 1 || num_borne > nb_bornes) {
         throw "Erreur : nombre invalide";
@@ -50,6 +52,6 @@ void Joueur::ajout_carte(Carte *c) {
     cout << "ajout carte" << endl;
     if (cartes.size() < nb_max_cartes) {
         cartes.push_back(c);
-        cout << "carte ajoutée" << endl;
+        cout << "carte ajoutee" << endl;
     }
 }

@@ -67,6 +67,7 @@ public:
     vector<Carte*> getCartes_joueur_1() {return cartes_joueur_1;};
     vector<Carte*> getCartes_joueur_2() {return cartes_joueur_2;};
     bool ajout_Carte(Carte* c, int joueur_actuelle);
+    string getId() const {return id;};
 
     friend ostream& operator<<(ostream& f, const Borne& b);
 

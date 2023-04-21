@@ -18,6 +18,7 @@ public:
     void afficher_cartes_bornes(vector<Borne*>& Bornes, int joueur_actuelle);
 
     void afficher_défausse(const Defausse& d);
+    void afficher_cartes_joueur(vector<Carte*>& cartes);
 
 
 };

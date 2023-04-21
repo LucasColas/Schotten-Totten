@@ -24,9 +24,9 @@ Schotten_Totten::Schotten_Totten() {
     nb_cartes_par_joueur = 6;
 
     for (int i = 0; i < nb_bornes; i++) {
-        string id = "Borne_"+ to_string(i);
+        string id = "B"+ to_string(i);
         bornes.push_back(new Borne(id, 0));
-        cout << "borne " << i << " cree : " << *bornes[i] << endl;
+        //cout << "borne " << i << " cree : " << *bornes[i] << endl;
     }
 
 }
