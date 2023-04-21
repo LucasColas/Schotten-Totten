@@ -24,7 +24,7 @@ private:
     string choix_IA;
     string choix_affichage;
     Affichage_console* affichageConsole;
-
+    vector<string> variantes;
     Schotten_Totten* schottenTotten;
     Pioche* pioche;
     Pioche* pioche_tactique;
@@ -49,6 +49,7 @@ public:
     int getNbParties() const { return nb_parties;};
     int getNbPartiesJouees() const { return nb_parties_jouees;};
     bool verif();
+    void changer_joueur();
 
 
 

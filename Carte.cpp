@@ -57,7 +57,7 @@ ostream& operator<<(ostream& f, const Carte_clan& c) {
 }
 
 ostream& operator<<(ostream& f, const Borne& b) {
-    f << b.getRegle() << "" << b.GetPossesseur() << "" << b.getNbMaxCartes();
+    f << b.getId();
     return f;
 }
 
@@ -68,6 +68,10 @@ ostream& operator<<(ostream& f, const Carte_tactique& c) {
 
 bool Borne::ajout_Carte(Carte *c, int joueur_actuelle) {
     if (joueur_actuelle == 1) {
+        if (cartes_joueur_1.size() == nb_max_cartes) {
+            cout << "pas possible de mettre une carte ici";
+            return false;
+        }
         cartes_joueur_1.push_back(c);
         if (cartes_joueur_1.size() == nb_max_cartes) {
             historique = 1;
@@ -75,9 +79,14 @@ bool Borne::ajout_Carte(Carte *c, int joueur_actuelle) {
 
     }
     else {
+        if (cartes_joueur_2.size() == nb_max_cartes) {
+            cout << "pas possible de mettre une carte ici";
+            return false;
+        }
         cartes_joueur_2.push_back(c);
         if (cartes_joueur_2.size() == nb_max_cartes) {
             historique = 2;
         }
     }
+    return true;
 }

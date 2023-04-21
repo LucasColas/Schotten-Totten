@@ -17,16 +17,18 @@ Jeu::Jeu(string mode, string v, int nb_max_j) {
     joueur_actuelle = 1;
     //schottenTotten = new Schotten_Totten();
     nb_max_joueurs = nb_max_j;
+    variantes.push_back("normal");
+    variantes.push_back("tactique");
 
 
     setNb_parties();
     choix_jeu();
     setNb_joueurs_humains();
     resume();
-    cout << "resumé fait" << endl;
+    cout << "resume fait" << endl;
     creation_joueurs();
     distribution_cartes();
-    cout << "cartes distribuées" << endl;
+    cout << "cartes distribuees" << endl;
 
 
 }
@@ -46,7 +48,7 @@ void Jeu::choix_jeu() {
             cout << "Schotten Totten cree" << endl;
             Pioche* pioche = new Pioche(schottenTotten->getCartesClan());
             pioches["pioche clan"] = pioche;
-            cout << "Pioche et jeu crées" << endl;
+            cout << "Pioche et jeu crees" << endl;
         }
         else {
             cout << "Schotten Totten tactique " << endl;
@@ -64,25 +66,51 @@ void Jeu::choix_jeu() {
      */
     cout << "jeu crée" << endl;
 }
+void Jeu::changer_joueur() {
+    if (joueur_actuelle == 1) {
+        joueur_actuelle = 2;
+    }
+    else {
+        joueur_actuelle = 1;
+    }
+}
 
 
 void Jeu::jouer_tour() {
     affichageConsole->afficher_cartes_bornes(schottenTotten->bornes, joueur_actuelle);
     int borne;
+    int choix;
 
     if (joueur_actuelle == 1) {
-        cout << "Joueur 1 à ton tour" << endl;
+        cout << "Joueur 1 a ton tour" << endl;
     }
 
     else {
-        cout << "Joueur 2 à ton tour" << endl;
+        cout << "Joueur 2 a ton tour" << endl;
     }
 
-    borne = joueurs[joueur_actuelle-1]->choix_borne();
-    Carte& carte = joueurs[joueur_actuelle-1]->choix_carte();
-    schottenTotten->bornes[borne-1]->ajout_Carte(&carte, joueur_actuelle);
-    if (variante.compare("normal")) {
-        joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
+    affichageConsole->afficher_cartes_joueur(joueurs[joueur_actuelle-1]->getCartes());
+    affichageConsole->Afficher_proposition();
+    cin >> choix;
+    if (choix == 1) {
+        borne = joueurs[joueur_actuelle-1]->choix_borne();
+        Carte& carte = joueurs[joueur_actuelle-1]->choix_carte();
+        if (schottenTotten->bornes[borne-1]->ajout_Carte(&carte, joueur_actuelle)) {
+            if (variante.compare("normal")) {
+                joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
+
+            }
+            changer_joueur();
+        }
+        else {
+            cout << "pas possible de poser une carte sur cette borne " << endl;
+            joueurs[joueur_actuelle-1]->ajout_carte(&carte);
+        }
+    }
+
+    if (choix == 2 && variante == variantes[1]) {
+        //consulter défausse. Fonctionne uniquement en mode tactique.
+
     }
 
 
@@ -125,13 +153,13 @@ void Jeu::resume() {
 }
 
 void Jeu::distribution_cartes() {
-    cout << "distribution cartes" << endl;
+    //cout << "distribution cartes" << endl;
     for (int i = 0; i < schottenTotten->getNb_Cartes_par_joueur() * 2; i++) {
         //Distribuer cartes
-        cout << "distribue carte" << to_string(i) << endl;
+        //cout << "distribue carte" << to_string(i) << endl;
         if (i%2 == 0) {
             cout << "dans i%2" << endl;
-            Carte c = pioches["pioche clan"]->piocher_carte();
+            Carte& c = pioches["pioche clan"]->piocher_carte();
 
             joueurs[0]->ajout_carte(&c);
         }

@@ -21,6 +21,8 @@ public:
     Carte& choix_carte();
     int choix_borne();
     void ajout_carte(Carte* c);
+    vector<Carte*>& getCartes() {return cartes;};
+
 
 
 };
