@@ -6,11 +6,11 @@
 
 string toString(Couleur c) {
     switch (c) {
-        case Couleur::Rouge: return "R";
-        case Couleur::Vert: return "V";
-        case Couleur::Bleu: return "B";
-        case Couleur::Marron: return "M";
-        case Couleur::Dore: return "D";
+        case Couleur::Rouge: return "Ro";
+        case Couleur::Vert: return "Ve";
+        case Couleur::Bleu: return "Bl";
+        case Couleur::Marron: return "Ma";
+        case Couleur::Dore: return "Do";
         case Couleur::Violet: return "Vi";
         case Couleur::NC: return "NC";
         default: throw SetException("Couleur inconnue");
@@ -67,6 +67,10 @@ ostream& operator<<(ostream& f, const Carte_tactique& c) {
 }
 
 bool Borne::ajout_Carte(Carte *c, int joueur_actuelle) {
+    if (!possesseur) {
+        cout << "borne déjà revendiquee" << endl;
+        return false;
+    }
     if (joueur_actuelle == 1) {
         if (cartes_joueur_1.size() == nb_max_cartes) {
             cout << "pas possible de mettre une carte ici";
