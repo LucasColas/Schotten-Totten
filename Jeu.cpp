@@ -64,7 +64,7 @@ void Jeu::choix_jeu() {
         cout << i << endl;
     }
      */
-    cout << "jeu crée" << endl;
+    cout << "jeu cree" << endl;
 }
 void Jeu::changer_joueur() {
     if (joueur_actuelle == 1) {
@@ -73,21 +73,25 @@ void Jeu::changer_joueur() {
     else {
         joueur_actuelle = 1;
     }
+    cout << "\n\n\n\n\n\n\n\n\nChangez de joueur et appuyez sur entree ";
+    cin.ignore();
+    cin.get();
 }
 
 
 void Jeu::jouer_tour() {
-    affichageConsole->afficher_cartes_bornes(schottenTotten->bornes, joueur_actuelle);
+
     int borne;
     int choix;
+    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
+    cout << "----------------------------------------------------" << endl;
+    cout << "\t\t\tDebut du tour" << endl;
+    cout << "Joueur actuel : " << joueurs[joueur_actuelle-1]->getNom() << endl;
+    cout << "----------------------------------------------------" << endl;
 
-    if (joueur_actuelle == 1) {
-        cout << "Joueur 1 a ton tour" << endl;
-    }
+    affichageConsole->afficher_cartes_bornes(schottenTotten->bornes, joueur_actuelle);
 
-    else {
-        cout << "Joueur 2 a ton tour" << endl;
-    }
+
 
     affichageConsole->afficher_cartes_joueur(joueurs[joueur_actuelle-1]->getCartes());
     affichageConsole->Afficher_proposition();
@@ -96,7 +100,8 @@ void Jeu::jouer_tour() {
         borne = joueurs[joueur_actuelle-1]->choix_borne();
         Carte& carte = joueurs[joueur_actuelle-1]->choix_carte();
         if (schottenTotten->bornes[borne-1]->ajout_Carte(&carte, joueur_actuelle)) {
-            if (variante.compare("normal")) {
+            if (variante == "normal") {
+                cout << "carte piochee automatiquement dans la pioche";
                 joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
 
             }
