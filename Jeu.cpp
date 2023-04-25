@@ -55,6 +55,7 @@ void Jeu::choix_jeu() {
             schottenTotten = new Tactique();
             pioches["pioche tactique"] = new Pioche(schottenTotten->getCartesTactique());
             pioches["pioche clan"] = new Pioche(schottenTotten->getCartesClan());
+            defausse = new Defausse();
         }
     }
     affichageConsole = new Affichage_console(variante);
@@ -83,6 +84,7 @@ void Jeu::jouer_tour() {
 
     int borne;
     int choix;
+    int choix_pioche;
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
     cout << "----------------------------------------------------" << endl;
     cout << "\t\t\tDebut du tour" << endl;
@@ -90,9 +92,6 @@ void Jeu::jouer_tour() {
     cout << "----------------------------------------------------" << endl;
 
     affichageConsole->afficher_cartes_bornes(schottenTotten->bornes, joueur_actuelle);
-
-
-
     affichageConsole->afficher_cartes_joueur(joueurs[joueur_actuelle-1]->getCartes());
     affichageConsole->Afficher_proposition();
     cin >> choix;
@@ -105,6 +104,21 @@ void Jeu::jouer_tour() {
                 joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
 
             }
+            else {
+                affichageConsole->choix_pioche();
+                cin >> choix_pioche;
+                if (choix_pioche == 1) {
+                    joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
+
+                }
+                else {
+                    joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche tactique"]->piocher_carte());
+                }
+
+            }
+            //Regarder revendication
+
+            //Regarder s'il y a un gagnant pour la partie et regarder si toutes les parties ont été jouées.
             changer_joueur();
         }
         else {
@@ -115,6 +129,7 @@ void Jeu::jouer_tour() {
 
     if (choix == 2 && variante == variantes[1]) {
         //consulter défausse. Fonctionne uniquement en mode tactique.
+        affichageConsole->afficher_défausse(*defausse);
 
     }
 

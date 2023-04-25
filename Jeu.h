@@ -9,6 +9,7 @@ using namespace std;
 #include "Affichage_console.h"
 #include "Schotten_Totten.h"
 #include "Pioche.h"
+#include "defausse.h"
 class Jeu {
 private:
     int nb_joueurs;
@@ -28,6 +29,7 @@ private:
     Schotten_Totten* schottenTotten;
     Pioche* pioche;
     Pioche* pioche_tactique;
+    Defausse* defausse;
     map<string, Pioche*> pioches;
 
 public:

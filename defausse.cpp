@@ -3,7 +3,7 @@
 //
 #include "defausse.h"
 #include "Carte.h"
-void Defausse::ajout_defausse(Carte * c) {
+void Defausse::ajout_defausse(Carte* c) {
     defausse.push_back(c);
 }
 

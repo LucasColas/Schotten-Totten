@@ -21,6 +21,7 @@ protected:
     int nb_bornes;
     int nb_cartes_par_joueur;
 
+
 public:
     Schotten_Totten();
     void gagnant();
@@ -58,6 +59,7 @@ public:
 class Tactique : public Schotten_Totten{
     friend class Jeu;
 private:
+    vector<string> types;
 
     vector<Carte_tactique*> cartes_tactique;
     int nb_cartes_tactiques;

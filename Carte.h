@@ -97,8 +97,8 @@ class Carte_Elite : public Carte_tactique {
 private:
     Couleur couleur;
     int force;
-    vector<Couleur> couleurs_possibles;
-    vector<int> force_possible;
+    initializer_list<Couleur> couleurs_possibles;
+    vector<int> forces_possibles;
 public:
     Carte_Elite(string t, string id_, int f, Couleur c);
     void setCouleur();

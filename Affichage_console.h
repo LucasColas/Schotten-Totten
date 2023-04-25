@@ -19,6 +19,7 @@ public:
 
     void afficher_défausse(const Defausse& d);
     void afficher_cartes_joueur(vector<Carte*>& cartes);
+    void choix_pioche();
 
 
 };
