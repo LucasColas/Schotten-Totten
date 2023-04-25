@@ -13,6 +13,7 @@ private:
 public:
     //void consulter();
     void ajout_defausse(Carte* c);
+    bool estVide() const {return defausse.empty();};
     size_t getNbCartes() const { return defausse.size();};
     Carte& getCarte(size_t i) const {return *defausse[i];};
 };

@@ -45,6 +45,23 @@ Carte_Elite::Carte_Elite(string id_, string t, int f, Couleur c) : Carte_tactiqu
     type = t;
     force = f;
     couleur = c;
+    couleurs_possibles = {Couleur::Rouge, Couleur::Bleu, Couleur::Dore, Couleur::Marron, Couleur::Vert, Couleur::Violet};
+    if (id == "Porte-Bouclier") {
+        //couleurs_possibles = {Couleur::Rouge, Couleur::Bleu, Couleur::Dore, Couleur::Marron, Couleur::Vert, Couleur::Violet};
+        for (int i = 1; i < 4; i++) {
+            forces_possibles.push_back(i);
+        }
+    }
+    if (id == "Espion") {
+        //couleurs_possibles = {Couleur::Rouge, Couleur::Bleu, Couleur::Dore, Couleur::Marron, Couleur::Vert, Couleur::Violet};
+    }
+
+    if (id.find("Joker") != string::npos) {
+        //couleurs_possibles = {Couleur::Rouge, Couleur::Bleu, Couleur::Dore, Couleur::Marron, Couleur::Vert, Couleur::Violet};
+        for (int i = 1; i < 10; i++) {
+            forces_possibles.push_back(i);
+        }
+    }
 }
 
 ostream& operator<<(ostream& f, const Carte& c) {

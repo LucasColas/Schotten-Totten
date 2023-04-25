@@ -19,8 +19,8 @@ Joueur::Joueur(string n, int nb_cartes, int nb_tactiques_jouees, int joker_j, in
 
 Carte& Joueur::choix_carte() {
     /*
-     * carte que l'utilisateur va jouer. Le num est lié à l'index de la carte stockées dans cartes.
-     * S'il rentre 1 alors on joue la carte située à l'index 0, S'il rentre 2 alors on joue la carte située à l'index 1.
+     * carte que l'utilisateur va jouer. Le num est lié à l'index de la carte stocké dans cartes.
+     * S'il rentre 1 alors on joue la carte située à l'index 0, S'il rentre 2 alors on joue la carte située à l'index 1. etc.
     */
 
     int num_carte;

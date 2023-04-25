@@ -66,13 +66,19 @@ void Affichage_console::afficher_cartes_bornes(vector<Borne *> &Bornes, int joue
     }
     //cout << "\n\n";
     //cout << "borne" << endl;
-
+    /*
+     * Les bornes
+     */
     for (int i = 0; i < Bornes.size(); i++) {
         //cout << i << " : ";
         cout << *Bornes[i] << espace;
 
     }
     cout << endl;
+
+    /*
+     * Les cartes du joueur actuel
+     */
     //cout << "carte en dessous" << endl;
     for (int i = 0; i < Bornes.size(); i++) {
         if (joueur_actuelle == 1) {
@@ -109,7 +115,6 @@ void Affichage_console::afficher_cartes_bornes(vector<Borne *> &Bornes, int joue
                 }
             }
 
-
         }
         cout << endl;
     }
@@ -140,6 +145,12 @@ void Affichage_console::Afficher_proposition() {
     }
 }
 
+void Affichage_console::choix_pioche() {
+    cout << "Choissisez dans quelle pioche vous voulez piocher" << endl;
+    cout << "1 : pioche cartes clan" << endl;
+    cout << "2 : pioche cartes tactique" << endl;
+}
+
 void Affichage_console::Afficher_jeu(vector<Borne*>& Bornes, int joueur_actuelle) {
 
     afficher_cartes_bornes(Bornes, joueur_actuelle);
@@ -147,18 +158,23 @@ void Affichage_console::Afficher_jeu(vector<Borne*>& Bornes, int joueur_actuelle
 }
 
 void Affichage_console::afficher_défausse(const Defausse &d) {
+    if (d.estVide()) {
+        cout << "defausse vide" << endl;
+        cout << "appuyer sur entree pour sortir de la defausse" << endl;
+        cin.ignore();
+        cin.get();
+        return;
+    }
     size_t nb = d.getNbCartes();
-    size_t i = 0;
+    //size_t i = 0;
     size_t nb_cartes_affichees = 7;
-    int continuer = 1;
+    //int continuer = 1;
 
-    while (i < nb && !continuer) {
-        for (size_t j = i; j < i+nb_cartes_affichees; j++) {
-            //
-            //Afficher carte. Besoin de surcharge d'opérateurs.
-            //
+
+    for (size_t j = 0; j < nb; j++) {
+        cout << d.getCarte(j) << "  ";
+        if (j%nb_cartes_affichees == 0) {
+            cout << endl;
         }
-        cout << "continuer (1) ou sortir (0)";
-        cin >> continuer;
     }
 }

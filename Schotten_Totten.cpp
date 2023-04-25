@@ -32,6 +32,7 @@ Schotten_Totten::Schotten_Totten() {
 }
 
 Tactique::Tactique() {
+    /*
     for (int force = 1; force < 10; force++) {
         for (auto couleur : Couleurs) {
             if (couleur != Couleur::NC) {
@@ -41,16 +42,26 @@ Tactique::Tactique() {
 
         }
     }
+     */
 
     nb_Cartes_clan = 54;
     nb_bornes = 9;
-    nb_cartes_par_joueur = 6;
-
+    nb_cartes_par_joueur = 7;
+    /*
     for (int i = 0; i < nb_bornes; i++) {
         string id = "Borne_"+ to_string(i);
         bornes.push_back(new Borne(id));
     }
+     */
+    types.push_back("Elite");
+
+
     for (int i = 0; i < 2; i++) {
         cartes_tactique.push_back(new Carte_Elite("Elite", "Joker_"+ to_string(i), -1, Couleur::NC));
     }
+    cartes_tactique.push_back(new Carte_Elite("Elite", "Espion", 7, Couleur::NC));
+    cartes_tactique.push_back(new Carte_Elite("Elite", "Porte-Bouclier", -1, Couleur::NC));
+
+    //cout << "nb bornes" << bornes.size() << endl;
+    //cout << "nb cartes clan" << cartes.size() << endl;
 }

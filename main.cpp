@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     cout << "Hi" << endl;
     string mode_jeu = "Schotten Totten";
-    string variante = "normal";
+    string variante = "tactique";
     /*
     cout << "Mode de jeu : " << endl;
     getline(cin, mode_jeu);
@@ -24,8 +24,15 @@ int main() {
             " |_____/ \\___|_| |_|\\___/ \\__|\\__\\___|_| |_|    |_|\\___/ \\__|\\__\\___|_| |_|\n"
             "                                                                           \n"
             "                                                                           " << endl;
+    /*cout << "Mode de jeu : " << endl;
+    getline(cin, mode_jeu);
+
+    cout << "Edition de jeu : " << endl;
+    getline(cin, variante);
+    cout << mode_jeu << " " << variante << endl;
+    */
     Jeu j(mode_jeu, variante);
-    cout << "There" << endl;
+
     cout << "nb parties" << j.getNbParties() << endl;
     cout << "nb parties jouees " << j.getNbPartiesJouees() << endl;
 
