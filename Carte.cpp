@@ -64,6 +64,31 @@ Carte_Elite::Carte_Elite(string id_, string t, int f, Couleur c) : Carte_tactiqu
     }
 }
 
+Carte_Combat::Carte_Combat(string t, string id_, int r) : Carte_tactique(id_, t) {
+    regle = r;
+
+}
+
+Carte_Ruse::Carte_Ruse(string t, string id_) : Carte_tactique(id_, t){
+
+}
+
+Carte_chasseur_de_tete::Carte_chasseur_de_tete(string t, string id_, int nb) : Carte_Ruse(id_, t){
+    nb_cartes = nb;
+}
+
+void Carte_chasseur_de_tete::proposition() {
+    cout << "Les choix : " << endl;
+    cout << "1. Piochez trois cartes d'une pioche" << endl;
+    cout << "2. Piochez trois cartes de deux pioches" << endl;
+    cout << "Choisissez ce que vous voulez faire (entrez 1 ou 2):" << endl;
+}
+
+
+Carte_Stratege::Carte_Stratege(string t, string id_) : Carte_Ruse(id_, t){
+
+}
+
 ostream& operator<<(ostream& f, const Carte& c) {
     f << c.get_force() << "," << c.get_couleur();
     return f;
@@ -111,3 +136,20 @@ bool Borne::ajout_Carte(Carte *c, int joueur_actuelle) {
     }
     return true;
 }
+
+Carte& Borne::supprimer_carte(int joueur, int num) {
+
+    if (joueur == 1) {
+        Carte& carte = *cartes_joueur_1[num];
+        cartes_joueur_1.erase(cartes_joueur_1.begin() + num);
+        return carte;
+    }
+
+    Carte& carte = *cartes_joueur_2[num];
+    cartes_joueur_2.erase(cartes_joueur_2.begin() + num);
+    return carte;
+
+
+}
+
+

@@ -60,6 +60,7 @@ class Tactique : public Schotten_Totten{
     friend class Jeu;
 private:
     vector<string> types;
+    map<string, int> regles_bornes; //permet d'avoir pour chaque carte combat un entier qui désigne sa règle.
 
     vector<Carte_tactique*> cartes_tactique;
     int nb_cartes_tactiques;

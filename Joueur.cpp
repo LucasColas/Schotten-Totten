@@ -25,9 +25,9 @@ Carte& Joueur::choix_carte() {
 
     int num_carte;
 
-    cout << "choix carte (nombre entre 1 et " << to_string(nb_max_cartes) <<  ", 1 etant la carte affichee la plus a gauche.)";
+    cout << "choix carte (nombre entre 1 et " << to_string(cartes.size()) <<  ", 1 etant la carte affichee la plus a gauche.)";
     cin >> num_carte;
-    //cout << "choix borne (nb entre 1 et 9, 1 la borne la plus a gauche)";
+
     if (num_carte < 1 || num_carte > nb_max_cartes) {
         throw "erreur";
     }
@@ -50,8 +50,8 @@ int Joueur::choix_borne() {
 
 void Joueur::ajout_carte(Carte *c) {
     cout << "ajout carte" << endl;
-    if (cartes.size() < nb_max_cartes) {
-        cartes.push_back(c);
-        cout << "carte ajoutee" << endl;
-    }
+
+    cartes.push_back(c);
+    cout << "carte ajoutee" << endl;
+
 }

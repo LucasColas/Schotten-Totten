@@ -22,6 +22,7 @@ public:
     string& getNom() {return nom;};
     int choix_borne();
     void ajout_carte(Carte* c);
+    int getNbCartes() {return cartes.size();};
     vector<Carte*>& getCartes() {return cartes;};
 
 
