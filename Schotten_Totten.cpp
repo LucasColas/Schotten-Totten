@@ -47,6 +47,8 @@ Tactique::Tactique() {
     nb_Cartes_clan = 54;
     nb_bornes = 9;
     nb_cartes_par_joueur = 7;
+    regles_bornes["Colin-Maillard"] = 1;
+    regles_bornes["Combat de Boue"] = 2;
     /*
     for (int i = 0; i < nb_bornes; i++) {
         string id = "Borne_"+ to_string(i);
@@ -61,6 +63,10 @@ Tactique::Tactique() {
     }
     cartes_tactique.push_back(new Carte_Elite("Elite", "Espion", 7, Couleur::NC));
     cartes_tactique.push_back(new Carte_Elite("Elite", "Porte-Bouclier", -1, Couleur::NC));
+
+    for (auto i : regles_bornes) {
+        cartes_tactique.push_back(new Carte_Combat("Combat", i.first, i.second));
+    }
 
     //cout << "nb bornes" << bornes.size() << endl;
     //cout << "nb cartes clan" << cartes.size() << endl;

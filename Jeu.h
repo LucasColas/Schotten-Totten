@@ -32,6 +32,7 @@ private:
     Defausse* defausse;
     map<string, Pioche*> pioches;
 
+
 public:
 
     Jeu(string mode,string v, int nb_max_j=2);
@@ -51,6 +52,7 @@ public:
     int getNbParties() const { return nb_parties;};
     int getNbPartiesJouees() const { return nb_parties_jouees;};
     bool verif();
+    bool action_carte_ruse(Carte& carte);
     void changer_joueur();
 
 

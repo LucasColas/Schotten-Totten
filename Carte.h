@@ -31,6 +31,8 @@ protected:
 public:
     virtual Couleur get_couleur() const { throw "erreur pas de couleur";};
     virtual int get_force() const { throw "erreur pas de force.";};
+    virtual int getNb_cartes() {throw "pas de nombre de cartes";};
+    string getId() {return id;};
 
     friend ostream& operator<<(ostream& f, const Carte&);
 };
@@ -66,13 +68,11 @@ public:
     int GetPossesseur() const {return possesseur;};
     vector<Carte*> getCartes_joueur_1() {return cartes_joueur_1;};
     vector<Carte*> getCartes_joueur_2() {return cartes_joueur_2;};
+    Carte& supprimer_carte(int joueur, int num);
     bool ajout_Carte(Carte* c, int joueur_actuelle);
     string getId() const {return id;};
 
     friend ostream& operator<<(ostream& f, const Borne& b);
-
-
-
 };
 
 class Carte_tactique : public Carte {
@@ -88,9 +88,12 @@ public:
 };
 
 class Carte_Combat : public Carte_tactique {
+private:
+    int regle;
 public:
-
-    void choix_borne();
+    Carte_Combat(string t, string id_, int r);
+    int getRegle() {return regle;};
+    //void choix_borne();
 };
 
 class Carte_Elite : public Carte_tactique {
@@ -108,23 +111,32 @@ public:
 
 class Carte_Ruse : public Carte_tactique {
 public:
-
+    Carte_Ruse(string t, string id_);
 };
 
 class Carte_chasseur_de_tete : public Carte_Ruse {
-
+private:
+    int nb_cartes;
+public:
+    Carte_chasseur_de_tete(string t, string id_, int nb=3);
+    int getNb_cartes() override {return nb_cartes;};
+    void proposition();
+    bool action();
 };
 
 class Carte_Stratege : public Carte_Ruse {
-
+public:
+    Carte_Stratege(string t, string id_);
 };
 
 class Carte_Banshee : public Carte_Ruse {
-
+public:
+    Carte_Banshee();
 };
 
 class Carte_Traitre : public Carte_Ruse {
-
+public:
+    Carte_Traitre();
 };
 
 #endif //SCHOTTEN_TOTTEN_CARTE_H
