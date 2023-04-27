@@ -29,10 +29,15 @@ Carte_clan::Carte_clan(string id_, Couleur couleur_, int force_) {
 
 Borne::Borne(string id_, int r, int nb_cartes, int p) {
     id = id_;
-    regle = r;
+    regles.push_back(r);
     nb_max_cartes = nb_cartes;
     possesseur = p;
 
+}
+
+bool Borne::ajoutRegle(int r) {
+    regles.push_back(r);
+    return true;
 }
 
 Carte_tactique::Carte_tactique(string id_, string t) {
@@ -140,6 +145,7 @@ bool Borne::ajout_Carte(Carte *c, int joueur_actuelle) {
 Carte& Borne::supprimer_carte(int joueur, int num) {
 
     if (joueur == 1) {
+
         Carte& carte = *cartes_joueur_1[num];
         cartes_joueur_1.erase(cartes_joueur_1.begin() + num);
         return carte;
@@ -152,4 +158,6 @@ Carte& Borne::supprimer_carte(int joueur, int num) {
 
 }
 
+Carte_Banshee::Carte_Banshee(string t, string id_) : Carte_Ruse(t, id_) {}
 
+Carte_Traitre::Carte_Traitre(string t, string id_) : Carte_Ruse(t, id_) {}
