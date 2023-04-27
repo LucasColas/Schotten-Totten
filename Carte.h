@@ -32,6 +32,7 @@ public:
     virtual Couleur get_couleur() const { throw "erreur pas de couleur";};
     virtual int get_force() const { throw "erreur pas de force.";};
     virtual int getNb_cartes() {throw "pas de nombre de cartes";};
+    virtual string getType() const {throw "pas de type";};
     string getId() {return id;};
 
     friend ostream& operator<<(ostream& f, const Carte&);
@@ -53,7 +54,7 @@ public:
 
 class Borne : public Carte {
 private:
-    int regle;
+    vector<int> regles;
     int nb_max_cartes;
     int possesseur;
     vector<Carte*> cartes_joueur_1;
@@ -63,7 +64,8 @@ private:
     int historique;
 public:
     Borne(string id_, int r=0, int nb_cartes=3, int p=0);
-    int getRegle() const { return regle;};
+    vector<int> getRegle() const { return regles;};
+    bool ajoutRegle(int r);
     int getNbMaxCartes() const { return nb_max_cartes;};
     int GetPossesseur() const {return possesseur;};
     vector<Carte*> getCartes_joueur_1() {return cartes_joueur_1;};
@@ -82,7 +84,7 @@ protected:
 public:
     Carte_tactique(string id_, string t);
     void capacite();
-    string getType() const { return type;};
+    string getType() const override { return type;};
     void setType();
 
 };
@@ -131,12 +133,12 @@ public:
 
 class Carte_Banshee : public Carte_Ruse {
 public:
-    Carte_Banshee();
+    Carte_Banshee(string t, string id_);
 };
 
 class Carte_Traitre : public Carte_Ruse {
 public:
-    Carte_Traitre();
+    Carte_Traitre(string t, string id_);
 };
 
 #endif //SCHOTTEN_TOTTEN_CARTE_H
