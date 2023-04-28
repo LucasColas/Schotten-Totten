@@ -126,7 +126,7 @@ void Affichage_console::afficher_cartes_joueur(vector<Carte *> &cartes) {
     cout << "Cartes du joueur : ";
     for (int i = 0; i < cartes.size(); i++) {
         //cout << "carte";
-        cout << "carte : " << cartes[i]->getType();
+        //cout << "carte : " << cartes[i]->getType();
         cout << *cartes[i] << "  ";
     }
     cout << endl;

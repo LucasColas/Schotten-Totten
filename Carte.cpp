@@ -99,7 +99,13 @@ Carte_Stratege::Carte_Stratege(string t, string id_) : Carte_Ruse(t, id_){
 }
 
 ostream& operator<<(ostream& f, const Carte& c) {
-    f << c.get_force() << "," << c.get_couleur();
+    if (c.getType() == "Clan") {
+        f << c.get_force() << "," << c.get_couleur();
+    }
+    else {
+        f << c.getType();
+    }
+
     return f;
 }
 ostream& operator<<(ostream& f, const Carte_clan& c) {
