@@ -71,6 +71,7 @@ Tactique::Tactique() {
     cartes_tactique.push_back(new Carte_chasseur_de_tete("Ruse", "Chasseur de Tête"));
     cartes_tactique.push_back(new Carte_Stratege("Ruse", "Stratège"));
     cartes_tactique.push_back(new Carte_Banshee("Ruse", "Banshee"));
+    cartes_tactique.push_back(new Carte_Traitre("Ruse", "Traitre"));
 
     //cout << "nb bornes" << bornes.size() << endl;
     //cout << "nb cartes clan" << cartes.size() << endl;

@@ -89,6 +89,7 @@ public:
     void capacite();
     string getType() const override { return type;};
     void setType();
+    friend ostream& operator<<(ostream& f, const Carte_tactique& c);
 
 };
 
@@ -99,6 +100,7 @@ public:
     Carte_Combat(string t, string id_, int r);
     int getRegle() const override {return regle;};
     //void choix_borne();
+    friend ostream& operator<<(ostream& f, const Carte_Combat& c);
 };
 
 class Carte_Elite : public Carte_tactique {
@@ -107,16 +109,20 @@ private:
     int force;
     initializer_list<Couleur> couleurs_possibles;
     vector<int> forces_possibles;
+
 public:
     Carte_Elite(string t, string id_, int f, Couleur c);
     void setCouleur();
     void setForce();
+    friend ostream& operator<<(ostream& f, const Carte_Elite& c);
 
 };
 
 class Carte_Ruse : public Carte_tactique {
 public:
     Carte_Ruse(string t, string id_);
+    friend ostream& operator<<(ostream& f, const Carte_Ruse& c);
+
 };
 
 class Carte_chasseur_de_tete : public Carte_Ruse {
@@ -126,22 +132,30 @@ public:
     Carte_chasseur_de_tete(string t, string id_, int nb=3);
     int getNb_cartes() override {return nb_cartes;};
     void proposition();
-    bool action();
+    friend ostream& operator<<(ostream& f, const Carte_chasseur_de_tete& c);
+
 };
 
 class Carte_Stratege : public Carte_Ruse {
 public:
     Carte_Stratege(string t, string id_);
+    friend ostream& operator<<(ostream& f, const Carte_Stratege& c);
+
 };
 
 class Carte_Banshee : public Carte_Ruse {
 public:
     Carte_Banshee(string t, string id_);
+    friend ostream& operator<<(ostream& f, const Carte_Banshee& c);
+
 };
 
 class Carte_Traitre : public Carte_Ruse {
 public:
     Carte_Traitre(string t, string id_);
+    friend ostream& operator<<(ostream& f, const Carte_Traitre& c);
+
 };
+
 
 #endif //SCHOTTEN_TOTTEN_CARTE_H

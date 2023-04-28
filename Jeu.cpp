@@ -6,6 +6,7 @@
 #include "Jeu.h"
 #include "Schotten_Totten.h"
 #include "Pioche.h"
+#include "defausse.h"
 using namespace std;
 
 
@@ -93,7 +94,7 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
 
         //proposition();
         cout << "Les choix : " << endl;
-        cout << "1. Piochez trois cartes d'un pioche" << endl;
+        cout << "1. Piochez trois cartes d'une pioche" << endl;
         cout << "2. Piochez trois cartes de deux pioches" << endl;
         cout << "Choisissez ce que vous voulez faire (entrez 1 ou 2):" << endl;
         cin >> choix;
@@ -103,14 +104,14 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
             cout << "2. Piochez dans la pioche tactique" << endl;
             cin >> choix_pioche;
 
-            if (choix == 1) {
+            if (choix_pioche == 1) {
                 //Pioche 3 cartes dans la pioche clan
                 for (int i = 0; i < carte_ruse.getNb_cartes(); i++) {
                     joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
                 }
             }
 
-            else if (choix == 2){
+            else if (choix_pioche == 2){
                 //Pioche 3 cartes dans la pioche tactique
                 for (int i = 0; i < carte_ruse.getNb_cartes(); i++) {
                     joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche tactique"]->piocher_carte());
@@ -412,8 +413,12 @@ void Jeu::jouer_tour() {
                     joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
 
                 }
-                else {
+                else if (choix_pioche == 2) {
                     joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche tactique"]->piocher_carte());
+                }
+                else {
+                    cout << "mauvais nombre entree" << endl;
+                    return;
                 }
 
             }

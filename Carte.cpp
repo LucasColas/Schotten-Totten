@@ -4,6 +4,7 @@
 #include "Carte.h"
 #include "iostream"
 
+
 string toString(Couleur c) {
     switch (c) {
         case Couleur::Rouge: return "Ro";
@@ -16,6 +17,7 @@ string toString(Couleur c) {
         default: throw SetException("Couleur inconnue");
     }
 }
+
 
 ostream& operator<<(ostream& f, Couleur c) {
     f << toString(c);
@@ -79,7 +81,7 @@ Carte_Ruse::Carte_Ruse(string t, string id_) : Carte_tactique(id_, t){
 
 }
 
-Carte_chasseur_de_tete::Carte_chasseur_de_tete(string t, string id_, int nb) : Carte_Ruse(id_, t){
+Carte_chasseur_de_tete::Carte_chasseur_de_tete(string t, string id_, int nb) : Carte_Ruse(t, id_){
     nb_cartes = nb;
 }
 
@@ -91,7 +93,8 @@ void Carte_chasseur_de_tete::proposition() {
 }
 
 
-Carte_Stratege::Carte_Stratege(string t, string id_) : Carte_Ruse(id_, t){
+
+Carte_Stratege::Carte_Stratege(string t, string id_) : Carte_Ruse(t, id_){
 
 }
 
@@ -100,20 +103,63 @@ ostream& operator<<(ostream& f, const Carte& c) {
     return f;
 }
 ostream& operator<<(ostream& f, const Carte_clan& c) {
+    cout << "call " << endl;
     f << c.get_force() << "," << c.get_couleur();
     return f;
 }
 
 ostream& operator<<(ostream& f, const Borne& b) {
+    //cout << "call " << endl;
     f << b.getId();
     return f;
 }
 
 ostream& operator<<(ostream& f, const Carte_tactique& c) {
-    f << c.getType();
+    cout << "call " << endl;
+    f << "carte : " << c.getType();
     return f;
 }
 
+ostream& operator<<(ostream& f, const Carte_Ruse& c) {
+    cout << "call " << endl;
+    f << "carte : " << c.getType();
+    return f;
+}
+
+ostream& operator<<(ostream& f, const Carte_Combat& c) {
+    cout << "call " << endl;
+    f << "carte : " << c.getType();
+    return f;
+}
+
+ostream& operator<<(ostream& f, const Carte_Elite& c) {
+    cout << "call " << endl;
+    f << "carte : " << c.getType();
+    return f;
+}
+
+ostream& operator<<(ostream& f, const Carte_chasseur_de_tete& c) {
+    cout << "call " << endl;
+    f << "carte : " << c.getType();
+    return f;
+}
+ostream& operator<<(ostream& f, const Carte_Stratege& c) {
+    cout << "call " << endl;
+    f << "carte : " << c.getType();
+    return f;
+}
+
+ostream& operator<<(ostream& f, const Carte_Banshee& c) {
+    cout << "call " << endl;
+    f << "carte : " << c.getType();
+    return f;
+}
+
+ostream& operator<<(ostream& f, const Carte_Traitre& c) {
+    cout << "call " << endl;
+    f << "carte : " << c.getType();
+    return f;
+}
 bool Borne::ajout_Carte(Carte *c, int joueur_actuelle) {
     if (possesseur) {
         cout << "borne déjà revendiquee" << endl;
