@@ -370,6 +370,8 @@ void Jeu::jouer_tour() {
 
         Carte& carte = joueurs[joueur_actuelle-1]->choix_carte();
         //vérifier que la carte peut-être posée sur une borne ou pas.
+        cout << "on a la carte" << endl;
+        cout << "carte : " << carte.getType() << endl;
         if (carte.getType() == "Combat") {
             //Cas ou la carte est une carte tactique de combat
             cout << "Choisissez la borne ou voulez poser la carte Combat" << endl;
@@ -382,7 +384,7 @@ void Jeu::jouer_tour() {
             if (schottenTotten->bornes[borne-1]->GetPossesseur()) {
                 cout << "borne déjà revendiquee" << endl;
             }
-            schottenTotten->bornes[borne-1]->reg
+            schottenTotten->bornes[borne-1]->ajoutRegle(carte.getRegle());
         }
 
         if (carte.getType() == "Ruse") {
@@ -431,7 +433,6 @@ void Jeu::jouer_tour() {
         affichageConsole->afficher_défausse(*defausse);
 
     }
-
 
 }
 

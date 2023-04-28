@@ -21,10 +21,11 @@ ostream& operator<<(ostream& f, Couleur c) {
     f << toString(c);
     return f;
 }
-Carte_clan::Carte_clan(string id_, Couleur couleur_, int force_) {
+Carte_clan::Carte_clan(string id_, Couleur couleur_, int force_, string t) {
     id = id_;
     couleur = couleur_;
     force = force_;
+    type = t;
 }
 
 Borne::Borne(string id_, int r, int nb_cartes, int p) {
@@ -114,7 +115,7 @@ ostream& operator<<(ostream& f, const Carte_tactique& c) {
 }
 
 bool Borne::ajout_Carte(Carte *c, int joueur_actuelle) {
-    if (!possesseur) {
+    if (possesseur) {
         cout << "borne déjà revendiquee" << endl;
         return false;
     }

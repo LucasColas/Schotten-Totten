@@ -33,6 +33,7 @@ public:
     virtual int get_force() const { throw "erreur pas de force.";};
     virtual int getNb_cartes() {throw "pas de nombre de cartes";};
     virtual string getType() const {throw "pas de type";};
+    virtual int getRegle() const {throw "pas de regle";};
     string getId() {return id;};
 
     friend ostream& operator<<(ostream& f, const Carte&);
@@ -42,10 +43,12 @@ class Carte_clan : public Carte {
 private:
     Couleur couleur;
     int force;
+    string type;
 public:
-    Carte_clan(string id_, Couleur couleur_, int force_);
+    Carte_clan(string id_, Couleur couleur_, int force_, string t);
     Couleur get_couleur() const override { return couleur;};
     int get_force() const override { return force;};
+    string getType() const override {return type;};
 
     friend ostream& operator<<(ostream& f, const Carte_clan& c);
 
@@ -64,7 +67,7 @@ private:
     int historique;
 public:
     Borne(string id_, int r=0, int nb_cartes=3, int p=0);
-    vector<int> getRegle() const { return regles;};
+    vector<int> getRegles() const { return regles;};
     bool ajoutRegle(int r);
     int getNbMaxCartes() const { return nb_max_cartes;};
     int GetPossesseur() const {return possesseur;};
@@ -94,7 +97,7 @@ private:
     int regle;
 public:
     Carte_Combat(string t, string id_, int r);
-    int getRegle() {return regle;};
+    int getRegle() const override {return regle;};
     //void choix_borne();
 };
 
