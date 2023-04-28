@@ -27,14 +27,14 @@ Carte& Joueur::choix_carte() {
 
     cout << "choix carte (nombre entre 1 et " << to_string(cartes.size()) <<  ", 1 etant la carte affichee la plus a gauche.)";
     cin >> num_carte;
-    cout << "carte choisie : " << to_string(num_carte) << endl;
+    //cout << "carte choisie : " << to_string(num_carte) << endl;
     if (num_carte < 1 || num_carte > nb_max_cartes) {
         throw "erreur";
     }
     Carte& carte = *cartes[num_carte-1];
-    cout << "carte prise" << endl;
+    //cout << "carte prise" << endl;
     cartes.erase(cartes.begin()+num_carte-1);
-    cout << "carte supprimee" << endl;
+    //cout << "carte supprimee" << endl;
     return carte;
 
 }
