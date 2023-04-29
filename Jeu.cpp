@@ -208,6 +208,7 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
             cin >> choix_borne;
             if (choix_borne < 1 || choix_borne > 9) {
                 cout << "erreur nombre" << endl;
+                schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, joueur_actuelle);
                 return false;
             }
             if (schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, joueur_actuelle)) {
@@ -215,6 +216,8 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
                 return true;
             }
             else {
+                cout << "erreur ajout carte" << endl;
+                schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, joueur_actuelle);
                 return false;
             }
         }
@@ -250,6 +253,7 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
                 return false;
             }
             Carte& carte = schottenTotten->bornes[choix_borne-1]->supprimer_carte(1, carte_supp-1);
+            defausse->ajout_defausse(&carte);
             return true;
         }
         if (joueur_actuelle == 1) {
@@ -262,13 +266,14 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
                 return false;
             }
             Carte& carte = schottenTotten->bornes[choix_borne-1]->supprimer_carte(1, carte_supp-1);
+            defausse->ajout_defausse(&carte);
             return true;
         }
 
     }
 
     else if (carte_ruse.getId() == "Traître") {
-        cout << "choisissez la borne (entre 1 et 9) où vous voulez supprimer une carte de votre adversaire" << endl;
+        cout << "choisissez la borne (entre 1 et 9) ou vous voulez supprimer une carte de votre adversaire (et la mettre de votre cote)" << endl;
         cin >> choix_borne;
         if (choix_borne < 1 || choix_borne > 9) {
             return false;
@@ -295,51 +300,54 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
             cin >> choix_borne;
             if (choix_borne < 1 || choix_borne > 9) {
                 cout << "erreur borne invalide";
+                schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, 1);
                 return false;
             }
 
             if (schottenTotten->bornes[choix_borne-1]->GetPossesseur()) {
                 cout << "erreur borne revendiquee" << endl;
+                schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, 1);
                 return false;
             }
 
 
             if (joueur_actuelle == 2 and schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2().size() == schottenTotten->bornes[choix_borne-1]->getNbMaxCartes()) {
                 cout << "borne pleine" << endl;
+                schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, 1);
                 return false;
             }
             return true;
         }
         if (joueur_actuelle == 1) {
-            for (int i = 0; i < schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2().size(); i++) {
-                cout << to_string(i+1) << " " << schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2()[i] << endl;
+            for (int i = 0; i < schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size(); i++) {
+                cout << to_string(i+1) << " " << schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1()[i] << endl;
             }
             cin >> carte_supp;
-            if (carte_supp < 1 || carte_supp > schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2().size()) {
+            if (carte_supp < 1 || carte_supp > schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size()) {
                 cout << "carte invalide" << endl;
                 return false;
             }
-            Carte& carte = schottenTotten->bornes[choix_borne-1]->supprimer_carte(1, carte_supp-1);
+            Carte& carte = schottenTotten->bornes[choix_borne-1]->supprimer_carte(2, carte_supp-1);
             cout << "sur quelle borne vous souhaitez ajouter la carte (entre 1 et 9)" << endl;
 
             cin >> choix_borne;
             if (choix_borne < 1 || choix_borne > 9) {
                 cout << "erreur borne invalide";
+                schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, 2);
                 return false;
             }
 
             if (schottenTotten->bornes[choix_borne-1]->GetPossesseur()) {
                 cout << "erreur borne revendiquee" << endl;
+                schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, 2);
                 return false;
             }
 
-            if (schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size() == schottenTotten->bornes[choix_borne-1]->getNbMaxCartes()) {
-                cout << "borne pleine" << endl;
-                return false;
-            }
+
 
             if (joueur_actuelle == 2 and schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2().size() == schottenTotten->bornes[choix_borne-1]->getNbMaxCartes()) {
                 cout << "borne pleine" << endl;
+                schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, 2);
                 return false;
             }
 
@@ -350,6 +358,38 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
     //defausse->ajout_defausse(&carte_ruse);
 
     return true;
+}
+
+void Jeu::choixPioche() {
+    int choix_pioche;
+    if (variante == "normal") {
+        cout << "carte piochee automatiquement dans la pioche";
+        joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
+
+    }
+    else {
+        affichageConsole->choix_pioche();
+        cin >> choix_pioche;
+        if (choix_pioche == 1) {
+            joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
+
+        }
+        else if (choix_pioche == 2) {
+            joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche tactique"]->piocher_carte());
+        }
+        else {
+            cout << "mauvais nombre entree" << endl;
+            return;
+        }
+
+    }
+}
+
+int Jeu::autreJoueur() {
+    if (joueur_actuelle == 1) {
+        return 1;
+    }
+    return 0;
 }
 
 void Jeu::jouer_tour() {
@@ -371,29 +411,42 @@ void Jeu::jouer_tour() {
 
         Carte& carte = joueurs[joueur_actuelle-1]->choix_carte();
         //vérifier que la carte peut-être posée sur une borne ou pas.
-        cout << "on a la carte" << endl;
+        //cout << "on a la carte" << endl;
         cout << "carte : " << carte.getType() << endl;
+        if (carte.getType() != "Clan" && joueurs[joueur_actuelle-1]->getNbTactiqueJouees() > joueurs[autreJoueur()]->getNbTactiqueJouees())
+        {
+            cout << "vous avez jouez plus de cartes tactique que votre adversaire" << endl;
+            joueurs[joueur_actuelle-1]->ajout_carte(&carte);
+            return;
+        }
         if (carte.getType() == "Combat") {
             //Cas ou la carte est une carte tactique de combat
-            cout << "Choisissez la borne ou voulez poser la carte Combat" << endl;
+            cout << "Choisissez la borne ou voulez poser la carte Combat (nombre entre 1 et 9, 1 etant la borne la plus a gauche)" << endl;
             cin >> borne;
             if (borne < 1 || borne > 9) {
                 cout << "mauvaise borne" << endl;
+                joueurs[joueur_actuelle-1]->ajout_carte(&carte);
                 return;
             }
 
             if (schottenTotten->bornes[borne-1]->GetPossesseur()) {
                 cout << "borne déjà revendiquee" << endl;
+                return;
             }
             schottenTotten->bornes[borne-1]->ajoutRegle(carte.getRegle());
+            joueurs[joueur_actuelle-1]->carteTactiqueJouee();
+            return;
         }
 
         if (carte.getType() == "Ruse") {
             if (action_carte_ruse(carte)) {
                 defausse->ajout_defausse(&carte);
+                choixPioche();
                 changer_joueur();
+                joueurs[joueur_actuelle-1]->carteTactiqueJouee();
                 return;
             }
+            joueurs[joueur_actuelle-1]->ajout_carte(&carte);
             return;
         }
 
@@ -401,27 +454,8 @@ void Jeu::jouer_tour() {
         borne = joueurs[joueur_actuelle-1]->choix_borne();
 
         if (schottenTotten->bornes[borne-1]->ajout_Carte(&carte, joueur_actuelle)) {
-            if (variante == "normal") {
-                cout << "carte piochee automatiquement dans la pioche";
-                joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
-
-            }
-            else {
-                affichageConsole->choix_pioche();
-                cin >> choix_pioche;
-                if (choix_pioche == 1) {
-                    joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
-
-                }
-                else if (choix_pioche == 2) {
-                    joueurs[joueur_actuelle-1]->ajout_carte(&pioches["pioche tactique"]->piocher_carte());
-                }
-                else {
-                    cout << "mauvais nombre entree" << endl;
-                    return;
-                }
-
-            }
+            choixPioche();
+            joueurs[joueur_actuelle-1]->carteTactiqueJouee();
             //Regarder revendication
 
             //Regarder s'il y a un gagnant pour la partie et regarder si toutes les parties ont été jouées.

@@ -34,7 +34,7 @@ public:
     virtual int getNb_cartes() {throw "pas de nombre de cartes";};
     virtual string getType() const {throw "pas de type";};
     virtual int getRegle() const {throw "pas de regle";};
-    string getId() {return id;};
+    string getId() const {return id;};
 
     friend ostream& operator<<(ostream& f, const Carte&);
 };
