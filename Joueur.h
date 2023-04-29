@@ -23,6 +23,8 @@ public:
     int choix_borne();
     void ajout_carte(Carte* c);
     int getNbCartes() {return cartes.size();};
+    int getNbTactiqueJouees() const {return nb_cartes_tactiques_jouees;};
+    void carteTactiqueJouee() {nb_cartes_tactiques_jouees++;};
     vector<Carte*>& getCartes() {return cartes;};
 
 

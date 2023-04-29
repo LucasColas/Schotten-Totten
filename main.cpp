@@ -6,6 +6,7 @@ int main() {
     cout << "Hi" << endl;
     string mode_jeu = "Schotten Totten";
     string variante = "tactique";
+    int choix_jeu, choix_variante;
     /*
     cout << "Mode de jeu : " << endl;
     getline(cin, mode_jeu);
@@ -31,6 +32,8 @@ int main() {
     getline(cin, variante);
     cout << mode_jeu << " " << variante << endl;
     */
+
+
     Jeu j(mode_jeu, variante);
 
     cout << "nb parties" << j.getNbParties() << endl;

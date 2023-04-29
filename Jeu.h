@@ -51,6 +51,8 @@ public:
     string getVariante() const { return variante;};
     int getNbParties() const { return nb_parties;};
     int getNbPartiesJouees() const { return nb_parties_jouees;};
+    void choixPioche();
+    int autreJoueur();
     bool verif();
     bool action_carte_ruse(Carte& carte);
     void changer_joueur();

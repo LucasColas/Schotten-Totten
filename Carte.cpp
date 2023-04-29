@@ -48,11 +48,12 @@ Carte_tactique::Carte_tactique(string id_, string t) {
     type = t;
 }
 
-Carte_Elite::Carte_Elite(string id_, string t, int f, Couleur c) : Carte_tactique(id_, t) {
-    id = id_;
-    type = t;
+Carte_Elite::Carte_Elite(string t, string id_, int f, Couleur c) : Carte_tactique(id_, t) {
+    //id = id_;
+    //type = t;
     force = f;
     couleur = c;
+
     couleurs_possibles = {Couleur::Rouge, Couleur::Bleu, Couleur::Dore, Couleur::Marron, Couleur::Vert, Couleur::Violet};
     if (id == "Porte-Bouclier") {
         //couleurs_possibles = {Couleur::Rouge, Couleur::Bleu, Couleur::Dore, Couleur::Marron, Couleur::Vert, Couleur::Violet};
@@ -103,7 +104,7 @@ ostream& operator<<(ostream& f, const Carte& c) {
         f << c.get_force() << "," << c.get_couleur();
     }
     else {
-        f << c.getType();
+        f << c.getId().substr(0, 4);
     }
 
     return f;
