@@ -88,6 +88,7 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
     int carte_supp;
     int choix_borne;
     int choix2;
+    cout << carte_ruse.getId() << endl;
 
     if (carte_ruse.getId() == "Chasseur de Tête") {
 
@@ -231,7 +232,7 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
     }
 
     else if (carte_ruse.getId() == "Banshee") {
-        cout << "choisissez la borne (entre 1 et 9) où vous voulez supprimer une carte de votre adversaire" << endl;
+        cout << "choisissez la borne (entre 1 et 9) ou vous voulez supprimer une carte de votre adversaire" << endl;
         cin >> choix_borne;
         if (choix_borne < 1 || choix_borne > 9) {
             return false;
@@ -245,7 +246,7 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
         cout << "choisissez la carte à supp" << endl;
         if (joueur_actuelle == 2) {
             for (int i = 0; i < schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size(); i++) {
-                cout << to_string(i+1) << " " << schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1()[i] << endl;
+                cout << to_string(i+1) << " " << *schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1()[i] << endl;
             }
             cin >> carte_supp;
             if (carte_supp < 1 || carte_supp > schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size()) {
@@ -258,14 +259,14 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
         }
         if (joueur_actuelle == 1) {
             for (int i = 0; i < schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2().size(); i++) {
-                cout << to_string(i+1) << " " << schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2()[i] << endl;
+                cout << to_string(i+1) << " " << *schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2()[i] << endl;
             }
             cin >> carte_supp;
             if (carte_supp < 1 || carte_supp > schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2().size()) {
                 cout << "carte invalide" << endl;
                 return false;
             }
-            Carte& carte = schottenTotten->bornes[choix_borne-1]->supprimer_carte(1, carte_supp-1);
+            Carte& carte = schottenTotten->bornes[choix_borne-1]->supprimer_carte(2, carte_supp-1);
             defausse->ajout_defausse(&carte);
             return true;
         }
