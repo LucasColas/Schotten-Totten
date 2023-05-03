@@ -156,7 +156,7 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
         return true;
     }
 
-    else if (carte_ruse.getId() == "Stratège ") {
+    else if (carte_ruse.getId() == "Stratège") {
         cout << "choisissez la borne où vous voulez retirer une de vos cartes (entre 1 et 9)" << endl;
         cin >> choix_borne;
         if (schottenTotten->bornes[choix_borne-1]->GetPossesseur()) {
@@ -460,6 +460,9 @@ void Jeu::jouer_tour() {
             //Regarder revendication
 
             //Regarder s'il y a un gagnant pour la partie et regarder si toutes les parties ont été jouées.
+            if (carte.getType() == "Elite") {
+                joueurs[joueur_actuelle-1]->carteTactiqueJouee();
+            }
             changer_joueur();
         }
         else {
