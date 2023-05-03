@@ -127,7 +127,12 @@ void Affichage_console::afficher_cartes_joueur(vector<Carte *> &cartes) {
     for (int i = 0; i < cartes.size(); i++) {
         //cout << "carte";
         //cout << "carte : " << cartes[i]->getType();
-        cout << *cartes[i] << "  ";
+        if (cartes[i]->getType() == "Clan") {
+            cout << *cartes[i] << "  ";
+        }
+        else {
+            cout << cartes[i]->getId();
+        }
     }
     cout << endl;
 }
