@@ -48,9 +48,9 @@ public:
     void distribution_cartes();
     int partie_terminee();
     string getModeJeu() const {return mode_jeu;};
-    string getVariante() const { return variante;};
-    int getNbParties() const { return nb_parties;};
-    int getNbPartiesJouees() const { return nb_parties_jouees;};
+    string getVariante() const {return variante;};
+    int getNbParties() const {return nb_parties;};
+    int getNbPartiesJouees() const {return nb_parties_jouees;};
     void choixPioche();
     int autreJoueur();
     bool verif();

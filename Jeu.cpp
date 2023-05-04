@@ -477,6 +477,20 @@ void Jeu::jouer_tour() {
 
     }
 
+    if (verif()) {
+        nb_parties_jouees++;
+        //Afficher le joueur qui a gagné la partie
+        if (nb_parties == nb_parties_jouees) {
+            //Afficher le joueur qui a gagne le plus de points.
+        }
+    }
+
+}
+
+bool Jeu::verif() {
+    //appel algo revendication
+
+    return false;
 }
 
 void Jeu::designe_premier_joueur() {
