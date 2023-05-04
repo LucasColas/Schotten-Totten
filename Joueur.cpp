@@ -28,8 +28,9 @@ Carte& Joueur::choix_carte() {
     cout << "choix carte (nombre entre 1 et " << to_string(cartes.size()) <<  ", 1 etant la carte affichee la plus a gauche.)";
     cin >> num_carte;
     //cout << "carte choisie : " << to_string(num_carte) << endl;
-    if (num_carte < 1 || num_carte > nb_max_cartes) {
-        throw "erreur";
+    while (num_carte < 1 || num_carte > nb_max_cartes) {
+        cout << "choix carte (nombre entre 1 et " << to_string(cartes.size()) <<  ", 1 etant la carte affichee la plus a gauche.)";
+        cin >> num_carte;
     }
     Carte& carte = *cartes[num_carte-1];
     //cout << "carte prise" << endl;

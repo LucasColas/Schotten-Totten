@@ -7,6 +7,7 @@ int main() {
     string mode_jeu = "Schotten Totten";
     string variante = "tactique";
     int choix_jeu, choix_variante;
+    Jeu* j;
     /*
     cout << "Mode de jeu : " << endl;
     getline(cin, mode_jeu);
@@ -32,16 +33,36 @@ int main() {
     getline(cin, variante);
     cout << mode_jeu << " " << variante << endl;
     */
+    cout << "Choisissez le jeu : " << endl;
+    cout << "1. Pour Schotten Totten" << endl;
+    cout << "2. Pour Schotten Totten 2" << endl;
+    cin >> choix_jeu;
+
+    if (choix_jeu == 1) {
+        cout << "Schotten Totten selectionne" << endl;
+        cout << "Choisissez la variante" << endl;
+        cout << "1. Normal" << endl;
+        cout << "2. Tactique" << endl;
+
+        cin >> choix_variante;
+
+        if (choix_variante == 1) {
+            j = new Jeu("Schotten Totten", "normal");
+        }
+        else if (choix_variante == 2) {
+            j = new Jeu("Schotten Totten", "tactique");
+        }
+    }
 
 
-    Jeu j(mode_jeu, variante);
 
-    cout << "nb parties" << j.getNbParties() << endl;
-    cout << "nb parties jouees " << j.getNbPartiesJouees() << endl;
 
-    while (j.getNbPartiesJouees() < j.getNbParties()) {
+    cout << "nb parties" << j->getNbParties() << endl;
+    cout << "nb parties jouees " << j->getNbPartiesJouees() << endl;
+
+    while (j->getNbPartiesJouees() < j->getNbParties()) {
         cout << "jouer" << endl;
-        j.jouer_tour();
+        j->jouer_tour();
     }
 
     cout << "A bientôt dans : " << endl;
