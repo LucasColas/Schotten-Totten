@@ -1,7 +1,7 @@
 #include "Combinaison.h"
+#include <algorithm>
 
-
-
+using namespace std;
 bool Combinaison::estUneCouleur(){
     Couleur C1= c1->get_couleur();
     Couleur C2= c2->get_couleur();
@@ -11,11 +11,12 @@ bool Combinaison::estUneCouleur(){
 }
 
 bool Combinaison::estUneSuite(){
-    int v1=c1->get_force();
-    int v2=c2->get_force();
-    int v3=c3->get_force();
+    Carte* cartes[] = { c1, c2, c3 };
+    sort(cartes, cartes + 3, [](Carte* a, Carte* b) { return a->get_force() < b->get_force(); });
 
-    return  (v1*2==v2+v3-2 || v2*2==v1+v3-2 || v3*2== v1+v2-2);
+    // Vérifier si les valeurs des cartes sont consécutives
+    return (cartes[0]->get_force() == cartes[1]->get_force() - 1) && (cartes[1]->get_force() == cartes[2]->get_force() - 1);
+
 }
 
 bool Combinaison::estUnBrelan(){
@@ -39,4 +40,9 @@ void Combinaison::PuissanceCombinaison(){
     if (estUneSuite()) p=p+100;
 
     Puissance=p;
+}
+
+int Combinaison::sommeSuite() {
+    //Methode pour quand 2 suites sont de même puissance.
+    somme = c1->get_force() + c2->get_force() + c3->get_force();
 }

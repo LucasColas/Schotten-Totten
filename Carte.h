@@ -56,6 +56,12 @@ public:
 
 
 class Borne : public Carte {
+    //TODO : Changer borne et la mettre dans un fichier à part.
+    //Car on utilisera sur borne la classe combinaison. Sauf que Combinaison
+    //a un include Carte.
+    //TODO : Si les 2 bornes sont identiques ainsi que leurs sommes sont identique,
+    //regarder celui qui a posé la troisième carte en premier
+    //TODO : gérer le cas où il y a 4 cartes par joueur. -> Prendre la mailleure combinaison possible.
 private:
     vector<int> regles;
     int nb_max_cartes;
@@ -84,10 +90,14 @@ class Carte_tactique : public Carte {
 //Pour savoir le type de carte tactique (Combat, Elite, etc.).
 protected:
     string type;
+    int force;
+    Couleur couleur;
 public:
     Carte_tactique(string id_, string t);
     void capacite();
     string getType() const override { return type;};
+    Couleur get_couleur() const override { return couleur;};
+    int get_force() const override { return force;};
     void setType();
     friend ostream& operator<<(ostream& f, const Carte_tactique& c);
 
