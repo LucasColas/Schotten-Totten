@@ -550,20 +550,33 @@ void Jeu::distribution_cartes() {
 
 void Jeu::revendication_borne(int i) {
 
+    if (!schottenTotten->bornes[i]->GetPossesseur() && schottenTotten->bornes[i]->getCartes_joueur_1().size() ==
+        schottenTotten->bornes[i]->getCartes_joueur_2().size() && schottenTotten->bornes[i]->getCartes_joueur_1().size() == schottenTotten->bornes[i]->getNbMaxCartes()) {
+        //Les deux ont le max de cartes
+
+    }
+
 
     if (!schottenTotten->bornes[i]->GetPossesseur() && schottenTotten->bornes[i]->possible_revendication()) {
         schottenTotten->bornes[i]->demander_valeurs(joueur_actuel);
-        //Les 2 joueurs ont posé leurs 3 cartes
+        //Les 2 joueurs ont posé le maximum de cartes
         //Vérifier que les cartes de l'adversaire ne sont pas des cartes tactique qui attendent d'obtenir des valeurs.
         if (schottenTotten->bornes[i]->getCartes_joueur_1().size() ==
             schottenTotten->bornes[i]->getCartes_joueur_2().size() && schottenTotten->bornes[i]->getCartes_joueur_1().size() == schottenTotten->bornes[i]->getNbMaxCartes()) {
+            schottenTotten->bornes[i]->creerCombinaison_joueur1();
+            schottenTotten->bornes[i]->creerCombinaison_joueur2();
             if (schottenTotten->bornes[i]->getRegles().size() != 0) {
                 //Des règles sont posées
+                for (auto r: schottenTotten->bornes[i]->getRegles()) {
+                    if (r==1) {
+
+                    }
+                }
+
                 return;
             }
 
-            schottenTotten->bornes[i]->creerCombinaison_joueur1();
-            schottenTotten->bornes[i]->creerCombinaison_joueur2();
+
             int puissance_joueur1 = schottenTotten->bornes[i]->getCombinaisonJoueur1().getPuissance();
             int puissance_joueur2 = schottenTotten->bornes[i]->getCombinaisonJoueur2().getPuissance();
             int joueur;
