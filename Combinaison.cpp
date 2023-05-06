@@ -2,6 +2,14 @@
 #include <algorithm>
 
 using namespace std;
+
+Combinaison::Combinaison(Carte *c1_, Carte *c2_, Carte *c3_) {
+    c1 = c1_;
+    c2 = c2_;
+    c3 = c3_;
+    PuissanceCombinaison();
+}
+
 bool Combinaison::estUneCouleur(){
     Couleur C1= c1->get_couleur();
     Couleur C2= c2->get_couleur();
@@ -42,7 +50,13 @@ void Combinaison::PuissanceCombinaison(){
     Puissance=p;
 }
 
-int Combinaison::sommeSuite() {
+void Combinaison::sommeSuite() {
     //Methode pour quand 2 suites sont de même puissance.
     somme = c1->get_force() + c2->get_force() + c3->get_force();
+}
+
+void Combinaison::setCartes(Carte *c1_, Carte *c2_, Carte *c3_) {
+    c1 = c1_;
+    c2 = c2_;
+    c3 = c3_;
 }

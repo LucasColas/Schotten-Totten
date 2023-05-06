@@ -121,6 +121,12 @@ build CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj: CXX_COMPILER__Schotten
   OBJECT_DIR = CMakeFiles\Schotten_Totten.dir
   OBJECT_FILE_DIR = CMakeFiles\Schotten_Totten.dir
 
+build CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj: CXX_COMPILER__Schotten_Totten_Debug C$:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Borne.cpp || cmake_object_order_depends_target_Schotten_Totten
+  DEP_FILE = CMakeFiles\Schotten_Totten.dir\Borne.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Schotten_Totten.dir
+  OBJECT_FILE_DIR = CMakeFiles\Schotten_Totten.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Schotten_Totten
@@ -129,7 +135,7 @@ build CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj: CXX_COMPILER__Schotten
 #############################################
 # Link the executable Schotten_Totten.exe
 
-build Schotten_Totten.exe: CXX_EXECUTABLE_LINKER__Schotten_Totten_Debug CMakeFiles/Schotten_Totten.dir/main.cpp.obj CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj CMakeFiles/Schotten_Totten.dir/Jeu.cpp.obj CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.obj CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.obj CMakeFiles/Schotten_Totten.dir/defausse.cpp.obj CMakeFiles/Schotten_Totten.dir/Jeu_cartes.cpp.obj CMakeFiles/Schotten_Totten.dir/Factory.cpp.obj CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj CMakeFiles/Schotten_Totten.dir/set.cpp.obj CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj
+build Schotten_Totten.exe: CXX_EXECUTABLE_LINKER__Schotten_Totten_Debug CMakeFiles/Schotten_Totten.dir/main.cpp.obj CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj CMakeFiles/Schotten_Totten.dir/Jeu.cpp.obj CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.obj CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.obj CMakeFiles/Schotten_Totten.dir/defausse.cpp.obj CMakeFiles/Schotten_Totten.dir/Jeu_cartes.cpp.obj CMakeFiles/Schotten_Totten.dir/Factory.cpp.obj CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj CMakeFiles/Schotten_Totten.dir/set.cpp.obj CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Schotten_Totten.dir

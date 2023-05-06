@@ -63,7 +63,8 @@
 				15,
 				17,
 				19,
-				22
+				22,
+				23
 			]
 		}
 	],
@@ -111,7 +112,8 @@
 				15,
 				17,
 				19,
-				22
+				22,
+				23
 			]
 		},
 		{
@@ -259,6 +261,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Combinaison.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Borne.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -34,6 +34,8 @@ public:
     virtual int getNb_cartes() {throw "pas de nombre de cartes";};
     virtual string getType() const {throw "pas de type";};
     virtual int getRegle() const {throw "pas de regle";};
+    virtual bool setCouleur() {throw "pas de set";};
+    virtual bool setForce() {throw "pas de set";};
     string getId() const {return id;};
 
     friend ostream& operator<<(ostream& f, const Carte&);
@@ -55,36 +57,6 @@ public:
 };
 
 
-class Borne : public Carte {
-    //TODO : Changer borne et la mettre dans un fichier à part.
-    //Car on utilisera sur borne la classe combinaison. Sauf que Combinaison
-    //a un include Carte.
-    //TODO : Si les 2 bornes sont identiques ainsi que leurs sommes sont identique,
-    //regarder celui qui a posé la troisième carte en premier
-    //TODO : gérer le cas où il y a 4 cartes par joueur. -> Prendre la mailleure combinaison possible.
-private:
-    vector<int> regles;
-    int nb_max_cartes;
-    int possesseur;
-    vector<Carte*> cartes_joueur_1;
-    vector<Carte*> cartes_joueur_2;
-    vector<Carte*> carte_dessus;
-    //pour savoir qui a posé la troisième ou quatrième carte en premier. On met 1 si c'est le joueur 1. 2 sinon.
-    int historique;
-public:
-    Borne(string id_, int r=0, int nb_cartes=3, int p=0);
-    vector<int> getRegles() const { return regles;};
-    bool ajoutRegle(int r);
-    int getNbMaxCartes() const { return nb_max_cartes;};
-    int GetPossesseur() const {return possesseur;};
-    vector<Carte*> getCartes_joueur_1() {return cartes_joueur_1;};
-    vector<Carte*> getCartes_joueur_2() {return cartes_joueur_2;};
-    Carte& supprimer_carte(int joueur, int num);
-    bool ajout_Carte(Carte* c, int joueur_actuelle);
-    string getId() const {return id;};
-
-    friend ostream& operator<<(ostream& f, const Borne& b);
-};
 
 class Carte_tactique : public Carte {
 //Pour savoir le type de carte tactique (Combat, Elite, etc.).
@@ -99,6 +71,7 @@ public:
     Couleur get_couleur() const override { return couleur;};
     int get_force() const override { return force;};
     void setType();
+
     friend ostream& operator<<(ostream& f, const Carte_tactique& c);
 
 };
@@ -122,8 +95,8 @@ private:
 
 public:
     Carte_Elite(string t, string id_, int f, Couleur c);
-    void setCouleur();
-    void setForce();
+    bool setCouleur() override;
+    bool setForce() override;
     friend ostream& operator<<(ostream& f, const Carte_Elite& c);
 
 };

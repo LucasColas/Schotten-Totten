@@ -30,24 +30,58 @@ Carte_clan::Carte_clan(string id_, Couleur couleur_, int force_, string t) {
     type = t;
 }
 
-Borne::Borne(string id_, int r, int nb_cartes, int p) {
-    id = id_;
-    regles.push_back(r);
-    nb_max_cartes = nb_cartes;
-    possesseur = p;
 
-}
 
-bool Borne::ajoutRegle(int r) {
-    regles.push_back(r);
-    return true;
-}
+
 
 Carte_tactique::Carte_tactique(string id_, string t) {
     id = id_;
     type = t;
 }
 
+bool Carte_Elite::setCouleur() {
+    cout << "choisissez la couleur que vous voulez pour cette carte elite" << endl;
+    int choix;
+    int i = 1;
+    int index = 0;
+    for (auto c: couleurs_possibles) {
+        cout << to_string(i) << " : " << toString(c) << endl;
+        i++;
+    }
+    cout << "votre choix : ";
+    cin >> choix;
+    if (choix < 1 || choix > couleurs_possibles.size()) {
+        cout << "choix invalide" << endl;
+        return false;
+    }
+    for (auto c : couleurs_possibles) {
+        if (index == choix-1) {
+            couleur = c;
+        }
+        index++;
+    }
+    return true;
+
+}
+
+bool Carte_Elite::setForce() {
+    cout << "choisissez la force que vous voulez parmi les forces possibles" << endl;
+    int i = 1;
+    int choix;
+    for (auto f : forces_possibles) {
+        cout << to_string(i) << " : " << to_string(f) << endl;
+        i++;
+    }
+    cout << "votre choix : ";
+    cin >> choix;
+    if (choix < 1 || choix > forces_possibles.size()) {
+        cout << "erreur choix";
+        return false;
+    }
+    force = forces_possibles[choix-1];
+
+    return true;
+}
 Carte_Elite::Carte_Elite(string t, string id_, int f, Couleur c) : Carte_tactique(id_, t) {
     //id = id_;
     //type = t;
@@ -115,11 +149,6 @@ ostream& operator<<(ostream& f, const Carte_clan& c) {
     return f;
 }
 
-ostream& operator<<(ostream& f, const Borne& b) {
-    //cout << "call " << endl;
-    f << b.getId();
-    return f;
-}
 
 ostream& operator<<(ostream& f, const Carte_tactique& c) {
     cout << "call " << endl;
@@ -166,50 +195,6 @@ ostream& operator<<(ostream& f, const Carte_Traitre& c) {
     cout << "call " << endl;
     f << "carte : " << c.getType();
     return f;
-}
-bool Borne::ajout_Carte(Carte *c, int joueur_actuelle) {
-    if (possesseur) {
-        cout << "borne déjà revendiquee" << endl;
-        return false;
-    }
-    if (joueur_actuelle == 1) {
-        if (cartes_joueur_1.size() == nb_max_cartes) {
-            cout << "pas possible de mettre une carte ici";
-            return false;
-        }
-        cartes_joueur_1.push_back(c);
-        if (cartes_joueur_1.size() == nb_max_cartes) {
-            historique = 1;
-        }
-
-    }
-    else {
-        if (cartes_joueur_2.size() == nb_max_cartes) {
-            cout << "pas possible de mettre une carte ici";
-            return false;
-        }
-        cartes_joueur_2.push_back(c);
-        if (cartes_joueur_2.size() == nb_max_cartes) {
-            historique = 2;
-        }
-    }
-    return true;
-}
-
-Carte& Borne::supprimer_carte(int joueur, int num) {
-
-    if (joueur == 1) {
-
-        Carte& carte = *cartes_joueur_1[num];
-        cartes_joueur_1.erase(cartes_joueur_1.begin() + num);
-        return carte;
-    }
-
-    Carte& carte = *cartes_joueur_2[num];
-    cartes_joueur_2.erase(cartes_joueur_2.begin() + num);
-    return carte;
-
-
 }
 
 Carte_Banshee::Carte_Banshee(string t, string id_) : Carte_Ruse(t, id_) {}

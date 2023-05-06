@@ -3,6 +3,7 @@
 //
 #include "Schotten_Totten.h"
 #include "Carte.h"
+#include "Borne.h"
 #include "Affichage_console.h"
 #include "iostream"
 using namespace std;
