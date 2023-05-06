@@ -4,6 +4,7 @@
 #include <string>
 #include "Carte.h"
 #include "defausse.h"
+#include "Borne.h"
 using namespace std;
 #ifndef SCHOTTEN_TOTTEN_AFFICHAGE_CONSOLE_H
 #define SCHOTTEN_TOTTEN_AFFICHAGE_CONSOLE_H

@@ -5,6 +5,7 @@
 #include "Carte.h"
 #include <iostream>
 #include <conio.h>
+#include "Borne.h"
 using namespace std;
 
 Affichage_console::Affichage_console(string v) {

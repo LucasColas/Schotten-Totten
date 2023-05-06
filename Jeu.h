@@ -10,10 +10,11 @@ using namespace std;
 #include "Schotten_Totten.h"
 #include "Pioche.h"
 #include "defausse.h"
+#include "Borne.h"
 class Jeu {
 private:
     int nb_joueurs;
-    int joueur_actuelle;
+    int joueur_actuel;
     int nb_max_joueurs;
     vector<Joueur*> joueurs;
     string mode_jeu;
@@ -56,6 +57,8 @@ public:
     bool verif();
     bool action_carte_ruse(Carte& carte);
     void changer_joueur();
+    void revendication_borne(int i);
+
 
 
 

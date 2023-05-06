@@ -11,6 +11,7 @@ using namespace std;
 
 #include <cstddef>
 #include "Carte.h"
+#include "Borne.h"
 class Schotten_Totten {
     friend class Jeu;
 protected:
