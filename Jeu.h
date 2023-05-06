@@ -11,6 +11,7 @@ using namespace std;
 #include "Pioche.h"
 #include "defausse.h"
 #include "Borne.h"
+#include "Revendication.h"
 class Jeu {
 private:
     int nb_joueurs;
