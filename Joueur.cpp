@@ -6,6 +6,7 @@
 #include <string>
 #include "Joueur.h"
 #include "iostream"
+#include <random>
 using namespace std;
 
 Joueur::Joueur(string n, int nb_cartes, int nb_tactiques_jouees, int joker_j, int nb_p, int nb_b) {
@@ -57,4 +58,34 @@ void Joueur::ajout_carte(Carte *c) {
     cartes.push_back(c);
     cout << "carte ajoutee" << endl;
 
+}
+
+
+
+
+
+
+//IA
+Carte& IA::choix_carte() {
+    std::default_random_engine generator;
+    std::uniform_int_distribution<int> distribution(1,cartes.size());
+    int num_carte = distribution(generator);
+
+    //cout << "IA carte choisie : " << to_string(num_carte) << endl;
+
+    Carte& carte = *cartes[num_carte-1];
+    //cout << "carte prise" << endl;
+    cartes.erase(cartes.begin()+num_carte-1);
+    //cout << "carte supprimee" << endl;
+    return carte;
+}
+
+
+int IA::choix_borne() {
+    //num_borne stocke le numéro de borne où le joueur veut poser sa carte
+    std::default_random_engine generator;
+    std::uniform_int_distribution<int> distribution(1,nb_bornes);
+    int num_borne = distribution(generator);
+    cout << "IA borne choisie : " << num_borne << endl;
+    return num_borne;
 }
