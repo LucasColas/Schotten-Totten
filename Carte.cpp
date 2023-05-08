@@ -97,6 +97,7 @@ Carte_Elite::Carte_Elite(string t, string id_, int f, Couleur c) : Carte_tactiqu
     }
     if (id == "Espion") {
         //couleurs_possibles = {Couleur::Rouge, Couleur::Bleu, Couleur::Dore, Couleur::Marron, Couleur::Vert, Couleur::Violet};
+        forces_possibles.push_back(7);
     }
 
     if (id.find("Joker") != string::npos) {
@@ -107,6 +108,13 @@ Carte_Elite::Carte_Elite(string t, string id_, int f, Couleur c) : Carte_tactiqu
     }
 }
 
+void Carte_Elite::setCouleurAuto(Couleur c) {
+    couleur = c;
+}
+
+void Carte_Elite::setForceAuto(int f) {
+    force = f;
+}
 Carte_Combat::Carte_Combat(string t, string id_, int r) : Carte_tactique(id_, t) {
     regle = r;
 

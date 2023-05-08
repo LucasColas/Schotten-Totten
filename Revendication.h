@@ -13,10 +13,12 @@ private:
     Combinaison* combinaison_joueur1;
     Combinaison* combinaison_joueur2;
     bool max_cartes_pose;
+    int nb_cartes_max;
     int historique;
     vector<int> regles;
     vector<Carte*> cartes_joueur1;
     vector<Carte*> cartes_joueur2;
+    int joueur1, joueur2;
     static map<string,int> rank;
 public:
     Revendication(Borne* b);
@@ -25,6 +27,7 @@ public:
     int Revendiquant_avec_max_cartes(); //Joueur qui obtient la borne. 0 si ce n'est aucun des joueurs.
 
     int Revendiquant();
+    int Revendiquer_sans_max_cartes(vector<Carte*>& cartes, vector<Carte*>& cartes_tactique);
 
     int Revendiquer(); //Méthode qui teste les différents cas de revendications et renvoie le joueur qui peut revendiquer la borne. 0 sinon.
 

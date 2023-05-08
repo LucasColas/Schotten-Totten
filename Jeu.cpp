@@ -553,7 +553,14 @@ void Jeu::revendication_borne(int i) {
     if (!schottenTotten->bornes[i]->GetPossesseur() && schottenTotten->bornes[i]->getCartes_joueur_1().size() ==
         schottenTotten->bornes[i]->getCartes_joueur_2().size() && schottenTotten->bornes[i]->getCartes_joueur_1().size() == schottenTotten->bornes[i]->getNbMaxCartes()) {
         //Les deux ont le max de cartes
+        //Il faut demander la valeur des cartes tactiques
+        affichageConsole->afficher_cartes_bornes(schottenTotten->bornes, joueur_actuel);
+        cout << "\n\n\n\n\n" << "la borne : " << to_string(i+1) << " a un nombre max de cartes pour chacun des joueurs" << endl;
+
+        schottenTotten->bornes[i]->demander_valeurs(1);
+        schottenTotten->bornes[i]->demander_valeurs(2);
         revendication = new Revendication(schottenTotten->bornes[i]);
+        schottenTotten->bornes[i]->setPossesseur(revendication->Revendiquant_avec_max_cartes());
 
 
     }

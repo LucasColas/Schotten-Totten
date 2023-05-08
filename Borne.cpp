@@ -78,6 +78,7 @@ bool Borne::possible_revendication() {
 
 }
 void Borne::demander_valeurs(int joueur_actuel) {
+
     if (joueur_actuel == 1) {
         for (auto c : cartes_joueur_1) {
             if (c->get_force() == -1) {

@@ -52,7 +52,7 @@ void Combinaison::PuissanceCombinaison(){
         p = p + c4->get_force();
     }
 
-    if (estUneSuiteCouleur()) p=p+10000;
+    if (estUneSuiteCouleur()) p=p+100000;
     if (estUnBrelan()) p=p+10000;
     if (estUneCouleur()) p=p+1000;
     if (estUneSuite()) p=p+100;

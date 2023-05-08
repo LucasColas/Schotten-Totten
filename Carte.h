@@ -36,6 +36,8 @@ public:
     virtual int getRegle() const {throw "pas de regle";};
     virtual bool setCouleur() {throw "pas de set";};
     virtual bool setForce() {throw "pas de set";};
+    virtual void setCouleurAuto(Couleur c) {throw "erreur";};
+    virtual void setForceAuto(int f) {throw "erreur";};
     virtual vector<int> forcesPossibles() {throw "pas de forces";};
     virtual initializer_list<Couleur> CouleursPossibles() {throw "pas de couleur";};
     string getId() const {return id;};
@@ -99,6 +101,8 @@ public:
     Carte_Elite(string t, string id_, int f, Couleur c);
     bool setCouleur() override;
     bool setForce() override;
+    void setCouleurAuto(Couleur c) override;
+    void setForceAuto(int f) override;
     vector<int> forcesPossibles() override {return forces_possibles;};
     initializer_list<Couleur> CouleursPossibles() override {return couleurs_possibles;};
     friend ostream& operator<<(ostream& f, const Carte_Elite& c);
