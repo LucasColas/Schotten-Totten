@@ -3,6 +3,7 @@
 //
 #include "Combinaison.h"
 #include "Carte.h"
+
 #ifndef SCHOTTEN_TOTTEN_REVENDICATION_H
 #define SCHOTTEN_TOTTEN_REVENDICATION_H
 //Revendication sera un attribut dans Jeu.
@@ -23,7 +24,7 @@ public:
 
     int Revendiquant();
 
-    int Revendiquer();
+    int Revendiquer(); //Méthode qui teste les différents cas de revendications et renvoie le joueur qui peut revendiquer la borne. 0 sinon.
 
 };
 #endif //SCHOTTEN_TOTTEN_REVENDICATION_H

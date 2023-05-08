@@ -70,12 +70,12 @@ Carte& Borne::supprimer_carte(int joueur, int num) {
 }
 
 bool Borne::possible_revendication() {
-    if (nb_max_cartes == 3) {
-        return ((cartes_joueur_1.size() == nb_max_cartes && cartes_joueur_2.size() >= 2) || (cartes_joueur_2.size() == nb_max_cartes && cartes_joueur_1.size() >= 2));
-    }
+    
     if (nb_max_cartes == 4) {
         return (cartes_joueur_1.size() == nb_max_cartes && cartes_joueur_2.size() == nb_max_cartes);
     }
+    return ((cartes_joueur_1.size() == nb_max_cartes && cartes_joueur_2.size() >= 2) || (cartes_joueur_2.size() == nb_max_cartes && cartes_joueur_1.size() >= 2));
+
 }
 void Borne::demander_valeurs(int joueur_actuel) {
     if (joueur_actuel == 1) {
@@ -91,11 +91,11 @@ void Borne::demander_valeurs(int joueur_actuel) {
 }
 
 void Borne::creerCombinaison_joueur1() {
-    combinaison_joueur_1 = new Combinaison(cartes_joueur_1[0], cartes_joueur_1[1], cartes_joueur_1[2]);
+    combinaison_joueur_1 = new Combinaison(cartes_joueur_1[0], cartes_joueur_1[1], cartes_joueur_1[2], 3);
 }
 
 void Borne::creerCombinaison_joueur2() {
-    combinaison_joueur_2 = new Combinaison(cartes_joueur_2[0], cartes_joueur_2[1], cartes_joueur_2[2]);
+    combinaison_joueur_2 = new Combinaison(cartes_joueur_2[0], cartes_joueur_2[1], cartes_joueur_2[2], 3);
 }
 
 void Borne::setPossesseur(int joueur) {
