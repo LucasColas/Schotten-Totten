@@ -525,6 +525,9 @@ void Jeu::creation_joueurs() {
        cin >> nom;
        joueurs.push_back(new Joueur(nom, schottenTotten->getNb_Cartes_par_joueur()));
     }
+    else if (nb_joueurs_humains == 1) {
+        cout << "1 joueurs humains"
+    }
 }
 
 void Jeu::resume() {

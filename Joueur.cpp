@@ -89,3 +89,13 @@ int IA::choix_borne() {
     cout << "IA borne choisie : " << num_borne << endl;
     return num_borne;
 }
+
+IA::IA(string n, int nb_cartes, int nb_tactiques_jouees, int joker_j, int nb_p, int nb_b) :
+Joueur(n, nb_cartes, nb_tactiques_jouees, joker_j = 0, nb_p=0, nb_b=9) {}
+
+
+int IA::choix_entier(const int min, const int max) {
+    std::default_random_engine generator;
+    std::uniform_int_distribution<int> distribution(min,max);
+    return distribution(generator);
+}

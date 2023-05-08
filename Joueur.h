@@ -9,6 +9,7 @@ using namespace std;
 #define SCHOTTEN_TOTTEN_JOUEUR_H
 class Joueur {
 protected:
+    const bool ia = false;
     string nom;
     int nb_bornes;
     vector<Carte*> cartes;
@@ -26,18 +27,19 @@ public:
     int getNbTactiqueJouees() const {return nb_cartes_tactiques_jouees;};
     void carteTactiqueJouee() {nb_cartes_tactiques_jouees++;};
     vector<Carte*>& getCartes() {return cartes;};
-
+    bool getIa() const {return ia;};
 
 
 };
 
-class IA : Joueur {
+class IA : public Joueur {
 protected:
-    int id_ia;
+    const bool ia = true;
 
 public:
-    IA(int id_ia, string n, int nb_cartes, int nb_tactiques_jouees=0, int joker_j = 0, int nb_p=0, int nb_b=9) : Joueur(n, nb_cartes, nb_tactiques_jouees, joker_j = 0, nb_p=0, nb_b=9), id_ia(id_ia) {}
-    Carte& choix_carte();
-    int choix_borne();
+    IA(string n, int nb_cartes, int nb_tactiques_jouees=0, int joker_j = 0, int nb_p=0, int nb_b=9);
+    Carte& choix_carte(); // Choisi une carte dans la main de l'IA
+    int choix_borne(); // Choisi une borne pour l'IA
+    static int choix_entier(const int min, const int max); // Fais un choix aleatoire entre min et max compris
 };
 #endif //SCHOTTEN_TOTTEN_JOUEUR_H
