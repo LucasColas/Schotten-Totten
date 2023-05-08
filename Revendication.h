@@ -27,7 +27,7 @@ public:
     int Revendiquant_avec_max_cartes(); //Joueur qui obtient la borne. 0 si ce n'est aucun des joueurs.
 
     int Revendiquant();
-    int Revendiquer_sans_max_cartes(vector<Carte*>& cartes, vector<Carte*>& cartes_tactique);
+    int Revendiquer_sans_max_cartes(vector<Carte*>& cartes, vector<Borne*>& bornes);
 
     int Revendiquer(); //Méthode qui teste les différents cas de revendications et renvoie le joueur qui peut revendiquer la borne. 0 sinon.
 

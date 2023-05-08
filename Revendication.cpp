@@ -3,6 +3,7 @@
 //
 #include "Revendication.h"
 #include "Carte.h"
+#include "algorithm"
 map<string, int> Revendication::rank = {{"Suite couleur", 1}, {"Brelan", 2}, {"Couleur", 3}, {"Suite", 4}, {"Somme", 5}};
 Revendication::Revendication(Borne* b)
 {
@@ -125,7 +126,7 @@ int Revendication::Revendiquant_avec_max_cartes() {
     return 0;
 }
 
-int Revendication::Revendiquer_sans_max_cartes(vector<Carte*>& cartes, vector<Carte*>& cartes_tactique) {
+int Revendication::Revendiquer_sans_max_cartes(vector<Carte*>& cartes, vector<Borne*>& bornes) {
     int joueur_sans_max_cartes;
     vector<Carte*> cartes_outs;
     int puissance_joueur_max_cartes;
@@ -246,6 +247,27 @@ int Revendication::Revendiquer_sans_max_cartes(vector<Carte*>& cartes, vector<Ca
                 }
             }
         }
+
+
+        for (auto b : bornes) {
+            for (auto c1 : b->getCartes_joueur_1()) {
+                for (auto c : cartes_outs) {
+                    if (c1->get_couleur() == c->get_couleur() && c1->get_force() == c->get_force()) {
+                        auto it = find(cartes_outs.begin(), cartes_outs.end(), c);
+                        if (it != cartes_outs.end()) {
+                            cartes_outs.erase(it);
+                            break;
+                        }
+                    }
+                }
+
+            }
+        }
+        if (cartes_outs.size() > 0) {
+            cout << "pas encore possible de revendiquer" << endl;
+            return 0;
+        }
+
     }
 
     else {
