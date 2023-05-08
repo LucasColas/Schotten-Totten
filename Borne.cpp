@@ -70,7 +70,7 @@ Carte& Borne::supprimer_carte(int joueur, int num) {
 }
 
 bool Borne::possible_revendication() {
-    
+
     if (nb_max_cartes == 4) {
         return (cartes_joueur_1.size() == nb_max_cartes && cartes_joueur_2.size() == nb_max_cartes);
     }

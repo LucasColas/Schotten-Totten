@@ -1,7 +1,3 @@
-//
-// Created by lucas on 24/03/2023.
-//
-
 using namespace std;
 #ifndef SCHOTTEN_TOTTEN_JEU_H
 #define SCHOTTEN_TOTTEN_JEU_H
@@ -33,6 +29,7 @@ private:
     Pioche* pioche_tactique;
     Defausse* defausse;
     map<string, Pioche*> pioches;
+    Revendication* revendication;
 
 
 public:

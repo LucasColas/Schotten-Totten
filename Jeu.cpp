@@ -553,61 +553,11 @@ void Jeu::revendication_borne(int i) {
     if (!schottenTotten->bornes[i]->GetPossesseur() && schottenTotten->bornes[i]->getCartes_joueur_1().size() ==
         schottenTotten->bornes[i]->getCartes_joueur_2().size() && schottenTotten->bornes[i]->getCartes_joueur_1().size() == schottenTotten->bornes[i]->getNbMaxCartes()) {
         //Les deux ont le max de cartes
+        revendication = new Revendication(schottenTotten->bornes[i]);
+
 
     }
 
 
-    if (!schottenTotten->bornes[i]->GetPossesseur() && schottenTotten->bornes[i]->possible_revendication()) {
-        schottenTotten->bornes[i]->demander_valeurs(joueur_actuel);
-        //Les 2 joueurs ont posé le maximum de cartes
-        //Vérifier que les cartes de l'adversaire ne sont pas des cartes tactique qui attendent d'obtenir des valeurs.
-        if (schottenTotten->bornes[i]->getCartes_joueur_1().size() ==
-            schottenTotten->bornes[i]->getCartes_joueur_2().size() && schottenTotten->bornes[i]->getCartes_joueur_1().size() == schottenTotten->bornes[i]->getNbMaxCartes()) {
-            schottenTotten->bornes[i]->creerCombinaison_joueur1();
-            schottenTotten->bornes[i]->creerCombinaison_joueur2();
-            if (schottenTotten->bornes[i]->getRegles().size() != 0) {
-                //Des règles sont posées
-                for (auto r: schottenTotten->bornes[i]->getRegles()) {
-                    if (r==1) {
 
-                    }
-                }
-
-                return;
-            }
-
-
-            int puissance_joueur1 = schottenTotten->bornes[i]->getCombinaisonJoueur1().getPuissance();
-            int puissance_joueur2 = schottenTotten->bornes[i]->getCombinaisonJoueur2().getPuissance();
-            int joueur;
-            if (puissance_joueur1 == puissance_joueur2) {
-                //calculer la somme des cartes.
-                int somme_joueur1 = schottenTotten->bornes[i]->getCombinaisonJoueur1().getSommeSuite();
-                int somme_joueur2 = schottenTotten->bornes[i]->getCombinaisonJoueur2().getSommeSuite();
-                if (somme_joueur1 > somme_joueur2) {
-                    joueur = 1;
-                }
-                else if (somme_joueur2 > somme_joueur1) {
-                    joueur = 2;
-                }
-                else if (somme_joueur1 == somme_joueur2) {
-                    //Si toujours égal regarder qui a posé la troisième carte en premier
-                    joueur = schottenTotten->bornes[i]->getHistorique();
-                }
-
-            }
-            else if (puissance_joueur1 > puissance_joueur2) {
-                joueur = 1;
-            }
-
-            else if (puissance_joueur1 < puissance_joueur2) {
-                joueur = 2;
-            }
-            schottenTotten->bornes[i]->setPossesseur(joueur);
-        }
-
-        //Cas un joueur a 3 cartes mais l'autre joueur en a 2.
-        //Déterminer toutes les cartes qui donneraient une meilleure combinaison
-
-    }
 }

@@ -2,16 +2,14 @@
 // Created by lucas on 06/05/2023.
 //
 #include "Revendication.h"
-
-Revendication::Revendication(vector<Carte*>& cartes_joueur1_, vector<Carte*>& cartes_joueur2_, bool max_cartes_pose_, int h, vector<int>& r)
+map<string, int> Revendication::rank = {{"Suite couleur", 1}, {"Brelan", 2}, {"Couleur", 3}, {"Suite", 4}, {"Somme", 5}};
+Revendication::Revendication(Borne* b)
 {
-    max_cartes_pose = max_cartes_pose_;
-    historique = h;
-    regles = r;
-    cartes_joueur1 = cartes_joueur1_;
-    cartes_joueur2 = cartes_joueur2_;
-
-
+    max_cartes_pose = b->getNbMaxCartes();
+    historique = b->getHistorique();
+    regles = b->getRegles();
+    cartes_joueur1 = b->getCartes_joueur_1();
+    cartes_joueur2 = b->getCartes_joueur_2();
 
 }
 
@@ -32,6 +30,9 @@ void Revendication::MeilleureCombinaison() {
             carte_tactique_joueur2++;
     }
 
+    for (auto c1: cartes_joueur1) {
+        //
+    }
 
 }
 
