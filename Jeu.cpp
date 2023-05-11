@@ -75,9 +75,11 @@ void Jeu::changer_joueur() {
     else {
         joueur_actuel = 1;
     }
-    cout << "\n\n\n\n\n\n\n\n\n\n\nChangez de joueur et appuyez sur entree ";
-    cin.ignore();
-    cin.get();
+    if (nb_joueurs_humains == 2) { //Partie avec une IA
+        cout << "\n\n\n\n\n\n\n\n\n\n\nChangez de joueur et appuyez sur entree ";
+        cin.ignore();
+        cin.get();
+    }
 }
 
 bool Jeu::action_carte_ruse(Carte& carte_ruse) {
@@ -90,6 +92,7 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
     int choix2;
     cout << carte_ruse.getId() << endl;
 
+    /* ========================Chasseur de Tete======================== */
     if (carte_ruse.getId() == "Chasseur de Tête") {
 
 
@@ -98,12 +101,15 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
         cout << "1. Piochez trois cartes d'une pioche" << endl;
         cout << "2. Piochez trois cartes de deux pioches" << endl;
         cout << "Choisissez ce que vous voulez faire (entrez 1 ou 2):" << endl;
-        cin >> choix;
+        if (joueurs[joueur_actuel-1]->getIa()) choix = IA::choix_entier(1, 2);
+        else cin >> choix;
+
         if (choix == 1) {
 
             cout << "1. Piochez dans la pioche clan" << endl;
             cout << "2. Piochez dans la pioche tactique" << endl;
-            cin >> choix_pioche;
+            if (joueurs[joueur_actuel-1]->getIa()) choix = IA::choix_entier(1, 2);
+            else cin >> choix;
 
             if (choix_pioche == 1) {
                 //Pioche 3 cartes dans la pioche clan
@@ -128,7 +134,8 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
         if (choix == 2) {
             //3 cartes dans deux pioches;
             cout << "Combien de cartes de la pioche clan" << endl;
-            cin >> nb_cartes_clan;
+            if (joueurs[joueur_actuel-1]->getIa()) nb_cartes_clan = IA::choix_entier(1, 2);
+            else cin >> nb_cartes_clan;
             if (nb_cartes_clan >= carte_ruse.getNb_cartes()) {
                 cout << "erreur trop de cartes ont été piochees." << endl;
 
@@ -147,18 +154,24 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
             cout << "erreur de choix" << endl;
             return false;
         }
-        cout << "voici vos cartes" << endl;
-        affichageConsole->afficher_cartes_joueur(joueurs[joueur_actuel-1]->getCartes());
-        cout << "vous devez en enlever deux" << endl;
+        if (!joueurs[joueur_actuel-1]->getIa()) {
+            cout << "voici vos cartes" << endl;
+            affichageConsole->afficher_cartes_joueur(joueurs[joueur_actuel - 1]->getCartes());
+            cout << "vous devez en enlever deux" << endl;
+        }
         joueurs[joueur_actuel-1]->choix_carte();
         joueurs[joueur_actuel-1]->choix_carte();
 
         return true;
     }
 
+
+    /* ========================Stratege======================== */
     else if (carte_ruse.getId() == "Stratège") {
         cout << "choisissez la borne où vous voulez retirer une de vos cartes (entre 1 et 9)" << endl;
-        cin >> choix_borne;
+        if (joueurs[joueur_actuel-1]->getIa()) choix_borne = IA::choix_entier(1, 9);
+        else cin >> choix_borne;
+
         if (schottenTotten->bornes[choix_borne-1]->GetPossesseur()) {
             cout << "borne revendiquee" << endl;
             return false;
@@ -189,7 +202,10 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
             for (int i = 0; i < schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2().size(); i++) {
                 cout << to_string(i+1) << schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2()[i] << endl;
             }
-            cin >> carte_supp;
+
+            if (joueurs[joueur_actuel-1]->getIa())
+                carte_supp = IA::choix_entier(1, schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2().size());
+            else cin >> carte_supp;
             if (carte_supp < 1 || carte_supp > schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2().size()) {
                 cout << "erreur valeur" << endl;
                 return false;
@@ -201,12 +217,15 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
         cout << "1. La mettre sur une autre borne" << endl;
         cout << "2. La défausser" << endl;
         cout << "Entrez 1 ou 2 : " << endl;
-        cin >> choix2;
+        if (joueurs[joueur_actuel-1]->getIa()) choix2 = IA::choix_entier(1, 2);
+        else cin >> choix2;
 
         if (choix2 == 1) {
             //Demander sur quelle borne mettre la carte et ajouter la carte + vérifier la borne
             cout << "sur quelle borne entre (1 et 9) vous voulez mettre cette carte" << endl;
-            cin >> choix_borne;
+            if (joueurs[joueur_actuel-1]->getIa()) choix_borne = IA::choix_entier(1, 9);
+            else cin >> choix_borne;
+
             if (choix_borne < 1 || choix_borne > 9) {
                 cout << "erreur nombre" << endl;
                 schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, joueur_actuel);
@@ -229,11 +248,14 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
         }
 
 
-    }
+    }// Stratege
 
+
+    /* ========================Banshee======================== */
     else if (carte_ruse.getId() == "Banshee") {
         cout << "choisissez la borne (entre 1 et 9) ou vous voulez supprimer une carte de votre adversaire" << endl;
-        cin >> choix_borne;
+        if (joueurs[joueur_actuel-1]->getIa()) choix_borne = IA::choix_entier(1, 9);
+        else cin >> choix_borne;
         if (choix_borne < 1 || choix_borne > 9) {
             return false;
         }
@@ -248,7 +270,10 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
             for (int i = 0; i < schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size(); i++) {
                 cout << to_string(i+1) << " " << *schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1()[i] << endl;
             }
-            cin >> carte_supp;
+
+            if (joueurs[joueur_actuel - 1]->getIa())
+                carte_supp = IA::choix_entier(1, schottenTotten->bornes[choix_borne - 1]->getCartes_joueur_1().size());
+            else cin >> carte_supp;
             if (carte_supp < 1 || carte_supp > schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size()) {
                 cout << "carte invalide" << endl;
                 return false;
@@ -271,11 +296,14 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
             return true;
         }
 
-    }
+    }// Banshee
 
+
+    /* ========================Traitre======================== */
     else if (carte_ruse.getId() == "Traître") {
         cout << "choisissez la borne (entre 1 et 9) ou vous voulez supprimer une carte de votre adversaire (et la mettre de votre cote)" << endl;
-        cin >> choix_borne;
+        if (joueurs[joueur_actuel-1]->getIa()) choix_borne = IA::choix_entier(1, 9);
+        else cin >> choix_borne;
         if (choix_borne < 1 || choix_borne > 9) {
             return false;
         }
@@ -290,15 +318,19 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
             for (int i = 0; i < schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size(); i++) {
                 cout << to_string(i+1) << " " << schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1()[i] << endl;
             }
-            cin >> carte_supp;
+
+            if (joueurs[joueur_actuel-1]->getIa())
+                choix_borne = IA::choix_entier(1, carte_supp = schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size());
+            else cin >> carte_supp;
             if (carte_supp < 1 || carte_supp > schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size()) {
                 cout << "carte invalide" << endl;
                 return false;
             }
             Carte& carte = schottenTotten->bornes[choix_borne-1]->supprimer_carte(1, carte_supp-1);
-            cout << "sur quelle borne vous souhaitez ajouter la carte (entre 1 et 9)" << endl;
 
-            cin >> choix_borne;
+            cout << "sur quelle borne vous souhaitez ajouter la carte (entre 1 et 9)" << endl;
+            if (joueurs[joueur_actuel-1]->getIa()) choix_borne = IA::choix_entier(1, 9);
+            else cin >> choix_borne;
             if (choix_borne < 1 || choix_borne > 9) {
                 cout << "erreur borne invalide";
                 schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, 1);
@@ -354,7 +386,7 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
 
             return true;
         }
-    }
+    }// Traitre
 
     //defausse->ajout_defausse(&carte_ruse);
 
@@ -370,7 +402,9 @@ void Jeu::choixPioche() {
     }
     else {
         affichageConsole->choix_pioche();
-        cin >> choix_pioche;
+
+        if (joueurs[joueur_actuel-1]->getIa()) choix_pioche = IA::choix_entier(1, 2);
+        else cin >> choix_pioche;
         if (choix_pioche == 1) {
             joueurs[joueur_actuel-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
 
@@ -407,7 +441,8 @@ void Jeu::jouer_tour() {
     affichageConsole->afficher_cartes_bornes(schottenTotten->bornes, joueur_actuel);
     affichageConsole->afficher_cartes_joueur(joueurs[joueur_actuel-1]->getCartes());
     affichageConsole->Afficher_proposition();
-    cin >> choix;
+    if (joueurs[joueur_actuel-1]->getIa()) choix = IA::choix_entier(1, 2);
+    else cin >> choix;
     if (choix == 1) {
 
         Carte& carte = joueurs[joueur_actuel-1]->choix_carte();
@@ -423,7 +458,8 @@ void Jeu::jouer_tour() {
         if (carte.getType() == "Combat") {
             //Cas ou la carte est une carte tactique de combat
             cout << "Choisissez la borne ou voulez poser la carte Combat (nombre entre 1 et 9, 1 etant la borne la plus a gauche)" << endl;
-            cin >> borne;
+            if (joueurs[joueur_actuel-1]->getIa()) borne = IA::choix_entier(1, 9);
+            else cin >> borne;
             if (borne < 1 || borne > 9) {
                 cout << "mauvaise borne" << endl;
                 joueurs[joueur_actuel-1]->ajout_carte(&carte);
@@ -524,6 +560,13 @@ void Jeu::creation_joueurs() {
        cout << "nom joueur 2 : " << endl;
        cin >> nom;
        joueurs.push_back(new Joueur(nom, schottenTotten->getNb_Cartes_par_joueur()));
+    }
+    else if (nb_joueurs_humains == 1) {
+        cout << "1 joueurs humains" << endl;
+        cout << "Entrez le nom du joueur : " << endl;
+        cin >> nom;
+        joueurs.push_back(new Joueur(nom, schottenTotten->getNb_Cartes_par_joueur()));
+        joueurs.push_back(new IA("Alfred l'IA", schottenTotten->getNb_Cartes_par_joueur()));
     }
 }
 

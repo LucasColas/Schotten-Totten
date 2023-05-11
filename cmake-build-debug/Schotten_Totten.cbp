@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Schotten_Totten"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Schotten_Totten">
+				<Option output="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Schotten_Totten.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 Schotten_Totten"/>
+					<CompileFile command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Schotten_Totten/fast">
+				<Option output="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Schotten_Totten.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 Schotten_Totten/fast"/>
+					<CompileFile command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/laure/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/231.8770.66/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Affichage_console.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Affichage_console.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Borne.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Borne.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Carte.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Carte.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Combinaison.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Combinaison.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Factory.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Factory.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Jeu.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Jeu.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Jeu_cartes.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Jeu_cartes.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Joueur.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Joueur.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Pioche.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Pioche.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Revendication.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Revendication.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Schotten_Totten.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/Schotten_Totten.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/defausse.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/defausse.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/main.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/set.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/set.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
