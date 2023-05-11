@@ -12,6 +12,7 @@ Revendication::Revendication(Borne* b)
     regles = b->getRegles();
     cartes_joueur1 = b->getCartes_joueur_1();
     cartes_joueur2 = b->getCartes_joueur_2();
+
     /*
     if (nb_cartes_max == 3) {
         combinaison_joueur1 = new Combinaison(cartes_joueur1[0], cartes_joueur1[1], cartes_joueur1[2], max_cartes_pose);
@@ -59,6 +60,74 @@ int Revendication::Revendiquer() {
     }
 
     return 0;
+}
+
+void Revendication::generer_combi(vector<Carte*>& cartes_adversaire, vector<Carte*>& cartes) {
+    for (int i = 0; i < cartes.size(); i++) {
+        if (cartes_adversaire.size() <= 1) {
+            for (int j = 0; j < cartes.size(); j++) {
+                if (cartes_adversaire.empty()) {
+                    for (int k = 0; k < cartes.size(); k++) {
+                        if (i == j && i == k && j ==k) {
+                            combinaisons.push_back(new Combinaison(cartes[i], cartes[j], cartes[k], 3));
+                        }
+                    }
+                }
+                if (i != j) {
+                    combinaisons.push_back(new Combinaison(cartes[i], cartes[j], cartes_adversaire[0], 3));
+                }
+            }
+        }
+        else {
+            combinaisons.push_back(new Combinaison(cartes[i], cartes_adversaire[0], cartes_adversaire[1], 3));
+        }
+
+    }
+}
+bool Revendication::PotentielleCombinaison(vector<Borne *> &bornes, vector<Carte *> &cartes, Combinaison *combinaison, vector<Carte*>& cartes_aversaire) {
+    combinaisons.clear();
+    generer_combi(cartes_aversaire, cartes);
+    int nb_combi_sup = 0;
+    vector<Combinaison*> combi_sup;
+    int carte_combi_trouve = false;
+    for (int i = 0; i < combinaisons.size(); i++) {
+        if (combinaisons[i]->getMaxPuissance() > combinaison->getPuissance()) {
+            combi_sup.push_back(combinaisons[i]);
+            for (int k = 0; k < combinaisons[i]->getCartesCombi().size(); k++) {
+                for (int j = 0; j < bornes.size(); j++) {
+                    for (int l = 0; l < bornes[i]->getCartes_joueur_1().size(); l++) {
+                        if (bornes[i]->getCartes_joueur_1()[l]->getId() == combinaisons[i]->getCartesCombi()[k]->getId()) {
+                            combi_sup.pop_back();
+                            carte_combi_trouve = true;
+                            break;
+                        }
+                    }
+                    if (carte_combi_trouve) {
+                        carte_combi_trouve = false;
+                        break;
+                    }
+                    for (int l = 0; l < bornes[i]->getCartes_joueur_2().size(); l++) {
+                        if (bornes[i]->getCartes_joueur_2()[l]->getId() == combinaisons[i]->getCartesCombi()[k]->getId()) {
+                            //nb_combi_sup--;
+                            combi_sup.pop_back();
+                            carte_combi_trouve = true;
+                            break;
+                        }
+                    }
+                    if (carte_combi_trouve) {
+                        carte_combi_trouve = false;
+                        break;
+                    }
+                }
+            }
+
+        }
+    }
+
+    if (combi_sup.empty()) {
+        return false;
+    }
+    return true;
 }
 
 int Revendication::Revendiquant_avec_max_cartes() {

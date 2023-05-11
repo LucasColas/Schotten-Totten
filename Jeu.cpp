@@ -564,6 +564,42 @@ void Jeu::revendication_borne(int i) {
 
 
     }
+    vector<Carte*> cartes_combi;
+    for (int i = 0; i < schottenTotten->cartes.size(); i++) {
+        cartes_combi.push_back(schottenTotten->cartes[i]);
+    }
+    if (variante == "tactique") {
+        for (int i = 0; i < schottenTotten->getCartesTactique().size(); i++) {
+            cartes_combi.push_back(schottenTotten->getCartesTactique()[i]);
+        }
+    }
+
+    if (!schottenTotten->bornes[i]->GetPossesseur() && schottenTotten->bornes[i]->getCartes_joueur_1().size() == schottenTotten->bornes[i]->getNbMaxCartes()) {
+        //Joueur 1 peut revendiquer
+        revendication = new Revendication(schottenTotten->bornes[i]);
+        Combinaison* combi_j1 = new Combinaison(schottenTotten->bornes[i]->getCartes_joueur_1()[0],schottenTotten->bornes[i]->getCartes_joueur_1()[1], schottenTotten->bornes[i]->getCartes_joueur_1()[2], 3);
+        vector<Carte*> cartes_combi;
+        vector<Carte*> cartes_adversaire = schottenTotten->bornes[i]->getCartes_joueur_2();
+        if (revendication->PotentielleCombinaison(schottenTotten->bornes, cartes_combi, combi_j1, cartes_adversaire)) {
+            schottenTotten->bornes[i]->setPossesseur(0);
+        }
+        else {
+            schottenTotten->bornes[i]->setPossesseur(1);
+        }
+    }
+    if (!schottenTotten->bornes[i]->GetPossesseur() && schottenTotten->bornes[i]->getCartes_joueur_2().size() == schottenTotten->bornes[i]->getNbMaxCartes()) {
+        //Joueur 1 peut revendiquer
+        revendication = new Revendication(schottenTotten->bornes[i]);
+        Combinaison* combi_j1 = new Combinaison(schottenTotten->bornes[i]->getCartes_joueur_2()[0],schottenTotten->bornes[i]->getCartes_joueur_2()[1], schottenTotten->bornes[i]->getCartes_joueur_2()[2], 3);
+
+        vector<Carte*> cartes_adversaire = schottenTotten->bornes[i]->getCartes_joueur_1();
+        if (revendication->PotentielleCombinaison(schottenTotten->bornes, cartes_combi, combi_j1, cartes_adversaire)) {
+            schottenTotten->bornes[i]->setPossesseur(0);
+        }
+        else {
+            schottenTotten->bornes[i]->setPossesseur(1);
+        }
+    }
 
 
 
