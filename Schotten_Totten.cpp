@@ -13,10 +13,9 @@ Schotten_Totten::Schotten_Totten() {
     for (int force = 1; force < 10; force++) {
         for (auto couleur : Couleurs) {
             if (couleur != Couleur::NC) {
-                string id = "CarteClan f:"+to_string(force)+" c:"+ to_string(static_cast<double>(couleur));
+                string id = "CarteClan f:"+to_string(force)+" c:"+ toString(couleur);
                 cartes.push_back(new Carte_clan( id, couleur, force, "Clan"));
             }
-
         }
     }
 

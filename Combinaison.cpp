@@ -84,7 +84,7 @@ int Combinaison::getMaxPuissance() {
 
                                 if (MaxPuissance < Puissance) {
                                     MaxPuissance = Puissance;
-                                    return MaxPuissance;
+
                                 }
                                 sommeSuite();
                                 MaxSomme = max(MaxSomme, somme);
@@ -110,7 +110,7 @@ int Combinaison::getMaxPuissance() {
                         PuissanceCombinaison();
                         if (MaxPuissance < Puissance) {
                             MaxPuissance = Puissance;
-                            return MaxPuissance;
+
                         }
                         sommeSuite();
                         MaxSomme = max(MaxSomme, somme);
@@ -134,7 +134,7 @@ int Combinaison::getMaxPuissance() {
                         PuissanceCombinaison();
                         if (MaxPuissance < Puissance) {
                             MaxPuissance = Puissance;
-                            return MaxPuissance;
+
                         }
                         sommeSuite();
                         MaxSomme = max(MaxSomme, somme);
@@ -159,8 +159,10 @@ int Combinaison::getMaxPuissance() {
                         PuissanceCombinaison();
                         if (MaxPuissance < Puissance) {
                             MaxPuissance = Puissance;
-                            return MaxPuissance;
+
                         }
+                        sommeSuite();
+                        MaxSomme = max(MaxSomme, somme);
 
                     }
                 }
@@ -178,10 +180,17 @@ int Combinaison::getMaxPuissance() {
                     cartes_combi[i]->setCouleurAuto(couleur);
                     PuissanceCombinaison();
                     MaxPuissance = max(Puissance, MaxPuissance);
+                    sommeSuite();
+                    MaxSomme = max(MaxSomme, somme);
                 }
             }
         }
     }
+    if (MaxPuissance == 0) {
+        PuissanceCombinaison();
+        return Puissance;
+    }
+
     return MaxPuissance;
 
 

@@ -1,3 +1,3 @@
-C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/CMakeFiles/Schotten_Totten.dir
-C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Projet/Schotten-Totten/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/CMakeFiles/Schotten_Totten.dir
+C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -54,7 +54,7 @@ void Affichage_console::afficher_cartes_bornes(vector<Borne *> &Bornes, int joue
 
             else {
                 if (Bornes[i]->getCartes_joueur_2().size() > j) {
-                    cout << *(Bornes[i]->getCartes_joueur_2()[j]) << "  ";
+                    cout << *(Bornes[i]->getCartes_joueur_2()[j]) << " ";
                 }
                 else {
                     cout << espace_large;

@@ -514,14 +514,16 @@ void Jeu::jouer_tour() {
     }
 
     //Revendication de bornes manuelles
-
-    if (verif()) {
-        nb_parties_jouees++;
-        //Afficher le joueur qui a gagné la partie
-        if (nb_parties == nb_parties_jouees) {
-            //Afficher le joueur qui a gagne le plus de points.
-        }
+    for (int i = 0; i < schottenTotten->bornes.size(); i++) {
+        revendication_borne(i);
     }
+
+    if (gagnant()) {
+        cout << "Partie terminée" << endl;
+
+    }
+
+
 
 }
 
@@ -552,14 +554,15 @@ void Jeu::setNb_joueurs_humains() {
 
 void Jeu::creation_joueurs() {
     string nom;
+    string nom2;
     if (nb_joueurs_humains == 2) {
        cout << "2 joueurs humains" << endl;
        cout << "nom joueur 1 : " << endl;
        cin >> nom;
        joueurs.push_back(new Joueur(nom, schottenTotten->getNb_Cartes_par_joueur()));
        cout << "nom joueur 2 : " << endl;
-       cin >> nom;
-       joueurs.push_back(new Joueur(nom, schottenTotten->getNb_Cartes_par_joueur()));
+       cin >> nom2;
+       joueurs.push_back(new Joueur(nom2, schottenTotten->getNb_Cartes_par_joueur()));
     }
     else if (nb_joueurs_humains == 1) {
         cout << "1 joueurs humains" << endl;
@@ -591,6 +594,30 @@ void Jeu::distribution_cartes() {
     }
 }
 
+bool Jeu::gagnant() {
+    int bornes_j1 = 0;
+    int bornes_j2 = 0;
+    for (int i = 0; i < schottenTotten->bornes.size(); i++) {
+        if (schottenTotten->bornes[i]->GetPossesseur() == 1) {
+            bornes_j1++;
+        }
+
+        else if (schottenTotten->bornes[i]->GetPossesseur() == 2) {
+            bornes_j2++;
+        }
+    }
+
+    if (bornes_j1 == 5) {
+        cout << "Joueur 1 gagne" << endl;
+        return true;
+    }
+
+    if (bornes_j2 == 5) {
+        cout << "Joueur 2 gagne" << endl;
+        return true;
+    }
+}
+
 void Jeu::revendication_borne(int i) {
 
     if (!schottenTotten->bornes[i]->GetPossesseur() && schottenTotten->bornes[i]->getCartes_joueur_1().size() ==
@@ -607,40 +634,41 @@ void Jeu::revendication_borne(int i) {
 
 
     }
-    vector<Carte*> cartes_combi;
-    for (int i = 0; i < schottenTotten->cartes.size(); i++) {
-        cartes_combi.push_back(schottenTotten->cartes[i]);
-    }
-    if (variante == "tactique") {
-        for (int i = 0; i < schottenTotten->getCartesTactique().size(); i++) {
-            cartes_combi.push_back(schottenTotten->getCartesTactique()[i]);
-        }
-    }
+
 
     if (!schottenTotten->bornes[i]->GetPossesseur() && schottenTotten->bornes[i]->getCartes_joueur_1().size() == schottenTotten->bornes[i]->getNbMaxCartes()) {
         //Joueur 1 peut revendiquer
         revendication = new Revendication(schottenTotten->bornes[i]);
         Combinaison* combi_j1 = new Combinaison(schottenTotten->bornes[i]->getCartes_joueur_1()[0],schottenTotten->bornes[i]->getCartes_joueur_1()[1], schottenTotten->bornes[i]->getCartes_joueur_1()[2], 3);
         vector<Carte*> cartes_combi;
+        for (int i = 0; i < schottenTotten->cartes.size(); i++) {
+            cartes_combi.push_back(schottenTotten->cartes[i]);
+        }
         vector<Carte*> cartes_adversaire = schottenTotten->bornes[i]->getCartes_joueur_2();
         if (revendication->PotentielleCombinaison(schottenTotten->bornes, cartes_combi, combi_j1, cartes_adversaire)) {
             schottenTotten->bornes[i]->setPossesseur(0);
         }
         else {
             schottenTotten->bornes[i]->setPossesseur(1);
+            cout << "Le joueur :" << joueurs[joueur_actuel-1]->getNom() << " a revendique" << endl;
         }
     }
     if (!schottenTotten->bornes[i]->GetPossesseur() && schottenTotten->bornes[i]->getCartes_joueur_2().size() == schottenTotten->bornes[i]->getNbMaxCartes()) {
-        //Joueur 1 peut revendiquer
+        //Joueur 2 peut revendiquer
         revendication = new Revendication(schottenTotten->bornes[i]);
-        Combinaison* combi_j1 = new Combinaison(schottenTotten->bornes[i]->getCartes_joueur_2()[0],schottenTotten->bornes[i]->getCartes_joueur_2()[1], schottenTotten->bornes[i]->getCartes_joueur_2()[2], 3);
+        vector<Carte*> cartes_combi;
+        for (int i = 0; i < schottenTotten->cartes.size(); i++) {
+            cartes_combi.push_back(schottenTotten->cartes[i]);
+        }
+        Combinaison* combi_j2 = new Combinaison(schottenTotten->bornes[i]->getCartes_joueur_2()[0],schottenTotten->bornes[i]->getCartes_joueur_2()[1], schottenTotten->bornes[i]->getCartes_joueur_2()[2], 3);
 
         vector<Carte*> cartes_adversaire = schottenTotten->bornes[i]->getCartes_joueur_1();
-        if (revendication->PotentielleCombinaison(schottenTotten->bornes, cartes_combi, combi_j1, cartes_adversaire)) {
+        if (revendication->PotentielleCombinaison(schottenTotten->bornes, cartes_combi, combi_j2, cartes_adversaire)) {
             schottenTotten->bornes[i]->setPossesseur(0);
         }
         else {
-            schottenTotten->bornes[i]->setPossesseur(1);
+            schottenTotten->bornes[i]->setPossesseur(2);
+            cout << "Le joueur :" << joueurs[joueur_actuel-1]->getNom() << " a revendique" << endl;
         }
     }
 

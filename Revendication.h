@@ -25,12 +25,13 @@ private:
 public:
     Revendication(Borne* b);
     void MeilleureCombinaison(); //Donne la meilleure combinaison qu'on a parmis un ensemble de cartes
-    bool PotentielleCombinaison(vector<Borne*>& bornes, vector<Carte*>& cartes, Combinaison* combinaison, vector<Carte*>& cartes_aversaire); //Nous renvoie vraie si l'adversaire peut avoir une meilleure combinaison
+    bool PotentielleCombinaison(vector<Borne*>& bornes, vector<Carte*>& cartes, Combinaison* combinaison, vector<Carte*>& cartes_adversaire); //Nous renvoie vraie si l'adversaire peut avoir une meilleure combinaison
     int Revendiquant_avec_max_cartes(); //Joueur qui obtient la borne. 0 si ce n'est aucun des joueurs.
     void generer_combi(vector<Carte*>& cartes_adversaire, vector<Carte*>& cartes);
 
     int Revendiquant();
     int Revendiquer_sans_max_cartes(vector<Carte*>& cartes, vector<Borne*>& bornes);
+    bool supprimerCombi(vector<Borne*>& bornes,Combinaison* c);
 
     int Revendiquer(); //Méthode qui teste les différents cas de revendications et renvoie le joueur qui peut revendiquer la borne. 0 sinon.
 

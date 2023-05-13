@@ -56,6 +56,7 @@ public:
     bool action_carte_ruse(Carte& carte);
     void changer_joueur();
     void revendication_borne(int i);
+    bool gagnant();
 
 
 

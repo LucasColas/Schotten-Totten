@@ -35,6 +35,10 @@ public:
     void sommeSuite();
     int getSommeSuite() const {return somme;};
 
+    Carte& getC1() const {return *c1;};
+    Carte& getC2() const {return *c2;};
+    Carte& getC3() const {return *c3;};
+
     void PuissanceCombinaison();
     int getMaxPuissance();
     int getMaxSomme() const {return MaxSomme;};
