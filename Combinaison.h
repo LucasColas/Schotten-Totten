@@ -27,6 +27,7 @@ public:
     bool estUneCouleur3();
     bool estUneCouleur4();
 
+<<<<<<< Updated upstream
     bool estUneSuite3();
     bool estUneSuite4();
 
@@ -35,6 +36,12 @@ public:
 
     bool estUneSuiteCouleur3();
     bool estUneSuiteCouleur4();
+=======
+    Carte& getC1() const {return *c1;};
+    Carte& getC2() const {return *c2;};
+    Carte& getC3() const {return *c3;};
+    Carte& getC4() const {return *c4;}
+>>>>>>> Stashed changes
 
     void PuissanceCombinaison();
 };
