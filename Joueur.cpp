@@ -60,7 +60,9 @@ void Joueur::ajout_carte(Carte *c) {
 
 }
 
-
+void Joueur::setNbPoints(int pts) {
+    nb_points = nb_points + pts;
+}
 
 
 
