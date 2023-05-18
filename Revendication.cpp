@@ -379,8 +379,4 @@ int Revendication::Revendiquer_sans_max_cartes(vector<Carte*>& cartes, vector<Bo
         cout << "il n'est pas possible de revendiquer" << endl;
         return 0;
     }
-
-
-
-
 }

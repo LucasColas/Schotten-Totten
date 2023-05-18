@@ -10,6 +10,7 @@
 using namespace std;
 
 Joueur::Joueur(string n, int nb_cartes, int nb_tactiques_jouees, int joker_j, int nb_p, int nb_b) {
+    ia = false;
     nom = n;
     nb_max_cartes = nb_cartes;
     nb_cartes_tactiques_jouees = nb_tactiques_jouees;
@@ -26,11 +27,12 @@ Carte& Joueur::choix_carte() {
 
     int num_carte;
 
-    cout << "choix carte (nombre entre 1 et " << to_string(cartes.size()) <<  ", 1 etant la carte affichee la plus a gauche.)";
-    cin >> num_carte;
+    cout << "choix carte (nombre entre 1 et " << to_string(cartes.size()) <<  ", 1 etant la carte affichee la plus a gauche.) :\n";
+    if (ia) num_carte = IA::choix_entier(1, cartes.size() + 1);
+    else cin >> num_carte;
     //cout << "carte choisie : " << to_string(num_carte) << endl;
     while (num_carte < 1 || num_carte > nb_max_cartes) {
-        cout << "choix carte (nombre entre 1 et " << to_string(cartes.size()) <<  ", 1 etant la carte affichee la plus a gauche.)";
+        cout << "choix carte (nombre entre 1 et " << to_string(cartes.size()) <<  ", 1 etant la carte affichee la plus a gauche.) :\n";
         cin >> num_carte;
     }
     Carte& carte = *cartes[num_carte-1];
@@ -44,8 +46,9 @@ Carte& Joueur::choix_carte() {
 int Joueur::choix_borne() {
     //num_borne stocke le numéro de borne où le joueur veut poser sa carte
     int num_borne;
-    cout << "choix borne (nombre entre 1 et  " << to_string(nb_bornes) << ", 1 etant la borne le plus a gauche)";
-    cin >> num_borne;
+    cout << "choix borne (nombre entre 1 et  " << to_string(nb_bornes) << ", 1 etant la borne le plus a gauche) :\n";
+    if (ia) num_borne = IA::choix_entier(1, nb_bornes + 1);
+    else cin >> num_borne;
     if (num_borne < 1 || num_borne > nb_bornes) {
         throw "Erreur : nombre invalide";
     }
@@ -93,7 +96,9 @@ int IA::choix_borne() {
 }
 
 IA::IA(string n, int nb_cartes, int nb_tactiques_jouees, int joker_j, int nb_p, int nb_b) :
-Joueur(n, nb_cartes, nb_tactiques_jouees, joker_j = 0, nb_p=0, nb_b=9) {}
+Joueur(n, nb_cartes, nb_tactiques_jouees, joker_j = 0, nb_p=0, nb_b=9) {
+    ia = true;
+}
 
 
 int IA::choix_entier(const int min, const int max) {

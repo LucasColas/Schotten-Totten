@@ -454,8 +454,17 @@ void Jeu::jouer_tour() {
     affichageConsole->afficher_cartes_bornes(schottenTotten->bornes, joueur_actuel);
     affichageConsole->afficher_cartes_joueur(joueurs[joueur_actuel-1]->getCartes());
     affichageConsole->Afficher_proposition();
-    if (joueurs[joueur_actuel-1]->getIa()) choix = IA::choix_entier(1, 2);
-    else cin >> choix;
+
+    if (joueurs[joueur_actuel-1]->getIa() == true) {
+        cout << "true\n";
+        choix = IA::choix_entier(1, 2);
+        cout << choix << "\n";
+    }
+    else {
+        cout << "false\n";
+        cin >> choix;
+    }
+
     if (choix == 1) {
 
         Carte& carte = joueurs[joueur_actuel-1]->choix_carte();
