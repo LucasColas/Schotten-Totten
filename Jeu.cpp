@@ -636,8 +636,10 @@ bool Jeu::gagnant() {
         if (schottenTotten->bornes[i]->GetPossesseur() != 0 && schottenTotten->bornes[i]->GetPossesseur() == schottenTotten->bornes[i+1]->GetPossesseur() && schottenTotten->bornes[i+1]->GetPossesseur() == schottenTotten->bornes[i+2]->GetPossesseur()) {
             cout << "Joueur " << joueurs[schottenTotten->bornes[i]->GetPossesseur()-1]->getNom() << " a gagne" << endl;
             joueurs[schottenTotten->bornes[i]->GetPossesseur()-1]->setNbPoints(5);
+            return true;
         }
     }
+    return false;
 }
 
 void Jeu::revendication_borne(int i) {
