@@ -27,7 +27,7 @@ public:
     void MeilleureCombinaison(); //Donne la meilleure combinaison qu'on a parmis un ensemble de cartes
     bool PotentielleCombinaison(vector<Borne*>& bornes, vector<Carte*>& cartes, Combinaison* combinaison, vector<Carte*>& cartes_adversaire); //Nous renvoie vraie si l'adversaire peut avoir une meilleure combinaison
     int Revendiquant_avec_max_cartes(); //Joueur qui obtient la borne. 0 si ce n'est aucun des joueurs.
-    void generer_combi(vector<Carte*>& cartes_adversaire, vector<Carte*>& cartes);
+    void generer_combi(vector<Carte*>& cartes_adversaire, vector<Carte*>& cartes_);
 
     int Revendiquant();
     int Revendiquer_sans_max_cartes(vector<Carte*>& cartes, vector<Borne*>& bornes);

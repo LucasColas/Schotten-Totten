@@ -62,33 +62,40 @@ int Revendication::Revendiquer() {
     return 0;
 }
 
-void Revendication::generer_combi(vector<Carte*>& cartes_adversaire, vector<Carte*>& cartes) {
-    for (int i = 0; i < cartes.size(); i++) {
+void Revendication::generer_combi(vector<Carte*>& cartes_adversaire, vector<Carte*>& cartes_) {
+    cout << "generer combi" << endl;
+    cout << "cartes adversaire" << cartes_adversaire.size();
+    cout << "cartes" << cartes_.size();
+    for (int i = 0; i < cartes_.size(); i++) {
         if (cartes_adversaire.size() <= 1) {
-            for (int j = 0; j < cartes.size(); j++) {
+            for (int j = 0; j < cartes_.size(); j++) {
                 if (cartes_adversaire.empty()) {
-                    for (int k = 0; k < cartes.size(); k++) {
+                    for (int k = 0; k < cartes_.size(); k++) {
                         if (i != k && i != j && j != k) {
-                            combinaisons.push_back(new Combinaison(cartes[i], cartes[j], cartes[k], 3));
+                            //cout << "combi generee" << endl;
+                            combinaisons.push_back(new Combinaison(cartes_[i], cartes_[j], cartes_[k], 3));
                         }
                     }
                 }
-                if (i != j && cartes[i]->getId() != cartes_adversaire[0]->getId() && cartes[j]->getId() != cartes_adversaire[0]->getId()) {
-                    combinaisons.push_back(new Combinaison(cartes[i], cartes[j], cartes_adversaire[0], 3));
+                if (!cartes_adversaire.empty() && i != j && cartes_[i]->getId() != cartes_adversaire[0]->getId() && cartes_[j]->getId() != cartes_adversaire[0]->getId()) {
+                    combinaisons.push_back(new Combinaison(cartes_[i], cartes_[j], cartes_adversaire[0], 3));
                 }
             }
         }
+
         else {
-            if (cartes[i]->getId() != cartes_adversaire[0]->getId() && cartes[i]->getId() != cartes_adversaire[1]->getId()) {
-                combinaisons.push_back(new Combinaison(cartes[i], cartes_adversaire[0], cartes_adversaire[1], 3));
+            cout << "cas adversaire a 2 cartes" << endl;
+            if (cartes_adversaire.size() >= 2 && cartes_[i]->getId() != cartes_adversaire[0]->getId() && cartes_[i]->getId() != cartes_adversaire[1]->getId()) {
+                combinaisons.push_back(new Combinaison(cartes_[i], cartes_adversaire[0], cartes_adversaire[1], 3));
             }
 
         }
 
     }
+    cout << "fin generation" << endl;
     for (int i = 0; i < combinaisons.size(); i++) {
-        cout << "combinaison cartes : " << combinaisons[i]->getC1() << combinaisons[i]->getC2() << combinaisons[i]->getC3();
-        cout << endl;
+        //cout << "combinaison cartes : " << combinaisons[i]->getC1() << combinaisons[i]->getC2() << combinaisons[i]->getC3();
+        //cout << endl;
     }
 }
 
@@ -117,7 +124,7 @@ bool Revendication::supprimerCombi(vector<Borne*>& bornes,Combinaison* c) {
 
         }
     }
-    cout << "combinaison cartes : " << c->getC1() << c->getC2() << c->getC3();
+    //cout << "combinaison cartes : " << c->getC1() << c->getC2() << c->getC3();
     for (auto i : cartes_t) {
         if (!i) {
             return false;
@@ -127,6 +134,7 @@ bool Revendication::supprimerCombi(vector<Borne*>& bornes,Combinaison* c) {
 }
 bool Revendication::PotentielleCombinaison(vector<Borne*>& bornes, vector<Carte*>& cartes, Combinaison* combinaison, vector<Carte*>& cartes_adversaire) {
     combinaisons.clear();
+    cout << "Potentielle Combinaison" << endl;
     generer_combi(cartes_adversaire, cartes);
     int nb_combi_sup = 0;
     vector<Combinaison*> combi_sup;

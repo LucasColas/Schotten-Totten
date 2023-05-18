@@ -393,23 +393,36 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
     return true;
 }
 
+bool Jeu::verifPioche(string pioche) {
+    if (pioches[pioche]->est_vide()) {
+        cout << "pioche vide" << endl;
+        return false;
+    }
+
+    return true;
+}
+
 void Jeu::choixPioche() {
     int choix_pioche;
-    if (variante == "normal") {
+    if (variante == "normal" && verifPioche("pioche clan")) {
+
         cout << "carte piochee automatiquement dans la pioche";
         joueurs[joueur_actuel-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
 
     }
     else {
+        if (!verifPioche("pioche clan") && !verifPioche("pioche tactique")) {
+            cout << "pioches vides" << endl;
+        }
         affichageConsole->choix_pioche();
 
         if (joueurs[joueur_actuel-1]->getIa()) choix_pioche = IA::choix_entier(1, 2);
         else cin >> choix_pioche;
-        if (choix_pioche == 1) {
+        if (choix_pioche == 1 && verifPioche("pioche clan")) {
             joueurs[joueur_actuel-1]->ajout_carte(&pioches["pioche clan"]->piocher_carte());
 
         }
-        else if (choix_pioche == 2) {
+        else if (choix_pioche == 2 && verifPioche("pioche tactique")) {
             joueurs[joueur_actuel-1]->ajout_carte(&pioches["pioche tactique"]->piocher_carte());
         }
         else {
@@ -631,7 +644,7 @@ void Jeu::revendication_borne(int i) {
         schottenTotten->bornes[i]->demander_valeurs(2);
         revendication = new Revendication(schottenTotten->bornes[i]);
         schottenTotten->bornes[i]->setPossesseur(revendication->Revendiquant_avec_max_cartes());
-
+        cout << "possesseur " << schottenTotten->bornes[i]->GetPossesseur();
 
     }
 

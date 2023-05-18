@@ -57,6 +57,7 @@ public:
     void changer_joueur();
     void revendication_borne(int i);
     bool gagnant();
+    bool verifPioche(string pioche);
 
 
 
