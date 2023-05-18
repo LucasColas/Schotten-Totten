@@ -28,7 +28,9 @@ Carte& Joueur::choix_carte() {
     int num_carte;
 
     cout << "choix carte (nombre entre 1 et " << to_string(cartes.size()) <<  ", 1 etant la carte affichee la plus a gauche.) :\n";
-    if (ia) num_carte = IA::choix_entier(1, cartes.size() + 1);
+    if (ia) {
+        num_carte = IA::choix_entier(1, cartes.size());
+    }
     else cin >> num_carte;
     //cout << "carte choisie : " << to_string(num_carte) << endl;
     while (num_carte < 1 || num_carte > nb_max_cartes) {
@@ -47,7 +49,9 @@ int Joueur::choix_borne() {
     //num_borne stocke le numéro de borne où le joueur veut poser sa carte
     int num_borne;
     cout << "choix borne (nombre entre 1 et  " << to_string(nb_bornes) << ", 1 etant la borne le plus a gauche) :\n";
-    if (ia) num_borne = IA::choix_entier(1, nb_bornes + 1);
+    if (ia) {
+        num_borne = IA::choix_entier(1, nb_bornes);
+    }
     else cin >> num_borne;
     if (num_borne < 1 || num_borne > nb_bornes) {
         throw "Erreur : nombre invalide";
@@ -103,6 +107,9 @@ Joueur(n, nb_cartes, nb_tactiques_jouees, joker_j = 0, nb_p=0, nb_b=9) {
 
 int IA::choix_entier(const int min, const int max) {
     std::default_random_engine generator;
-    std::uniform_int_distribution<int> distribution(min,max);
+    std::uniform_int_distribution<int> distribution{min, max};
+    for (int i = 0; i < 12; ++i) {
+        cout << distribution(generator) << endl;
+    }
     return distribution(generator);
 }

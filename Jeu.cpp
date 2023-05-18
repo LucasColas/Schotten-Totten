@@ -457,7 +457,7 @@ void Jeu::jouer_tour() {
 
     if (joueurs[joueur_actuel-1]->getIa() == true) {
         cout << "true\n";
-        choix = IA::choix_entier(1, 2);
+        choix = IA::choix_entier(1, 1);
         cout << choix << "\n";
     }
     else {
@@ -480,7 +480,7 @@ void Jeu::jouer_tour() {
         if (carte.getType() == "Combat") {
             //Cas ou la carte est une carte tactique de combat
             cout << "Choisissez la borne ou voulez poser la carte Combat (nombre entre 1 et 9, 1 etant la borne la plus a gauche)" << endl;
-            if (joueurs[joueur_actuel-1]->getIa()) borne = IA::choix_entier(1, 9);
+            if (joueurs[joueur_actuel-1]->getIa()) borne = IA::choix_entier(1, schottenTotten->getNb_bornes());
             else cin >> borne;
             if (borne < 1 || borne > 9) {
                 cout << "mauvaise borne" << endl;
