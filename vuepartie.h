@@ -1,0 +1,8 @@
+//
+// Created by lucas on 20/05/2023.
+//
+
+#ifndef SCHOTTEN_TOTTEN_VUEPARTIE_H
+#define SCHOTTEN_TOTTEN_VUEPARTIE_H
+
+#endif //SCHOTTEN_TOTTEN_VUEPARTIE_H

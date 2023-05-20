@@ -1,4 +1,5 @@
 #include "Combinaison.h"
+#include "Carte.h"
 #include <algorithm>
 
 using namespace std;
