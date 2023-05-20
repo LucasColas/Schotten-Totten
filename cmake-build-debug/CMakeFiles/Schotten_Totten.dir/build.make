@@ -68,11 +68,26 @@ include CMakeFiles/Schotten_Totten.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Schotten_Totten.dir/flags.make
 
+CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj: CMakeFiles/Schotten_Totten.dir/flags.make
+CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
+CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj: Schotten_Totten_autogen/mocs_compilation.cpp
+CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\Schotten_Totten_autogen\mocs_compilation.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\Schotten_Totten_autogen\mocs_compilation.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\mocs_compilation.cpp
+
+CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\mocs_compilation.cpp > CMakeFiles\Schotten_Totten.dir\Schotten_Totten_autogen\mocs_compilation.cpp.i
+
+CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\mocs_compilation.cpp -o CMakeFiles\Schotten_Totten.dir\Schotten_Totten_autogen\mocs_compilation.cpp.s
+
 CMakeFiles/Schotten_Totten.dir/main.cpp.obj: CMakeFiles/Schotten_Totten.dir/flags.make
 CMakeFiles/Schotten_Totten.dir/main.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/main.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/main.cpp
 CMakeFiles/Schotten_Totten.dir/main.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Schotten_Totten.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Schotten_Totten.dir/main.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/main.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\main.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\main.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\main.cpp
 
 CMakeFiles/Schotten_Totten.dir/main.cpp.i: cmake_force
@@ -87,7 +102,7 @@ CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj: CMakeFiles/Schotten_Totten.dir/fla
 CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Carte.cpp
 CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\Carte.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\Carte.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Carte.cpp
 
 CMakeFiles/Schotten_Totten.dir/Carte.cpp.i: cmake_force
@@ -102,7 +117,7 @@ CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj: CMakeFiles/Schotten_Totten.dir/fl
 CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Joueur.cpp
 CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\Joueur.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\Joueur.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Joueur.cpp
 
 CMakeFiles/Schotten_Totten.dir/Joueur.cpp.i: cmake_force
@@ -117,7 +132,7 @@ CMakeFiles/Schotten_Totten.dir/Jeu.cpp.obj: CMakeFiles/Schotten_Totten.dir/flags
 CMakeFiles/Schotten_Totten.dir/Jeu.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/Jeu.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Jeu.cpp
 CMakeFiles/Schotten_Totten.dir/Jeu.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Schotten_Totten.dir/Jeu.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Schotten_Totten.dir/Jeu.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/Jeu.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\Jeu.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\Jeu.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Jeu.cpp
 
 CMakeFiles/Schotten_Totten.dir/Jeu.cpp.i: cmake_force
@@ -132,7 +147,7 @@ CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.obj: CMakeFiles/Schotten_Tott
 CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Schotten_Totten.cpp
 CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\Schotten_Totten.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\Schotten_Totten.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Schotten_Totten.cpp
 
 CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.i: cmake_force
@@ -147,7 +162,7 @@ CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.obj: CMakeFiles/Schotten_To
 CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Affichage_console.cpp
 CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\Affichage_console.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\Affichage_console.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Affichage_console.cpp
 
 CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.i: cmake_force
@@ -162,7 +177,7 @@ CMakeFiles/Schotten_Totten.dir/defausse.cpp.obj: CMakeFiles/Schotten_Totten.dir/
 CMakeFiles/Schotten_Totten.dir/defausse.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/defausse.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/defausse.cpp
 CMakeFiles/Schotten_Totten.dir/defausse.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Schotten_Totten.dir/defausse.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Schotten_Totten.dir/defausse.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/defausse.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\defausse.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\defausse.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\defausse.cpp
 
 CMakeFiles/Schotten_Totten.dir/defausse.cpp.i: cmake_force
@@ -177,7 +192,7 @@ CMakeFiles/Schotten_Totten.dir/Jeu_cartes.cpp.obj: CMakeFiles/Schotten_Totten.di
 CMakeFiles/Schotten_Totten.dir/Jeu_cartes.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/Jeu_cartes.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Jeu_cartes.cpp
 CMakeFiles/Schotten_Totten.dir/Jeu_cartes.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Schotten_Totten.dir/Jeu_cartes.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Schotten_Totten.dir/Jeu_cartes.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/Jeu_cartes.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\Jeu_cartes.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\Jeu_cartes.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Jeu_cartes.cpp
 
 CMakeFiles/Schotten_Totten.dir/Jeu_cartes.cpp.i: cmake_force
@@ -192,7 +207,7 @@ CMakeFiles/Schotten_Totten.dir/Factory.cpp.obj: CMakeFiles/Schotten_Totten.dir/f
 CMakeFiles/Schotten_Totten.dir/Factory.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/Factory.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Factory.cpp
 CMakeFiles/Schotten_Totten.dir/Factory.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Schotten_Totten.dir/Factory.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Schotten_Totten.dir/Factory.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/Factory.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\Factory.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\Factory.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Factory.cpp
 
 CMakeFiles/Schotten_Totten.dir/Factory.cpp.i: cmake_force
@@ -207,7 +222,7 @@ CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj: CMakeFiles/Schotten_Totten.dir/fl
 CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Pioche.cpp
 CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\Pioche.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\Pioche.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Pioche.cpp
 
 CMakeFiles/Schotten_Totten.dir/Pioche.cpp.i: cmake_force
@@ -222,7 +237,7 @@ CMakeFiles/Schotten_Totten.dir/set.cpp.obj: CMakeFiles/Schotten_Totten.dir/flags
 CMakeFiles/Schotten_Totten.dir/set.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/set.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/set.cpp
 CMakeFiles/Schotten_Totten.dir/set.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Schotten_Totten.dir/set.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Schotten_Totten.dir/set.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/set.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\set.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\set.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\set.cpp
 
 CMakeFiles/Schotten_Totten.dir/set.cpp.i: cmake_force
@@ -237,7 +252,7 @@ CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj: CMakeFiles/Schotten_Totten.d
 CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Combinaison.cpp
 CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\Combinaison.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\Combinaison.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Combinaison.cpp
 
 CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.i: cmake_force
@@ -252,7 +267,7 @@ CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj: CMakeFiles/Schotten_Totten.dir/fla
 CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Borne.cpp
 CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\Borne.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\Borne.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Borne.cpp
 
 CMakeFiles/Schotten_Totten.dir/Borne.cpp.i: cmake_force
@@ -267,7 +282,7 @@ CMakeFiles/Schotten_Totten.dir/Revendication.cpp.obj: CMakeFiles/Schotten_Totten
 CMakeFiles/Schotten_Totten.dir/Revendication.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
 CMakeFiles/Schotten_Totten.dir/Revendication.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Revendication.cpp
 CMakeFiles/Schotten_Totten.dir/Revendication.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Schotten_Totten.dir/Revendication.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Schotten_Totten.dir/Revendication.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/Revendication.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\Revendication.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\Revendication.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Revendication.cpp
 
 CMakeFiles/Schotten_Totten.dir/Revendication.cpp.i: cmake_force
@@ -278,8 +293,54 @@ CMakeFiles/Schotten_Totten.dir/Revendication.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Schotten_Totten.dir/Revendication.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Revendication.cpp -o CMakeFiles\Schotten_Totten.dir\Revendication.cpp.s
 
+CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj: CMakeFiles/Schotten_Totten.dir/flags.make
+CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
+CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.cpp
+CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\vuepartie.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\vuepartie.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuepartie.cpp
+
+CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuepartie.cpp > CMakeFiles\Schotten_Totten.dir\vuepartie.cpp.i
+
+CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuepartie.cpp -o CMakeFiles\Schotten_Totten.dir\vuepartie.cpp.s
+
+CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj: CMakeFiles/Schotten_Totten.dir/flags.make
+CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
+CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.cpp
+CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\vuecarte.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\vuecarte.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuecarte.cpp
+
+CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuecarte.cpp > CMakeFiles\Schotten_Totten.dir\vuecarte.cpp.i
+
+CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuecarte.cpp -o CMakeFiles\Schotten_Totten.dir\vuecarte.cpp.s
+
+CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj: CMakeFiles/Schotten_Totten.dir/flags.make
+CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj: CMakeFiles/Schotten_Totten.dir/includes_CXX.rsp
+CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.cpp
+CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj: CMakeFiles/Schotten_Totten.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj -MF CMakeFiles\Schotten_Totten.dir\vueborne.cpp.obj.d -o CMakeFiles\Schotten_Totten.dir\vueborne.cpp.obj -c C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vueborne.cpp
+
+CMakeFiles/Schotten_Totten.dir/vueborne.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Schotten_Totten.dir/vueborne.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vueborne.cpp > CMakeFiles\Schotten_Totten.dir\vueborne.cpp.i
+
+CMakeFiles/Schotten_Totten.dir/vueborne.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Schotten_Totten.dir/vueborne.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vueborne.cpp -o CMakeFiles\Schotten_Totten.dir\vueborne.cpp.s
+
 # Object files for target Schotten_Totten
 Schotten_Totten_OBJECTS = \
+"CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/Schotten_Totten.dir/main.cpp.obj" \
 "CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj" \
 "CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj" \
@@ -293,11 +354,15 @@ Schotten_Totten_OBJECTS = \
 "CMakeFiles/Schotten_Totten.dir/set.cpp.obj" \
 "CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj" \
 "CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj" \
-"CMakeFiles/Schotten_Totten.dir/Revendication.cpp.obj"
+"CMakeFiles/Schotten_Totten.dir/Revendication.cpp.obj" \
+"CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj" \
+"CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj" \
+"CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj"
 
 # External object files for target Schotten_Totten
 Schotten_Totten_EXTERNAL_OBJECTS =
 
+Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj
 Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/main.cpp.obj
 Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj
 Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj
@@ -312,6 +377,9 @@ Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/set.cpp.obj
 Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj
 Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj
 Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/Revendication.cpp.obj
+Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj
+Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj
+Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj
 Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/build.make
 Schotten_Totten.exe: C:/Qt/6.5.0/mingw_64/lib/libQt6Widgets.a
 Schotten_Totten.exe: C:/Qt/6.5.0/mingw_64/lib/libQt6Gui.a
@@ -319,7 +387,7 @@ Schotten_Totten.exe: C:/Qt/6.5.0/mingw_64/lib/libQt6Core.a
 Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/linklibs.rsp
 Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/objects1.rsp
 Schotten_Totten.exe: CMakeFiles/Schotten_Totten.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable Schotten_Totten.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable Schotten_Totten.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Schotten_Totten.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

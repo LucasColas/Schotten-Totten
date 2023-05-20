@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "Schotten_Totten",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -39,8 +41,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Schotten_Totten::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Schotten_Totten-Debug-9d0c0b8689e6e8be8279.json",
+					"jsonFile" : "target-Schotten_Totten-Debug-9eed75b43756b36b0c51.json",
 					"name" : "Schotten_Totten",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Schotten_Totten_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Schotten_Totten_autogen-Debug-a13c9c7a68b8d31bdd00.json",
+					"name" : "Schotten_Totten_autogen",
 					"projectIndex" : 0
 				}
 			]

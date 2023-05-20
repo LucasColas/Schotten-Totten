@@ -34,6 +34,7 @@
 					<Add option="-DUNICODE"/>
 					<Add option="-D_UNICODE"/>
 					<Add option="-DQT_GUI_LIB"/>
+					<Add directory="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/include"/>
 					<Add directory="C:/Qt/6.5.0/mingw_64/include/QtWidgets"/>
 					<Add directory="C:/Qt/6.5.0/mingw_64/include"/>
 					<Add directory="C:/Qt/6.5.0/mingw_64/include/QtCore"/>
@@ -72,6 +73,7 @@
 					<Add option="-DUNICODE"/>
 					<Add option="-D_UNICODE"/>
 					<Add option="-DQT_GUI_LIB"/>
+					<Add directory="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/include"/>
 					<Add directory="C:/Qt/6.5.0/mingw_64/include/QtWidgets"/>
 					<Add directory="C:/Qt/6.5.0/mingw_64/include"/>
 					<Add directory="C:/Qt/6.5.0/mingw_64/include/QtCore"/>
@@ -108,6 +110,16 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Schotten_Totten_autogen">
+				<Option working_dir="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 Schotten_Totten_autogen"/>
 					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -180,6 +192,9 @@
 		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Schotten_Totten.h">
 			<Option target="Schotten_Totten"/>
 		</Unit>
+		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/mocs_compilation.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
 		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/defausse.cpp">
 			<Option target="Schotten_Totten"/>
 		</Unit>
@@ -193,6 +208,21 @@
 			<Option target="Schotten_Totten"/>
 		</Unit>
 		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/set.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.h">
 			<Option target="Schotten_Totten"/>
 		</Unit>
 		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/CMakeLists.txt">

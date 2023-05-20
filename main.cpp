@@ -1,21 +1,66 @@
 #include <iostream>
 #include "Carte.h"
 #include "Jeu.h"
+#include "vuepartie.h"
 using namespace std;
+#include <QApplication>
+#include <QWidget>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+    QWidget fenetre;
+    fenetre.setFixedSize(250, 120);
+
+    /*
+    QLabel* noml = new QLabel("Nom",&fenetre);
+    //QLabel* noml = new QLabel("Nom", &fenetre);
+    noml->move(10, 10);
+
+    QLineEdit* nom = new QLineEdit(&fenetre);
+    nom->setGeometry(60, 10, 180, 20);
+
+    QPushButton* ok = new QPushButton("Ok", &fenetre);
+    ok->setGeometry(10, 60, 230, 30);
+    */
+
+
+    QLabel* noml = new QLabel("Nom");
+    QLineEdit* nom = new QLineEdit();
+    QPushButton* ok = new QPushButton("Ok");
+    QVBoxLayout* layoutPrincipal = new QVBoxLayout(&fenetre);
+    QHBoxLayout* layoutNom = new QHBoxLayout();
+    QHBoxLayout* layoutOk = new QHBoxLayout(); //si on ne fixe pas la largeur d'un bouton alors il prend la largeur totale
+
+    // Ajout des widgets aux layouts
+    layoutNom->addWidget(noml);
+    layoutNom->addWidget(nom);
+    layoutPrincipal->addLayout(layoutNom);
+
+    layoutOk->addWidget(ok);
+    layoutPrincipal->addLayout(layoutOk);
+
+    fenetre.show();
+    fenetre.setWindowTitle("Joueur");
+    return app.exec();
+}
+/*
 int main() {
     cout << "Hi" << endl;
     string mode_jeu = "Schotten Totten";
     string variante = "tactique";
     int choix_jeu, choix_variante;
     Jeu* j;
-    /*
+
     cout << "Mode de jeu : " << endl;
     getline(cin, mode_jeu);
 
     cout << "Edition de jeu : " << endl;
     getline(cin, variante);
     cout << mode_jeu << " " << variante << endl;
-    */
+
     //cout << "jeu pas encore instancie" << endl;
     cout << "Bienvenue dans : " << endl;
     cout << "   _____      _           _   _               _______    _   _             \n"
@@ -26,13 +71,13 @@ int main() {
             " |_____/ \\___|_| |_|\\___/ \\__|\\__\\___|_| |_|    |_|\\___/ \\__|\\__\\___|_| |_|\n"
             "                                                                           \n"
             "                                                                           " << endl;
-    /*cout << "Mode de jeu : " << endl;
-    getline(cin, mode_jeu);
+    //cout << "Mode de jeu : " << endl;
+    //getline(cin, mode_jeu);
 
-    cout << "Edition de jeu : " << endl;
-    getline(cin, variante);
-    cout << mode_jeu << " " << variante << endl;
-    */
+    //cout << "Edition de jeu : " << endl;
+    //getline(cin, variante);
+    //cout << mode_jeu << " " << variante << endl;
+
     cout << "Choisissez le jeu : " << endl;
     cout << "1. Pour Schotten Totten" << endl;
     cout << "2. Pour Schotten Totten 2" << endl;
@@ -81,3 +126,4 @@ int main() {
             "                                                                           " << endl;
     return 0;
 }
+*/

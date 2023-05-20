@@ -128,6 +128,19 @@ Schotten_Totten/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/build
 .PHONY : Schotten_Totten/fast
 
+#=============================================================================
+# Target rules for targets named Schotten_Totten_autogen
+
+# Build rule for target.
+Schotten_Totten_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Schotten_Totten_autogen
+.PHONY : Schotten_Totten_autogen
+
+# fast build rule for target.
+Schotten_Totten_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten_autogen.dir\build.make CMakeFiles/Schotten_Totten_autogen.dir/build
+.PHONY : Schotten_Totten_autogen/fast
+
 Affichage_console.obj: Affichage_console.cpp.obj
 .PHONY : Affichage_console.obj
 
@@ -392,6 +405,30 @@ Schotten_Totten.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.s
 .PHONY : Schotten_Totten.cpp.s
 
+Schotten_Totten_autogen/mocs_compilation.obj: Schotten_Totten_autogen/mocs_compilation.cpp.obj
+.PHONY : Schotten_Totten_autogen/mocs_compilation.obj
+
+# target to build an object file
+Schotten_Totten_autogen/mocs_compilation.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj
+.PHONY : Schotten_Totten_autogen/mocs_compilation.cpp.obj
+
+Schotten_Totten_autogen/mocs_compilation.i: Schotten_Totten_autogen/mocs_compilation.cpp.i
+.PHONY : Schotten_Totten_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+Schotten_Totten_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.i
+.PHONY : Schotten_Totten_autogen/mocs_compilation.cpp.i
+
+Schotten_Totten_autogen/mocs_compilation.s: Schotten_Totten_autogen/mocs_compilation.cpp.s
+.PHONY : Schotten_Totten_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+Schotten_Totten_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.s
+.PHONY : Schotten_Totten_autogen/mocs_compilation.cpp.s
+
 defausse.obj: defausse.cpp.obj
 .PHONY : defausse.obj
 
@@ -464,6 +501,78 @@ set.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/set.cpp.s
 .PHONY : set.cpp.s
 
+vueborne.obj: vueborne.cpp.obj
+.PHONY : vueborne.obj
+
+# target to build an object file
+vueborne.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj
+.PHONY : vueborne.cpp.obj
+
+vueborne.i: vueborne.cpp.i
+.PHONY : vueborne.i
+
+# target to preprocess a source file
+vueborne.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vueborne.cpp.i
+.PHONY : vueborne.cpp.i
+
+vueborne.s: vueborne.cpp.s
+.PHONY : vueborne.s
+
+# target to generate assembly for a file
+vueborne.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vueborne.cpp.s
+.PHONY : vueborne.cpp.s
+
+vuecarte.obj: vuecarte.cpp.obj
+.PHONY : vuecarte.obj
+
+# target to build an object file
+vuecarte.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj
+.PHONY : vuecarte.cpp.obj
+
+vuecarte.i: vuecarte.cpp.i
+.PHONY : vuecarte.i
+
+# target to preprocess a source file
+vuecarte.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.i
+.PHONY : vuecarte.cpp.i
+
+vuecarte.s: vuecarte.cpp.s
+.PHONY : vuecarte.s
+
+# target to generate assembly for a file
+vuecarte.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.s
+.PHONY : vuecarte.cpp.s
+
+vuepartie.obj: vuepartie.cpp.obj
+.PHONY : vuepartie.obj
+
+# target to build an object file
+vuepartie.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj
+.PHONY : vuepartie.cpp.obj
+
+vuepartie.i: vuepartie.cpp.i
+.PHONY : vuepartie.i
+
+# target to preprocess a source file
+vuepartie.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.i
+.PHONY : vuepartie.cpp.i
+
+vuepartie.s: vuepartie.cpp.s
+.PHONY : vuepartie.s
+
+# target to generate assembly for a file
+vuepartie.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.s
+.PHONY : vuepartie.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -472,6 +581,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Schotten_Totten_autogen
 	@echo ... Schotten_Totten
 	@echo ... Affichage_console.obj
 	@echo ... Affichage_console.i
@@ -506,6 +616,9 @@ help:
 	@echo ... Schotten_Totten.obj
 	@echo ... Schotten_Totten.i
 	@echo ... Schotten_Totten.s
+	@echo ... Schotten_Totten_autogen/mocs_compilation.obj
+	@echo ... Schotten_Totten_autogen/mocs_compilation.i
+	@echo ... Schotten_Totten_autogen/mocs_compilation.s
 	@echo ... defausse.obj
 	@echo ... defausse.i
 	@echo ... defausse.s
@@ -515,6 +628,15 @@ help:
 	@echo ... set.obj
 	@echo ... set.i
 	@echo ... set.s
+	@echo ... vueborne.obj
+	@echo ... vueborne.i
+	@echo ... vueborne.s
+	@echo ... vuecarte.obj
+	@echo ... vuecarte.i
+	@echo ... vuecarte.s
+	@echo ... vuepartie.obj
+	@echo ... vuepartie.i
+	@echo ... vuepartie.s
 .PHONY : help
 
 

@@ -1,0 +1,4 @@
+-DWIN32
+-o
+C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/moc_Jeu.cpp
+C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Jeu.h
