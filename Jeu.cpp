@@ -461,7 +461,7 @@ void Jeu::jouer_tour() {
         cout << choix << "\n";
     }
     else {
-        cout << "false\n";
+        //cout << "false\n";
         cin >> choix;
     }
 

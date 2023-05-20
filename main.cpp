@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Carte.h"
 #include "Jeu.h"
-#include <QApplication>
 using namespace std;
 int main() {
     cout << "Hi" << endl;
