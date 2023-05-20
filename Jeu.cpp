@@ -300,7 +300,7 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
 
 
     /* ========================Traitre======================== */
-    else if (carte_ruse.getId() == "Traître") {
+    else if (carte_ruse.getId() == "Traitre") {
         cout << "choisissez la borne (entre 1 et 9) ou vous voulez supprimer une carte de votre adversaire (et la mettre de votre cote)" << endl;
         if (joueurs[joueur_actuel-1]->getIa()) choix_borne = IA::choix_entier(1, 9);
         else cin >> choix_borne;

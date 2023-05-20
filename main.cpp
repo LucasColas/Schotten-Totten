@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Carte.h"
 #include "Jeu.h"
+#include <QApplication>
 using namespace std;
 int main() {
     cout << "Hi" << endl;
@@ -52,6 +53,11 @@ int main() {
         else if (choix_variante == 2) {
             j = new Jeu("Schotten Totten", "tactique");
         }
+    }
+
+    else {
+        cout << "Jeu pas encore implémentée" << endl;
+        return 0;
     }
 
 
