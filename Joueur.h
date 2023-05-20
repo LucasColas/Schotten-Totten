@@ -9,7 +9,7 @@ using namespace std;
 #define SCHOTTEN_TOTTEN_JOUEUR_H
 class Joueur {
 protected:
-    const bool ia = false;
+    bool ia;
     string nom;
     int nb_bornes;
     vector<Carte*> cartes;
@@ -34,8 +34,6 @@ public:
 };
 
 class IA : public Joueur {
-protected:
-    const bool ia = true;
 
 public:
     IA(string n, int nb_cartes, int nb_tactiques_jouees=0, int joker_j = 0, int nb_p=0, int nb_b=9);

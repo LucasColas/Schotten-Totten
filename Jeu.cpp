@@ -454,8 +454,17 @@ void Jeu::jouer_tour() {
     affichageConsole->afficher_cartes_bornes(schottenTotten->bornes, joueur_actuel);
     affichageConsole->afficher_cartes_joueur(joueurs[joueur_actuel-1]->getCartes());
     affichageConsole->Afficher_proposition();
-    if (joueurs[joueur_actuel-1]->getIa()) choix = IA::choix_entier(1, 2);
-    else cin >> choix;
+
+    if (joueurs[joueur_actuel-1]->getIa() == true) {
+        cout << "true\n";
+        choix = IA::choix_entier(1, 1);
+        cout << choix << "\n";
+    }
+    else {
+        cout << "false\n";
+        cin >> choix;
+    }
+
     if (choix == 1) {
 
         Carte& carte = joueurs[joueur_actuel-1]->choix_carte();
@@ -471,7 +480,7 @@ void Jeu::jouer_tour() {
         if (carte.getType() == "Combat") {
             //Cas ou la carte est une carte tactique de combat
             cout << "Choisissez la borne ou voulez poser la carte Combat (nombre entre 1 et 9, 1 etant la borne la plus a gauche)" << endl;
-            if (joueurs[joueur_actuel-1]->getIa()) borne = IA::choix_entier(1, 9);
+            if (joueurs[joueur_actuel-1]->getIa()) borne = IA::choix_entier(1, schottenTotten->getNb_bornes());
             else cin >> borne;
             if (borne < 1 || borne > 9) {
                 cout << "mauvaise borne" << endl;
@@ -636,8 +645,10 @@ bool Jeu::gagnant() {
         if (schottenTotten->bornes[i]->GetPossesseur() != 0 && schottenTotten->bornes[i]->GetPossesseur() == schottenTotten->bornes[i+1]->GetPossesseur() && schottenTotten->bornes[i+1]->GetPossesseur() == schottenTotten->bornes[i+2]->GetPossesseur()) {
             cout << "Joueur " << joueurs[schottenTotten->bornes[i]->GetPossesseur()-1]->getNom() << " a gagne" << endl;
             joueurs[schottenTotten->bornes[i]->GetPossesseur()-1]->setNbPoints(5);
+            return true;
         }
     }
+    return false;
 }
 
 void Jeu::revendication_borne(int i) {
