@@ -25,14 +25,14 @@ VuePartie::VuePartie(QWidget *parent) : QWidget(parent), vuecartes(20, nullptr)
     deckLabel = new QLabel("Pioche");
     scoreLabel = new QLabel("Score");
 
-    numberCardsDeckProgressBar = new QProgressBar;
+    //numberCardsDeckProgressBar = new QProgressBar;
     //numberCardsDeckProgressBar->setRange(0, Set::Jeu::getInstance().getNbCartes());
     //numberCardsDeckProgressBar->setValue(controller.getPioche().getNbCartes());
     numberCardsDeckProgressBar->setFixedHeight(30);
 
-    scoreDisplayer = new QLCDNumber;
-    scoreDisplayer->display(0);
-    scoreDisplayer->setFixedHeight(30);
+    //scoreDisplayer = new QLCDNumber;
+    //scoreDisplayer->display(0);
+    //scoreDisplayer->setFixedHeight(30);
 
     informationsHeaderLayout = new QHBoxLayout;
     cardsGridLayout = new QGridLayout;
@@ -43,17 +43,44 @@ VuePartie::VuePartie(QWidget *parent) : QWidget(parent), vuecartes(20, nullptr)
     informationsHeaderLayout->addWidget(scoreLabel);
     informationsHeaderLayout->addWidget(scoreDisplayer);
     int index = 0;
-    for (int i = 0; i < 9; ++i) {
+    //Cartes du haut
+    for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < 4; ++j) {
+            vuecartes[index] = new VueCarte;
+            cardsGridLayout->addWidget(vuecartes[index], j, i);
 
+            connect(vuecartes[index], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
+            index++;
 
         }
     }
-    for (size_t i = 0; i < 20; i++) {
-        vuecartes[i] = new VueCarte;
-        cardsGridLayout->addWidget(vuecartes[i], i/4, i%4);
+    //Bornes
+    for (int i = 0; i < 9; i++) {
+        //vuebornes[index] = new VueCarte;
+        //cardsGridLayout->addWidget(vuebornes[index], 4, i);
 
-        connect(vuecartes[i], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
+        //connect(vuebornes[i], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
+
+    }
+
+    //Cartes du Bas
+    for (int i = 0; i < 4; i++) {
+        for (int j = 5; j < 9; j++) {
+            vuecartes[index] = new VueCarte;
+            cardsGridLayout->addWidget(vuecartes[index], j, i);
+
+            connect(vuecartes[index], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
+            index++;
+        }
+    }
+
+    //Cartes du joueur
+    for (int i = 0; i < 9; i++) {
+        vuecartes[index] = new VueCarte;
+        cardsGridLayout->addWidget(vuecartes[index], 9, i);
+
+        connect(vuecartes[index], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
+        index++;
     }
 
     //updateVueCards();
