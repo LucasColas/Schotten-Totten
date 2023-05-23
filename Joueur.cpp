@@ -76,9 +76,7 @@ void Joueur::setNbPoints(int pts) {
 
 //IA
 Carte& IA::choix_carte() {
-    std::default_random_engine generator;
-    std::uniform_int_distribution<int> distribution(1,cartes.size());
-    int num_carte = distribution(generator);
+    int num_carte = choix_entier(1, cartes.size());
 
     //cout << "IA carte choisie : " << to_string(num_carte) << endl;
 
@@ -92,9 +90,7 @@ Carte& IA::choix_carte() {
 
 int IA::choix_borne() {
     //num_borne stocke le numéro de borne où le joueur veut poser sa carte
-    std::default_random_engine generator;
-    std::uniform_int_distribution<int> distribution(1,nb_bornes);
-    int num_borne = distribution(generator);
+    int num_borne = choix_entier(1, nb_bornes);
     cout << "IA borne choisie : " << num_borne << endl;
     return num_borne;
 }
@@ -106,10 +102,8 @@ Joueur(n, nb_cartes, nb_tactiques_jouees, joker_j = 0, nb_p=0, nb_b=9) {
 
 
 int IA::choix_entier(const int min, const int max) {
-    std::default_random_engine generator;
+    std::random_device rd;
+    std::mt19937 mt(rd());
     std::uniform_int_distribution<int> distribution{min, max};
-    for (int i = 0; i < 12; ++i) {
-        cout << distribution(generator) << endl;
-    }
-    return distribution(generator);
+    return distribution(mt);
 }
