@@ -14,6 +14,7 @@
 #include "Borne.h"
 #include "Jeu.h"
 #include "vuecarte.h"
+#include "vueborne.h"
 class QLabel;
 class QLineEdit;
 class QPushButton;
@@ -23,10 +24,11 @@ class QGridLayout;
 class QProgressBar;
 class QLCDNumber;
 class VueCarte;
+class VueBorne;
 class VuePartie : public QWidget {
 Q_OBJECT
 public:
-    explicit VuePartie(QWidget *parent = nullptr);
+    explicit VuePartie(string mode_, string variante_, QWidget *parent = nullptr);
     virtual ~VuePartie();
 private:
     Jeu *controller; // controleur de la partie
@@ -35,11 +37,20 @@ private:
     QLabel* deckLabel; // texte "Pioche"
     QProgressBar* numberCardsDeckProgressBar; // progression de la pioche
     QHBoxLayout* informationsHeaderLayout;
-    QGridLayout* cardsGridLayout; // grille des cartes
+    QGridLayout* firstCardsGridLayout; // grille des cartes du joueur en haut
+    QGridLayout* bornesGridLayout; //grille des bornes
+    QGridLayout* secondCardsGridLayout; //Grille des cartes du joueur en bas
+    QGridLayout* playerCardsGridLayout; //Grille des cartes du joueur
+
     QVBoxLayout* layer;
-    vector<VueCarte*> vuecartes; // adresses des objets VueCarte
+    vector<VueCarte*> vuecarteshaut; // adresses des objets VueCarte
+    vector<VueCarte*> vuecartesbas;
+    vector<VueCarte*> vuecartesjoueur;
+    vector<VueBorne*> vuebornes;
+    string mode;
+    string variante;
+
     //std::set<const Set::Carte*> selectedCards; // ensemble des cartes sélectionnées
-    int userScore=0; // score courant (nb de sets trouvés)
 
     void updateVueCards();
     void showWarning(const char* message);
@@ -54,5 +65,7 @@ private:
 private slots:
     // slots qui gère les clics sur les cartes
     void onCardClicked(VueCarte* vc);
+    //void onPiocheClicked(VuePioche* p);
+    //void onDefausseClicked(VueDefausse* p);
 };
 #endif //SCHOTTEN_TOTTEN_VUEPARTIE_H

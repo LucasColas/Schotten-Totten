@@ -9,22 +9,19 @@ using namespace std;
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
+
 int main(int argc, char *argv[]) {
+
+    QApplication app(argc, argv);
+    VuePartie partie("Schotten Totten", "normal");
+    //partie.setFixedSize(700, 500);
+    partie.show();
+    return app.exec();
+    /*
     QApplication app(argc, argv);
     QWidget fenetre;
     fenetre.setFixedSize(250, 120);
 
-    /*
-    QLabel* noml = new QLabel("Nom",&fenetre);
-    //QLabel* noml = new QLabel("Nom", &fenetre);
-    noml->move(10, 10);
-
-    QLineEdit* nom = new QLineEdit(&fenetre);
-    nom->setGeometry(60, 10, 180, 20);
-
-    QPushButton* ok = new QPushButton("Ok", &fenetre);
-    ok->setGeometry(10, 60, 230, 30);
-    */
 
 
     QLabel* noml = new QLabel("Nom");
@@ -45,7 +42,11 @@ int main(int argc, char *argv[]) {
     fenetre.show();
     fenetre.setWindowTitle("Joueur");
     return app.exec();
+     */
+
+
 }
+
 /*
 int main() {
     cout << "Hi" << endl;
@@ -54,12 +55,12 @@ int main() {
     int choix_jeu, choix_variante;
     Jeu* j;
 
-    cout << "Mode de jeu : " << endl;
-    getline(cin, mode_jeu);
+    //cout << "Mode de jeu : " << endl;
+    //getline(cin, mode_jeu);
 
-    cout << "Edition de jeu : " << endl;
-    getline(cin, variante);
-    cout << mode_jeu << " " << variante << endl;
+    //cout << "Edition de jeu : " << endl;
+    //getline(cin, variante);
+    //cout << mode_jeu << " " << variante << endl;
 
     //cout << "jeu pas encore instancie" << endl;
     cout << "Bienvenue dans : " << endl;

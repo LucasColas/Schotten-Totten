@@ -10,6 +10,7 @@
 #include <QPushButton>
 #include "Carte.h"
 class VueCarte : public QPushButton {
+Q_OBJECT
 private:
     const Carte* carte= nullptr;
 protected:
@@ -23,5 +24,12 @@ public:
     void setNoCarte() { carte=nullptr; setCheckable(false); update(); }
     const Carte& getCarte() const { return *carte; }
     bool cartePresente() const { return carte!=nullptr; }
+
+signals:
+    // quand la vude de carte est cliquée, elle émet un signal en transmettant son adresse
+    void carteClicked(VueCarte*);
+public slots:
+private slots:
+    void clickedEvent() { emit carteClicked(this); }
 };
 #endif //SCHOTTEN_TOTTEN_VUECARTE_H

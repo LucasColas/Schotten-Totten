@@ -50,6 +50,9 @@ public:
     string getVariante() const {return variante;};
     int getNbParties() const {return nb_parties;};
     int getNbPartiesJouees() const {return nb_parties_jouees;};
+    int getJoueurActuel() const {return joueur_actuel;};
+    Schotten_Totten& getSchottenTotten() {return *schottenTotten;};
+    Joueur& getJoueur(int i) const {return *joueurs[i-1];};
     void choixPioche();
     int autreJoueur();
     bool verif();

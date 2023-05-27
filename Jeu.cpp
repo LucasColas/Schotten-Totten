@@ -31,7 +31,6 @@ Jeu::Jeu(string mode, string v, int nb_max_j) {
     distribution_cartes();
     cout << "cartes distribuees" << endl;
 
-
 }
 
 void Jeu::setNb_parties() {

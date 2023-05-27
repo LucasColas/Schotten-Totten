@@ -38,7 +38,8 @@ add_executable(Schotten_Totten
         vuepartie.h
         vuecarte.cpp
         vuecarte.h
-        vueborne.cpp)
+        vueborne.cpp
+        vueborne.h)
 
 # Use the AUTOMOC feature to automatically generate MOC files
 set_target_properties(Schotten_Totten PROPERTIES AUTOMOC ON)

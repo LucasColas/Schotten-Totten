@@ -17,77 +17,89 @@
 #include "vueborne.h"
 VuePartie::~VuePartie() = default; // Add virtual destructor definition
 
-VuePartie::VuePartie(QWidget *parent) : QWidget(parent), vuecartes(20, nullptr)
+VuePartie::VuePartie(string mode_, string variante_, QWidget *parent) : QWidget(parent), vuecarteshaut(36, nullptr), vuecartesbas(36,
+                                                                                                                                  nullptr), vuecartesjoueur(9,
+                                                                                                                                                            nullptr), vuebornes(9,
+                                                                                                                                                                                nullptr)
 {
-    setWindowTitle("Set !");
+    setWindowTitle("Schotten Totten!");
+    mode = mode_;
+    variante = variante_;
+    controller = new Jeu(mode, variante, 2);
 
-
-    deckLabel = new QLabel("Pioche");
-    scoreLabel = new QLabel("Score");
 
     //numberCardsDeckProgressBar = new QProgressBar;
     //numberCardsDeckProgressBar->setRange(0, Set::Jeu::getInstance().getNbCartes());
     //numberCardsDeckProgressBar->setValue(controller.getPioche().getNbCartes());
-    numberCardsDeckProgressBar->setFixedHeight(30);
+    //numberCardsDeckProgressBar->setFixedHeight(30);
 
     //scoreDisplayer = new QLCDNumber;
     //scoreDisplayer->display(0);
     //scoreDisplayer->setFixedHeight(30);
 
-    informationsHeaderLayout = new QHBoxLayout;
-    cardsGridLayout = new QGridLayout;
+    //informationsHeaderLayout = new QHBoxLayout;
+    firstCardsGridLayout = new QGridLayout;
+    secondCardsGridLayout = new QGridLayout;
+    bornesGridLayout = new QGridLayout;
+    playerCardsGridLayout = new QGridLayout;
     layer = new QVBoxLayout;
-
-    informationsHeaderLayout->addWidget(deckLabel);
-    informationsHeaderLayout->addWidget(numberCardsDeckProgressBar);
-    informationsHeaderLayout->addWidget(scoreLabel);
-    informationsHeaderLayout->addWidget(scoreDisplayer);
+    cout << "Création Grid Layout" << endl;
+    //informationsHeaderLayout->addWidget(deckLabel);
+    //informationsHeaderLayout->addWidget(numberCardsDeckProgressBar);
+    //informationsHeaderLayout->addWidget(scoreLabel);
+    //informationsHeaderLayout->addWidget(scoreDisplayer);
     int index = 0;
     //Cartes du haut
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < 9; ++i) {
         for (int j = 0; j < 4; ++j) {
-            vuecartes[index] = new VueCarte;
-            cardsGridLayout->addWidget(vuecartes[index], j, i);
+            vuecarteshaut[index] = new VueCarte;
+            firstCardsGridLayout->addWidget(vuecarteshaut[index], j, i);
 
-            connect(vuecartes[index], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
+            connect(vuecarteshaut[index], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
             index++;
 
         }
     }
     //Bornes
     for (int i = 0; i < 9; i++) {
-        //vuebornes[index] = new VueCarte;
-        //cardsGridLayout->addWidget(vuebornes[index], 4, i);
+        vuebornes[i] = new VueBorne;
+        bornesGridLayout->addWidget(vuebornes[i], 0, i);
 
         //connect(vuebornes[i], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
 
     }
 
     //Cartes du Bas
-    for (int i = 0; i < 4; i++) {
-        for (int j = 5; j < 9; j++) {
-            vuecartes[index] = new VueCarte;
-            cardsGridLayout->addWidget(vuecartes[index], j, i);
+    index = 0;
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 4; j++) {
+            vuecartesbas[index] = new VueCarte;
+            secondCardsGridLayout->addWidget(vuecartesbas[index], j, i);
 
-            connect(vuecartes[index], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
+            connect(vuecartesbas[index], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
             index++;
         }
     }
 
     //Cartes du joueur
-    for (int i = 0; i < 9; i++) {
-        vuecartes[index] = new VueCarte;
-        cardsGridLayout->addWidget(vuecartes[index], 9, i);
 
-        connect(vuecartes[index], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
+    for (int i = 0; i < 9; i++) {
+        vuecartesjoueur[i] = new VueCarte;
+        playerCardsGridLayout->addWidget(vuecartesjoueur[i], 9, i);
+
+        connect(vuecartesjoueur[i], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
         index++;
     }
 
-    //updateVueCards();
+    updateVueCards();
 
-    layer->addLayout(informationsHeaderLayout);
-    layer->addLayout(cardsGridLayout);
+    //layer->addLayout(informationsHeaderLayout);
+    layer->addLayout(firstCardsGridLayout);
+    layer->addLayout(bornesGridLayout);
+    layer->addLayout(secondCardsGridLayout);
+    layer->addLayout(playerCardsGridLayout);
     setLayout(layer);
+    cout << "Constructeur terminé" << endl;
 }
 
 
@@ -97,4 +109,43 @@ void VuePartie::onCardClicked(VueCarte *vc)
         cout << "carte présente" << endl;
     }
     update();
+}
+
+void VuePartie::updateVueCards() {
+    //Mettre à jour les cartes du joueur actuel. Prendre les cartes depuis le controleur
+    //
+    //Mettre à jour les bornes par exemple.
+    for (int i = 0; i < controller->getSchottenTotten().getNb_bornes(); i++) {
+        vuebornes[i]->setBorne(controller->getSchottenTotten().getBorne(i));
+    }
+    if (controller->getJoueurActuel() == 1) {
+        //Le joueur 2 est en haut.
+        for (int i = 0; i < controller->getJoueur(1).getNbCartes(); i++) {
+            vuecartesjoueur[i]->setCarte(*controller->getJoueur(1).getCartes()[i]);
+        }
+
+        for (int i = 0; i < controller->getSchottenTotten().getNb_bornes(); i++) {
+            for (int j = 0; j < controller->getSchottenTotten().getBorne(i).getCartes_joueur_2().size(); j++) {
+                vuecarteshaut[i*4 + j]->setCarte(*controller->getSchottenTotten().getBorne(i).getCartes_joueur_2()[j]);
+
+            }
+        }
+    }
+
+    if (controller->getJoueurActuel() == 2) {
+
+        for (int i = 0; i < controller->getJoueur(2).getNbCartes(); i++) {
+            vuecartesjoueur[i]->setCarte(*controller->getJoueur(2).getCartes()[i]);
+        }
+        //Les cartes du joueur 1 sont en haut.
+        for (int i = 0; i < controller->getSchottenTotten().getNb_bornes(); i++) {
+            for (int j = 0; j < controller->getSchottenTotten().getBorne(i).getCartes_joueur_1().size(); j++) {
+                vuecarteshaut[i*4 + j]->setCarte(*controller->getSchottenTotten().getBorne(i).getCartes_joueur_1()[j]);
+
+            }
+        }
+    }
+
+
+
 }
