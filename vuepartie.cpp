@@ -90,14 +90,27 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
         connect(vuecartesjoueur[i], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
         index++;
     }
+    //Pioches et défausse
+    QSpacerItem *spacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
+    // Buttons on the right
+    buttonLayout = new QVBoxLayout;
+    for (int i = 0; i < 3; ++i) {
+        QPushButton *button = new QPushButton(QString("Button %1").arg(i));
+        buttonLayout->addWidget(button);
+    }
     updateVueCards();
+    rightLayout = new QHBoxLayout;
+    rightLayout->addLayout(buttonLayout);
+    rightLayout->addSpacerItem(spacer);
+
 
     //layer->addLayout(informationsHeaderLayout);
     layer->addLayout(firstCardsGridLayout);
     layer->addLayout(bornesGridLayout);
     layer->addLayout(secondCardsGridLayout);
     layer->addLayout(playerCardsGridLayout);
+    layer->addLayout(rightLayout);
     setLayout(layer);
     cout << "Constructeur terminé" << endl;
 }

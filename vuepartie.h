@@ -41,12 +41,15 @@ private:
     QGridLayout* bornesGridLayout; //grille des bornes
     QGridLayout* secondCardsGridLayout; //Grille des cartes du joueur en bas
     QGridLayout* playerCardsGridLayout; //Grille des cartes du joueur
-
+    QHBoxLayout* rightLayout;
+    QSpacerItem *spacer;
+    QVBoxLayout* buttonLayout;
     QVBoxLayout* layer;
     vector<VueCarte*> vuecarteshaut; // adresses des objets VueCarte
     vector<VueCarte*> vuecartesbas;
     vector<VueCarte*> vuecartesjoueur;
     vector<VueBorne*> vuebornes;
+
     string mode;
     string variante;
 
