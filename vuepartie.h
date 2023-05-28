@@ -28,7 +28,7 @@ class VueBorne;
 class VuePartie : public QWidget {
 Q_OBJECT
 public:
-    explicit VuePartie(string mode_, string variante_, QWidget *parent = nullptr);
+    explicit VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h, vector<string>& noms_j, QWidget *parent = nullptr);
     virtual ~VuePartie();
 private:
     Jeu *controller; // controleur de la partie

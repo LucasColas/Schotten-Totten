@@ -30,11 +30,12 @@ private:
     Defausse* defausse;
     map<string, Pioche*> pioches;
     Revendication* revendication;
+    vector<string> noms_joueurs;
 
 
 public:
 
-    Jeu(string mode,string v, int nb_max_j=2);
+    Jeu(string mode,string v, int nb_p, int nb_joueurs_h, vector<string>& noms_j, int nb_max_j=2);
     void designe_premier_joueur();
     void setNb_joueurs_humains();
     void choix_jeu();

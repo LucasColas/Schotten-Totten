@@ -10,7 +10,7 @@
 using namespace std;
 
 
-Jeu::Jeu(string mode, string v, int nb_max_j) {
+Jeu::Jeu(string mode, string v, int nb_p, int nb_joueurs_h, vector<string>& noms_j, int nb_max_j) {
 
     mode_jeu = mode;
     variante = v;
@@ -22,9 +22,12 @@ Jeu::Jeu(string mode, string v, int nb_max_j) {
     variantes.push_back("tactique");
 
 
-    setNb_parties();
+    //setNb_parties();
+    noms_joueurs = noms_j;
+    nb_parties = nb_p;
+    nb_joueurs_humains = nb_joueurs_h;
     choix_jeu();
-    setNb_joueurs_humains();
+    //setNb_joueurs_humains();
     resume();
     cout << "resume fait" << endl;
     creation_joueurs();
@@ -570,7 +573,6 @@ void Jeu::setNb_joueurs_humains() {
     }
 
 
-
 }
 
 void Jeu::creation_joueurs() {
@@ -578,18 +580,18 @@ void Jeu::creation_joueurs() {
     string nom2;
     if (nb_joueurs_humains == 2) {
        cout << "2 joueurs humains" << endl;
-       cout << "nom joueur 1 : " << endl;
-       cin >> nom;
-       joueurs.push_back(new Joueur(nom, schottenTotten->getNb_Cartes_par_joueur()));
+       //cout << "nom joueur 1 : " << endl;
+       //cin >> nom;
+       joueurs.push_back(new Joueur(noms_joueurs[0], schottenTotten->getNb_Cartes_par_joueur()));
        cout << "nom joueur 2 : " << endl;
-       cin >> nom2;
-       joueurs.push_back(new Joueur(nom2, schottenTotten->getNb_Cartes_par_joueur()));
+       //cin >> nom2;
+       joueurs.push_back(new Joueur(noms_joueurs[1], schottenTotten->getNb_Cartes_par_joueur()));
     }
     else if (nb_joueurs_humains == 1) {
         cout << "1 joueurs humains" << endl;
         cout << "Entrez le nom du joueur : " << endl;
-        cin >> nom;
-        joueurs.push_back(new Joueur(nom, schottenTotten->getNb_Cartes_par_joueur()));
+        //cin >> nom;
+        joueurs.push_back(new Joueur(noms_joueurs[0], schottenTotten->getNb_Cartes_par_joueur()));
         joueurs.push_back(new IA("Alfred l'IA", schottenTotten->getNb_Cartes_par_joueur()));
     }
 }

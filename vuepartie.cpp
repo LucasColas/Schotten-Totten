@@ -17,7 +17,7 @@
 #include "vueborne.h"
 VuePartie::~VuePartie() = default; // Add virtual destructor definition
 
-VuePartie::VuePartie(string mode_, string variante_, QWidget *parent) : QWidget(parent), vuecarteshaut(36, nullptr), vuecartesbas(36,
+VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h, vector<string>& noms_j, QWidget *parent) : QWidget(parent), vuecarteshaut(36, nullptr), vuecartesbas(36,
                                                                                                                                   nullptr), vuecartesjoueur(9,
                                                                                                                                                             nullptr), vuebornes(9,
                                                                                                                                                                                 nullptr)
@@ -25,7 +25,7 @@ VuePartie::VuePartie(string mode_, string variante_, QWidget *parent) : QWidget(
     setWindowTitle("Schotten Totten!");
     mode = mode_;
     variante = variante_;
-    controller = new Jeu(mode, variante, 2);
+    controller = new Jeu(mode, variante, nb_p, nb_joueurs_h, noms_j);
 
 
     //numberCardsDeckProgressBar = new QProgressBar;

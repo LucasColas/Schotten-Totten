@@ -9,14 +9,18 @@ using namespace std;
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
-
+#include "menu.h"
 int main(int argc, char *argv[]) {
-
+    Menu m = Menu();
+    m.jouer();
+    /*
     QApplication app(argc, argv);
     VuePartie partie("Schotten Totten", "normal");
     //partie.setFixedSize(700, 500);
     partie.show();
+
     return app.exec();
+    */
     /*
     QApplication app(argc, argv);
     QWidget fenetre;
