@@ -18,6 +18,7 @@ protected:
 public:
     VueCarte(const Carte& c, QWidget *parent = nullptr);
     explicit VueCarte(QWidget *parent = nullptr);
+    ~VueCarte();
     // affecter une nouvelle carte à la vue
     void setCarte(const Carte& c) { setCheckable(true); setChecked(false); carte=&c; update(); }
     // vue sans carte

@@ -6,6 +6,9 @@
 #include <QString>
 #include <QStaticText>
 #include "string"
+
+VueCarte::~VueCarte()= default;
+
 VueCarte::VueCarte(const Carte& c, QWidget *parent) : QPushButton(parent),carte(&c)
 {
     setBackgroundRole(QPalette::Base);

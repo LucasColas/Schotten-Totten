@@ -113,3 +113,11 @@ int IA::choix_entier(const int min, const int max) {
     }
     return distribution(generator);
 }
+
+
+void Joueur::supprimerCarte(int i) {
+    Carte& carte = *cartes[i-1];
+    //cout << "carte prise" << endl;
+    cartes.erase(cartes.begin()+i-1);
+    //cout << "carte supprimee" << endl;
+}

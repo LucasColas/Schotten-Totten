@@ -19,5 +19,6 @@ public:
     void melange();
     Carte& piocher_carte();
     bool est_vide();
+    int sizePioche() const {return cartes_pioche.size();};
 };
 #endif //SCHOTTEN_TOTTEN_PIOCHE_H

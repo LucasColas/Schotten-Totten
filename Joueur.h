@@ -28,6 +28,7 @@ public:
     int getNbTactiqueJouees() const {return nb_cartes_tactiques_jouees;};
     void carteTactiqueJouee() {nb_cartes_tactiques_jouees++;};
     vector<Carte*>& getCartes() {return cartes;};
+    void supprimerCarte(int i);
     bool getIa() const {return ia;};
 
 

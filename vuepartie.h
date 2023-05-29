@@ -52,6 +52,8 @@ private:
 
     string mode;
     string variante;
+    const Carte* carte_selectionne;
+    VueCarte* vueCarteSelectionne;
 
     //std::set<const Set::Carte*> selectedCards; // ensemble des cartes sélectionnées
 

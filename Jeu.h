@@ -54,6 +54,7 @@ public:
     int getJoueurActuel() const {return joueur_actuel;};
     Schotten_Totten& getSchottenTotten() {return *schottenTotten;};
     Joueur& getJoueur(int i) const {return *joueurs[i-1];};
+    Pioche& getPioche(string nom) const {return *pioches.at(nom);};
     void choixPioche();
     int autreJoueur();
     bool verif();
@@ -62,9 +63,5 @@ public:
     void revendication_borne(int i);
     bool gagnant();
     bool verifPioche(string pioche);
-
-
-
-
 };
 #endif //SCHOTTEN_TOTTEN_JEU_H

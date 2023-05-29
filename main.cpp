@@ -113,8 +113,6 @@ int main() {
     }
 
 
-
-
     cout << "nb parties" << j->getNbParties() << endl;
     cout << "nb parties jouees " << j->getNbPartiesJouees() << endl;
 
