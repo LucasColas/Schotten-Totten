@@ -442,7 +442,7 @@ void Jeu::choixPioche() {
 }
 
 int Jeu::autreJoueur() {
-    if (joueur_actuel == 1) {
+    if (joueur_actuel == 2) {
         return 0;
     }
     return 1;
