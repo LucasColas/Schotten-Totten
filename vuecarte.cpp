@@ -9,13 +9,17 @@
 
 VueCarte::~VueCarte()= default;
 
-VueCarte::VueCarte(const Carte& c, QWidget *parent) : QPushButton(parent),carte(&c)
+VueCarte::VueCarte(Carte& c, QWidget *parent) : QPushButton(parent),carte(&c)
 {
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
     setFixedSize(70,100);
     connect(this,SIGNAL(clicked()),this,SLOT(clickedEvent()));
     setCheckable(true);
+}
+
+void VueCarte::setNbBorne(int i) {
+    nb_borne = i;
 }
 
 VueCarte::VueCarte(QWidget *parent): QPushButton(parent)

@@ -351,6 +351,10 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
                 schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, 1);
                 return false;
             }
+
+            schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, 2);
+
+            defausse->ajout_defausse(&carte_ruse);
             return true;
         }
         if (joueur_actuel == 1) {
@@ -385,6 +389,8 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
                 schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, 2);
                 return false;
             }
+            schottenTotten->bornes[choix_borne-1]->ajout_Carte(&carte, 1);
+            defausse->ajout_defausse(&carte_ruse);
 
             return true;
         }
@@ -437,9 +443,9 @@ void Jeu::choixPioche() {
 
 int Jeu::autreJoueur() {
     if (joueur_actuel == 1) {
-        return 1;
+        return 0;
     }
-    return 0;
+    return 1;
 }
 
 void Jeu::jouer_tour() {
@@ -708,4 +714,9 @@ void Jeu::revendication_borne(int i) {
 
 
 
+}
+
+
+void Jeu::setJoueurActuel(int i) {
+    joueur_actuel = i;
 }

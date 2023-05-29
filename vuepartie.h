@@ -30,6 +30,7 @@ Q_OBJECT
 public:
     explicit VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h, vector<string>& noms_j, QWidget *parent = nullptr);
     virtual ~VuePartie();
+
 private:
     Jeu *controller; // controleur de la partie
     QLabel* scoreLabel; // texte "Score"
@@ -52,8 +53,11 @@ private:
 
     string mode;
     string variante;
-    const Carte* carte_selectionne;
+    Carte* carte_selectionne;
     VueCarte* vueCarteSelectionne;
+    void changerJoueur();
+    void clearvues();
+    int nb_cartes_haut;
 
     //std::set<const Set::Carte*> selectedCards; // ensemble des cartes sélectionnées
 
