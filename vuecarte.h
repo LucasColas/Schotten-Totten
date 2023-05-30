@@ -15,6 +15,7 @@ private:
     const Carte* carte= nullptr;
 protected:
     void paintEvent(QPaintEvent *event) override;
+    int borne = -1;
 public:
     VueCarte(const Carte& c, QWidget *parent = nullptr);
     explicit VueCarte(QWidget *parent = nullptr);
@@ -25,6 +26,8 @@ public:
     void setNoCarte() { carte=nullptr; setCheckable(false); update(); }
     const Carte& getCarte() const { return *carte; }
     bool cartePresente() const { return carte!=nullptr; }
+    const int getBorne() const { return borne; }
+    void setBorne(int pos) { borne = pos; }
 
 signals:
     // quand la vude de carte est cliquée, elle émet un signal en transmettant son adresse

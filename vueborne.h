@@ -22,7 +22,7 @@ public:
     // affecter une nouvelle borne à la vue
     void setBorne(const Borne& c) { setCheckable(true); setChecked(false); borne=&c; update(); }
     // vue sans carte
-    void setNoCarte() { borne=nullptr; setCheckable(false); update(); }
+    void setNoBorne() { borne=nullptr; setCheckable(false); update();}
     const Borne& getBorne() const { return *borne; }
     bool BornePresente() const { return borne!=nullptr; }
 signals:
