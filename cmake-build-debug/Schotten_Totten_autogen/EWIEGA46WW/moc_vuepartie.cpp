@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'vuepartie.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.5.0)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.5.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -22,7 +22,7 @@ QT_BEGIN_MOC_NAMESPACE
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'vuepartie.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.5.0. It"
+#error "This file was generated using the moc from 6.5.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -121,6 +121,17 @@ void VuePartie::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 0: _t->onCardClicked((*reinterpret_cast< std::add_pointer_t<VueCarte*>>(_a[1]))); break;
         default: ;
         }
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+        case 0:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< VueCarte* >(); break;
+            }
+            break;
+        }
     }
 }
 
@@ -148,7 +159,7 @@ int VuePartie::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         _id -= 1;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 1)
-            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+            qt_static_metacall(this, _c, _id, _a);
         _id -= 1;
     }
     return _id;

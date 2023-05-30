@@ -1,4 +1,4 @@
-ToolSet: w64 9.0 (local)@C:\Program Files\JetBrains\CLion 2022.3.2\bin\mingw
+ToolSet: w64 9.0 (local)@C:\Users\laure\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9011.31\bin\mingw
 Options: 
 
-Options:
+Options:-DCMAKE_PREFIX_PATH=C:\Qt\6.5.1\mingw_64

@@ -55,6 +55,7 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
     for (int i = 0; i < 9; ++i) {
         for (int j = 0; j < 4; ++j) {
             vuecarteshaut[index] = new VueCarte;
+            vuecarteshaut[index]->setBorne(index);
             firstCardsGridLayout->addWidget(vuecarteshaut[index], j, i);
 
             connect(vuecarteshaut[index], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
@@ -76,6 +77,7 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 4; j++) {
             vuecartesbas[index] = new VueCarte;
+            vuecartesbas[index]->setBorne(index);
             secondCardsGridLayout->addWidget(vuecartesbas[index], j, i);
 
             connect(vuecartesbas[index], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
@@ -139,22 +141,25 @@ void VuePartie::onCardClicked(VueCarte *vc)
             }
 
             if (!dejaPlace) {
-                vc->setCarte(*carte_selectionne);
-                for (int i = 0; i < vuecartesjoueur.size(); i++) {
-                    if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
-                        cout << "i : " << i << endl;
-                        controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i + 1);
-                        if (variante == "normal") {
-                            cout << "size pioche : " << controller->getPioche("pioche clan").sizePioche() << endl;
-                            controller->getJoueur(controller->getJoueurActuel()).ajout_carte(
-                                    &controller->getPioche("pioche clan").piocher_carte());
-                            cout << "size pioche : " << controller->getPioche("pioche clan").sizePioche() << endl;
+                //Si la vue est sur une borne revendiquee
+                if (!vuebornes[vc->getBorne()]->getBorne().GetPossesseur()) {
+                    vc->setCarte(*carte_selectionne);
+                    for (int i = 0; i < vuecartesjoueur.size(); i++) {
+                        if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
+                            cout << "i : " << i << endl;
+                            controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i + 1);
+                            if (variante == "normal") {
+                                cout << "size pioche : " << controller->getPioche("pioche clan").sizePioche() << endl;
+                                controller->getJoueur(controller->getJoueurActuel()).ajout_carte(
+                                        &controller->getPioche("pioche clan").piocher_carte());
+                                cout << "size pioche : " << controller->getPioche("pioche clan").sizePioche() << endl;
+                            }
                         }
                     }
-                }
-                vueCarteSelectionne->setNoCarte();
+                    vueCarteSelectionne->setNoCarte();
 
-                updateVueCards();
+                    updateVueCards();
+                }
             }
             cout << "La carte sélectionnée est déjà placée sur le plateau !" << endl;
         }

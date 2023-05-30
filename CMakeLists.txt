@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_PREFIX_PATH "C://Qt//6.5.0//mingw_64//lib//cmake")
 
 # Tell CMake to find the modules Qt6Core and Qt6Widgets
+set(CMAKE_PREFIX_PATH "C:\\Qt\\6.5.1\\mingw_64")
 find_package(Qt6Widgets REQUIRED)
 
 add_executable(Schotten_Totten
