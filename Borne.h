@@ -8,12 +8,7 @@
 #define SCHOTTEN_TOTTEN_BORNE_H
 
 class Borne {
-    //TODO : Changer borne et la mettre dans un fichier à part.
-    //Car on utilisera sur borne la classe combinaison. Sauf que Combinaison
-    //a un include Carte.
-    //TODO : Si les 2 bornes sont identiques ainsi que leurs sommes sont identique,
-    //regarder celui qui a posé la troisième carte en premier
-    //TODO : gérer le cas où il y a 4 cartes par joueur. -> Prendre la mailleure combinaison possible.
+
 private:
     vector<int> regles;
     int nb_max_cartes;

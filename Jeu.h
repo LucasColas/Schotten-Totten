@@ -63,5 +63,6 @@ public:
     void revendication_borne(int i);
     bool gagnant();
     bool verifPioche(string pioche);
+    void setJoueurActuel(int i);
 };
 #endif //SCHOTTEN_TOTTEN_JEU_H
