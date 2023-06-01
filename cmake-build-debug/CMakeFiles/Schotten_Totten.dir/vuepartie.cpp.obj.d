@@ -449,4 +449,5 @@ CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj: \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Schotten_Totten.h \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Pioche.h \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Revendication.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vueborne.h
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vueborne.h \
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuepioche.h

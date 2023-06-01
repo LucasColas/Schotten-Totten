@@ -234,6 +234,12 @@
 		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.h">
 			<Option target="Schotten_Totten"/>
 		</Unit>
+		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepioche.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepioche.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
 		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

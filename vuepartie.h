@@ -15,6 +15,7 @@
 #include "Jeu.h"
 #include "vuecarte.h"
 #include "vueborne.h"
+#include "vuepioche.h"
 class QLabel;
 class QLineEdit;
 class QPushButton;
@@ -25,6 +26,7 @@ class QProgressBar;
 class QLCDNumber;
 class VueCarte;
 class VueBorne;
+class VuePioche;
 class VuePartie : public QWidget {
 Q_OBJECT
 public:
@@ -50,6 +52,7 @@ private:
     vector<VueCarte*> vuecartesbas;
     vector<VueCarte*> vuecartesjoueur;
     vector<VueBorne*> vuebornes;
+    vector<VuePioche*> vuepioches;
 
     string mode;
     string variante;
@@ -74,7 +77,8 @@ private:
 private slots:
     // slots qui gère les clics sur les cartes
     void onCardClicked(VueCarte* vc);
-    //void onPiocheClicked(VuePioche* p);
+    void onPiocheClicked(VuePioche* p);
     //void onDefausseClicked(VueDefausse* p);
+
 };
 #endif //SCHOTTEN_TOTTEN_VUEPARTIE_H

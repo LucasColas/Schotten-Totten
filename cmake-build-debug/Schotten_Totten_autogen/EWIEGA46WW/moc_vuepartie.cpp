@@ -43,16 +43,22 @@ static constexpr auto qt_meta_stringdata_CLASSVuePartieENDCLASS = QtMocHelpers::
     "onCardClicked",
     "",
     "VueCarte*",
-    "vc"
+    "vc",
+    "onPiocheClicked",
+    "VuePioche*",
+    "p"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSVuePartieENDCLASS_t {
-    uint offsetsAndSizes[10];
+    uint offsetsAndSizes[16];
     char stringdata0[10];
     char stringdata1[14];
     char stringdata2[1];
     char stringdata3[10];
     char stringdata4[3];
+    char stringdata5[16];
+    char stringdata6[11];
+    char stringdata7[2];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSVuePartieENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -62,13 +68,19 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSVuePartieENDCLASS_t qt_meta_str
         QT_MOC_LITERAL(10, 13),  // "onCardClicked"
         QT_MOC_LITERAL(24, 0),  // ""
         QT_MOC_LITERAL(25, 9),  // "VueCarte*"
-        QT_MOC_LITERAL(35, 2)   // "vc"
+        QT_MOC_LITERAL(35, 2),  // "vc"
+        QT_MOC_LITERAL(38, 15),  // "onPiocheClicked"
+        QT_MOC_LITERAL(54, 10),  // "VuePioche*"
+        QT_MOC_LITERAL(65, 1)   // "p"
     },
     "VuePartie",
     "onCardClicked",
     "",
     "VueCarte*",
-    "vc"
+    "vc",
+    "onPiocheClicked",
+    "VuePioche*",
+    "p"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -80,7 +92,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSVuePartieENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -88,10 +100,12 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSVuePartieENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   20,    2, 0x08,    1 /* Private */,
+       1,    1,   26,    2, 0x08,    1 /* Private */,
+       5,    1,   29,    2, 0x08,    3 /* Private */,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
+    QMetaType::Void, 0x80000000 | 6,    7,
 
        0        // eod
 };
@@ -107,7 +121,10 @@ Q_CONSTINIT const QMetaObject VuePartie::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<VuePartie, std::true_type>,
         // method 'onCardClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<VueCarte *, std::false_type>
+        QtPrivate::TypeAndForceComplete<VueCarte *, std::false_type>,
+        // method 'onPiocheClicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<VuePioche *, std::false_type>
     >,
     nullptr
 } };
@@ -119,6 +136,7 @@ void VuePartie::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         (void)_t;
         switch (_id) {
         case 0: _t->onCardClicked((*reinterpret_cast< std::add_pointer_t<VueCarte*>>(_a[1]))); break;
+        case 1: _t->onPiocheClicked((*reinterpret_cast< std::add_pointer_t<VuePioche*>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -129,6 +147,13 @@ void VuePartie::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
             default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
             case 0:
                 *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< VueCarte* >(); break;
+            }
+            break;
+        case 1:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< VuePioche* >(); break;
             }
             break;
         }
@@ -154,13 +179,13 @@ int VuePartie::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }

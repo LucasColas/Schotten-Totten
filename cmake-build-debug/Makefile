@@ -597,6 +597,30 @@ vuepartie.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.s
 .PHONY : vuepartie.cpp.s
 
+vuepioche.obj: vuepioche.cpp.obj
+.PHONY : vuepioche.obj
+
+# target to build an object file
+vuepioche.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuepioche.cpp.obj
+.PHONY : vuepioche.cpp.obj
+
+vuepioche.i: vuepioche.cpp.i
+.PHONY : vuepioche.i
+
+# target to preprocess a source file
+vuepioche.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuepioche.cpp.i
+.PHONY : vuepioche.cpp.i
+
+vuepioche.s: vuepioche.cpp.s
+.PHONY : vuepioche.s
+
+# target to generate assembly for a file
+vuepioche.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuepioche.cpp.s
+.PHONY : vuepioche.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -664,6 +688,9 @@ help:
 	@echo ... vuepartie.obj
 	@echo ... vuepartie.i
 	@echo ... vuepartie.s
+	@echo ... vuepioche.obj
+	@echo ... vuepioche.i
+	@echo ... vuepioche.s
 .PHONY : help
 
 

@@ -27,6 +27,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.cpp" "CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj" "gcc" "CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj.d"
   "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.cpp" "CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj" "gcc" "CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj.d"
   "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.cpp" "CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj" "gcc" "CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj.d"
+  "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepioche.cpp" "CMakeFiles/Schotten_Totten.dir/vuepioche.cpp.obj" "gcc" "CMakeFiles/Schotten_Totten.dir/vuepioche.cpp.obj.d"
   )
 
 # Targets to which this target links.

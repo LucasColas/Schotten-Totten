@@ -425,4 +425,7 @@ CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj:
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Pioche.h \
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Revendication.h \
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.h \
- C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.h
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.h \
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepioche.h \
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\EWIEGA46WW/moc_vuepioche.cpp \
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepioche.h

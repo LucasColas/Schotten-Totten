@@ -18,12 +18,14 @@
 #include "vuecarte.h"
 #include "vuepartie.h"
 #include "vueborne.h"
+#include "vuepioche.h"
 VuePartie::~VuePartie() = default; // Add virtual destructor definition
 
 VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h, vector<string>& noms_j, QWidget *parent) : QWidget(parent), vuecarteshaut(36, nullptr), vuecartesbas(36,
                                                                                                                                   nullptr), vuecartesjoueur(9,
                                                                                                                                                             nullptr), vuebornes(9,
-                                                                                                                                                                                nullptr)
+                                                                                                                                                                                nullptr), vuepioches(2,
+                                                                                                                                                                                                     nullptr)
 {
     setWindowTitle("Schotten Totten!");
     mode = mode_;
@@ -101,12 +103,19 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
     //Pioches et défausse
     QSpacerItem *spacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-    // Buttons on the right
+    // Pioches et défausse
     buttonLayout = new QVBoxLayout;
-    for (int i = 0; i < 3; ++i) {
+    vuepioches[0] = new VuePioche("pioche clan");
+    connect(vuepioches[0], SIGNAL(PiocheClicked(VuePioche*)), this, SLOT(onPiocheClicked(VuePioche *)));
+    vuepioches[1] = new VuePioche("pioche tactique");
+    connect(vuepioches[1], SIGNAL(PiocheClicked(VuePioche*)), this, SLOT(onPiocheClicked(VuePioche *)));
+    buttonLayout->addWidget(vuepioches[0]);
+    buttonLayout->addWidget(vuepioches[1]);
+    /*for (int i = 0; i < 2; ++i) {
+
         QPushButton *button = new QPushButton(QString("Button %1").arg(i));
         buttonLayout->addWidget(button);
-    }
+    }*/
     updateVueCards();
     rightLayout = new QHBoxLayout;
     rightLayout->addLayout(buttonLayout);
@@ -179,6 +188,16 @@ void VuePartie::onCardClicked(VueCarte *vc)
 
     }
     update();
+}
+
+void VuePartie::onPiocheClicked(VuePioche *p) {
+    if (p->getNomPioche() == "pioche clan") {
+        cout << "Pioche clan" << endl;
+    }
+
+    if (p->getNomPioche() == "pioche tactique") {
+        cout << "Pioche tactique" << endl;
+    }
 }
 
 void VuePartie::changerJoueur() {

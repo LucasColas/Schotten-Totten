@@ -11,6 +11,7 @@ class Pioche {
 
 private:
     vector<Carte*> cartes_pioche;
+    string id;
 
 public:
     Pioche(vector<Carte_clan*>& cartes);
