@@ -30,6 +30,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Schotten_Totten.dir/defausse.cpp.obj.d"
   "CMakeFiles/Schotten_Totten.dir/main.cpp.obj"
   "CMakeFiles/Schotten_Totten.dir/main.cpp.obj.d"
+  "CMakeFiles/Schotten_Totten.dir/menu.cpp.obj"
+  "CMakeFiles/Schotten_Totten.dir/menu.cpp.obj.d"
   "CMakeFiles/Schotten_Totten.dir/set.cpp.obj"
   "CMakeFiles/Schotten_Totten.dir/set.cpp.obj.d"
   "CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj"

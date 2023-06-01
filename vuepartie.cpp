@@ -132,6 +132,20 @@ void VuePartie::onCardClicked(VueCarte *vc)
     if (!vc->cartePresente()) {
         cout << "carte non présente" << endl;
         if (carte_selectionne != nullptr) {
+            //bool dejaPlace = false;
+            for (int i = 0; i < vuecarteshaut.size(); i++) {
+                if (carte_selectionne == &vuecarteshaut[i]->getCarte()) {
+                    return;
+                }
+            }
+            for (int i = 0; i < vuecartesbas.size(); i++) {
+                if (carte_selectionne == &vuecartesbas[i]->getCarte()) {
+                    return;
+                }
+            }
+            if (vuebornes[vc->getNbBorne()]->getBorne().GetPossesseur()) {
+                return;
+            }
             vc->setCarte(*carte_selectionne);
             for (int i = 0; i < vuecartesjoueur.size(); i++) {
 

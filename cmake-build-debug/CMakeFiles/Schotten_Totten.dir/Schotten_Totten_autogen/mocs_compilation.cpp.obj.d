@@ -1,9 +1,9 @@
 CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj: \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\mocs_compilation.cpp \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\EWIEGA46WW/moc_vuepartie.cpp \
- C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.h \
- C:/Qt/6.5.0/mingw_64/include/QtWidgets/QApplication \
- C:/Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\EWIEGA46WW/moc_vueborne.cpp \
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/QWidget \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qwidget.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qtguiglobal.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qglobal.h \
@@ -143,7 +143,13 @@ CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj:
  C:/Qt/6.5.0/mingw_64/include/QtGui/qtguiexports.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qwindowdefs.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qobjectdefs.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qnamespace.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qtmetamacros.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qobjectdefs_impl.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qobject.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qstring.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qchar.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/functional \
@@ -176,8 +182,6 @@ CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj:
  C:/Qt/6.5.0/mingw_64/include/QtCore/qstringview.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qbytearray.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qrefcount.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qnamespace.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qtmetamacros.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qarraydata.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qpair.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/x86_64-w64-mingw32/include/string.h \
@@ -272,11 +276,6 @@ CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj:
  C:/Qt/6.5.0/mingw_64/include/QtCore/qanystringview.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qutf8stringview.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qstringtokenizer.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreevent.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qobjectdefs.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qobjectdefs_impl.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qeventloop.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qobject.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qlist.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qhashfunctions.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/numeric \
@@ -311,60 +310,92 @@ CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj:
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/chrono \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ratio \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ctime \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qnativeinterface.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qdebug.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qtextstream.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qstringconverter_base.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qcontiguouscache.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qsharedpointer.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qshareddata.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qmap.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qshareddata_impl.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qset.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qhash.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qvarlengtharray.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/q20memory.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qwindowdefs.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qwindowdefs_win.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qpoint.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qsize.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qmargins.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qcursor.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qbitmap.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qaction.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qkeysequence.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qicon.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qsize.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qpixmap.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qpaintdevice.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qrect.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qpoint.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qcolor.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qrgb.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qrgba64.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qsharedpointer.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qshareddata.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qimage.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qpixelformat.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qtransform.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qpolygon.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qregion.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qline.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qguiapplication.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qinputmethod.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qvariant.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qguiapplication_platform.h \
- C:/Qt/6.5.0/mingw_64/include/QtWidgets/QWidget \
- C:/Qt/6.5.0/mingw_64/include/QtWidgets/qwidget.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qaction.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qkeysequence.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qicon.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qdebug.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qtextstream.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qstringconverter_base.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qcontiguouscache.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qmap.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qshareddata_impl.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qset.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qhash.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qvarlengtharray.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/q20memory.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qpalette.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qbrush.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qfont.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qfontmetrics.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qfontinfo.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qsizepolicy.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qcursor.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qbitmap.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/QPen \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qpen.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/QBrush \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qbrush.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/QPushButton \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qpushbutton.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractbutton.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qwidget.h \
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Borne.h \
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Carte.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/queue \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/deque \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_deque.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/deque.tcc \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_queue.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwctype \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/x86_64-w64-mingw32/include/wctype.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.tcc \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
+ C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Combinaison.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qtmochelpers.h \
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\EWIEGA46WW/moc_vuecarte.cpp \
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.h \
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\EWIEGA46WW/moc_vuepartie.cpp \
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/QApplication \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreevent.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qeventloop.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qnativeinterface.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qguiapplication.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qinputmethod.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qlocale.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qguiapplication_platform.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/QVBoxLayout \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qboxlayout.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qlayout.h \
@@ -384,28 +415,6 @@ CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj:
  C:/Qt/6.5.0/mingw_64/include/QtGui/qtextformat.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qpen.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qtextoption.h \
- C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Carte.h \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/queue \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/deque \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_deque.h \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/deque.tcc \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_queue.h \
- C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Borne.h \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.h \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.h \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cwctype \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/x86_64-w64-mingw32/include/wctype.h \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_facets.tcc \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/basic_ios.tcc \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
- C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
- C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Combinaison.h \
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Jeu.h \
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Joueur.h \
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Affichage_console.h \
@@ -416,8 +425,4 @@ CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj:
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Pioche.h \
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Revendication.h \
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/QPen \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qpen.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/QBrush \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qbrush.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qtmochelpers.h
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.h

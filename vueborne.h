@@ -27,9 +27,9 @@ public:
     bool BornePresente() const { return borne!=nullptr; }
 signals:
     // quand la vude de carte est cliquée, elle émet un signal en transmettant son adresse
-    void carteClicked(VueBorne*);
+    void BorneClicked(VueBorne*);
 public slots:
 private slots:
-    void clickedEvent() { emit carteClicked(this); }
+    void clickedEvent() { emit BorneClicked(this); }
 };
 #endif //SCHOTTEN_TOTTEN_VUEBORNE_H

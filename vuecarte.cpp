@@ -37,7 +37,16 @@ void VueCarte::paintEvent(QPaintEvent * /* event */) {
         painter.drawText(QRect(0,10,width(),10), Qt::AlignCenter, tr("vide"));
         return;
     }
-    string str = toString(carte->get_couleur()) + to_string(carte->get_force());
+    if (carte->getType() == "Clan") {
+        string str = toString(carte->get_couleur()) + to_string(carte->get_force());
+        const char* s = str.c_str();
+        painter.drawText(QRect(0, 10, width(), 10), Qt::AlignCenter, tr(s));
+        return;
+    }
+
+    string str = carte->getId();
     const char* s = str.c_str();
     painter.drawText(QRect(0, 10, width(), 10), Qt::AlignCenter, tr(s));
+
+
 }

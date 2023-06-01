@@ -418,4 +418,6 @@ CMakeFiles/Schotten_Totten.dir/main.cpp.obj: \
  C:/Qt/6.5.0/mingw_64/include/QtGui/QPen \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qpen.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/QBrush \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qbrush.h
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qbrush.h \
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vueborne.h \
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\menu.h

@@ -407,4 +407,5 @@ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotte
   C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Revendication.h \
   C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Schotten_Totten.h \
   C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/defausse.h \
+  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.h \
   C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.h

@@ -379,6 +379,37 @@ CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj: \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/QMessageBox \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qmessagebox.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/QApplication \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreevent.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qeventloop.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qnativeinterface.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qguiapplication.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qinputmethod.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qlocale.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qguiapplication_platform.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/QKeyEvent \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qevent.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qpointer.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qeventpoint.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qvector2d.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qvectornd.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qpointingdevice.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qinputdevice.h \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qscreen.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/QList \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qlist.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/QObject \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qobject.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/QRect \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qrect.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/QSize \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qsize.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/QSizeF \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/QTransform \
+ C:/Qt/6.5.0/mingw_64/include/QtGui/qtransform.h \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuecarte.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/QWidget \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qwidget.h \
@@ -393,17 +424,6 @@ CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/deque.tcc \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_queue.h \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuepartie.h \
- C:/Qt/6.5.0/mingw_64/include/QtWidgets/QApplication \
- C:/Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreevent.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qeventloop.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qnativeinterface.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qguiapplication.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qinputmethod.h \
- C:/Qt/6.5.0/mingw_64/include/QtCore/qlocale.h \
- C:/Qt/6.5.0/mingw_64/include/QtGui/qguiapplication_platform.h \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Borne.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream \
@@ -428,4 +448,5 @@ CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_stack.h \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Schotten_Totten.h \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Pioche.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Revendication.h
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Revendication.h \
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vueborne.h

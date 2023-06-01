@@ -27,6 +27,6 @@ void VueBorne::paintEvent(QPaintEvent *event) {
         painter.drawText(QRect(5,10,width(),10), Qt::AlignCenter, tr("vide"));
         return;
     }
-    painter.drawText(QRect(5, 10, width(), 10), Qt::AlignCenter, tr(borne->getId().c_str()));
+    painter.drawText(QRect(5, 10, width(), 10), Qt::AlignCenter, tr((borne->getId() + "\n" + std::to_string(borne->GetPossesseur())).c_str()));
 
 }

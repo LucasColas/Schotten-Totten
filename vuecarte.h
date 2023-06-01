@@ -26,6 +26,7 @@ public:
     void setNoCarte() { carte=nullptr; setCheckable(false); update(); }
     Carte& getCarte() const { return *carte; }
     bool cartePresente() const { return carte!=nullptr; }
+
     void setNbBorne(int i);
     int getNbBorne() const {return nb_borne;};
 
