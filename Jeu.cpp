@@ -666,7 +666,7 @@ void Jeu::revendication_borne(int i) {
         //Il faut demander la valeur des cartes tactiques
         affichageConsole->afficher_cartes_bornes(schottenTotten->bornes, joueur_actuel);
         cout << "\n\n\n\n\n" << "la borne : " << to_string(i+1) << " a un nombre max de cartes pour chacun des joueurs" << endl;
-
+        // A faire. Ne plus demander la valeur des cartes Elite. Mais calculer automatiquement celui qui a la meilleure combinaison.
         schottenTotten->bornes[i]->demander_valeurs(1);
         schottenTotten->bornes[i]->demander_valeurs(2);
         revendication = new Revendication(schottenTotten->bornes[i]);

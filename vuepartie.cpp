@@ -137,8 +137,6 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
 void VuePartie::onCardClicked(VueCarte *vc)
 {
 
-
-
     if (!vc->cartePresente()) {
         cout << "carte non présente" << endl;
         if (carte_selectionne != nullptr) {
@@ -169,6 +167,7 @@ void VuePartie::onCardClicked(VueCarte *vc)
                 if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
                     cout << "i : " << i << endl;
                     if (carte_selectionne->getType() != "Elite" && carte_selectionne->getType() != "Clan") {
+                        //On ne peut poser que des cartes Clan ou Elite sur une case vide.
                         return;
                     }
 
@@ -269,6 +268,7 @@ void VuePartie::updateVueCards() {
     //
     //Mettre à jour les bornes par exemple.
     clearvues();
+    verif_bornes();
     for (int i = 0; i < controller->getSchottenTotten().getNb_bornes(); i++) {
         vuebornes[i]->setBorne(controller->getSchottenTotten().getBorne(i),i);
     }
@@ -327,7 +327,9 @@ void VuePartie::updateVueCards() {
 void VuePartie::onBorneClicked(VueBorne *b) {
     if (carte_selectionne != nullptr) {
         if (carte_selectionne->getType() == "Combat") {
+            //Une carte mode de combat veut être posée sur une borne.
             controller->getSchottenTotten().getBorne(b->getNbBorne()).ajoutRegle(carte_selectionne->getRegle());
+            vueCarteSelectionne->setNoCarte();
         }
     }
 }
