@@ -105,13 +105,15 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
     QSpacerItem *spacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
     // Pioches et défausse
-    buttonLayout = new QVBoxLayout;
-    vuepioches[0] = new VuePioche("pioche clan");
-    connect(vuepioches[0], SIGNAL(PiocheClicked(VuePioche*)), this, SLOT(onPiocheClicked(VuePioche *)));
-    vuepioches[1] = new VuePioche("pioche tactique");
-    connect(vuepioches[1], SIGNAL(PiocheClicked(VuePioche*)), this, SLOT(onPiocheClicked(VuePioche *)));
-    buttonLayout->addWidget(vuepioches[0]);
-    buttonLayout->addWidget(vuepioches[1]);
+    if (variante=="tactique"){
+        buttonLayout = new QVBoxLayout;
+        vuepioches[0] = new VuePioche("pioche clan");
+        connect(vuepioches[0], SIGNAL(PiocheClicked(VuePioche*)), this, SLOT(onPiocheClicked(VuePioche *)));
+        vuepioches[1] = new VuePioche("pioche tactique");
+        connect(vuepioches[1], SIGNAL(PiocheClicked(VuePioche*)), this, SLOT(onPiocheClicked(VuePioche *)));
+        buttonLayout->addWidget(vuepioches[0]);
+        buttonLayout->addWidget(vuepioches[1]);
+    }
     /*for (int i = 0; i < 2; ++i) {
 
         QPushButton *button = new QPushButton(QString("Button %1").arg(i));

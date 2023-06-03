@@ -9,7 +9,7 @@ using namespace std;
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
-#include "menu.h"
+
 int main(int argc, char *argv[]) {
     //Menu m = Menu();
     //m.jouer();
@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     vector<string> noms;
     noms.push_back("A");
     noms.push_back("B");
-    VuePartie partie("Schotten Totten", "tactique", 3, 2, noms);
+    VuePartie partie("Schotten Totten", "normal", 3, 1, noms);
     //partie.setFixedSize(700, 500);
     partie.show();
 

@@ -35,6 +35,7 @@ VueCarte::VueCarte(QWidget *parent): QPushButton(parent)
 void VueCarte::paintEvent(QPaintEvent * /* event */) {
     QPainter painter(this);
     if (carte==nullptr) { // si la vue de carte n'a pas de carte on affiche un message
+        setStyleSheet("color: black;");
         painter.drawText(QRect(0,10,width(),10), Qt::AlignCenter, tr("vide"));
         return;
     }
