@@ -380,9 +380,9 @@ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Factory.h
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.cpp
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/main.cpp
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Borne.h
+C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/defausse.cpp
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Carte.h
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Jeu_cartes.h
-C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/defausse.cpp
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Combinaison.h
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Joueur.h
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Jeu.h
