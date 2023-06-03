@@ -32,6 +32,7 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
     variante = variante_;
     controller = new Jeu(mode, variante, nb_p, nb_joueurs_h, noms_j);
     nb_cartes_haut = 36;
+    carte_place = false;
 
 
     //numberCardsDeckProgressBar = new QProgressBar;
@@ -155,12 +156,24 @@ void VuePartie::onCardClicked(VueCarte *vc)
             if (vuebornes[vc->getNbBorne()]->getBorne().GetPossesseur()) {
                 return;
             }
+
+            if (controller->getJoueurActuel() == 1) {
+                if (vuebornes[vc->getNbBorne()]->getBorne().getCartes_joueur_1().size() == vuebornes[vc->getNbBorne()]->getBorne().getNbMaxCartes()) {
+                    cout << "nombre max de carte posé" << endl;
+                    return;
+                }
+            }
             vc->setCarte(*carte_selectionne);
             for (int i = 0; i < vuecartesjoueur.size(); i++) {
 
                 if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
                     cout << "i : " << i << endl;
+
+                    //vuebornes[vc->getNbBorne()]->getBorne().ajout_Carte(carte_selectionne, controller->getJoueurActuel());
+                    //controller->getSchottenTotten().getBorne(vc->getNbBorne()).ajout_Carte(carte_selectionne, controller->getJoueurActuel());
+
                     controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i+1);
+                    carte_place = true;
                     if (variante == "normal") {
                         cout << "size pioche : " << controller->getPioche("pioche clan").sizePioche() << endl;
                         controller->getJoueur(controller->getJoueurActuel()).ajout_carte(&controller->getPioche("pioche clan").piocher_carte());

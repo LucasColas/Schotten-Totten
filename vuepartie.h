@@ -58,6 +58,7 @@ private:
     string variante;
     Carte* carte_selectionne;
     VueCarte* vueCarteSelectionne;
+    bool carte_place;
     void changerJoueur();
     void clearvues();
     int nb_cartes_haut;
