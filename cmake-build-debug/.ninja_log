@@ -1,12 +1,16 @@
 # ninja log v5
-8	754	7026388391106668	CMakeFiles/Schotten_Totten.dir/main.cpp.obj	eee8dff2a5ab0a34
-4	723	7026388390796715	CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj	aeb80630f0235882
-810	986	7026388393396675	Schotten_Totten.exe	2609081679fd1f14
-17	1199	7026362582728701	CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj	a0033754871ede08
-18	809	7026388391666699	CMakeFiles/Schotten_Totten.dir/Jeu.cpp.obj	1b5d9e1483d47968
-50	253	7018574553967143	CMakeFiles/Schotten_Totten.dir/Jeu_cartes.cpp.obj	81a40885c26098b8
-43	254	7018574553967143	CMakeFiles/Schotten_Totten.dir/defausse.cpp.obj	9da5dc88c9382cfb
-22	741	7026388390966696	CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.obj	1070c79a3974d755
-13	792	7026388391486672	CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.obj	a29be1ed48747bf6
-30	976	7026362580498667	CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj	4b8b35747b6fa173
-15	78	7020338011453438	CMakeFiles/Schotten_Totten.dir/Factory.cpp.obj	9e1b677d19efe8af
+4	2782	7062644006003115	CMakeFiles/Schotten_Totten.dir/main.cpp.obj	c0b96f033e2e7b67
+16	1443	7062643992599660	CMakeFiles/Schotten_Totten.dir/Joueur.cpp.obj	54fffda9ea687c24
+832	1949	7062643997670009	CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj	c425378b56208ede
+2784	3248	7062644010628934	Schotten_Totten.exe	2edfa8445b28fcbd
+10	1143	7062643989589671	CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj	425fedcd11acaeee
+27	1800	7062643996159713	CMakeFiles/Schotten_Totten.dir/Jeu.cpp.obj	ab7c6017641cdd83
+42	155	7062643979685964	CMakeFiles/Schotten_Totten.dir/Jeu_cartes.cpp.obj	b23fc2ab0725215a
+49	832	7062643986489701	CMakeFiles/Schotten_Totten.dir/defausse.cpp.obj	a5986902c81805a9
+21	1055	7062643988719670	CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.obj	99962795152f415
+34	1583	7062643993999692	CMakeFiles/Schotten_Totten.dir/Schotten_Totten.cpp.obj	62337467c74d951e
+169	1804	7062643996199711	CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj	4fba02f915629a9a
+156	965	7062643987829684	CMakeFiles/Schotten_Totten.dir/set.cpp.obj	cd1b1a4ca6667369
+55	169	7062643979835970	CMakeFiles/Schotten_Totten.dir/Factory.cpp.obj	fb64d8c4f84e352d
+966	1951	7062643997690035	CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj	6ad9225cedefc665
+1056	2483	7062644003010052	CMakeFiles/Schotten_Totten.dir/Revendication.cpp.obj	28af919935fbde30

@@ -11,6 +11,7 @@ using namespace std;
 
 #include <cstddef>
 #include "Carte.h"
+#include "Borne.h"
 class Schotten_Totten {
     friend class Jeu;
 protected:
@@ -21,6 +22,7 @@ protected:
     int nb_bornes;
     int nb_cartes_par_joueur;
 
+
 public:
     Schotten_Totten();
     void gagnant();
@@ -28,6 +30,14 @@ public:
     void revendication();
     int getNb_bornes() const { return nb_bornes;};
     int getNb_Cartes_clan() const {return nb_Cartes_clan;};
+    virtual vector<Carte_tactique*>& getCartesTactique() {
+        throw SetException("La classe Schotten_Totten n'a pas de cartes tactiques");
+
+    }
+
+    vector<Carte_clan*>& getCartesClan() {
+        return cartes;
+    }
 
     Carte_clan& getCarte_clan(int i) const {
         if (i >= nb_Cartes_clan) {
@@ -44,16 +54,24 @@ public:
     int getNb_Cartes_par_joueur() const { return nb_cartes_par_joueur;};
 
 
+
 };
 
 class Tactique : public Schotten_Totten{
+    friend class Jeu;
 private:
+    vector<string> types;
+    map<string, int> regles_bornes; //permet d'avoir pour chaque carte combat un entier qui désigne sa règle.
 
     vector<Carte_tactique*> cartes_tactique;
     int nb_cartes_tactiques;
+    vector<Carte_tactique*>& getCartesTactique() override {
+        return cartes_tactique;
+    }
 
 public:
     Tactique();
+    void test();
 
 };
 

@@ -5,23 +5,49 @@
 #include "Carte.h"
 #include "Schotten_Totten.h"
 #include <iostream>
+#include <algorithm>
+#include <random>
+
+
 using namespace std;
-Pioche::Pioche(Schotten_Totten& j): cartes(new const Carte*[j.getNb_Cartes_clan()]), nb(j.getNb_Cartes_clan()) {
-    for(size_t i=0; i <nb; i++)
-        cartes[i] = &j.getCarte_clan(i);
+Pioche::Pioche(vector<Carte_clan*>& cartes) {
+    for (size_t i = 0; i < cartes.size(); i++) {
+        cartes_pioche.push_back(cartes[i]);
+    }
+    melange();
 }
+
+Pioche::Pioche(vector<Carte_tactique*>& cartes) {
+    for (size_t i = 0; i < cartes.size(); i++) {
+        cartes_pioche.push_back(cartes[i]);
+    }
+    melange();
+
+
+}
+
+void Pioche::melange() {
+    random_device rd;
+    mt19937 g(rd());
+
+    // Melange du vecteur avec le seed
+    shuffle(cartes_pioche.begin(), cartes_pioche.end(), g);
+}
+
 Pioche::Pioche(int n) {
     cout << "essai";
 }
 bool Pioche::est_vide() {
-    return nb == 0;
+    return cartes_pioche.size() == 0;
 }
 Carte& Pioche::piocher_carte() {
     if (est_vide()) {
         throw "pas possible de piocher. Pioche vide";
     }
 
-    Carte& c = *cartes[nb- 1];
-    nb--;
+    Carte& c = *cartes_pioche.back();
+    cartes_pioche.pop_back();
+    cout << "return c" << endl;
+    //cout << c << endl;
     return c;
 }

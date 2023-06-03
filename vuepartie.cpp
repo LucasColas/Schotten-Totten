@@ -19,8 +19,6 @@
 #include "vuepartie.h"
 #include "vueborne.h"
 #include "vuepioche.h"
-#include "vuemenu.h"
-
 VuePartie::~VuePartie() = default; // Add virtual destructor definition
 
 VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h, vector<string>& noms_j, QWidget *parent) : QWidget(parent), vuecarteshaut(36, nullptr), vuecartesbas(36,

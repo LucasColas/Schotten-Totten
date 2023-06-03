@@ -2,46 +2,48 @@
 
 #include "Carte.h"
 
-
+#ifndef COMBINAISON_H
+#define COMBINAISON_H
 class Combinaison{
-    const Carte_clan* c1;
-    const Carte_clan* c2;
-    const Carte_clan* c3;
-    const Carte_clan* c4;
-
-    int Puissance=0;
-    int nb_carte;
+    Carte* c1;
+    Carte* c2;
+    Carte* c3;
+    Carte* c4;
+    int nb_cartes;
+    int Puissance;
+    int MaxPuissance;
+    vector<Carte*> cartes_combi;
+    int somme;
+    int MaxSomme;
 
 public:
-    const Carte_clan& getCarte1() const { return *c1; }
-    const Carte_clan& getCarte2() const { return *c2; }
-    const Carte_clan& getCarte3() const { return *c3; }
-    const Carte_clan& getCarte4() const { return *c4; }
-    
-    Combinaison(const Carte_clan* u, const Carte_clan* d, const Carte_clan* t): nb_carte(3), c1(u), c2(d), c3(t) {}
-    Combinaison(const Carte_clan* u, const Carte_clan* d, const Carte_clan* t, const Carte_clan* q): nb_carte(4), c1(u), c2(d), c3(t), c4(q) {}
+    //const Carte& getCarte1() const { return *c1; }
+    //const Carte& getCarte2() const { return *c2; }
+    //const Carte& getCarte3() const { return *c3; }
+    Combinaison(Carte* c1_, Carte* c2_, Carte* c3_, int nb_c);
+    Combinaison(Carte* c1_, Carte* c2_, Carte* c3_, Carte* c4_, int nb_c);
 
     
     const int getPuissance() const {return Puissance;}
+    vector<Carte*> getCartesCombi() {return cartes_combi;};
+    void setCartes(Carte* c1_, Carte* c2_, Carte* c3_);
 
-    bool estUneCouleur3();
-    bool estUneCouleur4();
+    bool estUneCouleur();
+    bool estUneSuite();
+    bool estUnBrelan();
+    bool estUneSuiteCouleur();
+    void sommeSuite();
+    int getSommeSuite() const {return somme;};
 
-<<<<<<< Updated upstream
-    bool estUneSuite3();
-    bool estUneSuite4();
-
-    bool estUnBrelan3();
-    bool estUnBrelan4();
-
-    bool estUneSuiteCouleur3();
-    bool estUneSuiteCouleur4();
-=======
     Carte& getC1() const {return *c1;};
     Carte& getC2() const {return *c2;};
     Carte& getC3() const {return *c3;};
-    Carte& getC4() const {return *c4;}
->>>>>>> Stashed changes
 
     void PuissanceCombinaison();
+    int getMaxPuissance();
+    int getMaxSomme() const {return MaxSomme;};
+
+    void DonnerCombinaison();
 };
+#endif // COMBINAISON_H
+

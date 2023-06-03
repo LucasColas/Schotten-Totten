@@ -1,0 +1,4 @@
+-DWIN32
+-o
+C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/moc_vuecarte.cpp
+C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.h
