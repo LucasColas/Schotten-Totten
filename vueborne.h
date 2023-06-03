@@ -13,18 +13,20 @@ class VueBorne : public QPushButton {
 Q_OBJECT
 private:
     Borne* borne= nullptr;
+    int nb_borne;
 protected:
     void paintEvent(QPaintEvent *event) override;
 public:
-    VueBorne(Borne& c, QWidget *parent = nullptr);
+    VueBorne(Borne& c, int nb_b, QWidget *parent = nullptr);
     //virtual ~VueBorne();
-    explicit VueBorne(QWidget *parent = nullptr);
+    explicit VueBorne(int nb_b, QWidget *parent = nullptr);
     // affecter une nouvelle borne à la vue
-    void setBorne(Borne& c) { setCheckable(true); setChecked(false); borne=&c; update(); }
+    void setBorne(Borne& c, int nb_b) { setCheckable(true); setChecked(false); borne=&c; nb_borne = nb_b; update(); }
     // vue sans carte
-    void setNoCarte() { borne=nullptr; setCheckable(false); update(); }
+    void setNoBorne() { borne=nullptr; setCheckable(false); update(); }
     Borne& getBorne() const { return *borne; }
     bool BornePresente() const { return borne!=nullptr; }
+    int getNbBorne() const {return nb_borne;}
 signals:
     // quand la vude de carte est cliquée, elle émet un signal en transmettant son adresse
     void BorneClicked(VueBorne*);

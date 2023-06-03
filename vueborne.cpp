@@ -5,20 +5,22 @@
 #include <QPainter>
 #include <QString>
 #include <QStaticText>
-VueBorne::VueBorne(Borne &c, QWidget *parent) {
+VueBorne::VueBorne(Borne &c, int nb_b, QWidget *parent) {
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
     setFixedSize(50,70);
-    //connect(this,SIGNAL(clicked()),this,SLOT(clickedEvent()));
+    connect(this,SIGNAL(clicked()),this,SLOT(clickedEvent()));
     setCheckable(true);
+    nb_borne = nb_b;
 }
 
-VueBorne::VueBorne(QWidget *parent) {
+VueBorne::VueBorne(int nb_b, QWidget *parent) {
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
     setFixedSize(50,70);
-    //connect(this,SIGNAL(clicked()),this,SLOT(clickedEvent()));
+    connect(this,SIGNAL(clicked()),this,SLOT(clickedEvent()));
     setCheckable(false);
+    nb_borne = nb_b;
 }
 
 void VueBorne::paintEvent(QPaintEvent *event) {

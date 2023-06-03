@@ -62,6 +62,7 @@ private:
     void changerJoueur();
     void clearvues();
     int nb_cartes_haut;
+    void verif_bornes();
 
     //std::set<const Set::Carte*> selectedCards; // ensemble des cartes sélectionnées
 
@@ -79,6 +80,7 @@ private slots:
     // slots qui gère les clics sur les cartes
     void onCardClicked(VueCarte* vc);
     void onPiocheClicked(VuePioche* p);
+    void onBorneClicked(VueBorne* b);
     //void onDefausseClicked(VueDefausse* p);
 
 };
