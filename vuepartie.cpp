@@ -173,11 +173,19 @@ void VuePartie::onCardClicked(VueCarte *vc)
                     //controller->getSchottenTotten().getBorne(vc->getNbBorne()).ajout_Carte(carte_selectionne, controller->getJoueurActuel());
 
                     controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i+1);
-                    carte_place = true;
+
                     if (variante == "normal") {
+                        //La pioche est automatique
                         cout << "size pioche : " << controller->getPioche("pioche clan").sizePioche() << endl;
                         controller->getJoueur(controller->getJoueurActuel()).ajout_carte(&controller->getPioche("pioche clan").piocher_carte());
                         cout << "size pioche : " <<controller->getPioche("pioche clan").sizePioche() << endl;
+                        updateVueCards();
+                        changerJoueur();
+                        updateVueCards();
+                    }
+                    if (variante == "tactique") {
+                        //Pioche pas automatique car le joueur peut choisir.
+                        carte_place = true;
                     }
                     controller->getSchottenTotten().getBorne(vc->getNbBorne()).ajout_Carte(carte_selectionne, controller->getJoueurActuel());
                     cout << "vecteur joueurs bornes : " << controller->getSchottenTotten().getBorne(vc->getNbBorne()).getCartes_joueur_2().size() << " " << controller->getSchottenTotten().getBorne(vc->getNbBorne()).getCartes_joueur_1().size() << endl;
@@ -186,9 +194,7 @@ void VuePartie::onCardClicked(VueCarte *vc)
             vueCarteSelectionne->setNoCarte();
 
             updateVueCards();
-            changerJoueur();
 
-            updateVueCards();
 
         }
 
@@ -204,13 +210,25 @@ void VuePartie::onCardClicked(VueCarte *vc)
 }
 
 void VuePartie::onPiocheClicked(VuePioche *p) {
-    if (p->getNomPioche() == "pioche clan") {
+    if (carte_place && p->getNomPioche() == "pioche clan") {
         cout << "Pioche clan" << endl;
+        controller->getJoueur(controller->getJoueurActuel()).ajout_carte(&controller->getPioche("pioche clan").piocher_carte());
+        carte_place = false;
+        updateVueCards();
+        changerJoueur();
+        updateVueCards();
+
     }
 
-    if (p->getNomPioche() == "pioche tactique") {
+    if (carte_place && p->getNomPioche() == "pioche tactique") {
         cout << "Pioche tactique" << endl;
+        controller->getJoueur(controller->getJoueurActuel()).ajout_carte(&controller->getPioche("pioche tactique").piocher_carte());
+        carte_place = false;
+        updateVueCards();
+        changerJoueur();
+        updateVueCards();
     }
+
 }
 
 void VuePartie::changerJoueur() {

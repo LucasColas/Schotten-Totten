@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     vector<string> noms;
     noms.push_back("A");
     noms.push_back("B");
-    VuePartie partie("Schotten Totten", "normal", 3, 2, noms);
+    VuePartie partie("Schotten Totten", "tactique", 3, 2, noms);
     //partie.setFixedSize(700, 500);
     partie.show();
 
