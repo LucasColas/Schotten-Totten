@@ -335,6 +335,12 @@
 			null
 		],
 		[
+			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuemenu.h",
+			"Mu",
+			"EWIEGA46WW/moc_vuemenu.cpp",
+			null
+		],
+		[
 			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.h",
 			"Mu",
 			"EWIEGA46WW/moc_vuepartie.cpp",
@@ -499,6 +505,11 @@
 		],
 		[
 			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuemenu.cpp",
 			"Mu",
 			null
 		],

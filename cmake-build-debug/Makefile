@@ -573,6 +573,30 @@ vuecarte.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.s
 .PHONY : vuecarte.cpp.s
 
+vuemenu.obj: vuemenu.cpp.obj
+.PHONY : vuemenu.obj
+
+# target to build an object file
+vuemenu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuemenu.cpp.obj
+.PHONY : vuemenu.cpp.obj
+
+vuemenu.i: vuemenu.cpp.i
+.PHONY : vuemenu.i
+
+# target to preprocess a source file
+vuemenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuemenu.cpp.i
+.PHONY : vuemenu.cpp.i
+
+vuemenu.s: vuemenu.cpp.s
+.PHONY : vuemenu.s
+
+# target to generate assembly for a file
+vuemenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuemenu.cpp.s
+.PHONY : vuemenu.cpp.s
+
 vuepartie.obj: vuepartie.cpp.obj
 .PHONY : vuepartie.obj
 
@@ -685,6 +709,9 @@ help:
 	@echo ... vuecarte.obj
 	@echo ... vuecarte.i
 	@echo ... vuecarte.s
+	@echo ... vuemenu.obj
+	@echo ... vuemenu.i
+	@echo ... vuemenu.s
 	@echo ... vuepartie.obj
 	@echo ... vuepartie.i
 	@echo ... vuepartie.s

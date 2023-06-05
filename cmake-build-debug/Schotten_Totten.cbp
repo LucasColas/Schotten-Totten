@@ -228,6 +228,12 @@
 		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.h">
 			<Option target="Schotten_Totten"/>
 		</Unit>
+		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuemenu.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuemenu.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
 		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.cpp">
 			<Option target="Schotten_Totten"/>
 		</Unit>

@@ -3638,6 +3638,8 @@ CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj: C:/Users/lucas/Desktop/Cours/In
   C:/Qt/6.5.0/mingw_64/include/QtGui/QStaticText \
   C:/Qt/6.5.0/mingw_64/include/QtGui/qstatictext.h
 
+CMakeFiles/Schotten_Totten.dir/vuemenu.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuemenu.cpp
+
 CMakeFiles/Schotten_Totten.dir/vuepartie.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.cpp \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qlabel.h \
@@ -5346,6 +5348,8 @@ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.h:
 C:/Qt/6.5.0/mingw_64/include/QtGui/qtransform.h:
 
 C:/Qt/6.5.0/mingw_64/include/QtCore/qvariant.h:
+
+C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuemenu.cpp:
 
 C:/Qt/6.5.0/mingw_64/include/QtCore/qdebug.h:
 

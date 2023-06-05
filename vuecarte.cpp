@@ -40,7 +40,24 @@ void VueCarte::paintEvent(QPaintEvent * /* event */) {
     if (carte->getType() == "Clan") {
         string str = toString(carte->get_couleur()) + to_string(carte->get_force());
         const char* s = str.c_str();
+
+        string couleur = toString(carte->get_couleur());
+        if (couleur == "Bl")
+            setStyleSheet("color: blue;");
+        if (couleur == "Ro")
+            setStyleSheet("color: red;");
+        if (couleur == "Ve")
+            setStyleSheet("color: green;");
+        if (couleur == "Do")
+            setStyleSheet("color: gold;");
+        if (couleur == "Vi")
+            setStyleSheet("color: purple;");
+        if (couleur == "Ma")
+            setStyleSheet("color: brown;");
+
         painter.drawText(QRect(0, 10, width(), 10), Qt::AlignCenter, tr(s));
+
+
         return;
     }
 

@@ -38,6 +38,7 @@ public:
     Carte& getC1() const {return *c1;};
     Carte& getC2() const {return *c2;};
     Carte& getC3() const {return *c3;};
+    Carte& getC4() const {return *c4;};
 
     void PuissanceCombinaison();
     int getMaxPuissance();
