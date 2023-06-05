@@ -32,6 +32,7 @@ Q_OBJECT
 public:
     explicit VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h, vector<string>& noms_j, QWidget *parent = nullptr);
     virtual ~VuePartie();
+    void showInfo(const char* message);
 
 private:
     Jeu *controller; // controleur de la partie
@@ -67,14 +68,8 @@ private:
     //std::set<const Set::Carte*> selectedCards; // ensemble des cartes sélectionnées
 
     void updateVueCards();
-    void showWarning(const char* message);
-    void addNewCardIfDeckNotEmpty();
+    void verifPartie();
 
-    void clearSelectedCardsIfInvalidSET();
-
-
-
-    void checkIfValidSETAndClearSelectedCards();
 
 private slots:
     // slots qui gère les clics sur les cartes

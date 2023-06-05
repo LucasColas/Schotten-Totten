@@ -639,12 +639,14 @@ bool Jeu::gagnant() {
     if (bornes_j1 == 5) {
         cout << "Joueur 1 gagne" << endl;
         joueurs[0]->setNbPoints(5);
+        joueur_gagnant = 1;
         return true;
     }
 
     if (bornes_j2 == 5) {
         cout << "Joueur 2 gagne" << endl;
         joueurs[1]->setNbPoints(5);
+        joueur_gagnant = 2;
         return true;
     }
 
@@ -652,6 +654,7 @@ bool Jeu::gagnant() {
         if (schottenTotten->bornes[i]->GetPossesseur() != 0 && schottenTotten->bornes[i]->GetPossesseur() == schottenTotten->bornes[i+1]->GetPossesseur() && schottenTotten->bornes[i+1]->GetPossesseur() == schottenTotten->bornes[i+2]->GetPossesseur()) {
             cout << "Joueur " << joueurs[schottenTotten->bornes[i]->GetPossesseur()-1]->getNom() << " a gagne" << endl;
             joueurs[schottenTotten->bornes[i]->GetPossesseur()-1]->setNbPoints(5);
+            joueur_gagnant = schottenTotten->bornes[i]->GetPossesseur();
             return true;
         }
     }

@@ -31,7 +31,7 @@ private:
     map<string, Pioche*> pioches;
     Revendication* revendication;
     vector<string> noms_joueurs;
-
+    int joueur_gagnant;
 
 public:
 
@@ -64,5 +64,6 @@ public:
     bool gagnant();
     bool verifPioche(string pioche);
     void setJoueurActuel(int i);
+    int getJoueurGagnant() const {return joueur_gagnant;};
 };
 #endif //SCHOTTEN_TOTTEN_JEU_H

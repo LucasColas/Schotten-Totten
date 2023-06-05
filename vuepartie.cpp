@@ -19,6 +19,8 @@
 #include "vuepartie.h"
 #include "vueborne.h"
 #include "vuepioche.h"
+#include <string>
+using namespace std;
 VuePartie::~VuePartie() = default; // Add virtual destructor definition
 
 VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h, vector<string>& noms_j, QWidget *parent) : QWidget(parent), vuecarteshaut(36, nullptr), vuecartesbas(36,
@@ -261,6 +263,10 @@ void VuePartie::clearvues() {
         vuecartesbas[i]->setNoCarte();
     }
 
+    for (int i = 0; i < vuecartesjoueur.size(); i++) {
+        vuecartesjoueur[i]->setNoCarte();
+    }
+
 }
 
 void VuePartie::updateVueCards() {
@@ -332,4 +338,17 @@ void VuePartie::onBorneClicked(VueBorne *b) {
             vueCarteSelectionne->setNoCarte();
         }
     }
+}
+
+void VuePartie::verifPartie() {
+    if (controller->gagnant()) {
+        string str = "Le joueur " + controller->getJoueur(controller->getJoueurGagnant()).getNom() + " a gagne.";
+        showInfo(str.c_str());
+
+    }
+}
+
+void VuePartie::showInfo(const char *message) {
+    QMessageBox messageBox(QMessageBox::Icon::Warning, "Info : ", message);
+    messageBox.exec();
 }
