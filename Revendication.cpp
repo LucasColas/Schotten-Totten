@@ -183,8 +183,8 @@ int Revendication::Revendiquant_avec_max_cartes() {
 
     }
 
-    int puissance_joueur1 = combinaison_joueur1->getPuissance();
-    int puissance_joueur2 = combinaison_joueur2->getPuissance();
+    int puissance_joueur1 = combinaison_joueur1->getMaxPuissance();
+    int puissance_joueur2 = combinaison_joueur2->getMaxPuissance();
     int somme_joueur1;
     int somme_joueur2;
     for (auto r : regles) {

@@ -123,7 +123,7 @@ int Combinaison::getMaxPuissance() {
         return MaxPuissance;
     }
 
-    if (c1->getType() != "Clan" && c2->getType() != "Clan" && c3->getType() != "Clan") {
+    if (c1->getType() != "Clan" && c3->getType() != "Clan") {
         for (auto couleur : c1->CouleursPossibles()) {
             for (auto force : c1->forcesPossibles()) {
                 for (auto couleur3: c3->CouleursPossibles()) {
@@ -187,7 +187,7 @@ int Combinaison::getMaxPuissance() {
             }
         }
     }
-    if (MaxPuissance == 0) {
+    if (c1->getType() == "Clan" && c2->getType() == "Clan" && c3->getType() == "Clan") {
         PuissanceCombinaison();
         return Puissance;
     }

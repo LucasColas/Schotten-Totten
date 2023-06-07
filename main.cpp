@@ -11,8 +11,19 @@ using namespace std;
 #include <QLineEdit>
 #include "menu.h"
 int main(int argc, char *argv[]) {
-    //Menu m = Menu();
-    //m.jouer();
+    Menu m = Menu();
+    m.jouer();
+    return 0;
+
+
+
+
+
+
+
+
+
+    /*
 
     QApplication app(argc, argv);
     vector<string> noms;
@@ -23,6 +34,9 @@ int main(int argc, char *argv[]) {
     partie.show();
 
     return app.exec();
+
+
+     */
 
     /*
     QApplication app(argc, argv);
