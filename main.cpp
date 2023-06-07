@@ -9,7 +9,37 @@ using namespace std;
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
+#include <QDebug>
+#include "vuemenu.h"
 
+
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+
+    VueMenu vueMenu;
+    vueMenu.show();
+
+    QObject::connect(&vueMenu, &VueMenu::varianteNormaleSelected, []() {
+        qDebug() << "Variante Normale sélectionnée !";
+    });
+
+    QObject::connect(&vueMenu, &VueMenu::varianteTactiqueSelected, []() {
+        qDebug() << "Variante Tactique sélectionnée !";
+    });
+
+    QObject::connect(&vueMenu, &VueMenu::unJoueurSelected, []() {
+        qDebug() << "1 Joueur sélectionné !";
+    });
+
+    QObject::connect(&vueMenu, &VueMenu::deuxJoueursSelected, []() {
+        qDebug() << "2 Joueurs sélectionnés !";
+    });
+
+    return app.exec();
+}
+
+/*
 int main(int argc, char *argv[]) {
     //Menu m = Menu();
     //m.jouer();
@@ -23,7 +53,7 @@ int main(int argc, char *argv[]) {
     partie.show();
 
     return app.exec();
-
+*/
     /*
     QApplication app(argc, argv);
     QWidget fenetre;
@@ -52,7 +82,7 @@ int main(int argc, char *argv[]) {
      */
 
 
-}
+//}
 
 /*
 int main() {
