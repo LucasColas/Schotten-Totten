@@ -20,22 +20,6 @@ int main(int argc, char *argv[])
     VueMenu vueMenu;
     vueMenu.show();
 
-    QObject::connect(&vueMenu, &VueMenu::varianteNormaleSelected, []() {
-        qDebug() << "Variante Normale sélectionnée !";
-    });
-
-    QObject::connect(&vueMenu, &VueMenu::varianteTactiqueSelected, []() {
-        qDebug() << "Variante Tactique sélectionnée !";
-    });
-
-    QObject::connect(&vueMenu, &VueMenu::unJoueurSelected, []() {
-        qDebug() << "1 Joueur sélectionné !";
-    });
-
-    QObject::connect(&vueMenu, &VueMenu::deuxJoueursSelected, []() {
-        qDebug() << "2 Joueurs sélectionnés !";
-    });
-
     return app.exec();
 }
 
