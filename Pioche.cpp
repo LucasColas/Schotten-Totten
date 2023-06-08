@@ -42,7 +42,8 @@ bool Pioche::est_vide() {
 }
 Carte& Pioche::piocher_carte() {
     if (est_vide()) {
-        throw "pas possible de piocher. Pioche vide";
+        cout << "pas possible de piocher" << endl;
+
     }
 
     Carte& c = *cartes_pioche.back();

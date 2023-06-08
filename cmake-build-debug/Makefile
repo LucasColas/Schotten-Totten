@@ -525,6 +525,30 @@ set.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/set.cpp.s
 .PHONY : set.cpp.s
 
+vueajouterdefausse.obj: vueajouterdefausse.cpp.obj
+.PHONY : vueajouterdefausse.obj
+
+# target to build an object file
+vueajouterdefausse.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vueajouterdefausse.cpp.obj
+.PHONY : vueajouterdefausse.cpp.obj
+
+vueajouterdefausse.i: vueajouterdefausse.cpp.i
+.PHONY : vueajouterdefausse.i
+
+# target to preprocess a source file
+vueajouterdefausse.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vueajouterdefausse.cpp.i
+.PHONY : vueajouterdefausse.cpp.i
+
+vueajouterdefausse.s: vueajouterdefausse.cpp.s
+.PHONY : vueajouterdefausse.s
+
+# target to generate assembly for a file
+vueajouterdefausse.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vueajouterdefausse.cpp.s
+.PHONY : vueajouterdefausse.cpp.s
+
 vueborne.obj: vueborne.cpp.obj
 .PHONY : vueborne.obj
 
@@ -703,6 +727,9 @@ help:
 	@echo ... set.obj
 	@echo ... set.i
 	@echo ... set.s
+	@echo ... vueajouterdefausse.obj
+	@echo ... vueajouterdefausse.i
+	@echo ... vueajouterdefausse.s
 	@echo ... vueborne.obj
 	@echo ... vueborne.i
 	@echo ... vueborne.s

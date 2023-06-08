@@ -65,5 +65,6 @@ public:
     bool verifPioche(string pioche);
     void setJoueurActuel(int i);
     int getJoueurGagnant() const {return joueur_gagnant;};
+    Defausse& getDefausse() {return *defausse;};
 };
 #endif //SCHOTTEN_TOTTEN_JEU_H

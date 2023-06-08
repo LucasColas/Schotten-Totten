@@ -11,6 +11,7 @@ Borne::Borne(string id_, int r, int nb_cartes, int p) {
 }
 
 bool Borne::ajoutRegle(int r) {
+    cout << "ajout regle : " << r << endl;
     regles.push_back(r);
 
     return true;

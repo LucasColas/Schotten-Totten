@@ -2876,6 +2876,8 @@ CMakeFiles/Schotten_Totten.dir/set.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/utility \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_relops.h
 
+CMakeFiles/Schotten_Totten.dir/vueajouterdefausse.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueajouterdefausse.cpp
+
 CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.cpp \
   C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/QWidget \
@@ -5801,6 +5803,8 @@ C:/Qt/6.5.0/mingw_64/include/QtGui/qtextcursor.h:
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepioche.h:
 
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/menu.cpp:
+
+C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueajouterdefausse.cpp:
 
 C:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h:
 

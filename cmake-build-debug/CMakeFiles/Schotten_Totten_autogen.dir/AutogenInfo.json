@@ -323,6 +323,12 @@
 			null
 		],
 		[
+			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueajouterdefausse.h",
+			"Mu",
+			"EWIEGA46WW/moc_vueajouterdefausse.cpp",
+			null
+		],
+		[
 			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.h",
 			"Mu",
 			"EWIEGA46WW/moc_vueborne.cpp",
@@ -495,6 +501,11 @@
 		],
 		[
 			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/set.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueajouterdefausse.cpp",
 			"Mu",
 			null
 		],

@@ -216,6 +216,12 @@
 		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/set.h">
 			<Option target="Schotten_Totten"/>
 		</Unit>
+		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueajouterdefausse.cpp">
+			<Option target="Schotten_Totten"/>
+		</Unit>
+		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueajouterdefausse.h">
+			<Option target="Schotten_Totten"/>
+		</Unit>
 		<Unit filename="C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.cpp">
 			<Option target="Schotten_Totten"/>
 		</Unit>

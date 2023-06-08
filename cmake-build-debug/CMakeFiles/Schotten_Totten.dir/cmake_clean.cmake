@@ -34,6 +34,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Schotten_Totten.dir/menu.cpp.obj.d"
   "CMakeFiles/Schotten_Totten.dir/set.cpp.obj"
   "CMakeFiles/Schotten_Totten.dir/set.cpp.obj.d"
+  "CMakeFiles/Schotten_Totten.dir/vueajouterdefausse.cpp.obj"
+  "CMakeFiles/Schotten_Totten.dir/vueajouterdefausse.cpp.obj.d"
   "CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj"
   "CMakeFiles/Schotten_Totten.dir/vueborne.cpp.obj.d"
   "CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.obj"

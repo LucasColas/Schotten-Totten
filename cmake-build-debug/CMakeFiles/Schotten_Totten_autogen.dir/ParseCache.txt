@@ -1567,3 +1567,5 @@ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/set.cpp
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.cpp
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.cpp
 C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuemenu.h
+C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueajouterdefausse.h
+C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueajouterdefausse.cpp

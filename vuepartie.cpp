@@ -35,18 +35,8 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
     controller = new Jeu(mode, variante, nb_p, nb_joueurs_h, noms_j);
     nb_cartes_haut = 36;
     carte_place = false;
+    carte_exception = false;
 
-
-    //numberCardsDeckProgressBar = new QProgressBar;
-    //numberCardsDeckProgressBar->setRange(0, Set::Jeu::getInstance().getNbCartes());
-    //numberCardsDeckProgressBar->setValue(controller.getPioche().getNbCartes());
-    //numberCardsDeckProgressBar->setFixedHeight(30);
-
-    //scoreDisplayer = new QLCDNumber;
-    //scoreDisplayer->display(0);
-    //scoreDisplayer->setFixedHeight(30);
-
-    //informationsHeaderLayout = new QHBoxLayout;
     carte_selectionne = nullptr;
     vueCarteSelectionne = nullptr;
     firstCardsGridLayout = new QGridLayout;
@@ -77,7 +67,7 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
         vuebornes[i] = new VueBorne(i);
         bornesGridLayout->addWidget(vuebornes[i], 0, i);
 
-        //connect(vuebornes[i], SIGNAL(carteClicked(VueCarte*)), this, SLOT(onCardClicked(VueCarte*)));
+        connect(vuebornes[i], SIGNAL(BorneClicked(VueBorne *)), this, SLOT(onBorneClicked(VueBorne *)));
 
     }
 
@@ -141,10 +131,68 @@ void VuePartie::onCardClicked(VueCarte *vc)
 
     if (!vc->cartePresente()) {
         cout << "carte non présente" << endl;
+
+        if (carte_selectionne != nullptr && carte_exception) {
+            if (controller->getJoueurActuel() == 1) {
+                if (vuebornes[vc->getNbBorne()]->getBorne().getCartes_joueur_1().size() == vuebornes[vc->getNbBorne()]->getBorne().getNbMaxCartes()) {
+                    cout << "nombre max de carte posé" << endl;
+                    return;
+                }
+            }
+
+            if (controller->getJoueurActuel() == 2) {
+                if (vuebornes[vc->getNbBorne()]->getBorne().getCartes_joueur_2().size() == vuebornes[vc->getNbBorne()]->getBorne().getNbMaxCartes()) {
+                    cout << "nombre max de carte posé" << endl;
+                    return;
+                }
+            }
+
+            for (int i = 0; i < vuecarteshaut.size(); i++) {
+                if (carte_selectionne == &vuecarteshaut[i]->getCarte()) {
+                    vuecarteshaut[i]->setNoCarte();
+                    cout << "borne nb : " << vc->getNbBorne() << endl;
+
+                    controller->getSchottenTotten().getBorne(vc->getNbBorne()).ajout_Carte(carte_selectionne, controller->getJoueurActuel());
+                    if (controller->getJoueurActuel() == 1) {
+                        vuecarteshaut[i]->setNoCarte();
+                        for (int j = 0; j < controller->getSchottenTotten().getBorne(vc->getNbBorne()).getCartes_joueur_2().size() ; j++) {
+                            if (controller->getSchottenTotten().getBorne(vc->getNbBorne()).getCartes_joueur_2()[j] == carte_selectionne) {
+                                controller->getSchottenTotten().getBorne(vc->getNbBorne()).supprimer_carte(2, j);
+                                break;
+                            }
+                        }
+                    }
+
+                    if (controller->getJoueurActuel() == 2) {
+                        vuecarteshaut[i]->setNoCarte();
+                        for (int j = 0; j < controller->getSchottenTotten().getBorne(vc->getNbBorne()).getCartes_joueur_1().size() ; j++) {
+                            if (controller->getSchottenTotten().getBorne(vc->getNbBorne()).getCartes_joueur_1()[j] == carte_selectionne) {
+                                controller->getSchottenTotten().getBorne(vc->getNbBorne()).supprimer_carte(1, j);
+
+                                break;
+                            }
+                        }
+                    }
+
+                }
+            }
+            for (int i = 0; i < vuecartesbas.size(); i++) {
+                if (carte_selectionne == &vuecartesbas[i]->getCarte()) {
+                    return;
+                }
+            }
+            vueCarteSelectionne->setNoCarte();
+            carte_exception = false;
+            carte_place = true;
+            updateVueCards();
+            return;
+        }
+
+
         if (carte_selectionne != nullptr) {
             //bool dejaPlace = false;
             for (int i = 0; i < vuecarteshaut.size(); i++) {
-                if (carte_selectionne == &vuecarteshaut[i]->getCarte()) {
+                if (!carte_exception && carte_selectionne == &vuecarteshaut[i]->getCarte()) {
                     return;
                 }
             }
@@ -163,7 +211,17 @@ void VuePartie::onCardClicked(VueCarte *vc)
                     return;
                 }
             }
+            if (controller->getJoueurActuel() == 2) {
+                if (vuebornes[vc->getNbBorne()]->getBorne().getCartes_joueur_2().size() == vuebornes[vc->getNbBorne()]->getBorne().getNbMaxCartes()) {
+                    cout << "nombre max de carte posé" << endl;
+                    return;
+                }
+            }
+            if (carte_exception) {
+                cout << "exception" << endl;
+            }
             vc->setCarte(*carte_selectionne);
+
             for (int i = 0; i < vuecartesjoueur.size(); i++) {
 
                 if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
@@ -196,18 +254,32 @@ void VuePartie::onCardClicked(VueCarte *vc)
                 }
             }
             vueCarteSelectionne->setNoCarte();
-
             updateVueCards();
-
 
         }
 
     }
 
     if (vc->cartePresente()) {
-        cout << "carte présente dans le slot" << endl;
+        cout << "carte presente dans le slot" << endl;
         carte_selectionne = &vc->getCarte(); //On récupère la carte
         vueCarteSelectionne = vc;
+        if (carte_selectionne->getId() == "Traitre") {
+            cout << "carte traitre. La carte va disparaitre et il sera possible de prendre une carte de "
+                    "l'adversaire et de la mettre sur une borne a nous." << endl;
+            controller->getDefausse().ajout_defausse(carte_selectionne);
+
+
+            for (int i = 0; i < vuecartesjoueur.size(); i++) {
+                if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
+                    controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i+1);
+                }
+            }
+            vueCarteSelectionne->setNoCarte();
+            carte_selectionne = nullptr;
+            carte_exception = true;
+            updateVueCards();
+        }
 
     }
     update();
@@ -216,13 +288,21 @@ void VuePartie::onCardClicked(VueCarte *vc)
 void VuePartie::onPiocheClicked(VuePioche *p) {
     if (carte_place && p->getNomPioche() == "pioche clan") {
         cout << "Pioche clan" << endl;
+        if (controller->getPioche("pioche clan").est_vide()) {
+            cout << "pas possible de piocher, pioche vide" << endl;
+            return;
+        }
         controller->getJoueur(controller->getJoueurActuel()).ajout_carte(&controller->getPioche("pioche clan").piocher_carte());
-
 
     }
 
     if (carte_place && p->getNomPioche() == "pioche tactique") {
         cout << "Pioche tactique" << endl;
+        cout << "size pioche " << controller->getPioche("pioche tactique").sizePioche() << endl;
+        if (controller->getPioche("pioche tactique").est_vide()) {
+            cout << "pas possible de piocher, pioche vide" << endl;
+            return;
+        }
         controller->getJoueur(controller->getJoueurActuel()).ajout_carte(&controller->getPioche("pioche tactique").piocher_carte());
 
     }
@@ -289,9 +369,9 @@ void VuePartie::updateVueCards() {
         //Le joueur 2 est en haut.
         for (int i = 0; i < controller->getSchottenTotten().getNb_bornes(); i++) {
             for (int j = 0; j < controller->getSchottenTotten().getBorne(i).getCartes_joueur_2().size(); j++) {
-                cout << "size borne  " << i << " : " << controller->getSchottenTotten().getBorne(i).getCartes_joueur_2().size();
-                cout << "c : " << *controller->getSchottenTotten().getBorne(i).getCartes_joueur_2()[j] << endl;
-                cout << "i*4+j :" << i*4 + j << endl;
+                //cout << "size borne  " << i << " : " << controller->getSchottenTotten().getBorne(i).getCartes_joueur_2().size();
+                //cout << "c : " << *controller->getSchottenTotten().getBorne(i).getCartes_joueur_2()[j] << endl;
+                //cout << "i*4+j :" << i*4 + j << endl;
                 vuecarteshaut[i*4 + j]->setCarte(*controller->getSchottenTotten().getBorne(i).getCartes_joueur_2()[j]);
             }
         }
@@ -311,9 +391,9 @@ void VuePartie::updateVueCards() {
         //Les cartes du joueur 1 sont en haut.
         for (int i = 0; i < controller->getSchottenTotten().getNb_bornes(); i++) {
             for (int j = 0; j < controller->getSchottenTotten().getBorne(i).getCartes_joueur_1().size(); j++) {
-                cout << "size borne " << i << " : " << controller->getSchottenTotten().getBorne(i).getCartes_joueur_1().size();
-                cout << "c : " << *controller->getSchottenTotten().getBorne(i).getCartes_joueur_1()[j] << endl;
-                cout << "i*4+j :" << i*4 + j << endl;
+                //cout << "size borne " << i << " : " << controller->getSchottenTotten().getBorne(i).getCartes_joueur_1().size();
+                //cout << "c : " << *controller->getSchottenTotten().getBorne(i).getCartes_joueur_1()[j] << endl;
+                //cout << "i*4+j :" << i*4 + j << endl;
                 vuecarteshaut[i*4 + j]->setCarte(*controller->getSchottenTotten().getBorne(i).getCartes_joueur_1()[j]);
 
             }
@@ -331,11 +411,22 @@ void VuePartie::updateVueCards() {
 }
 
 void VuePartie::onBorneClicked(VueBorne *b) {
+    cout << "Borne cliquée" << endl;
     if (carte_selectionne != nullptr) {
         if (carte_selectionne->getType() == "Combat") {
             //Une carte mode de combat veut être posée sur une borne.
             controller->getSchottenTotten().getBorne(b->getNbBorne()).ajoutRegle(carte_selectionne->getRegle());
-            vueCarteSelectionne->setNoCarte();
+
+            for (int i = 0; i < vuecartesjoueur.size(); i++) {
+
+                if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
+
+                    controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i + 1);
+                    updateVueCards();
+                    vueCarteSelectionne->setNoCarte();
+                    carte_place = true;
+                }
+            }
         }
     }
 }
