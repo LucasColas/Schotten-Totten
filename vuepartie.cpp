@@ -104,6 +104,9 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
     connect(vuepioches[1], SIGNAL(PiocheClicked(VuePioche*)), this, SLOT(onPiocheClicked(VuePioche *)));
     buttonLayout->addWidget(vuepioches[0]);
     buttonLayout->addWidget(vuepioches[1]);
+    vuedefausse = new VueDefausse(controller->getDefausse());
+    connect(vuedefausse, SIGNAL(DefausseClicked(VueDefausse*)), this, SLOT(onDefausseClicked(VueDefausse *)));
+    buttonLayout->addWidget(vuedefausse);
     /*for (int i = 0; i < 2; ++i) {
 
         QPushButton *button = new QPushButton(QString("Button %1").arg(i));
@@ -128,7 +131,6 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
 
 void VuePartie::onCardClicked(VueCarte *vc)
 {
-
     if (!vc->cartePresente()) {
         cout << "carte non présente" << endl;
 
@@ -173,7 +175,6 @@ void VuePartie::onCardClicked(VueCarte *vc)
                             }
                         }
                     }
-
                 }
             }
             for (int i = 0; i < vuecartesbas.size(); i++) {
@@ -181,6 +182,7 @@ void VuePartie::onCardClicked(VueCarte *vc)
                     return;
                 }
             }
+
             vueCarteSelectionne->setNoCarte();
             carte_exception = false;
             carte_place = true;
@@ -310,6 +312,10 @@ void VuePartie::onPiocheClicked(VuePioche *p) {
     carte_place = false;
     updateVueCards();
     changerJoueur();
+    if (controller->getJoueurActuelIA()) {
+        controller->jouer_tour();
+        changerJoueur();
+    }
     updateVueCards();
 
 }
@@ -430,6 +436,23 @@ void VuePartie::onBorneClicked(VueBorne *b) {
         }
     }
 }
+
+
+void VuePartie::onDefausseClicked(VueDefausse *p) {
+    cout << "Defausse cliquee" << endl;
+    if (carte_selectionne != nullptr) {
+        if (carte_selectionne->getType() == "Ruse") {
+            // Effet d'une carte Traite
+            if (carte_selectionne->getId() == "Traitre") {
+                // Envoyer la carte dans la defausse
+                controller->getDefausse().ajout_defausse(carte_selectionne);
+                carte_selectionne = nullptr;
+                cout << "choisissez une carte Clan du côté adverse de la frontière." << endl;
+            }
+        }
+    }
+}
+
 
 void VuePartie::verifPartie() {
     if (controller->gagnant()) {

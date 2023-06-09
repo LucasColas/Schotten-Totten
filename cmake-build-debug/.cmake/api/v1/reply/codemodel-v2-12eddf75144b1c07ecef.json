@@ -41,7 +41,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Schotten_Totten::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Schotten_Totten-Debug-ebaae26bba218cd1c180.json",
+					"jsonFile" : "target-Schotten_Totten-Debug-7a92a378f502fe105153.json",
 					"name" : "Schotten_Totten",
 					"projectIndex" : 0
 				},
@@ -58,8 +58,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug",
-		"source" : "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten"
+		"build" : "C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Schotten-Totten/cmake-build-debug",
+		"source" : "C:/Users/laure/OneDrive/Documents/UT/GI02/LO21/Schotten-Totten"
 	},
 	"version" : 
 	{

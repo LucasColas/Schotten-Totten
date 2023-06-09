@@ -16,6 +16,7 @@
 #include "vuecarte.h"
 #include "vueborne.h"
 #include "vuepioche.h"
+#include "vuedefausse.h"
 class QLabel;
 class QLineEdit;
 class QPushButton;
@@ -33,6 +34,7 @@ public:
     explicit VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h, vector<string>& noms_j, QWidget *parent = nullptr);
     virtual ~VuePartie();
     void showInfo(const char* message);
+    bool getInRuse() const {return inRuse;};
 
 private:
     Jeu *controller; // controleur de la partie
@@ -54,6 +56,7 @@ private:
     vector<VueCarte*> vuecartesjoueur;
     vector<VueBorne*> vuebornes;
     vector<VuePioche*> vuepioches;
+    VueDefausse* vuedefausse;
 
     string mode;
     string variante;
@@ -66,6 +69,9 @@ private:
     int nb_cartes_haut;
     void verif_bornes();
 
+    bool inRuse; // Pour savoir si le jeu attend l'execution d'une carte ruse
+    string whatRuse; // Pour quelle carte ruse
+
     //std::set<const Set::Carte*> selectedCards; // ensemble des cartes sélectionnées
 
     void updateVueCards();
@@ -77,7 +83,7 @@ private slots:
     void onCardClicked(VueCarte* vc);
     void onPiocheClicked(VuePioche* p);
     void onBorneClicked(VueBorne* b);
-    //void onDefausseClicked(VueDefausse* p);
+    void onDefausseClicked(VueDefausse* p);
 
 };
 #endif //SCHOTTEN_TOTTEN_VUEPARTIE_H

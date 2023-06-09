@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Schotten_Totten.dir/Affichage_console.cpp.obj.d"
   "CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj"
   "CMakeFiles/Schotten_Totten.dir/Borne.cpp.obj.d"
+  "CMakeFiles/Schotten_Totten.dir/C_/Users/laure/OneDrive/Documents/UT/GI02/LO21/Schotten-TottenQT/Combinaison.cpp.obj"
+  "CMakeFiles/Schotten_Totten.dir/C_/Users/laure/OneDrive/Documents/UT/GI02/LO21/Schotten-TottenQT/Combinaison.cpp.obj.d"
   "CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj"
   "CMakeFiles/Schotten_Totten.dir/Carte.cpp.obj.d"
   "CMakeFiles/Schotten_Totten.dir/Combinaison.cpp.obj"
