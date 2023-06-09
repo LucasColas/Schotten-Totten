@@ -16,6 +16,7 @@ VueMenu::VueMenu()
     boutonUnJoueur = new QPushButton("1 Joueur", this);
     boutonDeuxJoueurs = new QPushButton("2 Joueurs", this);
     boutonLancerPartie = new QPushButton("Lancer la partie", this);
+    boutonQuitter = new QPushButton("Quitter", this);
 
     connect(boutonST,SIGNAL(clicked()), this, SLOT(onSTClicked()));
     connect(boutonST2,SIGNAL(clicked()), this, SLOT(onST2Clicked()));
@@ -24,6 +25,7 @@ VueMenu::VueMenu()
     connect(boutonUnJoueur, SIGNAL(clicked()), this, SLOT(onUnJoueurClicked()));
     connect(boutonDeuxJoueurs, SIGNAL(clicked()), this, SLOT(onDeuxJoueursClicked()));
     connect(boutonLancerPartie, SIGNAL(clicked()), this,SLOT(onLancerPartieClicked()));
+    connect(boutonQuitter, SIGNAL(clicked()), this, SLOT(onQuitterClicked()));
 
     QVBoxLayout *layout = new QVBoxLayout(this);
 
@@ -35,6 +37,7 @@ VueMenu::VueMenu()
     layout->addWidget(boutonUnJoueur);
     layout->addWidget(boutonDeuxJoueurs);
     layout->addWidget(boutonLancerPartie);
+    layout->addWidget(boutonQuitter);
 
 
     setLayout(layout);
@@ -133,4 +136,8 @@ void VueMenu::onLancerPartieClicked(){
         message->setText("Erreur lors de la sélection");
         message->show();
     }
+}
+
+void VueMenu::onQuitterClicked(){
+    QCoreApplication::quit();
 }

@@ -22,6 +22,7 @@ private:
     QPushButton *boutonUnJoueur;
     QPushButton *boutonDeuxJoueurs;
     QPushButton *boutonLancerPartie;
+    QPushButton *boutonQuitter;
     QMessageBox *message;
     VuePartie *partie;
 
@@ -37,6 +38,7 @@ signals:
     void deuxJoueursSelected(bool deuxJselected);
     void STSelected(bool STselected);
     void ST2Selected(bool ST2selected);
+    void QuitterSelected(bool QuitterSelected);
 
 private slots:
     void onVarianteNormaleClicked();
@@ -46,6 +48,7 @@ private slots:
     void onSTClicked();
     void onST2Clicked();
     void onLancerPartieClicked();
+    void onQuitterClicked();
 
 };
 
