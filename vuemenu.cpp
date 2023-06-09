@@ -92,8 +92,6 @@ void VueMenu::onLancerPartieClicked(){
         noms.push_back("J1");
         noms.push_back("IA");
 
-        message->setText("Partie lancée");
-        message->show();
         QMainWindow* mainWindow= new QMainWindow();
         partie = new VuePartie("Schotten Totten", "normal", 1, 1, noms);
         mainWindow->setCentralWidget(partie);

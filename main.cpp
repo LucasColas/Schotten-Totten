@@ -23,8 +23,7 @@ int main(int argc, char *argv[])
     return app.exec();
 }
 
-/*
-int main(int argc, char *argv[]) {
+
     /*
     Menu m = Menu();
     m.jouer();
@@ -34,7 +33,7 @@ int main(int argc, char *argv[]) {
 
 
 
-
+/*
     QApplication app(argc, argv);
     vector<string> noms;
     noms.push_back("A");
@@ -44,7 +43,7 @@ int main(int argc, char *argv[]) {
     partie.show();
 
     return app.exec();
-*/
+}*/
     /*
     QApplication app(argc, argv);
     QWidget fenetre;
