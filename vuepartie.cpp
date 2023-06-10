@@ -135,7 +135,7 @@ void VuePartie::onCardClicked(VueCarte *vc)
     if (!vc->cartePresente()) {
         cout << "carte non présente" << endl;
 
-        if (carte_selectionne != nullptr && carte_exception) {
+        if (carte_selectionne != nullptr && carte_exception) { //On a cliqué auparavant sur une carte traitre.
             if (controller->getJoueurActuel() == 1) {
                 if (vuebornes[vc->getNbBorne()]->getBorne().getCartes_joueur_1().size() == vuebornes[vc->getNbBorne()]->getBorne().getNbMaxCartes()) {
                     cout << "nombre max de carte posé" << endl;
@@ -267,20 +267,27 @@ void VuePartie::onCardClicked(VueCarte *vc)
         cout << "carte presente dans le slot" << endl;
         carte_selectionne = &vc->getCarte(); //On récupère la carte
         vueCarteSelectionne = vc;
+
+        //On a sélectionné la carte traitre.
         if (carte_selectionne->getId() == "Traitre") {
             cout << "carte traitre. La carte va disparaitre et il sera possible de prendre une carte de "
                     "l'adversaire et de la mettre sur une borne a nous." << endl;
             controller->getDefausse().ajout_defausse(carte_selectionne);
 
-
+            // On supprime la carte traitre des mains du joueur
             for (int i = 0; i < vuecartesjoueur.size(); i++) {
                 if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
                     controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i+1);
                 }
             }
             vueCarteSelectionne->setNoCarte();
+
+            //Permet à l'utilisateur de pouvoir recliquer sur une carte. Et en plus sur une carte qui n'est pas à lui
+            //grâce à carte_exception
             carte_selectionne = nullptr;
             carte_exception = true;
+
+
             updateVueCards();
         }
 
