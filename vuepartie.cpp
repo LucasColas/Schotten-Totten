@@ -135,7 +135,7 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
 void VuePartie::onCardClicked(VueCarte *vc)
 {
 
-    if (!vc->cartePresente()) {
+    if (!vc->cartePresente() && !(getInRuse() && getWhatRuse() == "Chasseur de Tete")) {
         cout << "carte non présente" << endl;
 
         if (carte_selectionne != nullptr && carte_exception) { //On a cliqué auparavant sur une carte traitre.
@@ -299,6 +299,39 @@ void VuePartie::onCardClicked(VueCarte *vc)
 }
 
 void VuePartie::onPiocheClicked(VuePioche *p) {
+    if (getInRuse()) {
+        // Effet de chasseur de tete
+        if (getWhatRuse() == "Chasseur de Tete") {
+            if (aPiocher > 0) {
+                aPiocher--;
+                // On laisse continuer l'algo qui fait piocher
+            } else if (aDeposer > 0) {
+                if (carte_selectionne != nullptr) {
+                    // On doit tout faire ici et stopper la methode dans ce bloque
+                    if (carte_selectionne->getType() == "Clan" && p->getNomPioche() == "pioche clan") {
+                        std::erase(controller->getJoueur(controller->getJoueurActuel()).getCartes(), carte_selectionne);
+                        controller->getPioche().ajout_carte(carte_selectionne);
+                    }
+
+                    if (carte_selectionne->getType() != "Clan" && p->getNomPioche() == "pioche tactique") {
+                        std::erase(controller->getJoueur(controller->getJoueurActuel()).getCartes(), carte_selectionne);
+                        controller->getPioche().ajout_carte(carte_selectionne);
+                    }
+
+                    else {
+                        cout << "Erreur : Cette carte ne va pas dans cette pioche."
+                        return;
+                    }
+
+                    aDeposer--;
+                    return;
+                }
+            } else {
+                setInRuse(false);
+            }
+        }
+    }
+
     if (carte_place && p->getNomPioche() == "pioche clan") {
         cout << "Pioche clan" << endl;
         if (controller->getPioche("pioche clan").est_vide()) {
@@ -322,7 +355,14 @@ void VuePartie::onPiocheClicked(VuePioche *p) {
 
     carte_place = false;
     updateVueCards();
-    changerJoueur();
+    if (!getInRuse()) {
+        changerJoueur();
+    }
+
+    if (getInRuse() && getWhatRuse() == "Chasseur de Tete" && aDeposer == 0) {
+        setInRuse(false);
+    }
+    
     if (controller->getJoueurActuelIA()) {
         controller->jouer_tour();
         changerJoueur();
@@ -447,6 +487,41 @@ void VuePartie::onBorneClicked(VueBorne *b) {
         }
     }
 }
+
+
+void VuePartie::onDefausseClicked(VueDefausse *p) {
+    cout << "Defausse cliquee" << endl;
+    if (carte_selectionne != nullptr) { //Et que c'est une carte ruse alors on active l'effet
+        if (carte_selectionne->getType() == "Ruse") {
+            // Effet d'une carte Traite
+            if (carte_selectionne->getId() == "Traitre") {
+                // Envoyer la carte dans la defausse
+                controller->getDefausse().ajout_defausse(carte_selectionne);
+                setInRuse(true);
+                setWhatRuse("Traitre");
+                carte_selectionne = nullptr;
+                cout << "choisissez une carte Clan du côté adverse de la frontière." << endl;
+            }
+
+            //Effet de chasseure de tete
+            if (carte_selectionne->getId() == "Chasseur de Tete") {
+                controller->getDefausse().ajout_defausse(carte_selectionne);
+                setInRuse(true);
+                setWhatRuse("Chasseur de Tete");
+            }
+        }
+    }
+}
+
+
+void VuePartie::setWhatRuse(int s) {
+    whatRuse = s;
+    if (whatRuse == "Chasseur de Tete") {
+        aPiocher = 3;
+        aDeposer = 2;
+    }
+}
+
 
 void VuePartie::verifPartie() {
     if (controller->gagnant()) {

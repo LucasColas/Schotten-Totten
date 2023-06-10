@@ -7,6 +7,7 @@
 #include "Carte.h"
 #include "Schotten_Totten.h"
 #include <iostream>
+#include <vector>
 class Pioche {
 
 private:
@@ -21,5 +22,6 @@ public:
     Carte& piocher_carte();
     bool est_vide();
     int sizePioche() const {return cartes_pioche.size();};
+    void ajout_carte(Carte* carte) {cartes_pioche.push_back(carte);};
 };
 #endif //SCHOTTEN_TOTTEN_PIOCHE_H
