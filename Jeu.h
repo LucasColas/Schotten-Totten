@@ -52,6 +52,7 @@ public:
     int getNbParties() const {return nb_parties;};
     int getNbPartiesJouees() const {return nb_parties_jouees;};
     int getJoueurActuel() const {return joueur_actuel;};
+    const bool getJoueurActuelIA() const {return joueurs[joueur_actuel-1]->getIa();};
     Schotten_Totten& getSchottenTotten() {return *schottenTotten;};
     Joueur& getJoueur(int i) const {return *joueurs[i-1];};
     Pioche& getPioche(string nom) const {return *pioches.at(nom);};

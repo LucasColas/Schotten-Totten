@@ -323,6 +323,10 @@ void VuePartie::onPiocheClicked(VuePioche *p) {
     carte_place = false;
     updateVueCards();
     changerJoueur();
+    if (controller->getJoueurActuelIA()) {
+        controller->jouer_tour();
+        changerJoueur();
+    }
     updateVueCards();
 
 }

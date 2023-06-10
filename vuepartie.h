@@ -16,6 +16,7 @@
 #include "vuecarte.h"
 #include "vueborne.h"
 #include "vuepioche.h"
+#include "vuedefausse.h"
 class QLabel;
 class QLineEdit;
 class QPushButton;
@@ -54,6 +55,7 @@ private:
     vector<VueCarte*> vuecartesjoueur;
     vector<VueBorne*> vuebornes;
     vector<VuePioche*> vuepioches;
+    VueDefausse* vueDefausse;
 
     string mode;
     string variante;
