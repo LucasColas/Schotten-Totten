@@ -106,6 +106,9 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
         connect(vuepioches[1], SIGNAL(PiocheClicked(VuePioche*)), this, SLOT(onPiocheClicked(VuePioche *)));
         buttonLayout->addWidget(vuepioches[0]);
         buttonLayout->addWidget(vuepioches[1]);
+        vuedefausse = new VueDefausse(controller->getDefausse());
+        connect(vuedefausse, SIGNAL(DefausseClicked(VueDefausse*)), this, SLOT(onDefausseClicked(VueDefausse *)));
+        buttonLayout->addWidget(vuedefausse);
     }
     /*for (int i = 0; i < 2; ++i) {
 
