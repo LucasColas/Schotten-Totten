@@ -3,6 +3,7 @@
 
 #include "defausse.h"
 #include "vuecarte.h"
+#include "Jeu.h"
 
 #include <QWidget>
 #include <QPen>
@@ -22,11 +23,21 @@ public :
     VueDefausse(const Defausse& d, QWidget* parent = nullptr);
 };
 
+
 class QPushButtonDefausse : public QPushButton {
     Q_OBJECT
-private :
-    VueDefausse* vuedefausse;
+public:
+    explicit QPushButtonDefausse(QWidget* parent = nullptr) : QPushButton("Afficher la Défausse",parent) {
+        connect(this, &QPushButton::clicked, this, &QPushButtonDefausse::ButtonDefausseClicked);
+    }
+
+private slots:
+    void ButtonDefausseClicked() {
+        VueDefausse* vuedefausse = new VueDefausse(/*???*/.Jeu::getDefausse(), this->parentWidget());
+        vuedefausse->show();
+    }
 };
+
 
 
 #endif SCHOTTEN_TOTTEN_VUEDEFAUSSE_H

@@ -20,3 +20,4 @@ VueDefausse::VueDefausse(const Defausse& d, QWidget* parent){
         layoutCartesDefausse->addWidget(vueCartesDefausse[i],1,i);
     }
 }
+
