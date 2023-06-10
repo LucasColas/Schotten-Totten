@@ -12,6 +12,8 @@ VueBorne::VueBorne(Borne &c, int nb_b, QWidget *parent) {
     connect(this,SIGNAL(clicked()),this,SLOT(clickedEvent()));
     setCheckable(true);
     nb_borne = nb_b;
+
+
 }
 
 VueBorne::VueBorne(int nb_b, QWidget *parent) {

@@ -35,6 +35,6 @@ void VuePioche::paintEvent(QPaintEvent *event) {
         return;
     }*/
     const char* s = nompioche.c_str();
-    painter.drawText(QRect(0, 10, width(), 10), Qt::AlignCenter, tr(s));
+    painter.drawText(QRect(0, 10, width(), 15), Qt::AlignCenter, tr(s));
 
 }

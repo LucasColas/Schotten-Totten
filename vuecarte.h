@@ -31,7 +31,7 @@ public:
     int getNbBorne() const {return nb_borne;};
 
 signals:
-    // quand la vude de carte est cliquée, elle émet un signal en transmettant son adresse
+    // quand la vue de de carte est cliquée, elle émet un signal en transmettant son adresse
     void carteClicked(VueCarte*);
 public slots:
 private slots:
