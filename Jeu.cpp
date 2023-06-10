@@ -682,7 +682,15 @@ void Jeu::revendication_borne(int i) {
     if (!schottenTotten->bornes[i]->GetPossesseur() && schottenTotten->bornes[i]->getCartes_joueur_1().size() == schottenTotten->bornes[i]->getNbMaxCartes()) {
         //Joueur 1 peut revendiquer
         revendication = new Revendication(schottenTotten->bornes[i]);
-        Combinaison* combi_j1 = new Combinaison(schottenTotten->bornes[i]->getCartes_joueur_1()[0],schottenTotten->bornes[i]->getCartes_joueur_1()[1], schottenTotten->bornes[i]->getCartes_joueur_1()[2], 3);
+        Combinaison* combi_j1;
+        if (schottenTotten->bornes[i]->getCartes_joueur_1().size() == 3) {
+            combi_j1 = new Combinaison(schottenTotten->bornes[i]->getCartes_joueur_1()[0],schottenTotten->bornes[i]->getCartes_joueur_1()[1], schottenTotten->bornes[i]->getCartes_joueur_1()[2], 3);
+
+        }
+        else if (schottenTotten->bornes[i]->getCartes_joueur_1().size() == 4) {
+            combi_j1 = new Combinaison(schottenTotten->bornes[i]->getCartes_joueur_1()[0],schottenTotten->bornes[i]->getCartes_joueur_1()[1], schottenTotten->bornes[i]->getCartes_joueur_1()[2], schottenTotten->bornes[i]->getCartes_joueur_1()[3], 4);
+
+        }
         vector<Carte*> cartes_combi;
         for (int i = 0; i < schottenTotten->cartes.size(); i++) {
             cartes_combi.push_back(schottenTotten->cartes[i]);
@@ -703,7 +711,16 @@ void Jeu::revendication_borne(int i) {
         for (int i = 0; i < schottenTotten->cartes.size(); i++) {
             cartes_combi.push_back(schottenTotten->cartes[i]);
         }
-        Combinaison* combi_j2 = new Combinaison(schottenTotten->bornes[i]->getCartes_joueur_2()[0],schottenTotten->bornes[i]->getCartes_joueur_2()[1], schottenTotten->bornes[i]->getCartes_joueur_2()[2], 3);
+        Combinaison* combi_j2;
+        if (schottenTotten->bornes[i]->getCartes_joueur_2().size() == 3) {
+            combi_j2 = new Combinaison(schottenTotten->bornes[i]->getCartes_joueur_2()[0],schottenTotten->bornes[i]->getCartes_joueur_2()[1], schottenTotten->bornes[i]->getCartes_joueur_2()[2], 3);
+
+        }
+
+        if (schottenTotten->bornes[i]->getCartes_joueur_2().size() == 4) {
+            combi_j2 = new Combinaison(schottenTotten->bornes[i]->getCartes_joueur_2()[0],schottenTotten->bornes[i]->getCartes_joueur_2()[1], schottenTotten->bornes[i]->getCartes_joueur_2()[2], schottenTotten->bornes[i]->getCartes_joueur_2()[3],4);
+
+        }
 
         vector<Carte*> cartes_adversaire = schottenTotten->bornes[i]->getCartes_joueur_1();
         if (revendication->PotentielleCombinaison(schottenTotten->bornes, cartes_combi, combi_j2, cartes_adversaire)) {

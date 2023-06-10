@@ -12,6 +12,14 @@ Revendication::Revendication(Borne* b)
     regles = b->getRegles();
     cartes_joueur1 = b->getCartes_joueur_1();
     cartes_joueur2 = b->getCartes_joueur_2();
+    for (int i = 0; i < regles.size(); i++) {
+        if (regles[i] == 1) {
+            colin_maillard = true;
+        }
+        if (regles[i] == 2) {
+            combat_de_boue = true;
+        }
+    }
 
     /*
     if (nb_cartes_max == 3) {
@@ -66,6 +74,50 @@ void Revendication::generer_combi(vector<Carte*>& cartes_adversaire, vector<Cart
     cout << "generer combi" << endl;
     cout << "cartes adversaire" << cartes_adversaire.size();
     cout << "cartes" << cartes_.size();
+
+    if (colin_maillard) {
+        //Colin Maillard
+        for (int i = 0; i < cartes_.size(); i++) {
+            if (cartes_adversaire.size() <= 2) {
+                for (int j = 0; j < cartes_.size(); j++) {
+                    if (cartes_adversaire.size() <= 1) {
+                        for (int k = 0; k < cartes_.size(); k++) {
+                            if (cartes_adversaire.empty()) {
+                                for (int l = 0; l < cartes_.size(); l++) {
+                                    if (i != j && i != k && i != l && j != k && j != l && k != l) {
+                                        //Cas 0 cartes
+                                        combinaisons.push_back(new Combinaison(cartes_[i], cartes_[j], cartes_[k], cartes_[l], 4));
+                                    }
+                                }
+                            }
+                            //Cas 1 carte
+                            if (!cartes_adversaire.empty() && i != j && i != k && j != k && cartes_[i]->getId() != cartes_adversaire[0]->getId() && cartes_[j]->getId() != cartes_adversaire[0]->getId() && cartes_[k]->getId() != cartes_adversaire[0]->getId()) {
+                                combinaisons.push_back(new Combinaison(cartes_[i], cartes_[j], cartes_[k], cartes_adversaire[0], 4));
+
+                            }
+
+                        }
+                    }
+                    else {
+                        //Cas 2 cartes
+                        cout << "cas adversaire a 2 cartes" << endl;
+                        if (cartes_adversaire.size() >= 2 && i != j && cartes_[i]->getId() != cartes_adversaire[0]->getId() && cartes_[i]->getId() != cartes_adversaire[1]->getId() && cartes_[j]->getId() != cartes_adversaire[0]->getId() && cartes_[j]->getId() != cartes_adversaire[1]->getId()) {
+                            combinaisons.push_back(new Combinaison(cartes_[i], cartes_[j], cartes_adversaire[0], cartes_adversaire[1], 4));
+                        }
+                    }
+                }
+            }
+            else {
+                //Adversaires a 3 cartes
+                if (cartes_adversaire.size() >= 3 && cartes_[i]->getId() != cartes_adversaire[0]->getId() && cartes_[i]->getId() != cartes_adversaire[1]->getId() && cartes_[i]->getId() != cartes_adversaire[2]->getId()) {
+                    combinaisons.push_back(new Combinaison(cartes_[i], cartes_adversaire[0], cartes_adversaire[1], cartes_adversaire[1], 4));
+                }
+            }
+        }
+        return;
+    }
+
+
     for (int i = 0; i < cartes_.size(); i++) {
         if (cartes_adversaire.size() <= 1) {
             for (int j = 0; j < cartes_.size(); j++) {
@@ -100,6 +152,40 @@ void Revendication::generer_combi(vector<Carte*>& cartes_adversaire, vector<Cart
 }
 
 bool Revendication::supprimerCombi(vector<Borne*>& bornes,Combinaison* c) {
+
+    if (colin_maillard) {
+        vector<bool> cartes_t4 = {false, false, false, false};
+        for (int j = 0; j < bornes.size(); j++) {
+            for (int k = 0; k < bornes[j]->getCartes_joueur_1().size(); k++) {
+                for (int l = 0; l < c->getCartesCombi().size(); l++) {
+                    if (bornes[j]->getCartes_joueur_1()[k]->getId() == c->getCartesCombi()[l]->getId()) {
+                        //cout << bornes[j]->getCartes_joueur_1()[k]->getId() << " " << c->getCartesCombi()[l]->getId() << endl;
+                        //cout << "combinaison cartes : " << c->getC1() << c->getC2() << c->getC3();
+                        cartes_t4[l] = true;
+
+                    }
+                }
+
+
+            }
+            for (int k = 0; k < bornes[j]->getCartes_joueur_2().size(); k++) {
+                for (int l = 0; l < c->getCartesCombi().size(); l++) {
+                    if (bornes[j]->getCartes_joueur_2()[k]->getId() == c->getCartesCombi()[l]->getId()) {
+                        //cout << bornes[j]->getCartes_joueur_2()[k]->getId() << " " << c->getCartesCombi()[l]->getId() << endl;
+                        cartes_t4[l] = true;
+                    }
+                }
+
+            }
+        }
+        //cout << "combinaison cartes : " << c->getC1() << c->getC2() << c->getC3();
+        for (auto i : cartes_t4) {
+            if (!i) {
+                return false;
+            }
+        }
+        return true;
+    }
     vector<bool> cartes_t = {false, false, false};
     for (int j = 0; j < bornes.size(); j++) {
         for (int k = 0; k < bornes[j]->getCartes_joueur_1().size(); k++) {
@@ -141,11 +227,18 @@ bool Revendication::PotentielleCombinaison(vector<Borne*>& bornes, vector<Carte*
     vector<int> index_combi_supp;
     int carte_combi_trouve = false;
     int MaxPuissance = combinaison->getMaxPuissance();
+    int MaxSomme = combinaison->getMaxSomme();
     cout << "MaxPuissance" << MaxPuissance << endl;
     for (int i = 0; i < combinaisons.size(); i++) {
         //cout << "Combi Max Puissance" << combinaisons[i]->getMaxPuissance() << endl;
-        if (combinaisons[i]->getMaxPuissance() > MaxPuissance) {
+
+        if (!combat_de_boue && combinaisons[i]->getMaxPuissance() > MaxPuissance) {
             combi_sup.push_back(combinaisons[i]);
+        }
+        else {
+            if (combat_de_boue && combinaisons[i]->getMaxSomme() > MaxSomme) {
+                combi_sup.push_back(combinaisons[i]);
+            }
         }
     }
     //cout << "size combi sup " << combi_sup.size() << endl;
@@ -189,8 +282,8 @@ int Revendication::Revendiquant_avec_max_cartes() {
     int somme_joueur2;
     for (auto r : regles) {
         if (r == 1) {
-            somme_joueur1 = combinaison_joueur1->getSommeSuite();
-            somme_joueur2 = combinaison_joueur2->getSommeSuite();
+            somme_joueur1 = combinaison_joueur1->getMaxSomme();
+            somme_joueur2 = combinaison_joueur2->getMaxSomme();
             if (somme_joueur1 > somme_joueur2) {
                 return 1;
             }

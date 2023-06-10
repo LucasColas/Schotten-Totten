@@ -22,6 +22,8 @@ private:
     vector<Combinaison*> combinaisons;
     vector<Carte*> cartes;
     static map<string,int> rank;
+    bool colin_maillard = false;
+    bool combat_de_boue = false;
 public:
     Revendication(Borne* b);
     void MeilleureCombinaison(); //Donne la meilleure combinaison qu'on a parmis un ensemble de cartes
