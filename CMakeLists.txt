@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 3.24)
 project(Schotten_Totten)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_PREFIX_PATH "C://Qt//6.5.0//mingw_64//lib//cmake")
+set(CMAKE_PREFIX_PATH "C:\\Qt")
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
 
 # Tell CMake to find the modules Qt6Core and Qt6Widgets
 find_package(Qt6Widgets REQUIRED)
@@ -39,7 +42,7 @@ add_executable(Schotten_Totten
         vuecarte.cpp
         vuecarte.h
         vueborne.cpp
-        vueborne.h menu.cpp menu.h vuepioche.cpp vuepioche.h vuemenu.cpp vuemenu.h vueajouterdefausse.cpp vueajouterdefausse.h)
+        vueborne.h menu.cpp menu.h vuepioche.cpp vuepioche.h vuemenu.cpp vuemenu.h vueajouterdefausse.cpp vueajouterdefausse.h ../Schotten-TottenQT/Combinaison.cpp vuedefausse.h)
 
 # Use the AUTOMOC feature to automatically generate MOC files
 set_target_properties(Schotten_Totten PROPERTIES AUTOMOC ON)
