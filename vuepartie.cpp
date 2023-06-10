@@ -362,7 +362,7 @@ void VuePartie::onPiocheClicked(VuePioche *p) {
     if (getInRuse() && getWhatRuse() == "Chasseur de Tete" && aDeposer == 0) {
         setInRuse(false);
     }
-    
+
     if (controller->getJoueurActuelIA()) {
         controller->jouer_tour();
         changerJoueur();
