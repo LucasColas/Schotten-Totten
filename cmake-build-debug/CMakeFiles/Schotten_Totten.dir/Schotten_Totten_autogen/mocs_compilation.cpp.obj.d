@@ -383,8 +383,8 @@ CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj:
  C:/Qt/6.5.0/mingw_64/include/QtCore/qtmochelpers.h \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\EWIEGA46WW/moc_vuecarte.cpp \
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\EWIEGA46WW/moc_vuepartie.cpp \
- C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.h \
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\EWIEGA46WW/moc_vuemenu.cpp \
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuemenu.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/QApplication \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qcoreapplication.h \
@@ -409,6 +409,13 @@ CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj:
  C:/Qt/6.5.0/mingw_64/include/QtCore/qiodevice.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qtextdocument.h \
  C:/Qt/6.5.0/mingw_64/include/QtCore/qurl.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/QMessageBox \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qmessagebox.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/QMainWindow \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qmainwindow.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabwidget.h \
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/QLineEdit \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qlineedit.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qtextcursor.h \
@@ -427,5 +434,7 @@ CMakeFiles/Schotten_Totten.dir/Schotten_Totten_autogen/mocs_compilation.cpp.obj:
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.h \
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.h \
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepioche.h \
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\EWIEGA46WW/moc_vuepartie.cpp \
+ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.h \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\Schotten_Totten_autogen\EWIEGA46WW/moc_vuepioche.cpp \
  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepioche.h

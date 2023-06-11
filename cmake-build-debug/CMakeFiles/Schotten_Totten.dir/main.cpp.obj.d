@@ -421,4 +421,12 @@ CMakeFiles/Schotten_Totten.dir/main.cpp.obj: \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qbrush.h \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vueborne.h \
  C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuepioche.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\menu.h
+ C:/Qt/6.5.0/mingw_64/include/QtCore/QDebug \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qdebug.h \
+ C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuemenu.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/QMessageBox \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qmessagebox.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/QMainWindow \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qmainwindow.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabwidget.h
