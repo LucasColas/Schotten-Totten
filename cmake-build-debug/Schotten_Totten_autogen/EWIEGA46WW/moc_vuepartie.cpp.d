@@ -1,5 +1,5 @@
-C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/EWIEGA46WW/moc_vuepartie.cpp: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/moc_predefs.h \
+C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/EWIEGA46WW/moc_vuepartie.cpp: C:/Users/lucas/Desktop/git/Schotten-Totten/vuepartie.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/moc_predefs.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/limits.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/syslimits.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/algorithm \
@@ -377,8 +377,10 @@ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotte
   C:/Qt/6.5.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.5.0/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/QApplication \
+  C:/Qt/6.5.0/mingw_64/include/QtWidgets/QGridLayout \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/QLabel \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/QLineEdit \
+  C:/Qt/6.5.0/mingw_64/include/QtWidgets/QMainWindow \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/QPushButton \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/QVBoxLayout \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/QWidget \
@@ -391,22 +393,26 @@ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotte
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qlayout.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qlayoutitem.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qlineedit.h \
+  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qmainwindow.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qsizepolicy.h \
+  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qwidget.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Affichage_console.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Borne.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Carte.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Combinaison.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Jeu.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Joueur.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Pioche.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Revendication.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Schotten_Totten.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/defausse.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepioche.h
+  C:/Users/lucas/Desktop/git/Schotten-Totten/Affichage_console.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/Borne.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/Carte.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/Combinaison.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/Jeu.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/Joueur.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/Pioche.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/Revendication.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/Schotten_Totten.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/defausse.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/vueajouterdefausse.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/vueborne.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/vuecarte.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/vuedefausse.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/vuepioche.h

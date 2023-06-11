@@ -1,5 +1,5 @@
 CMakeFiles/Schotten_Totten.dir/main.cpp.obj: \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\main.cpp \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\main.cpp \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -135,7 +135,7 @@ CMakeFiles/Schotten_Totten.dir/main.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Carte.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Carte.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/vector \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_uninitialized.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_vector.h \
@@ -160,19 +160,19 @@ CMakeFiles/Schotten_Totten.dir/main.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/invoke.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_multimap.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/erase_if.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Jeu.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Joueur.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Affichage_console.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\defausse.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Jeu.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Joueur.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Affichage_console.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\defausse.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/stack \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_stack.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Borne.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Combinaison.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Schotten_Totten.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Borne.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Combinaison.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Schotten_Totten.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstddef \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Pioche.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Revendication.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuepartie.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Pioche.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Revendication.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\vuepartie.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/QApplication \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -414,11 +414,23 @@ CMakeFiles/Schotten_Totten.dir/main.cpp.obj: \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qtextformat.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qpen.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qtextoption.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuecarte.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\vuecarte.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/QPen \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qpen.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/QBrush \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qbrush.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vueborne.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuepioche.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\menu.h
+ C:\Users\lucas\Desktop\git\Schotten-Totten\vueborne.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\vuepioche.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\vuedefausse.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/QGridLayout \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qgridlayout.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\vueajouterdefausse.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/QMainWindow \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qmainwindow.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtabwidget.h \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/QDebug \
+ C:/Qt/6.5.0/mingw_64/include/QtCore/qdebug.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\vuemenu.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/QMessageBox \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qmessagebox.h \
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h

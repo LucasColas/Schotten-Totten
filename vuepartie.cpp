@@ -106,6 +106,9 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
         connect(vuepioches[1], SIGNAL(PiocheClicked(VuePioche*)), this, SLOT(onPiocheClicked(VuePioche *)));
         buttonLayout->addWidget(vuepioches[0]);
         buttonLayout->addWidget(vuepioches[1]);
+        vueDefausse = new VueDefausse();
+        connect(vueDefausse, SIGNAL(defausseClicked(VueDefausse*)), this, SLOT(onDefausseClicked(VueDefausse *)));
+        buttonLayout->addWidget(vueDefausse);
     }
     /*for (int i = 0; i < 2; ++i) {
 
@@ -452,4 +455,11 @@ void VuePartie::verifPartie() {
 void VuePartie::showInfo(const char *message) {
     QMessageBox messageBox(QMessageBox::Icon::Warning, "Info : ", message);
     messageBox.exec();
+}
+
+void VuePartie::onDefausseClicked(VueDefausse *d) {
+    cout << "defausse cliquée" << endl;
+    VueAjouterDefausse* vueajoutedefausse = new VueAjouterDefausse(controller->getDefausse(), this);
+    vueajoutedefausse->show();
+
 }

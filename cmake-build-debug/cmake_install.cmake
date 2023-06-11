@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten
+# Install script for directory: C:/Users/lucas/Desktop/git/Schotten-Totten
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

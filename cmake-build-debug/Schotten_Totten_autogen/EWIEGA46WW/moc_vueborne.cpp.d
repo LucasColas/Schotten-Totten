@@ -1,5 +1,5 @@
-C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/EWIEGA46WW/moc_vueborne.cpp: C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/moc_predefs.h \
+C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/EWIEGA46WW/moc_vueborne.cpp: C:/Users/lucas/Desktop/git/Schotten-Totten/vueborne.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/moc_predefs.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/limits.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/syslimits.h \
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/algorithm \
@@ -367,6 +367,6 @@ C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotte
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qwidget.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Borne.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Carte.h \
-  C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Combinaison.h
+  C:/Users/lucas/Desktop/git/Schotten-Totten/Borne.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/Carte.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/Combinaison.h

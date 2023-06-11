@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten
+CMAKE_SOURCE_DIR = C:\Users\lucas\Desktop\git\Schotten-Totten
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\lucas\Desktop\git\Schotten-Totten\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\lucas\Desktop\git\Schotten-Totten\cmake-build-debug\CMakeFiles C:\Users\lucas\Desktop\git\Schotten-Totten\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\lucas\Desktop\git\Schotten-Totten\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -597,6 +597,30 @@ vuecarte.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuecarte.cpp.s
 .PHONY : vuecarte.cpp.s
 
+vuedefausse.obj: vuedefausse.cpp.obj
+.PHONY : vuedefausse.obj
+
+# target to build an object file
+vuedefausse.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuedefausse.cpp.obj
+.PHONY : vuedefausse.cpp.obj
+
+vuedefausse.i: vuedefausse.cpp.i
+.PHONY : vuedefausse.i
+
+# target to preprocess a source file
+vuedefausse.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuedefausse.cpp.i
+.PHONY : vuedefausse.cpp.i
+
+vuedefausse.s: vuedefausse.cpp.s
+.PHONY : vuedefausse.s
+
+# target to generate assembly for a file
+vuedefausse.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Schotten_Totten.dir\build.make CMakeFiles/Schotten_Totten.dir/vuedefausse.cpp.s
+.PHONY : vuedefausse.cpp.s
+
 vuemenu.obj: vuemenu.cpp.obj
 .PHONY : vuemenu.obj
 
@@ -736,6 +760,9 @@ help:
 	@echo ... vuecarte.obj
 	@echo ... vuecarte.i
 	@echo ... vuecarte.s
+	@echo ... vuedefausse.obj
+	@echo ... vuedefausse.i
+	@echo ... vuedefausse.s
 	@echo ... vuemenu.obj
 	@echo ... vuemenu.i
 	@echo ... vuemenu.s

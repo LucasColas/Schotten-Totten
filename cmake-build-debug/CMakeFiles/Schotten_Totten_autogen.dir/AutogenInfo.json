@@ -1,16 +1,16 @@
 {
-	"BUILD_DIR" : "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen",
-	"CMAKE_BINARY_DIR" : "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten",
+	"BUILD_DIR" : "C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/lucas/Desktop/git/Schotten-Totten",
 	"CMAKE_EXECUTABLE" : "C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/bin/cmake.exe",
 	"CMAKE_LIST_FILES" : 
 	[
-		"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/CMakeLists.txt",
-		"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/CMakeFiles/3.24.2/CMakeSystem.cmake",
+		"C:/Users/lucas/Desktop/git/Schotten-Totten/CMakeLists.txt",
+		"C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/CMakeFiles/3.24.2/CMakeSystem.cmake",
 		"C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake",
-		"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/CMakeFiles/3.24.2/CMakeCCompiler.cmake",
-		"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/CMakeFiles/3.24.2/CMakeCXXCompiler.cmake",
+		"C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/CMakeFiles/3.24.2/CMakeCCompiler.cmake",
+		"C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/CMakeFiles/3.24.2/CMakeCXXCompiler.cmake",
 		"C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake",
 		"C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake",
 		"C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake",
@@ -26,7 +26,7 @@
 		"C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
 		"C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C.cmake",
 		"C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU.cmake",
-		"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/CMakeFiles/3.24.2/CMakeRCCompiler.cmake",
+		"C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/CMakeFiles/3.24.2/CMakeRCCompiler.cmake",
 		"C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeRCInformation.cmake",
 		"C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-windres.cmake",
 		"C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake",
@@ -233,135 +233,141 @@
 		"C:/Qt/6.5.0/mingw_64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.5.0/mingw_64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginAdditionalTargetInfo.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten",
+	"CMAKE_SOURCE_DIR" : "C:/Users/lucas/Desktop/git/Schotten-Totten",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Affichage_console.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Affichage_console.h",
 			"Mu",
 			"EWIEGA46WW/moc_Affichage_console.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Borne.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Borne.h",
 			"Mu",
 			"EWIEGA46WW/moc_Borne.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Carte.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Carte.h",
 			"Mu",
 			"EWIEGA46WW/moc_Carte.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Combinaison.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Combinaison.h",
 			"Mu",
 			"EWIEGA46WW/moc_Combinaison.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Factory.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Factory.h",
 			"Mu",
 			"EWIEGA46WW/moc_Factory.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Jeu.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Jeu.h",
 			"Mu",
 			"EWIEGA46WW/moc_Jeu.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Jeu_cartes.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Jeu_cartes.h",
 			"Mu",
 			"EWIEGA46WW/moc_Jeu_cartes.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Joueur.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Joueur.h",
 			"Mu",
 			"EWIEGA46WW/moc_Joueur.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Pioche.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Pioche.h",
 			"Mu",
 			"EWIEGA46WW/moc_Pioche.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Revendication.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Revendication.h",
 			"Mu",
 			"EWIEGA46WW/moc_Revendication.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Schotten_Totten.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Schotten_Totten.h",
 			"Mu",
 			"EWIEGA46WW/moc_Schotten_Totten.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/defausse.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/defausse.h",
 			"Mu",
 			"EWIEGA46WW/moc_defausse.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/menu.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/menu.h",
 			"Mu",
 			"EWIEGA46WW/moc_menu.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/set.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/set.h",
 			"Mu",
 			"EWIEGA46WW/moc_set.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueajouterdefausse.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/vueajouterdefausse.h",
 			"Mu",
 			"EWIEGA46WW/moc_vueajouterdefausse.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/vueborne.h",
 			"Mu",
 			"EWIEGA46WW/moc_vueborne.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/vuecarte.h",
 			"Mu",
 			"EWIEGA46WW/moc_vuecarte.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuemenu.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/vuedefausse.h",
+			"Mu",
+			"EWIEGA46WW/moc_vuedefausse.cpp",
+			null
+		],
+		[
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/vuemenu.h",
 			"Mu",
 			"EWIEGA46WW/moc_vuemenu.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/vuepartie.h",
 			"Mu",
 			"EWIEGA46WW/moc_vuepartie.cpp",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepioche.h",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/vuepioche.h",
 			"Mu",
 			"EWIEGA46WW/moc_vuepioche.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/include",
-	"MOC_COMPILATION_FILE" : "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/include",
+	"MOC_COMPILATION_FILE" : "C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
@@ -416,121 +422,74 @@
 		"-c",
 		"C:/Program Files/JetBrains/CLion 2022.3.2/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/Schotten_Totten_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 6,
-	"PARSE_CACHE_FILE" : "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/CMakeFiles/Schotten_Totten_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/CMakeFiles/Schotten_Totten_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "C:/Qt/6.5.0/mingw_64/./bin/moc.exe",
 	"QT_UIC_EXECUTABLE" : "",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 5,
-	"SETTINGS_FILE" : "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/CMakeFiles/Schotten_Totten_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/CMakeFiles/Schotten_Totten_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Affichage_console.cpp",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Affichage_console.cpp",
+			"Mu",
+			null
+		],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/Borne.cpp", "Mu", null ],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/Carte.cpp", "Mu", null ],
+		[
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Combinaison.cpp",
+			"Mu",
+			null
+		],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/Factory.cpp", "Mu", null ],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/Jeu.cpp", "Mu", null ],
+		[
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Jeu_cartes.cpp",
+			"Mu",
+			null
+		],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/Joueur.cpp", "Mu", null ],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/Pioche.cpp", "Mu", null ],
+		[
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Revendication.cpp",
 			"Mu",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Borne.cpp",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/Schotten_Totten.cpp",
+			"Mu",
+			null
+		],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/defausse.cpp", "Mu", null ],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/main.cpp", "Mu", null ],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/menu.cpp", "Mu", null ],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/set.cpp", "Mu", null ],
+		[
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/vueajouterdefausse.cpp",
+			"Mu",
+			null
+		],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/vueborne.cpp", "Mu", null ],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/vuecarte.cpp", "Mu", null ],
+		[
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/vuedefausse.cpp",
+			"Mu",
+			null
+		],
+		[ "C:/Users/lucas/Desktop/git/Schotten-Totten/vuemenu.cpp", "Mu", null ],
+		[
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/vuepartie.cpp",
 			"Mu",
 			null
 		],
 		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Carte.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Combinaison.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Factory.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Jeu.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Jeu_cartes.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Joueur.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Pioche.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Revendication.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/Schotten_Totten.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/defausse.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/main.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/menu.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/set.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueajouterdefausse.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vueborne.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuecarte.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuemenu.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepartie.cpp",
-			"Mu",
-			null
-		],
-		[
-			"C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/vuepioche.cpp",
+			"C:/Users/lucas/Desktop/git/Schotten-Totten/vuepioche.cpp",
 			"Mu",
 			null
 		]

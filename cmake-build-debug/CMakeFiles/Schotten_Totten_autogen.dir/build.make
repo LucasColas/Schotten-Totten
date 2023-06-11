@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten
+CMAKE_SOURCE_DIR = C:\Users\lucas\Desktop\git\Schotten-Totten
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\lucas\Desktop\git\Schotten-Totten\cmake-build-debug
 
 # Utility rule file for Schotten_Totten_autogen.
 
@@ -66,8 +66,8 @@ include CMakeFiles/Schotten_Totten_autogen.dir/compiler_depend.make
 include CMakeFiles/Schotten_Totten_autogen.dir/progress.make
 
 CMakeFiles/Schotten_Totten_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target Schotten_Totten"
-	"C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E cmake_autogen C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/cmake-build-debug/CMakeFiles/Schotten_Totten_autogen.dir/AutogenInfo.json Debug
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=C:\Users\lucas\Desktop\git\Schotten-Totten\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target Schotten_Totten"
+	"C:\Program Files\JetBrains\CLion 2022.3.2\bin\cmake\win\x64\bin\cmake.exe" -E cmake_autogen C:/Users/lucas/Desktop/git/Schotten-Totten/cmake-build-debug/CMakeFiles/Schotten_Totten_autogen.dir/AutogenInfo.json Debug
 
 Schotten_Totten_autogen: CMakeFiles/Schotten_Totten_autogen
 Schotten_Totten_autogen: CMakeFiles/Schotten_Totten_autogen.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/Schotten_Totten_autogen.dir/clean:
 .PHONY : CMakeFiles/Schotten_Totten_autogen.dir/clean
 
 CMakeFiles/Schotten_Totten_autogen.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\cmake-build-debug\CMakeFiles\Schotten_Totten_autogen.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\lucas\Desktop\git\Schotten-Totten C:\Users\lucas\Desktop\git\Schotten-Totten C:\Users\lucas\Desktop\git\Schotten-Totten\cmake-build-debug C:\Users\lucas\Desktop\git\Schotten-Totten\cmake-build-debug C:\Users\lucas\Desktop\git\Schotten-Totten\cmake-build-debug\CMakeFiles\Schotten_Totten_autogen.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Schotten_Totten_autogen.dir/depend
 

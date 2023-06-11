@@ -1,6 +1,6 @@
 CMakeFiles/Schotten_Totten.dir/vuepioche.cpp.obj: \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuepioche.cpp \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\vuepioche.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\vuepioche.cpp \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\vuepioche.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/QWidget \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qwidget.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -357,15 +357,15 @@ CMakeFiles/Schotten_Totten.dir/vuepioche.cpp.obj: \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qpushbutton.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qabstractbutton.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qwidget.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Pioche.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Carte.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Pioche.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Carte.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/queue \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/deque \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_deque.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/deque.tcc \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_queue.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Schotten_Totten.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Borne.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Schotten_Totten.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Borne.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
@@ -380,7 +380,7 @@ CMakeFiles/Schotten_Totten.dir/vuepioche.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Combinaison.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Combinaison.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/QPainter \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qpainter.h \
  C:/Qt/6.5.0/mingw_64/include/QtGui/qtextoption.h \

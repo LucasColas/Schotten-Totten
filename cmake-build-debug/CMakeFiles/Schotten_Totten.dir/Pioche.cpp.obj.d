@@ -1,7 +1,7 @@
 CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj: \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Pioche.cpp \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Pioche.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Carte.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Pioche.cpp \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Pioche.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Carte.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/string \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -133,9 +133,9 @@ CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/invoke.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_multimap.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/erase_if.h \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Schotten_Totten.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Schotten_Totten.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstddef \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Borne.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Borne.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
@@ -164,7 +164,7 @@ CMakeFiles/Schotten_Totten.dir/Pioche.cpp.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
- C:\Users\lucas\Desktop\Cours\Info\LO21\Schotten-Totten\Combinaison.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\Combinaison.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/algorithm \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_algo.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/algorithmfwd.h \

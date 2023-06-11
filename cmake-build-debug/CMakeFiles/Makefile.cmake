@@ -180,7 +180,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Qt/6.5.0/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersionImpl.cmake"
   "C:/Qt/6.5.0/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateTargets.cmake"
   "C:/Qt/6.5.0/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateVersionlessTargets.cmake"
-  "C:/Users/lucas/Desktop/Cours/Info/LO21/Schotten-Totten/CMakeLists.txt"
+  "C:/Users/lucas/Desktop/git/Schotten-Totten/CMakeLists.txt"
   "CMakeFiles/3.24.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.24.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.24.2/CMakeRCCompiler.cmake"

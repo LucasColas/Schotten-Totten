@@ -39,7 +39,7 @@ add_executable(Schotten_Totten
         vuecarte.cpp
         vuecarte.h
         vueborne.cpp
-        vueborne.h menu.cpp menu.h vuepioche.cpp vuepioche.h vuemenu.cpp vuemenu.h vueajouterdefausse.cpp vueajouterdefausse.h)
+        vueborne.h menu.cpp menu.h vuepioche.cpp vuepioche.h vuemenu.cpp vuemenu.h vueajouterdefausse.cpp vueajouterdefausse.h vuedefausse.cpp vuedefausse.h)
 
 # Use the AUTOMOC feature to automatically generate MOC files
 set_target_properties(Schotten_Totten PROPERTIES AUTOMOC ON)
