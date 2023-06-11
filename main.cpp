@@ -11,16 +11,23 @@ using namespace std;
 #include <QLineEdit>
 #include <QDebug>
 #include "vuemenu.h"
-
+#include "menu.h"
 
 int main(int argc, char *argv[])
 {
+    /*
+    Menu m = Menu();
+    m.jouer();
+    return 0;
+     */
+
     QApplication app(argc, argv);
 
     VueMenu vueMenu;
     vueMenu.show();
 
     return app.exec();
+
 }
 
 

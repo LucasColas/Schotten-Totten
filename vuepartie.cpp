@@ -334,6 +334,7 @@ void VuePartie::verif_bornes() {
 }
 
 void VuePartie::changerJoueur() {
+    verif_bornes();
     for (int i = 0; i < vuecartesjoueur.size(); i++) {
         vuecartesjoueur[i]->setNoCarte();
     }
@@ -367,7 +368,7 @@ void VuePartie::updateVueCards() {
     //
     //Mettre à jour les bornes par exemple.
     clearvues();
-    verif_bornes();
+    //verif_bornes();
     for (int i = 0; i < controller->getSchottenTotten().getNb_bornes(); i++) {
         vuebornes[i]->setBorne(controller->getSchottenTotten().getBorne(i),i);
     }
@@ -459,6 +460,9 @@ void VuePartie::showInfo(const char *message) {
 
 void VuePartie::onDefausseClicked(VueDefausse *d) {
     cout << "defausse cliquée" << endl;
+    if (carte_selectionne != nullptr) {
+        controller->getDefausse().ajout_defausse(carte_selectionne);
+    }
     VueAjouterDefausse* vueajoutedefausse = new VueAjouterDefausse(controller->getDefausse(), this);
     vueajoutedefausse->show();
 

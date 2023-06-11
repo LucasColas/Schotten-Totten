@@ -433,4 +433,5 @@ CMakeFiles/Schotten_Totten.dir/main.cpp.obj: \
  C:\Users\lucas\Desktop\git\Schotten-Totten\vuemenu.h \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/QMessageBox \
  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qmessagebox.h \
- C:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h
+ C:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
+ C:\Users\lucas\Desktop\git\Schotten-Totten\menu.h
