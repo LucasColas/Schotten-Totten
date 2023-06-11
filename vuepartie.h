@@ -66,6 +66,9 @@ private:
     VueCarte* vueCarteSelectionne;
     bool carte_exception; //Permet de récupérer à une carte à un endroit où on n'aurait pas le droit de base. Utile pour les cartes ruses.
     bool carte_place;
+    bool carte_stratege;
+    bool carte_banshee;
+
     void changerJoueur();
     void clearvues();
     int nb_cartes_haut;
