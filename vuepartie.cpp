@@ -139,6 +139,7 @@ void VuePartie::onCardClicked(VueCarte *vc)
 
     if (!vc->cartePresente()) {
 
+
         if (carte_selectionne != nullptr && carte_stratege) {
             cout << "Carte statege select" << endl;
             //Cas carte stratege selectionnee auparavant
@@ -149,11 +150,12 @@ void VuePartie::onCardClicked(VueCarte *vc)
                     if (controller->getJoueurActuel() == 1) {
                         for (int l = 0; l < 9; l++) {
                             for (int j = 0; j < controller->getSchottenTotten().getBorne(l).getCartes_joueur_1().size(); j++) {
-                                if (carte_selectionne == controller->getSchottenTotten().getBorne(l).getCartes_joueur_1()[j]) {
+                                if (carte_selectionne == controller->getSchottenTotten().getBorne(l).getCartes_joueur_1()[j] && !controller->getSchottenTotten().getBorne(l).GetPossesseur()) {
                                     cout << "carte à supprimer du joueur 1" << endl;
                                     cout << "l : " << l << "j : " << j << endl;
                                     cout << "size vecteur : " << controller->getSchottenTotten().getBorne(l).getCartes_joueur_1().size();
                                     carte_selectionne = &controller->getSchottenTotten().getBorne(l).supprimer_carte(controller->getJoueurActuel(), j);
+                                    controller->getDefausse().ajout_defausse(carte_selectionne);
                                 }
                             }
                         }
@@ -163,10 +165,10 @@ void VuePartie::onCardClicked(VueCarte *vc)
                     if (controller->getJoueurActuel() == 2) {
                         for (int l = 0; l < 9; l++) {
                             for (int j = 0; j < controller->getSchottenTotten().getBorne(l).getCartes_joueur_2().size(); j++) {
-                                if (carte_selectionne == controller->getSchottenTotten().getBorne(l).getCartes_joueur_2()[j]) {
+                                if (carte_selectionne == controller->getSchottenTotten().getBorne(l).getCartes_joueur_2()[j] && !controller->getSchottenTotten().getBorne(l).GetPossesseur()) {
                                     cout << "carte à supprimer du joueur 2" << endl;
                                     cout << "l : " << l << "j : " << j << endl;
-                                    cout << "size vecteur : " << controller->getSchottenTotten().getBorne(l).getCartes_joueur_1().size();
+                                    cout << "size vecteur : " << controller->getSchottenTotten().getBorne(l).getCartes_joueur_2().size();
                                     controller->getSchottenTotten().getBorne(l).supprimer_carte(controller->getJoueurActuel(), j);
                                 }
                             }
@@ -306,7 +308,7 @@ void VuePartie::onCardClicked(VueCarte *vc)
                     cout << "vecteur joueurs bornes : " << controller->getSchottenTotten().getBorne(vc->getNbBorne()).getCartes_joueur_2().size() << " " << controller->getSchottenTotten().getBorne(vc->getNbBorne()).getCartes_joueur_1().size() << endl;
                 }
             }
-            vueCarteSelectionne->setNoCarte();
+
             updateVueCards();
 
         }
@@ -317,9 +319,47 @@ void VuePartie::onCardClicked(VueCarte *vc)
         cout << "carte presente dans le slot" << endl;
         carte_selectionne = &vc->getCarte(); //On récupère la carte
         vueCarteSelectionne = vc;
+        if (carte_banshee) {
+            cout << "banshee" << endl;
+            for (int i = 0; i < vuecarteshaut.size(); i++) {
+                if (carte_selectionne == &vuecarteshaut[i]->getCarte()) {
+                    for (int l = 0; l < 9; l++) {
+                        for (int j = 0; j < controller->getSchottenTotten().getBorne(l).getCartes_joueur_1().size(); j++) {
+                            if (carte_selectionne == controller->getSchottenTotten().getBorne(l).getCartes_joueur_1()[j] && !controller->getSchottenTotten().getBorne(l).GetPossesseur()) {
+                                cout << "carte à supprimer du joueur 1" << endl;
+                                cout << "l : " << l << "j : " << j << endl;
+                                cout << "size vecteur : " << controller->getSchottenTotten().getBorne(l).getCartes_joueur_1().size();
+                                carte_selectionne = &controller->getSchottenTotten().getBorne(l).supprimer_carte(1, j);
+                                controller->getDefausse().ajout_defausse(carte_selectionne);
+                                carte_banshee = false;
+                                vueCarteSelectionne->setNoCarte();
+                                updateVueCards();
+
+                                return;
+                            }
+                        }
+
+                        for (int j = 0; j < controller->getSchottenTotten().getBorne(l).getCartes_joueur_2().size(); j++) {
+                            if (carte_selectionne == controller->getSchottenTotten().getBorne(l).getCartes_joueur_2()[j] && !controller->getSchottenTotten().getBorne(l).GetPossesseur()) {
+                                cout << "carte à supprimer du joueur 2" << endl;
+                                cout << "l : " << l << "j : " << j << endl;
+                                cout << "size vecteur : " << controller->getSchottenTotten().getBorne(l).getCartes_joueur_2().size();
+                                carte_selectionne = &controller->getSchottenTotten().getBorne(l).supprimer_carte(2, j);
+                                cout << "carte supprimee. Ajout à la defausse" << endl;
+                                controller->getDefausse().ajout_defausse(carte_selectionne);
+                                carte_banshee = false;
+                                updateVueCards();
+
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         //On a sélectionné la carte traitre.
-        if (carte_selectionne->getId() == "Traitre") {
+        if (carte_selectionne != nullptr && carte_selectionne->getId() == "Traitre") {
             cout << "carte traitre. La carte va disparaitre et il sera possible de prendre une carte de "
                     "l'adversaire et de la mettre sur une borne a nous." << endl;
             controller->getDefausse().ajout_defausse(carte_selectionne);
@@ -328,8 +368,10 @@ void VuePartie::onCardClicked(VueCarte *vc)
             for (int i = 0; i < vuecartesjoueur.size(); i++) {
                 if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
                     controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i+1);
+                    break;
                 }
             }
+            cout << "carte supprimmee" << endl;
             vueCarteSelectionne->setNoCarte();
 
             //Permet à l'utilisateur de pouvoir recliquer sur une carte. Et en plus sur une carte qui n'est pas à lui
@@ -337,27 +379,49 @@ void VuePartie::onCardClicked(VueCarte *vc)
             carte_selectionne = nullptr;
             carte_exception = true;
 
-
+            cout << "fin carte" << endl;
             updateVueCards();
         }
 
-        if (carte_selectionne->getId() == "Stratège") {
+        else if (carte_selectionne != nullptr && carte_selectionne->getId() == "Stratège") {
             cout << "carte stratege. La carte va disparaitre et il sera possible de prendre une carte de "
                     "l'adversaire et de la mettre sur une borne a nous." << endl;
             controller->getDefausse().ajout_defausse(carte_selectionne);
-
+            cout << "ajout defausse" << endl;
             // On supprime la carte stratege des mains du joueur
             for (int i = 0; i < vuecartesjoueur.size(); i++) {
                 if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
                     controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i+1);
+                    break;
                 }
             }
+            cout << "carte supprimmee" << endl;
+            vueCarteSelectionne->setNoCarte();
+            updateVueCards();
+            //Permet à l'utilisateur de pouvoir recliquer sur une carte. Et en plus sur une carte qui n'est pas à lui
+            //grâce à carte_exception
+            carte_selectionne = nullptr;
+            carte_stratege = true;
+        }
+
+        else if (carte_selectionne != nullptr && carte_selectionne->getId() == "Banshee") {
+            cout << "carte banshee." << endl;
+            controller->getDefausse().ajout_defausse(carte_selectionne);
+            for (int i = 0; i < vuecartesjoueur.size(); i++) {
+                if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
+                    controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i+1);
+                    break;
+                }
+            }
+            cout << "carte supprimmee" << endl;
             vueCarteSelectionne->setNoCarte();
 
             //Permet à l'utilisateur de pouvoir recliquer sur une carte. Et en plus sur une carte qui n'est pas à lui
             //grâce à carte_exception
             carte_selectionne = nullptr;
-            carte_stratege = true;
+            carte_banshee = true;
+            updateVueCards();
+
         }
 
     }
@@ -385,6 +449,9 @@ void VuePartie::onPiocheClicked(VuePioche *p) {
         }
         controller->getJoueur(controller->getJoueurActuel()).ajout_carte(&controller->getPioche("pioche tactique").piocher_carte());
 
+    }
+    for (int i = 0; i < controller->getJoueur(controller->getJoueurActuel()).getNbCartes(); i++) {
+        cout << "c : " << *controller->getJoueur(controller->getJoueurActuel()).getCartes()[i] << endl;
     }
 
     carte_place = false;

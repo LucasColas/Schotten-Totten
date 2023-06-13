@@ -12,6 +12,7 @@ private:
     vector<Carte*> defausse;
 public:
     //void consulter();
+    Defausse();
     void ajout_defausse(Carte* c);
     bool estVide() const {return defausse.empty();};
     size_t getNbCartes() const { return defausse.size();};

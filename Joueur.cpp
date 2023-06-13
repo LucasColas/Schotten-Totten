@@ -117,7 +117,7 @@ int IA::choix_entier(const int min, const int max) {
 
 void Joueur::supprimerCarte(int i) {
     Carte& carte = *cartes[i-1];
-    //cout << "carte prise" << endl;
+    cout << "carte prise" << endl;
     cartes.erase(cartes.begin()+i-1);
-    //cout << "carte supprimee" << endl;
+    cout << "carte supprimee" << endl;
 }

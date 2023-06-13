@@ -69,6 +69,7 @@ private:
     bool carte_stratege;
     bool carte_banshee;
 
+
     void changerJoueur();
     void clearvues();
     int nb_cartes_haut;
