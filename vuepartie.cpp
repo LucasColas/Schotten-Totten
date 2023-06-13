@@ -210,21 +210,27 @@ void VuePartie::onCardClicked(VueCarte *vc)
                     controller->getSchottenTotten().getBorne(vc->getNbBorne()).ajout_Carte(carte_selectionne, controller->getJoueurActuel());
                     if (controller->getJoueurActuel() == 1) {
                         vuecarteshaut[i]->setNoCarte();
-                        for (int j = 0; j < controller->getSchottenTotten().getBorne(vc->getNbBorne()).getCartes_joueur_2().size() ; j++) {
-                            if (controller->getSchottenTotten().getBorne(vc->getNbBorne()).getCartes_joueur_2()[j] == carte_selectionne) {
-                                controller->getSchottenTotten().getBorne(vc->getNbBorne()).supprimer_carte(2, j);
-                                break;
+                        for (int l = 0; l < controller->getSchottenTotten().getNb_bornes(); l++) {
+
+                            for (int j = 0; j < controller->getSchottenTotten().getBorne(l).getCartes_joueur_2().size(); j++) {
+                                if (controller->getSchottenTotten().getBorne(l).getCartes_joueur_2()[j] == carte_selectionne) {
+                                    controller->getSchottenTotten().getBorne(vc->getNbBorne()).supprimer_carte(2, j);
+                                    break;
+                                }
                             }
                         }
+
                     }
 
                     if (controller->getJoueurActuel() == 2) {
                         vuecarteshaut[i]->setNoCarte();
-                        for (int j = 0; j < controller->getSchottenTotten().getBorne(vc->getNbBorne()).getCartes_joueur_1().size() ; j++) {
-                            if (controller->getSchottenTotten().getBorne(vc->getNbBorne()).getCartes_joueur_1()[j] == carte_selectionne) {
-                                controller->getSchottenTotten().getBorne(vc->getNbBorne()).supprimer_carte(1, j);
+                        for (int l = 0; l < controller->getSchottenTotten().getNb_bornes(); l++) {
 
-                                break;
+                            for (int j = 0; j < controller->getSchottenTotten().getBorne(l).getCartes_joueur_1().size(); j++) {
+                                if (controller->getSchottenTotten().getBorne(l).getCartes_joueur_1()[j] == carte_selectionne) {
+                                    controller->getSchottenTotten().getBorne(vc->getNbBorne()).supprimer_carte(1, j);
+                                    break;
+                                }
                             }
                         }
                     }
@@ -334,7 +340,7 @@ void VuePartie::onCardClicked(VueCarte *vc)
                                 carte_banshee = false;
                                 vueCarteSelectionne->setNoCarte();
                                 updateVueCards();
-
+                                carte_place = true;
                                 return;
                             }
                         }
@@ -349,7 +355,7 @@ void VuePartie::onCardClicked(VueCarte *vc)
                                 controller->getDefausse().ajout_defausse(carte_selectionne);
                                 carte_banshee = false;
                                 updateVueCards();
-
+                                carte_place = true;
                                 return;
                             }
                         }
