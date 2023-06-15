@@ -1,6 +1,11 @@
 #include <iostream>
 #include "Carte.h"
 #include "Jeu.h"
+#include "menu.h"
+
+
+
+
 #include "vuepartie.h"
 using namespace std;
 #include <QApplication>
@@ -11,15 +16,15 @@ using namespace std;
 #include <QLineEdit>
 #include <QDebug>
 #include "vuemenu.h"
-#include "menu.h"
+
+
+
 
 int main(int argc, char *argv[])
 {
-    /*
-    Menu m = Menu();
-    m.jouer();
-    return 0;
-     */
+
+
+
 
     QApplication app(argc, argv);
 
@@ -27,6 +32,18 @@ int main(int argc, char *argv[])
     vueMenu.show();
 
     return app.exec();
+
+
+
+
+
+
+
+
+    /*Menu m = Menu();
+    m.jouer();
+    return 0;*/
+
 
 }
 

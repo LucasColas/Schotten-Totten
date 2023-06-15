@@ -38,6 +38,9 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
     carte_exception = false;
     carte_stratege = false;
     carte_banshee = false;
+    carte_chasseur_de_tete = false;
+    compte_pioche = 0;
+    cartes_choisies = 0;
 
     carte_selectionne = nullptr;
     vueCarteSelectionne = nullptr;
@@ -99,6 +102,15 @@ VuePartie::VuePartie(string mode_, string variante_, int nb_p, int nb_joueurs_h,
     QSpacerItem *spacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
     // Pioches et défausse
+
+    if (variante == "normal") {
+        buttonLayout = new QVBoxLayout;
+        vuepioches[0] = new VuePioche("pioche clan");
+        connect(vuepioches[0], SIGNAL(PiocheClicked(VuePioche*)), this, SLOT(onPiocheClicked(VuePioche *)));
+
+        buttonLayout->addWidget(vuepioches[0]);
+
+    }
 
     if (variante=="tactique"){
         buttonLayout = new QVBoxLayout;
@@ -214,7 +226,7 @@ void VuePartie::onCardClicked(VueCarte *vc)
 
                             for (int j = 0; j < controller->getSchottenTotten().getBorne(l).getCartes_joueur_2().size(); j++) {
                                 if (controller->getSchottenTotten().getBorne(l).getCartes_joueur_2()[j] == carte_selectionne) {
-                                    controller->getSchottenTotten().getBorne(vc->getNbBorne()).supprimer_carte(2, j);
+                                    controller->getSchottenTotten().getBorne(l).supprimer_carte(2, j);
                                     break;
                                 }
                             }
@@ -228,7 +240,7 @@ void VuePartie::onCardClicked(VueCarte *vc)
 
                             for (int j = 0; j < controller->getSchottenTotten().getBorne(l).getCartes_joueur_1().size(); j++) {
                                 if (controller->getSchottenTotten().getBorne(l).getCartes_joueur_1()[j] == carte_selectionne) {
-                                    controller->getSchottenTotten().getBorne(vc->getNbBorne()).supprimer_carte(1, j);
+                                    controller->getSchottenTotten().getBorne(l).supprimer_carte(1, j);
                                     break;
                                 }
                             }
@@ -299,12 +311,13 @@ void VuePartie::onCardClicked(VueCarte *vc)
 
                     if (variante == "normal") {
                         //La pioche est automatique
-                        cout << "size pioche : " << controller->getPioche("pioche clan").sizePioche() << endl;
-                        controller->getJoueur(controller->getJoueurActuel()).ajout_carte(&controller->getPioche("pioche clan").piocher_carte());
-                        cout << "size pioche : " <<controller->getPioche("pioche clan").sizePioche() << endl;
-                        updateVueCards();
-                        changerJoueur();
-                        updateVueCards();
+                        //cout << "size pioche : " << controller->getPioche("pioche clan").sizePioche() << endl;
+                        //controller->getJoueur(controller->getJoueurActuel()).ajout_carte(&controller->getPioche("pioche clan").piocher_carte());
+                        //cout << "size pioche : " <<controller->getPioche("pioche clan").sizePioche() << endl;
+                        //updateVueCards();
+                        //changerJoueur();
+                        //updateVueCards();
+                        carte_place = true;
                     }
                     if (variante == "tactique") {
                         //Pioche pas automatique car le joueur peut choisir.
@@ -316,6 +329,7 @@ void VuePartie::onCardClicked(VueCarte *vc)
             }
 
             updateVueCards();
+            carte_selectionne = nullptr;
 
         }
 
@@ -430,12 +444,94 @@ void VuePartie::onCardClicked(VueCarte *vc)
 
         }
 
+        else if (carte_selectionne != nullptr && carte_selectionne->getId() == "Chasseur de Tête") {
+            cout << "Carte chasseur de tête" << endl;
+            controller->getDefausse().ajout_defausse(carte_selectionne);
+            for (int i = 0; i < vuecartesjoueur.size(); i++) {
+                if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
+                    controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i+1);
+                    break;
+                }
+            }
+
+            vueCarteSelectionne->setNoCarte();
+            carte_selectionne = nullptr;
+            carte_chasseur_de_tete = true;
+            compte_pioche = 0;
+            updateVueCards();
+        }
+
     }
     updateVueCards();
     update();
 }
 
 void VuePartie::onPiocheClicked(VuePioche *p) {
+
+    if (carte_chasseur_de_tete) {
+        //Peut piocher 3 cartes. Dans la pioche clan ou dans la pioche tactique.
+        //Ajoute les cartes dans les mains du joueur.
+        if (compte_pioche < 3) {
+            if (p->getNomPioche() == "pioche clan") {
+                if (controller->getPioche("pioche clan").est_vide()) {
+                    cout << "pas possible de piocher, pioche vide" << endl;
+                    return;
+                }
+                controller->getJoueur(controller->getJoueurActuel()).ajout_carte(&controller->getPioche("pioche clan").piocher_carte());
+                compte_pioche++;
+            }
+            if (p->getNomPioche() == "pioche tactique") {
+                if (controller->getPioche("pioche tactique").est_vide()) {
+                    cout << "pas possible de piocher, pioche vide" << endl;
+                    return;
+                }
+                controller->getJoueur(controller->getJoueurActuel()).ajout_carte(&controller->getPioche("pioche tactique").piocher_carte());
+                compte_pioche++;
+            }
+
+
+        }
+
+        if (compte_pioche == 3 && cartes_choisies < 2) {
+            if (carte_selectionne != nullptr) {
+                //ajoute la carte dans la pioche
+                if (p->getNomPioche() == "pioche clan") {
+                    controller->getPioche("pioche clan").ajoutcarte(carte_selectionne);
+                    cout << "ajout pioche clan" << endl;
+                    //Supprime la carte dans la main du joueur
+                    for (int i = 0; i < vuecartesjoueur.size(); i++) {
+                        if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
+                            controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i+1);
+                            break;
+                        }
+                    }
+
+                    vueCarteSelectionne->setNoCarte();
+                    carte_selectionne = nullptr;
+                }
+
+                if (p->getNomPioche() == "pioche tactique") {
+                    controller->getPioche("pioche tactique").ajoutcarte(carte_selectionne);
+                    cout << "ajout pioche tactique" << endl;
+                    //Supprime la carte dans la main du joueur
+                    for (int i = 0; i < vuecartesjoueur.size(); i++) {
+                        if (carte_selectionne == &vuecartesjoueur[i]->getCarte()) {
+                            controller->getJoueur(controller->getJoueurActuel()).supprimerCarte(i+1);
+                            break;
+                        }
+                    }
+                    vueCarteSelectionne->setNoCarte();
+                    carte_selectionne = nullptr;
+                }
+
+                cartes_choisies++;
+                if (cartes_choisies == 2) {
+                    carte_place = true;
+                }
+            }
+        }
+    }
+
     if (carte_place && p->getNomPioche() == "pioche clan") {
         cout << "Pioche clan" << endl;
         if (controller->getPioche("pioche clan").est_vide()) {
@@ -471,6 +567,7 @@ void VuePartie::verif_bornes() {
     for (int i = 0; i < controller->getSchottenTotten().getNb_bornes(); i++) {
         controller->revendication_borne(i);
     }
+    updateVueCards();
 }
 
 void VuePartie::changerJoueur() {
@@ -504,9 +601,8 @@ void VuePartie::clearvues() {
 }
 
 void VuePartie::updateVueCards() {
-    //Mettre à jour les cartes du joueur actuel. Prendre les cartes depuis le controleur
-    //
-    //Mettre à jour les bornes par exemple.
+
+
     clearvues();
     //verif_bornes();
     for (int i = 0; i < controller->getSchottenTotten().getNb_bornes(); i++) {
@@ -514,9 +610,11 @@ void VuePartie::updateVueCards() {
     }
 
 
+    //Met les cartes du joueur adverse en haut
     if (controller->getJoueurActuel() == 1) {
 
         for (int i = 0; i < controller->getJoueur(1).getNbCartes(); i++) {
+            //Prend les cartes du joueur actuel
             vuecartesjoueur[i]->setCarte(*controller->getJoueur(1).getCartes()[i]);
         }
 

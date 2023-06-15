@@ -159,10 +159,23 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
         if (!joueurs[joueur_actuel-1]->getIa()) {
             cout << "voici vos cartes" << endl;
             affichageConsole->afficher_cartes_joueur(joueurs[joueur_actuel - 1]->getCartes());
-            cout << "vous devez en enlever deux" << endl;
+            cout << "vous devez en enlever deux cartes" << endl;
         }
-        joueurs[joueur_actuel-1]->choix_carte();
-        joueurs[joueur_actuel-1]->choix_carte();
+        Carte& c1 = joueurs[joueur_actuel-1]->choix_carte();
+        Carte& c2 = joueurs[joueur_actuel-1]->choix_carte();
+        if (c1.getType() == "clan") {
+            pioches["pioche clan"]->ajoutcarte(&c1);
+        }
+        else {
+            pioches["pioche tactique"]->ajoutcarte(&c1);
+        }
+
+        if (c2.getType() == "clan") {
+            pioches["pioche clan"]->ajoutcarte(&c2);
+        }
+        else {
+            pioches["pioche tactique"]->ajoutcarte(&c2);
+        }
 
         return true;
     }
@@ -358,11 +371,11 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
             return true;
         }
         if (joueur_actuel == 1) {
-            for (int i = 0; i < schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size(); i++) {
-                cout << to_string(i+1) << " " << schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1()[i] << endl;
+            for (int i = 0; i < schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2().size(); i++) {
+                cout << to_string(i+1) << " " << schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2()[i] << endl;
             }
             cin >> carte_supp;
-            if (carte_supp < 1 || carte_supp > schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size()) {
+            if (carte_supp < 1 || carte_supp > schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2().size()) {
                 cout << "carte invalide" << endl;
                 return false;
             }
@@ -502,6 +515,7 @@ void Jeu::jouer_tour() {
             }
             schottenTotten->bornes[borne-1]->ajoutRegle(carte.getRegle());
             joueurs[joueur_actuel-1]->carteTactiqueJouee();
+            changer_joueur();
             return;
         }
 

@@ -21,5 +21,6 @@ public:
     Carte& piocher_carte();
     bool est_vide();
     int sizePioche() const {return cartes_pioche.size();};
+    void ajoutcarte(Carte* c) {cartes_pioche.push_back(c);};
 };
 #endif //SCHOTTEN_TOTTEN_PIOCHE_H

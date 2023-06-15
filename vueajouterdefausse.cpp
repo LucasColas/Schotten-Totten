@@ -24,6 +24,9 @@ VueAjouterDefausse::VueAjouterDefausse(Defausse& d,QWidget *parent) : QMainWindo
 
 void VueAjouterDefausse::updateVueAjouterDefausse() {
     for (int i = 0; i < defausse->getNbCartes(); i++) {
+        vuescartes[i]->setNoCarte();
+    }
+    for (int i = 0; i < defausse->getNbCartes(); i++) {
         vuescartes[i]->setCarte(defausse->getCarte(i));
     }
 }

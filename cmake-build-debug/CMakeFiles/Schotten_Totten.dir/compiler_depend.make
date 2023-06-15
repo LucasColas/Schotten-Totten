@@ -2354,6 +2354,7 @@ CMakeFiles/Schotten_Totten.dir/main.cpp.obj: C:/Users/lucas/Desktop/git/Schotten
   C:/Program\ Files/JetBrains/CLion\ 2022.3.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/cstddef \
   C:/Users/lucas/Desktop/git/Schotten-Totten/Pioche.h \
   C:/Users/lucas/Desktop/git/Schotten-Totten/Revendication.h \
+  C:/Users/lucas/Desktop/git/Schotten-Totten/menu.h \
   C:/Users/lucas/Desktop/git/Schotten-Totten/vuepartie.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/QApplication \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qapplication.h \
@@ -2615,8 +2616,7 @@ CMakeFiles/Schotten_Totten.dir/main.cpp.obj: C:/Users/lucas/Desktop/git/Schotten
   C:/Users/lucas/Desktop/git/Schotten-Totten/vuemenu.h \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.5.0/mingw_64/include/QtWidgets/qmessagebox.h \
-  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h \
-  C:/Users/lucas/Desktop/git/Schotten-Totten/menu.h
+  C:/Qt/6.5.0/mingw_64/include/QtWidgets/qdialog.h
 
 CMakeFiles/Schotten_Totten.dir/menu.cpp.obj: C:/Users/lucas/Desktop/git/Schotten-Totten/menu.cpp \
   C:/Users/lucas/Desktop/git/Schotten-Totten/menu.h \

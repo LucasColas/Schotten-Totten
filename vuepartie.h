@@ -68,6 +68,9 @@ private:
     bool carte_place;
     bool carte_stratege;
     bool carte_banshee;
+    bool carte_chasseur_de_tete;
+    int compte_pioche;
+    int cartes_choisies;
 
 
     void changerJoueur();
