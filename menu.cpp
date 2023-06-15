@@ -16,7 +16,7 @@ Menu::Menu() {
 
     cout << "Choisissez le jeu : " << endl;
     cout << "1. Pour Schotten Totten" << endl;
-    cout << "2. Pour Schotten Totten 2" << endl;
+    //cout << "2. Pour Schotten Totten 2" << endl;
     cin >> choix_jeu;
 
     if (choix_jeu == 1) {

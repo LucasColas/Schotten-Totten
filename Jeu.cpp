@@ -463,6 +463,11 @@ int Jeu::autreJoueur() {
 
 void Jeu::jouer_tour() {
 
+    if (verif_partie()) {
+        cout << "partie terminee" << endl;
+        return;
+    }
+
     int borne;
     int choix;
     int choix_pioche;
@@ -564,6 +569,7 @@ void Jeu::jouer_tour() {
 
     if (gagnant()) {
         cout << "Partie terminée" << endl;
+        return;
 
     }
 
@@ -571,8 +577,22 @@ void Jeu::jouer_tour() {
 
 }
 
-bool Jeu::verif() {
-    //appel algo revendication
+
+
+bool Jeu::verif_partie() {
+    //Vérifie si une partie
+    if (variante == "normal") {
+        if (pioches["pioche clan"]->est_vide()) {
+            cout << "plus possible de piocher des cartes" << endl;
+            return true;
+        }
+    }
+
+    if (variante == "tactique")
+        if (pioches["pioche tactique"]->est_vide() && pioches["pioche clan"]->est_vide()) {
+            cout << "plus possible de piocher des cartes" << endl;
+            return true;
+        }
 
     return false;
 }

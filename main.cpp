@@ -26,12 +26,12 @@ int main(int argc, char *argv[])
 
 
 
-    QApplication app(argc, argv);
+    /*QApplication app(argc, argv);
 
     VueMenu vueMenu;
     vueMenu.show();
 
-    return app.exec();
+    return app.exec();*/
 
 
 
@@ -40,9 +40,9 @@ int main(int argc, char *argv[])
 
 
 
-    /*Menu m = Menu();
+    Menu m = Menu();
     m.jouer();
-    return 0;*/
+    return 0;
 
 
 }

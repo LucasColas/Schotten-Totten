@@ -582,6 +582,17 @@ void VuePartie::changerJoueur() {
 
     controller->setJoueurActuel(1);
 
+    if (controller->gagnant()) {
+        cout << "gagnant : " << controller->getJoueurActuel() << endl;
+        string msg = "Le joueur " + to_string(controller->getJoueurActuel()) + " a gagné";
+        showInfo(msg.c_str());
+        return;
+    }
+
+    if (controller->verif_partie()) {
+        showInfo("fin de la partie");
+    }
+
 }
 
 

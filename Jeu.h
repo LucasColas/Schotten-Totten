@@ -57,7 +57,7 @@ public:
     Pioche& getPioche(string nom) const {return *pioches.at(nom);};
     void choixPioche();
     int autreJoueur();
-    bool verif();
+    bool verif_partie();
     bool action_carte_ruse(Carte& carte);
     void changer_joueur();
     void revendication_borne(int i);
