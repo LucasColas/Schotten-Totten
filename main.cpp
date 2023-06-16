@@ -20,32 +20,53 @@ using namespace std;
 
 
 
+
+
 int main(int argc, char *argv[])
 {
-
-
-
-
-    /*QApplication app(argc, argv);
-
-    VueMenu vueMenu;
-    vueMenu.show();
-
-    return app.exec();*/
-
-
-
-
-
-
-
-
     Menu m = Menu();
     m.jouer();
     return 0;
 
 
+
+
+
+
+
+
+
+
+
+    /*
+    QApplication app(argc, argv);
+
+    VueMenu vueMenu;
+    vueMenu.show();
+
+    return app.exec();
+
+    */
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
 
 
     /*

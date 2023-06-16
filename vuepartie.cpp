@@ -581,11 +581,81 @@ void VuePartie::changerJoueur() {
     }
 
     controller->setJoueurActuel(1);
+    for (int i = 0; i < controller->getSchottenTotten().getNb_bornes()-2; i++) {
+        cout << "i : " << i << endl;
+        cout << "borne : " << controller->getSchottenTotten().getBorne(i).GetPossesseur() << endl;
+        if (controller->getSchottenTotten().getBorne(i).GetPossesseur() == 1 && controller->getSchottenTotten().getBorne(i).GetPossesseur()  == controller->getSchottenTotten().getBorne(i+1).GetPossesseur()  && controller->getSchottenTotten().getBorne(i+1).GetPossesseur()  == controller->getSchottenTotten().getBorne(i+2).GetPossesseur() ) {
+            //cout << schottenTotten->bornes[i]->GetPossesseur() << endl;
+            //cout << "Joueur " << joueurs[0]->getNom() << " a gagne" << endl;
+            controller->getJoueur(1).setNbPoints(5);
+            //joueur_gagnant = schottenTotten->bornes[i]->GetPossesseur();
+            string msg = "Le joueur 1 a gagné";
+            showInfo(msg.c_str());
+            return;
+        }
+
+        if (controller->getSchottenTotten().getBorne(i).GetPossesseur() == 1 && controller->getSchottenTotten().getBorne(i).GetPossesseur()  == controller->getSchottenTotten().getBorne(i+1).GetPossesseur()  && controller->getSchottenTotten().getBorne(i+1).GetPossesseur()  == controller->getSchottenTotten().getBorne(i+2).GetPossesseur()) {
+            controller->getJoueur(2).setNbPoints(5);
+            //joueur_gagnant = schottenTotten->bornes[i]->GetPossesseur();
+            string msg = "Le joueur 2 a gagné";
+            showInfo(msg.c_str());
+            return;
+        }
+    }
 
     if (controller->gagnant()) {
-        cout << "gagnant : " << controller->getJoueurActuel() << endl;
-        string msg = "Le joueur " + to_string(controller->getJoueurActuel()) + " a gagné";
-        showInfo(msg.c_str());
+        //Donner le gagnant
+        int bornes_j1 = 0;
+        int bornes_j2 = 0;
+        for (int i = 0; i < controller->getSchottenTotten().getNb_bornes(); i++) {
+            if (controller->getSchottenTotten().getBorne(i).GetPossesseur() == 1) {
+                bornes_j1++;
+            }
+
+            else if (controller->getSchottenTotten().getBorne(i).GetPossesseur() == 2) {
+                bornes_j2++;
+            }
+        }
+
+        if (bornes_j1 == 5) {
+            cout << "Joueur 1 gagne" << endl;
+            controller->getJoueur(1).setNbPoints(5);
+            string msg = "Le joueur 1 a gagné";
+            showInfo(msg.c_str());
+            //joueur_gagnant = 1;
+
+        }
+
+        if (bornes_j2 == 5) {
+            cout << "Joueur 2 gagne" << endl;
+            controller->getJoueur(2).setNbPoints(5);
+            string msg = "Le joueur 2 a gagné";
+            showInfo(msg.c_str());
+            //joueur_gagnant = 2;
+
+        }
+
+        for (int i = 0; i < controller->getSchottenTotten().getNb_bornes()-2; i++) {
+
+            if (controller->getSchottenTotten().getBorne(i).GetPossesseur() == 1 && controller->getSchottenTotten().getBorne(i).GetPossesseur()  == controller->getSchottenTotten().getBorne(i+1).GetPossesseur()  && controller->getSchottenTotten().getBorne(i+1).GetPossesseur()  == controller->getSchottenTotten().getBorne(i+2).GetPossesseur() ) {
+                //cout << schottenTotten->bornes[i]->GetPossesseur() << endl;
+                //cout << "Joueur " << joueurs[0]->getNom() << " a gagne" << endl;
+                controller->getJoueur(1).setNbPoints(5);
+                //joueur_gagnant = schottenTotten->bornes[i]->GetPossesseur();
+                string msg = "Le joueur 1 a gagné";
+                showInfo(msg.c_str());
+                return;
+            }
+
+            if (controller->getSchottenTotten().getBorne(i).GetPossesseur() == 1 && controller->getSchottenTotten().getBorne(i).GetPossesseur()  == controller->getSchottenTotten().getBorne(i+1).GetPossesseur()  && controller->getSchottenTotten().getBorne(i+1).GetPossesseur()  == controller->getSchottenTotten().getBorne(i+2).GetPossesseur()) {
+                controller->getJoueur(2).setNbPoints(5);
+                //joueur_gagnant = schottenTotten->bornes[i]->GetPossesseur();
+                string msg = "Le joueur 2 a gagné";
+                showInfo(msg.c_str());
+                return;
+            }
+        }
+
         return;
     }
 

@@ -465,7 +465,15 @@ void Jeu::jouer_tour() {
 
     if (verif_partie()) {
         cout << "partie terminee" << endl;
+        nb_parties_jouees++;
         return;
+    }
+
+    if (gagnant()) {
+        cout << "Partie terminee" << endl;
+        nb_parties_jouees++;
+        return;
+
     }
 
     int borne;
@@ -567,11 +575,7 @@ void Jeu::jouer_tour() {
         revendication_borne(i);
     }
 
-    if (gagnant()) {
-        cout << "Partie terminée" << endl;
-        return;
 
-    }
 
 
 
@@ -674,6 +678,7 @@ bool Jeu::gagnant() {
         cout << "Joueur 1 gagne" << endl;
         joueurs[0]->setNbPoints(5);
         joueur_gagnant = 1;
+
         return true;
     }
 
@@ -685,8 +690,17 @@ bool Jeu::gagnant() {
     }
 
     for (int i = 0; i < schottenTotten->bornes.size()-2; i++) {
-        if (schottenTotten->bornes[i]->GetPossesseur() != 0 && schottenTotten->bornes[i]->GetPossesseur() == schottenTotten->bornes[i+1]->GetPossesseur() && schottenTotten->bornes[i+1]->GetPossesseur() == schottenTotten->bornes[i+2]->GetPossesseur()) {
-            cout << "Joueur " << joueurs[schottenTotten->bornes[i]->GetPossesseur()-1]->getNom() << " a gagne" << endl;
+        if (schottenTotten->bornes[i]->GetPossesseur() == 1 && schottenTotten->bornes[i]->GetPossesseur() == schottenTotten->bornes[i+1]->GetPossesseur() && schottenTotten->bornes[i+1]->GetPossesseur() == schottenTotten->bornes[i+2]->GetPossesseur()) {
+            cout << schottenTotten->bornes[i]->GetPossesseur() << endl;
+            cout << "Joueur " << joueurs[0]->getNom() << " a gagne" << endl;
+            joueurs[schottenTotten->bornes[i]->GetPossesseur()-1]->setNbPoints(5);
+            joueur_gagnant = schottenTotten->bornes[i]->GetPossesseur();
+            return true;
+        }
+
+        if (schottenTotten->bornes[i]->GetPossesseur() == 2 && schottenTotten->bornes[i]->GetPossesseur() == schottenTotten->bornes[i+1]->GetPossesseur() && schottenTotten->bornes[i+1]->GetPossesseur() == schottenTotten->bornes[i+2]->GetPossesseur()) {
+            cout << schottenTotten->bornes[i]->GetPossesseur() << endl;
+            cout << "Joueur " << joueurs[1]->getNom() << " a gagne" << endl;
             joueurs[schottenTotten->bornes[i]->GetPossesseur()-1]->setNbPoints(5);
             joueur_gagnant = schottenTotten->bornes[i]->GetPossesseur();
             return true;
@@ -703,12 +717,13 @@ void Jeu::revendication_borne(int i) {
         //Il faut demander la valeur des cartes tactiques
         affichageConsole->afficher_cartes_bornes(schottenTotten->bornes, joueur_actuel);
         cout << "\n\n\n\n\n" << "la borne : " << to_string(i+1) << " a un nombre max de cartes pour chacun des joueurs" << endl;
-        // A faire. Ne plus demander la valeur des cartes Elite. Mais calculer automatiquement celui qui a la meilleure combinaison.
+
         //schottenTotten->bornes[i]->demander_valeurs(1);
         //schottenTotten->bornes[i]->demander_valeurs(2);
         revendication = new Revendication(schottenTotten->bornes[i]);
         schottenTotten->bornes[i]->setPossesseur(revendication->Revendiquant_avec_max_cartes());
         cout << "possesseur " << schottenTotten->bornes[i]->GetPossesseur();
+        cout << "Le joueur :" << joueurs[schottenTotten->bornes[i]->GetPossesseur()-1]->getNom() << " a revendique" << endl;
 
     }
 
@@ -735,7 +750,7 @@ void Jeu::revendication_borne(int i) {
         }
         else {
             schottenTotten->bornes[i]->setPossesseur(1);
-            cout << "Le joueur :" << joueurs[joueur_actuel-1]->getNom() << " a revendique" << endl;
+            cout << "Le joueur :" << joueurs[0]->getNom() << " a revendique" << endl;
         }
     }
     if (!schottenTotten->bornes[i]->GetPossesseur() && schottenTotten->bornes[i]->getCartes_joueur_2().size() == schottenTotten->bornes[i]->getNbMaxCartes()) {
@@ -762,7 +777,7 @@ void Jeu::revendication_borne(int i) {
         }
         else {
             schottenTotten->bornes[i]->setPossesseur(2);
-            cout << "Le joueur :" << joueurs[joueur_actuel-1]->getNom() << " a revendique" << endl;
+            cout << "Le joueur :" << joueurs[1]->getNom() << " a revendique" << endl;
         }
     }
 

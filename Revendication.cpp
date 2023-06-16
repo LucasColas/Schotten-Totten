@@ -282,6 +282,7 @@ int Revendication::Revendiquant_avec_max_cartes() {
     int somme_joueur2;
     for (auto r : regles) {
         if (r == 1) {
+            cout << "carte avec règle 1 de posee" << endl;
             somme_joueur1 = combinaison_joueur1->getMaxSomme();
             somme_joueur2 = combinaison_joueur2->getMaxSomme();
             if (somme_joueur1 > somme_joueur2) {

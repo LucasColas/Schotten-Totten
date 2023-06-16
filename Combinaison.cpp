@@ -1,7 +1,7 @@
 #include "Combinaison.h"
 #include "Carte.h"
 #include <algorithm>
-
+#include <iostream>
 using namespace std;
 Combinaison::Combinaison(Carte *c1_, Carte *c2_, Carte *c3_, int nb_c) {
     cartes_combi.push_back(c1_);
@@ -147,7 +147,7 @@ int Combinaison::getMaxPuissance() {
     }
 
     if (c2->getType() != "Clan" && c3->getType() != "Clan") {
-
+        cout << "on a 2 carte tactique" << endl;
         for (auto couleur2: c2->CouleursPossibles()) {
             for (auto force2: c2->forcesPossibles()) {
                 for (auto couleur3: c3->CouleursPossibles()) {
@@ -172,11 +172,16 @@ int Combinaison::getMaxPuissance() {
         return MaxPuissance;
     }
 
+    cout << "cartes combi size : " << cartes_combi.size() << endl;
 
     for (int i = 0; i < cartes_combi.size(); i++) {
+        cout << "carte combi : " << *cartes_combi[i] << endl;
+        //cout << "on a une carte tactique" << endl;
+        //cout << cartes_combi[i]->getType() << endl;
         if (cartes_combi[i]->getType() != "Clan") {
             for (auto force: cartes_combi[i]->forcesPossibles()) {
                 for (auto couleur: cartes_combi[i]->CouleursPossibles()) {
+                    cout << "essai puissance" << endl;
                     cartes_combi[i]->setForceAuto(force);
                     cartes_combi[i]->setCouleurAuto(couleur);
                     PuissanceCombinaison();

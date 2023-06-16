@@ -100,7 +100,7 @@ Carte_Elite::Carte_Elite(string t, string id_, int f, Couleur c) : Carte_tactiqu
         forces_possibles.push_back(7);
     }
 
-    if (id == "Joker") {
+    if (id.find("Joker") != string::npos) {
         //couleurs_possibles = {Couleur::Rouge, Couleur::Bleu, Couleur::Dore, Couleur::Marron, Couleur::Vert, Couleur::Violet};
         for (int i = 1; i < 10; i++) {
             forces_possibles.push_back(i);
