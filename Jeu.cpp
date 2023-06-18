@@ -198,7 +198,7 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
                 return false;
             }
             for (int i = 0; i < schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size(); i++) {
-                cout << to_string(i+1) << schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1()[i] << endl;
+                cout << to_string(i+1) << *schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1()[i] << endl;
             }
             cin >> carte_supp;
             if (carte_supp < 1 || carte_supp > schottenTotten->bornes[choix_borne-1]->getCartes_joueur_1().size()) {
@@ -215,7 +215,7 @@ bool Jeu::action_carte_ruse(Carte& carte_ruse) {
                 return false;
             }
             for (int i = 0; i < schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2().size(); i++) {
-                cout << to_string(i+1) << schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2()[i] << endl;
+                cout << to_string(i+1) << *schottenTotten->bornes[choix_borne-1]->getCartes_joueur_2()[i] << endl;
             }
 
             if (joueurs[joueur_actuel-1]->getIa())
@@ -528,6 +528,7 @@ void Jeu::jouer_tour() {
             }
             schottenTotten->bornes[borne-1]->ajoutRegle(carte.getRegle());
             joueurs[joueur_actuel-1]->carteTactiqueJouee();
+            choixPioche();
             changer_joueur();
             return;
         }
@@ -536,8 +537,9 @@ void Jeu::jouer_tour() {
             if (action_carte_ruse(carte)) {
                 defausse->ajout_defausse(&carte);
                 choixPioche();
-                changer_joueur();
                 joueurs[joueur_actuel-1]->carteTactiqueJouee();
+                changer_joueur();
+
                 return;
             }
             joueurs[joueur_actuel-1]->ajout_carte(&carte);
@@ -549,7 +551,7 @@ void Jeu::jouer_tour() {
 
         if (schottenTotten->bornes[borne-1]->ajout_Carte(&carte, joueur_actuel)) {
             choixPioche();
-            joueurs[joueur_actuel-1]->carteTactiqueJouee();
+            //joueurs[joueur_actuel-1]->carteTactiqueJouee();
             //Regarder revendication
 
             //Regarder s'il y a un gagnant pour la partie et regarder si toutes les parties ont été jouées.
